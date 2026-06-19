@@ -63,31 +63,35 @@
 
 ## 🎨 Gallery
 
-<p align="center"><em>→ 左右滑动浏览更多 / Scroll to explore →</em></p>
+<p align="center">
+  <sub>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</sub><br>
+  <b>◀&emsp;左右滑动浏览更多&emsp;▶</b><br>
+  <sub>Scroll to explore</sub>
+</p>
 
-<div align="center" style="overflow-x: auto; padding: 12px 0;">
+<div align="center" style="overflow-x: auto; padding: 8px 0 16px 0;">
   <table><tr>
-    <td><img src="assets/gallery/115.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/114.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/116.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/100.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/102.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/103.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/104.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/105.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/106.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/107.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/108.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/109.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/110.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/111.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/112.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/113.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/117.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/118.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/119.jpg" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/120.png" width="270" style="border-radius: 6px;"></td>
-    <td><img src="assets/gallery/121.png" width="270" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/115.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/114.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/116.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/100.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/102.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/103.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/104.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/105.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/106.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/107.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/108.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/109.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/110.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/111.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/112.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/113.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/117.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/118.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/119.jpg" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/120.png" width="300" style="border-radius: 6px;"></td>
+    <td><img src="assets/gallery/121.png" width="300" style="border-radius: 6px;"></td>
   </tr></table>
 </div>
 
