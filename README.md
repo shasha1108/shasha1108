@@ -1,0 +1,133 @@
+<div align="center">
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="让每个说不清的情绪，都能被看见、被理解。" />
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+%C2%B7+%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%95%B0%E5%AD%97%E7%96%97%E6%84%88;Three.js+%C2%B7+WebGL+%C2%B7+Particle+Systems+%C2%B7+Web+Audio" alt="Healing Visual Lab" />
+
+<br/>
+
+<p>
+  <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="24px" height="24px"/>
+  <em>身体记得的，代码可以翻译。代码翻译不了的，时间可以消融。</em>
+</p>
+
+<br/>
+
+<p>
+  <a href="mailto:383052980@qq.com">
+    <img src="https://img.shields.io/badge/Email-383052980@qq.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+  <a href="https://www.xiaohongshu.com/user/profile/云野自由">
+    <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"/>
+  </a>
+  <a href="https://github.com/shasha1108">
+    <img src="https://img.shields.io/badge/GitHub-shasha1108-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+</p>
+
+</div>
+
+---
+
+## 🔮 About Me
+
+```
+软件开发 ──→ 自动化测试 ──→ 数据产品经理
+                    │
+                    └── 每一次转身都指向同一个方向：
+                        理解人，而不仅仅是理解技术。
+```
+
+我天生对一切新奇的事物充满好奇。从写代码到测系统，从看数据到做产品——这些经历最终让我意识到：**最复杂的系统不是代码，是人的情绪。**
+
+现在的我，专注于一件事：
+
+> 把那些堵在胸口、卡在喉咙、说又说不清的情绪，
+> 翻译成可以被看见、被触碰、被释放的交互体验。
+>
+> **我不做 App。我只做打开浏览器就起效的三分钟疗愈。**
+
+---
+
+## 🎨 Gallery
+
+<p align="center"><em>→ 左右滑动浏览 / Scroll to explore →</em></p>
+
+<div align="center" style="overflow-x: auto; white-space: nowrap; padding: 16px 0;">
+  <img src="assets/gallery/100.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/101.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/102.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/103.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/104.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/105.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/106.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/107.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/108.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/109.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/110.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/111.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/112.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/113.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/114.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/115.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/116.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/117.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/118.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/119.jpg" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/120.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+  <img src="assets/gallery/121.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+</div>
+
+---
+
+## 🌀 Healing Visual Lab · 视觉疗愈实验室
+
+> 不是艺术。是工具。不是作品展示。是情绪急救箱。
+
+一个持续生长的数字交互疗愈作品集——**13 件**独立 H5 作品，每件只需浏览器打开即可体验。没有登录，没有付费——你只需要**看、触碰、和算法一起呼吸**。
+
+<p align="center">
+  <a href="https://github.com/shasha1108/healing-visual-lab">
+    <img src="https://img.shields.io/badge/Explore_the_Collection_→-C4A46C?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="Explore"/>
+  </a>
+  <a href="https://shasha1108.github.io/healing-visual-lab/">
+    <img src="https://img.shields.io/badge/Live_Demo_→-8B9DC3?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=1a1a2e" alt="Live"/>
+  </a>
+</p>
+
+### ✦ 精选作品
+
+| 作品 | 一句话 | 技术核心 |
+|------|--------|----------|
+| 🦋 **[释·茧 / Unbound Mind](https://github.com/shasha1108/healing-visual-lab/tree/main/unbound-mind)** | 150K 粒子：从焦虑乱麻 → 治愈星系，4-7-8 呼吸引导 | WebGL · GLSL · Web Audio · Spring Physics |
+| ⏳ **[时间流转 / Particle Clock](https://github.com/shasha1108/healing-visual-lab/tree/main/time-particle-clock)** | 200K 粒子时钟，拖拽加速，松开即止 | ShaderMaterial · Web Audio Ticks |
+| 🏔️ **[万里江山图 / Grand Jiangshan](https://github.com/shasha1108/healing-visual-lab/tree/main/grand-jiangshan)** | 470K 粒子 + 4D Simplex 噪声过程化生成山水 | GLSL Terrain · OrbitControls |
+| 🫧 **[深蓝呼吸 / Deep Blue Breath](https://github.com/shasha1108/healing-visual-lab/tree/main/deep-blue-breath)** | 长按屏幕，金色粒子从漩涡中缓缓升起 | 25K Particles · Fmaj7 Chords |
+| 🧠 **[过载脑区 / Overthinking Engine](https://github.com/shasha1108/healing-visual-lab/tree/main/overthinking-engine)** | CRT 赛博朋克叙事疗愈 | GSAP · Typewriter · CSS Animation |
+| 🫁 **[呼吸边界 / Breathing Boundary](https://github.com/shasha1108/healing-visual-lab/tree/main/breathing-boundary)** | 一层会呼吸的有机膜——看似隔绝，实则翻译 | Custom GLSL · Binural Beats |
+
+→ [查看全部 13 件作品](https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95)
+
+---
+
+## 🛠️ 技术光谱
+
+```
+Three.js WebGL ── ◆◆◆◆◆◆◆◆── 10K–500K 粒子系统
+Custom GLSL ──── ◆◆◆◆◆◇◇◇── Simplex Noise · FBM · Smoothstep
+Web Audio API ── ◆◆◆◆◇◇◇◇── 432Hz 颂钵 · Brown 噪声 · Binural Beats
+Touch Design ─── ◆◆◆◆◆◇◇◇── 拖拽物理 · 长按检测 · 呼吸同步
+CSS 3D / GSAP ── ◆◆◆◇◇◇◇◇── 视差滚动 · CRT 效果 · 打字机叙事
+```
+
+---
+
+<p align="center">
+  <em>If one of these pieces made you feel seen — that's the only reason this exists.</em>
+  <br/>
+  <em>如果其中某件作品让你感到被看见——那就是这些代码存在的全部意义。</em>
+</p>
+
+<p align="center">
+  <sub>Sha.w.z · 云野自由 · Healing Visual Lab · 2026</sub>
+</p>
