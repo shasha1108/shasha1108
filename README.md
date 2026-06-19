@@ -110,12 +110,12 @@
 
 | 作品 | 一句话 | 技术核心 |
 |------|--------|----------|
-| 🦋 **[释·茧 / Unbound Mind](https://github.com/shasha1108/healing-visual-lab/tree/main/unbound-mind)** | 150K 粒子：从焦虑乱麻 → 治愈星系，4-7-8 呼吸引导 | WebGL · GLSL · Web Audio · Spring Physics |
-| ⏳ **[时间流转 / Particle Clock](https://github.com/shasha1108/healing-visual-lab/tree/main/time-particle-clock)** | 200K 粒子时钟，拖拽加速，松开即止 | ShaderMaterial · Web Audio Ticks |
-| 🏔️ **[万里江山图 / Grand Jiangshan](https://github.com/shasha1108/healing-visual-lab/tree/main/grand-jiangshan)** | 470K 粒子 + 4D Simplex 噪声过程化生成山水 | GLSL Terrain · OrbitControls |
-| 🫧 **[深蓝呼吸 / Deep Blue Breath](https://github.com/shasha1108/healing-visual-lab/tree/main/deep-blue-breath)** | 长按屏幕，金色粒子从漩涡中缓缓升起 | 25K Particles · Fmaj7 Chords |
-| 🧠 **[过载脑区 / Overthinking Engine](https://github.com/shasha1108/healing-visual-lab/tree/main/overthinking-engine)** | CRT 赛博朋克叙事疗愈 | GSAP · Typewriter · CSS Animation |
-| 🫁 **[呼吸边界 / Breathing Boundary](https://github.com/shasha1108/healing-visual-lab/tree/main/breathing-boundary)** | 一层会呼吸的有机膜——看似隔绝，实则翻译 | Custom GLSL · Binural Beats |
+| 🦋 **[释·茧 / Unbound Mind](https://github.com/shasha1108/healing-visual-lab/tree/main/unbound-mind)** | 你不需要挣脱——轻轻抚摸，茧会自己松开。 | WebGL · GLSL · Web Audio · Spring Physics |
+| ⏳ **[时间流转 / Particle Clock](https://github.com/shasha1108/healing-visual-lab/tree/main/time-particle-clock)** | 时间不是推着你的秒针，是你掌心可以放慢的河。 | ShaderMaterial · Web Audio Ticks |
+| 🏔️ **[万里江山图 / Grand Jiangshan](https://github.com/shasha1108/healing-visual-lab/tree/main/grand-jiangshan)** | 站远一点看——所有的焦虑，其实都很小。 | GLSL Terrain · OrbitControls |
+| 🫧 **[深蓝呼吸 / Deep Blue Breath](https://github.com/shasha1108/healing-visual-lab/tree/main/deep-blue-breath)** | 在最深的蓝里，总有一点金色会升起来。 | 25K Particles · Fmaj7 Chords |
+| 🧠 **[过载脑区 / Overthinking Engine](https://github.com/shasha1108/healing-visual-lab/tree/main/overthinking-engine)** | 你不是想太多。你只是忘了给自己按暂停。 | GSAP · Typewriter · CSS Animation |
+| 🫁 **[呼吸边界 / Breathing Boundary](https://github.com/shasha1108/healing-visual-lab/tree/main/breathing-boundary)** | 有些边界不是为了隔开——是为了让理解，有节奏地发生。 | Custom GLSL · Binural Beats |
 
 → [查看全部 13 件作品](https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95)
 
