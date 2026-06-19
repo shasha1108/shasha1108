@@ -86,7 +86,7 @@
   <a href="https://github.com/shasha1108/healing-visual-lab">
     <img src="https://img.shields.io/badge/Explore_the_Collection_→-C4A46C?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="Explore"/>
   </a>
-  <a href="https://shasha1108.github.io/healing-visual-lab/">
+  <a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">
     <img src="https://img.shields.io/badge/Live_Demo_→-8B9DC3?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=1a1a2e" alt="Live"/>
   </a>
 </p>
