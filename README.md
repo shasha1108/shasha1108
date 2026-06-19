@@ -117,7 +117,7 @@
 | 🧠 **[过载脑区 / Overthinking Engine](https://github.com/shasha1108/healing-visual-lab/tree/main/overthinking-engine)** | 你不是想太多。你只是忘了给自己按暂停。 | GSAP · Typewriter · CSS Animation |
 | 🫁 **[呼吸边界 / Breathing Boundary](https://github.com/shasha1108/healing-visual-lab/tree/main/breathing-boundary)** | 有些边界不是为了隔开——是为了让理解，有节奏地发生。 | Custom GLSL · Binural Beats |
 
-→ [查看全部 13 件作品](https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95)
+→ [查看全部作品](https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95)
 
 ---
 
