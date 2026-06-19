@@ -7,17 +7,20 @@
 <br/>
 
 <p>
-  <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="24px" height="24px"/>
+  ✨
   <em>身体记得的，代码可以翻译。代码翻译不了的，时间可以消融。</em>
 </p>
 
 <br/>
 
 <p>
-  <a href="mailto:383052980@qq.com">
-    <img src="https://img.shields.io/badge/Email-383052980@qq.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"/>
+  <a href="mailto:zhangwensha1108@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-zhangwensha1108-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
   </a>
-  <a href="https://www.xiaohongshu.com/user/profile/云野自由">
+  <a href="mailto:wensha_zhang@163.com">
+    <img src="https://img.shields.io/badge/163-wensha__zhang-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="163"/>
+  </a>
+  <a href="https://xhslink.com/m/1kVPy4geTiQ">
     <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"/>
   </a>
   <a href="https://github.com/shasha1108">
@@ -40,42 +43,43 @@
 
 我天生对一切新奇的事物充满好奇。从写代码到测系统，从看数据到做产品——这些经历最终让我意识到：**最复杂的系统不是代码，是人的情绪。**
 
-现在的我，专注于一件事：
+现在的我，专注于情绪类内容的创作：
 
-> 把那些堵在胸口、卡在喉咙、说又说不清的情绪，
-> 翻译成可以被看见、被触碰、被释放的交互体验。
+> 不止是交互体验——我还创作了大量的情绪插图和文案。
+> 那些堵在胸口、卡在喉咙、说又说不清的感受，
+> 被翻译成画面、文字、和可以触碰的代码。
+> 它们被无数人保存、引用、当作自己的情绪替身。
 >
-> **我不做 App。我只做打开浏览器就起效的三分钟疗愈。**
+> **让每一个微小的情绪，都有一个具体的形状。**
 
 ---
 
 ## 🎨 Gallery
 
-<p align="center"><em>→ 左右滑动浏览 / Scroll to explore →</em></p>
+<p align="center"><em>→ 左右滑动浏览更多 / Scroll to explore →</em></p>
 
-<div align="center" style="overflow-x: auto; white-space: nowrap; padding: 16px 0;">
-  <img src="assets/gallery/100.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/101.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/102.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/103.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/104.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/105.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/106.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/107.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/108.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/109.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/110.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/111.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/112.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/113.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/114.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/115.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/116.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/117.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/118.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/119.jpg" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/120.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
-  <img src="assets/gallery/121.png" height="280" style="margin: 0 4px; border-radius: 6px;" />
+<div align="center" style="overflow-x: auto; white-space: nowrap; padding: 12px 0;">
+  <img src="assets/gallery/115.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/114.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/116.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/100.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/102.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/103.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/104.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/105.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/106.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/107.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/108.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/109.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/110.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/111.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/112.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/113.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/117.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/118.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/119.jpg" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/120.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
+  <img src="assets/gallery/121.png" width="270" style="margin: 0 5px; border-radius: 6px;" />
 </div>
 
 ---
