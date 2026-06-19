@@ -14,12 +14,12 @@
 <br/>
 
 <p>
-  📧 <a href="mailto:zhangwensha1108@gmail.com">zhangwensha1108@gmail.com</a>
-  &ensp;·&ensp;
-  <a href="mailto:wensha_zhang@163.com">wensha_zhang@163.com</a>
-</p>
-
-<p>
+  <a href="mailto:zhangwensha1108@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
+  </a>
+  <a href="mailto:wensha_zhang@163.com">
+    <img src="https://img.shields.io/badge/📧-wensha_zhang@163.com-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="Email"/>
+  </a>
   <a href="https://xhslink.com/m/1kVPy4geTiQ">
     <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"/>
   </a>
