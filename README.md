@@ -23,7 +23,7 @@
   <a href="https://xhslink.com/m/1kVPy4geTiQ">
     <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"/>
   </a>
-  <a href="https://github.com/shasha1108">
+  <a href="https://shasha1108.github.io/shasha1108/">
     <img src="https://img.shields.io/badge/GitHub-shasha1108-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
