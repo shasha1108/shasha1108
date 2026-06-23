@@ -83,7 +83,7 @@ def build_hvl_description(readme: str) -> str:
     if not section:
         return ""
     # Get the paragraph before the first table or ### heading
-    m = re.search(r'^([^|\n].*?)(?=\n\n\||\n###|\n\|)', section, re.DOTALL)
+    m = re.search(r'^([^|\n].*?)(?=\n\n\||\n###|\n\||\n<p)', section, re.DOTALL)
     if m:
         desc = m.group(1).strip()
         html = []
