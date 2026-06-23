@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="让每个说不清的情绪，都能被看见、被理解。">
+<meta name="theme-color" content="#0a0a14">
+<title>情绪天气 · Sha.w.z</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Noto Serif SC", "Songti SC", serif;
+    background: #08080f;
+    color: rgba(230, 230, 245, 0.9);
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+    cursor: default;
+    user-select: none;
+  }
+
+  /* ── GIF 背景 ── */
+  .bg {
+    position: fixed; inset: 0; z-index: 0;
+    background: url('assets/bg.gif') center/cover no-repeat;
+    opacity: 0.18; filter: blur(4px) brightness(0.6) saturate(0.7);
+    animation: bgDrift 40s ease-in-out infinite alternate;
+  }
+  @keyframes bgDrift {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.06); }
+  }
+
+  /* ── 尘埃粒子 ── */
+  .dust {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* ── 文字舞台 ── */
+  .stage {
+    position: fixed; inset: 0; z-index: 2;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 40px 24px;
+  }
+
+  .line {
+    font-size: clamp(16px, 2.8vw, 22px);
+    letter-spacing: 6px;
+    font-weight: 300;
+    color: rgba(220, 225, 240, 0.85);
+    text-align: center;
+    line-height: 2;
+    transition: opacity 2s ease;
+    position: absolute;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* ── 最终联系方式 ── */
+  .reveal {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 24px 48px;
+    opacity: 0;
+    transition: opacity 2.4s ease;
+    pointer-events: none;
+  }
+
+  .reveal.on {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .reveal .name {
+    font-size: clamp(15px, 2.4vw, 20px);
+    letter-spacing: 10px;
+    font-weight: 200;
+    color: rgba(200, 210, 230, 0.75);
+  }
+
+  .reveal .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .reveal .links a {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: rgba(180, 195, 215, 0.65);
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(180, 195, 215, 0.18);
+    border-radius: 24px;
+    transition: all 0.6s ease;
+  }
+
+  .reveal .links a:hover {
+    color: rgba(220, 235, 250, 0.9);
+    border-color: rgba(200, 215, 235, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* ── 底部呼吸提示 ── */
+  .breath {
+    position: fixed; bottom: 28px; z-index: 3;
+    width: 100%; text-align: center;
+    font-size: 11px; letter-spacing: 8px;
+    color: rgba(200, 210, 225, 0.25);
+    animation: breathe 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes breathe {
+    0%, 100% { opacity: 0.18; }
+    50% { opacity: 0.45; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true"></div>
+
+<canvas class="dust" id="dustCanvas" aria-hidden="true"></canvas>
+
+<div class="stage" id="stage">
+  <!-- lines injected by JS -->
+</div>
+
+<div class="breath" id="breathHint">呼吸</div>
+
+<div class="reveal" id="reveal">
+  <p class="name">Sha.w.z · 云野自由</p>
+  <div class="links" id="contactLinks">
+    <a href="mailto:zhangwensha1108@gmail.com">Gmail</a>
+    <a href="https://xhslink.com/m/1kVPy4geTiQ" target="_blank">小红书</a>
+    <a href="https://github.com/shasha1108" target="_blank">GitHub</a>
+  </div>
+</div>
+
+<script>
+// ── 情绪天气台词 ──
+const script = [
+  "焦虑的时候，什么都不想点开。",
+  "难过的时候，什么都不想解释。",
+  "开心的时候，什么都想分享。",
+  "但你点开了这里。",
+  "所以这里，也有人在感受着。"
+];
+
+const stage = document.getElementById('stage');
+const reveal = document.getElementById('reveal');
+const breath = document.getElementById('breathHint');
+
+let lineEls = [];
+let currentStep = 0;
+const TOTAL_STEPS = script.length;
+
+// ── 创建文字元素 ──
+script.forEach((text, i) => {
+  const el = document.createElement('div');
+  el.className = 'line';
+  el.textContent = text;
+  el.style.opacity = '0';
+  stage.appendChild(el);
+  lineEls.push(el);
+});
+
+// ── 动画编排 ──
+let timer = null;
+
+function showLine(index, duration, nextDelay) {
+  if (index >= TOTAL_STEPS) {
+    // 所有台词结束，揭示联系方式
+    setTimeout(() => {
+      reveal.classList.add('on');
+      breath.style.opacity = '0';
+    }, 800);
+    return;
+  }
+
+  // 淡入当前行
+  lineEls[index].style.opacity = '1';
+  lineEls[index].style.position = 'relative';
+  lineEls[index].style.opacity = '1';
+
+  // 前一行淡出
+  if (index > 0) {
+    lineEls[index - 1].style.opacity = '0';
+    setTimeout(() => {
+      lineEls[index - 1].style.position = 'absolute';
+    }, 2000);
+  }
+
+  timer = setTimeout(() => {
+    showLine(index + 1, duration, nextDelay);
+  }, nextDelay);
+}
+
+// ── 尘埃粒子 ──
+(function initDust() {
+  const c = document.getElementById('dustCanvas');
+  const ctx = c.getContext('2d');
+  const particles = [];
+
+  function resize() {
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * c.width,
+      y: Math.random() * c.height,
+      r: Math.random() * 1.2 + 0.3,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.2 - 0.1,
+      alpha: Math.random() * 0.5 + 0.1,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    const t = Date.now() * 0.001;
+    for (const p of particles) {
+      p.x += p.vx + Math.sin(t * 0.3 + p.phase) * 0.15;
+      p.y += p.vy + Math.cos(t * 0.4 + p.phase) * 0.1;
+
+      if (p.x < -10) p.x = c.width + 10;
+      if (p.x > c.width + 10) p.x = -10;
+      if (p.y < -10) p.y = c.height + 10;
+      if (p.y > c.height + 10) p.y = -10;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(200,215,235,${p.alpha})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── 启动：showLine 自带链式调用，只需启动第一句 ──
+setTimeout(() => {
+  showLine(0, 0, 4000);
+}, 1000);
+
+// ── 点击任意位置提前揭示 ──
+let clicked = false;
+document.addEventListener('click', () => {
+  if (clicked) return;
+  clicked = true;
+  clearTimeout(timer);
+  // 快速推进
+  lineEls.forEach(el => { el.style.transition = 'opacity 0.6s ease'; el.style.opacity = '0'; });
+  setTimeout(() => {
+    reveal.classList.add('on');
+    breath.style.opacity = '0';
+  }, 400);
+});
+
+// ── 联系方式可动态扩展 ──
+// 后续新增账号：在 #contactLinks 内追加 <a> 元素即可
+// 格式: <a href="链接" target="_blank">平台名</a>
+</script>
+
+</body>
+</html>

@@ -31,8 +31,8 @@
 <br/>
 
 <!-- ═══════════ SHARE ═══════════ -->
-<a href="https://shasha1108.github.io/shasha1108/">
-  <img src="assets/share-badge.svg" alt="Share · 分享主页" width="240" style="transition: transform 0.2s ease;">
+<a href="https://shasha1108.github.io/shasha1108/weather">
+  <img src="assets/share-badge.svg" alt="Share · 分享主页" width="240">
 </a>
 
 </div>
