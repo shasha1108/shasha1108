@@ -13,6 +13,15 @@
 
 <br/>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/emotion-lines.svg">
+    <img src="assets/emotion-lines.svg" width="480" alt="焦虑的时候，什么都不想点开。难过的时候，什么都不想解释。开心的时候，什么都想分享。你点开了这里。所以这里，也有一个人在感受着。">
+  </picture>
+</p>
+
+<br/>
+
 <p>
   <a href="mailto:zhangwensha1108@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
