@@ -14,16 +14,13 @@
 <br/>
 
 <p align="center">
-  <sub>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</sub><br>
-  <em>
-    焦虑的时候，什么都不想点开。<br>
-    难过的时候，什么都不想解释。<br>
-    开心的时候，什么都想分享。<br>
-    <br>
-    你点开了这里。<br>
-    所以这里，也有一个人在感受着。
-  </em><br>
-  <sub>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</sub>
+
+  <span style="color:#7B93A8;">&#9679;</span> &ensp;<em style="color:#7B93A8;">焦虑的时候，什么都不想点开。</em><br>
+  <span style="color:#8899AE;">&#9679;</span> &ensp;<em style="color:#8899AE;">难过的时候，什么都不想解释。</em><br>
+  <span style="color:#A099A8;">&#9679;</span> &ensp;<em style="color:#A099A8;">开心的时候，什么都想分享。</em><br>
+  <span style="color:#B8928E;">&#9679;</span> &ensp;<em style="color:#B8928E;">你点开了这里。</em><br>
+  <span style="color:#C4A46C;">&#9679;</span> &ensp;<em style="color:#C4A46C;">所以这里，也有一个人在感受着。</em>
+
 </p>
 
 <br/>
