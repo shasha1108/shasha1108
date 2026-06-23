@@ -6,27 +6,34 @@
     </filter>
   </defs>
 
-  <style>
-    .line { font-family: "Noto Serif SC", "Songti SC", "STSong", serif; font-size: 15px; font-weight: 600; letter-spacing: 3px; }
-
-    @keyframes shimmer {
-      0%, 100% { opacity: 0.6; }
-      50%      { opacity: 0.95; }
-    }
-    .l1   { fill: #99B2C8; animation: shimmer 4s ease-in-out infinite; }
-    .l2   { fill: #A4B2C4; animation: shimmer 4s ease-in-out 0.2s infinite; }
-    .l3   { fill: #B5AEBE; animation: shimmer 4s ease-in-out 0.4s infinite; }
-    .l4   { fill: #C8A8A8; animation: shimmer 4s ease-in-out 0.6s infinite; }
-    .l5   { fill: #D4B880; animation: shimmer 4s ease-in-out 0.8s infinite; filter: url(#warmGlow); }
-  </style>
-
   <rect x="20" y="4" width="540" height="212" rx="12" fill="rgba(10,10,18,0.35)"/>
 
-  <text text-anchor="middle" class="line">
-    <tspan x="290" y="42"  class="l1">焦虑的时候，什么都不想点开。</tspan>
-    <tspan x="290" y="76"  class="l2">难过的时候，什么都不想解释。</tspan>
-    <tspan x="290" y="110" class="l3">开心的时候，什么都想分享。</tspan>
-    <tspan x="290" y="152" class="l4">你来到了这里，</tspan>
-    <tspan x="290" y="190" class="l5">有一个人和你一起感受着所有的情绪</tspan>
-  </text>
+  <g font-family="Noto Serif SC, Songti SC, STSong, serif" font-size="15" font-weight="600" letter-spacing="3" text-anchor="middle">
+
+    <text x="290" y="42"  fill="#99B2C8">
+      焦虑的时候，什么都不想点开。
+      <animate attributeName="opacity" values="0.55;0.92;0.55" dur="4s" repeatCount="indefinite" begin="0s"/>
+    </text>
+
+    <text x="290" y="76"  fill="#A4B2C4">
+      难过的时候，什么都不想解释。
+      <animate attributeName="opacity" values="0.55;0.92;0.55" dur="4s" repeatCount="indefinite" begin="0.25s"/>
+    </text>
+
+    <text x="290" y="110" fill="#B5AEBE">
+      开心的时候，什么都想分享。
+      <animate attributeName="opacity" values="0.55;0.92;0.55" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    </text>
+
+    <text x="290" y="152" fill="#C8A8A8">
+      你来到了这里，
+      <animate attributeName="opacity" values="0.55;0.92;0.55" dur="4s" repeatCount="indefinite" begin="0.75s"/>
+    </text>
+
+    <text x="290" y="190" fill="#D4B880" filter="url(#warmGlow)">
+      有一个人和你一起感受着所有的情绪
+      <animate attributeName="opacity" values="0.55;0.95;0.55" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </text>
+
+  </g>
 </svg>
