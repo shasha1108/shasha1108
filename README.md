@@ -1,10 +1,16 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/bg.gif">
-  <img src="assets/bg.gif" width="100%" style="max-width:800px;" alt="Healing Visual Lab background">
-</picture>
+<a href="https://shasha1108.github.io/shasha1108/">
+  <img src="assets/bg.gif" width="100%" alt="Healing Visual Lab · 交互式数字疗愈">
+</a>
 
+<sub>
+  <a href="https://shasha1108.github.io/shasha1108/">&#55356;&#57282; 全屏动效版 &#8594;</a>
+  &ensp;|&ensp;
+  点击上方 GIF 体验完整背景动画
+</sub>
+
+<br/>
 <br/>
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="让每个说不清的情绪，都能被看见、被理解。" />
