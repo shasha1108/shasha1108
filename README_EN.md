@@ -1,9 +1,5 @@
 <div align="center">
 
-<sub><a href="README.md">中文</a></sub>
-
-<br/>
-
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+·+Interactive+Digital+Healing;Three.js+·+WebGL+·+Particle+Systems+·+Web+Audio" alt="Healing Visual Lab" />
@@ -136,4 +132,6 @@ CSS 3D / GSAP ── ◆◆◆◇◇◇◇◇── Parallax · CRT effects · T
 
 <p align="center">
   <sub>Sha.w.z · 云野自由 · Healing Visual Lab · 2026</sub>
+  <br/>
+  <sub><a href="README.md">中文</a></sub>
 </p>
