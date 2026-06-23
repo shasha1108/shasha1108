@@ -1,42 +1,58 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="让每个说不清的情绪，都能被看见、被理解。" />
+<!-- 1. 深浅色自适应打字机效果 -->
+<picture>
+  <!-- 深色模式下显示的文字 (亮色系文字) -->
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=E8D4B4&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++让每个说不清的情绪，都能被看见、被理解。">
+  <!-- 浅色模式下显示的文字 (原本的颜色) -->
+  <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=9A7E50&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++让每个说不清的情绪，都能被看见、被理解。" alt="让每个说不清的情绪，都能被看见、被理解。" />
+</picture>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+%C2%B7+%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%95%B0%E5%AD%97%E7%96%97%E6%84%88;Three.js+%C2%B7+WebGL+%C2%B7+Particle+Systems+%C2%B7+Web+Audio" alt="Healing Visual Lab" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=A6B8E0&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+·+交互式数字疗愈;Three.js+·+WebGL+·+Particle+Systems+·+Web+Audio">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=6A7FA3&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+·+交互式数字疗愈;Three.js+·+WebGL+·+Particle+Systems+·+Web+Audio" alt="Healing Visual Lab" />
+</picture>
 
-<br/>
+<br/><br/>
 
 <p>
-  ✨
-  <em>身体记得的，代码可以翻译。代码翻译不了的，时间可以消融。</em>
+  ✨ <em>身体记得的痛楚，代码可以翻译；<br/>代码无法转译的执念，就交给时间消融。</em>
 </p>
 
 <br/>
 
-<p align="center">
-  <img src="assets/emotion-lines.svg?v=4" width="480" alt="焦虑的时候，什么都不想点开。难过的时候，什么都不想解释。开心的时候，什么都想分享。你来到了这里，有一个人和你一起感受着所有的情绪">
-</p>
+<!-- 2. 利用 Table 打造高级的 "情绪卡片" 替代原本模糊的 SVG -->
+<table width="600" align="center" style="border:none;">
+  <tr style="border:none;">
+    <td align="center" style="border:none; background-color: rgba(139, 157, 195, 0.05); border-radius: 12px; padding: 30px;">
+      <p style="font-size: 14px; color: #666; line-height: 2.2;">
+        焦虑的时候，连点开屏幕都需要力气。<br/>
+        难过的时候，所有的解释都显得多余。<br/>
+        没关系。<br/>
+        既然来到了这里，就请卸下防备。<br/>
+        <b>Welcome to the safe zone。</b>
+      </p>
+    </td>
+  </tr>
+</table>
 
-<br/>
+<br/><br/>
 
+<!-- 3. 规范化徽章：去除了冗余Emoji，统一高度，增加了一点点科技感 -->
 <p>
   <a href="mailto:zhangwensha1108@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
   </a>
   <a href="mailto:wensha_zhang@163.com">
-    <img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="Email"/>
+    <img src="https://img.shields.io/badge/163_Mail-C20C0C?style=for-the-badge&logo=maildotru&logoColor=white" alt="163Email"/>
   </a>
   <a href="https://xhslink.com/m/1kVPy4geTiQ">
-    <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"/>
+    <img src="https://img.shields.io/badge/云野自由-FF2442?style=for-the-badge&logo=xiaohongshu&logoColor=white" alt="小红书"/>
   </a>
-  <a href="https://shasha1108.github.io/shasha1108/">
-    <img src="https://img.shields.io/badge/GitHub-shasha1108-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+  <a href="https://github.com/shasha1108">
+    <img src="https://img.shields.io/badge/Github_Index-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
-
-<br/>
-
-<!-- ═══════════ SHARE ═══════════ -->
 
 </div>
 
