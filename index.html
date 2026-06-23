@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sha.w.z · 云野自由 — 让每个说不清的情绪，都能被看见、被理解。Healing Visual Lab 交互式数字疗愈。">
+<meta name="theme-color" content="#0a0a0f">
+<title>Sha.w.z · 云野自由</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Cascadia Code", "Noto Serif SC", "Songti SC", serif;
+    color: rgba(245, 245, 255, 0.9);
+    background: #0a0a0f;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ── Full-viewport GIF background ── */
+  .bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: url('assets/bg.gif') center/cover no-repeat;
+    opacity: 0.35;
+    filter: blur(2px) saturate(0.8);
+  }
+
+  /* ── Dark overlay for readability ── */
+  .bg-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(ellipse at center, rgba(10,10,20,0.3) 0%, rgba(10,10,20,0.85) 85%);
+    pointer-events: none;
+  }
+
+  /* ── Content ── */
+  main {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  /* ── Hero section ── */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .hero .typing {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .hero .motto {
+    font-size: clamp(14px, 2vw, 18px);
+    letter-spacing: 8px;
+    color: #C4A46C;
+    margin: 32px 0;
+    font-weight: 300;
+  }
+
+  .hero .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .hero .badges img { height: 28px; border-radius: 4px; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: rgba(200, 200, 220, 0.4);
+    animation: fadePulse 3s ease-in-out infinite;
+  }
+
+  @keyframes fadePulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+
+  /* ── Sections ── */
+  section {
+    padding: 60px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  section h2 {
+    font-size: clamp(18px, 3vw, 24px);
+    letter-spacing: 8px;
+    color: #C4A46C;
+    font-weight: 300;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  section h3 {
+    font-size: clamp(15px, 2.2vw, 18px);
+    letter-spacing: 6px;
+    color: #8B9DC3;
+    font-weight: 300;
+    margin: 28px 0 16px;
+  }
+
+  section p, section blockquote {
+    font-size: 15px;
+    color: rgba(220, 220, 240, 0.8);
+    margin-bottom: 16px;
+  }
+
+  section blockquote {
+    border-left: 2px solid rgba(196, 164, 108, 0.3);
+    padding-left: 20px;
+    font-style: italic;
+    color: rgba(200, 200, 220, 0.7);
+  }
+
+  /* ── Career path ── */
+  .career-path {
+    font-family: "Cascadia Code", monospace;
+    font-size: 13px;
+    color: rgba(180, 190, 210, 0.8);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.9;
+  }
+
+  /* ── Gallery horizontal scroll ── */
+  .gallery-strip {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 12px 0 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-strip::-webkit-scrollbar { height: 4px; }
+  .gallery-strip::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+
+  .gallery-strip img {
+    height: 240px;
+    width: auto;
+    border-radius: 6px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-strip img:hover { transform: scale(1.03); }
+
+  /* ── Works table ── */
+  .works-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .works-table th {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #8B9DC3;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .works-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: middle;
+  }
+
+  .works-table a {
+    color: #C4A46C;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .works-table a:hover { color: #e8d5a3; }
+
+  .works-table .tech-tags {
+    font-size: 11px;
+    color: rgba(180, 190, 210, 0.6);
+  }
+
+  /* ── Tech spectrum ── */
+  .tech-spectrum {
+    font-family: "Cascadia Code", monospace;
+    font-size: 13px;
+    color: rgba(180, 190, 210, 0.7);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.9;
+  }
+
+  /* ── Buttons ── */
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px 0;
+  }
+
+  .btn-row a img { height: 40px; border-radius: 6px; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 48px 0 32px;
+    font-size: 12px;
+    color: rgba(200, 200, 220, 0.4);
+    letter-spacing: 4px;
+  }
+
+  footer a { color: rgba(200, 200, 220, 0.5); text-decoration: none; }
+  footer a:hover { color: #C4A46C; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    main { padding: 40px 16px 60px; }
+    .hero { min-height: 90vh; }
+    .gallery-strip img { height: 180px; }
+    .works-table { font-size: 12px; }
+    .works-table th, .works-table td { padding: 8px 6px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-layer { animation: none; background-image: url('assets/bg.gif'); filter: blur(4px) saturate(0.5); opacity: 0.22; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-layer" aria-hidden="true"></div>
+<div class="bg-overlay" aria-hidden="true"></div>
+
+<main>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <img class="typing" src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=24&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="让每个说不清的情绪，都能被看见、被理解。">
+
+    <img class="typing" src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=16&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+%C2%B7+%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%95%B0%E5%AD%97%E7%96%97%E6%84%88;Three.js+%C2%B7+WebGL+%C2%B7+Particle+Systems+%C2%B7+Web+Audio" alt="Healing Visual Lab">
+
+    <p class="motto">&#10024; &ensp;<em>身体记得的，代码可以翻译。代码翻译不了的，时间可以消融。</em></p>
+
+    <div class="badges">
+      <a href="mailto:zhangwensha1108@gmail.com"><img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"></a>
+      <a href="mailto:wensha_zhang@163.com"><img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="Email"></a>
+      <a href="https://xhslink.com/m/1kVPy4geTiQ"><img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"></a>
+      <a href="https://github.com/shasha1108"><img src="https://img.shields.io/badge/GitHub-shasha1108-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
+    </div>
+
+    <div class="scroll-hint">&#8595; SCROLL &#8595;</div>
+  </section>
+
+  <!-- ═══════════ ABOUT ME ═══════════ -->
+  <section id="about">
+    <h2>&#55356;&#57118; About Me</h2>
+
+    <div class="career-path">&#36719;&#20214;&#24320;&#21457; &#9472;&#9472;&#8594; &#33258;&#21160;&#21270;&#27979;&#35797; &#9472;&#9472;&#8594; &#25968;&#25454;&#20135;&#21697;&#32463;&#29702;
+                    &#9474;
+                    &#9474;  &#27599;&#19968;&#27425;&#36716;&#36523;&#65292;&#37117;&#35753;&#25105;&#26356;&#25026;&#24471;&#31995;&#32479;&#21644;&#31639;&#27861;&#12290;
+                    &#9474;  &#20294;&#29616;&#22312;&#65292;&#25105;&#24819;&#26356;&#25026;&#19968;&#20010;&#20154;&#12290;
+                    &#9474;
+                    &#9492;&#9472;&#9472; &#24773;&#32490;&#20869;&#23481;&#21019;&#20316;</div>
+
+    <p>这些年，我看过无数的代码和数据。最复杂的系统，都可以被建模、被呈现、被优化。</p>
+    <p><strong>但人的内心不行。</strong></p>
+    <p>那些堵在胸口、卡在喉咙、说又说不清的感受——没有接口、没有日志、没有任何调试工具能告诉你它卡在哪一行。</p>
+    <p>所以现在的我，用了更多的时间去做这件事：</p>
+
+    <blockquote>
+      创作情绪插图、文案、和交互式数字体验。<br>
+      把那些无形的、无名的、无处安放的情绪，<br>
+      翻译成可以被看见、被触碰、被释放的形状。<br><br>
+      它们被无数人保存、引用、当作自己的情绪替身。<br><br>
+      <strong>让每一个说不清的情绪，都有一个具体的表达。</strong>
+    </blockquote>
+  </section>
+
+  <!-- ═══════════ GALLERY ═══════════ -->
+  <section id="gallery">
+    <h2>&#55356;&#57282; Gallery</h2>
+
+    <p style="text-align:center;font-size:12px;color:rgba(200,200,220,0.5);letter-spacing:4px;">
+      &#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;&#9473;<br>
+      <b>&#9000;&#65039; 左右滑动浏览更多</b><br>
+      Scroll to explore &#8594;
+    </p>
+
+    <div class="gallery-strip">
+      <img src="assets/gallery/115.png" loading="lazy"><img src="assets/gallery/114.png" loading="lazy"><img src="assets/gallery/116.png" loading="lazy"><img src="assets/gallery/100.png" loading="lazy"><img src="assets/gallery/102.png" loading="lazy"><img src="assets/gallery/103.png" loading="lazy"><img src="assets/gallery/104.png" loading="lazy"><img src="assets/gallery/105.png" loading="lazy"><img src="assets/gallery/106.png" loading="lazy"><img src="assets/gallery/107.png" loading="lazy"><img src="assets/gallery/108.png" loading="lazy"><img src="assets/gallery/109.png" loading="lazy"><img src="assets/gallery/110.png" loading="lazy"><img src="assets/gallery/111.png" loading="lazy"><img src="assets/gallery/112.png" loading="lazy"><img src="assets/gallery/113.png" loading="lazy"><img src="assets/gallery/117.png" loading="lazy"><img src="assets/gallery/118.png" loading="lazy"><img src="assets/gallery/119.jpg" loading="lazy"><img src="assets/gallery/120.png" loading="lazy"><img src="assets/gallery/121.png" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ═══════════ HEALING VISUAL LAB ═══════════ -->
+  <section id="hvl">
+    <h2>&#55356;&#57104; Healing Visual Lab · 视觉疗愈实验室</h2>
+
+    <blockquote>不是艺术。是工具。不是作品展示。是情绪急救箱。</blockquote>
+
+    <p>一个持续生长的数字交互疗愈作品集——每个都是独立的 H5 作品，每件只需浏览器打开即可体验。无需登录和付费——你只需要看、听、触碰、和算法一起呼吸。</p>
+
+    <div class="btn-row">
+      <a href="https://github.com/shasha1108/healing-visual-lab"><img src="https://img.shields.io/badge/Explore_the_Collection_&#8594;-C4A46C?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="Explore"></a>
+      <a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html"><img src="https://img.shields.io/badge/Live_Demo_&#8594;-8B9DC3?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=1a1a2e" alt="Live"></a>
+    </div>
+
+    <h3>&#10022; 精选作品</h3>
+
+    <table class="works-table">
+      <tr><th>作品</th><th>一句话</th><th>技术核心</th></tr>
+      <tr><td>&#129416; <a href="https://github.com/shasha1108/healing-visual-lab/tree/main/unbound-mind">释·茧 / Unbound Mind</a></td><td>你不需要挣脱——轻轻抚摸，茧会自己松开。</td><td class="tech-tags">WebGL · GLSL · Web Audio · Spring Physics</td></tr>
+      <tr><td>&#9203; <a href="https://github.com/shasha1108/healing-visual-lab/tree/main/time-particle-clock">时间流转 / Particle Clock</a></td><td>时间不是推着你的秒针，是你掌心可以放慢的河。</td><td class="tech-tags">ShaderMaterial · Web Audio Ticks</td></tr>
+      <tr><td>&#127956;&#65039; <a href="https://github.com/shasha1108/healing-visual-lab/tree/main/grand-jiangshan">万里江山图 / Grand Jiangshan</a></td><td>站远一点看——所有的焦虑，其实都很小。</td><td class="tech-tags">GLSL Terrain · OrbitControls</td></tr>
+      <tr><td>&#129459; <a href="https://github.com/shasha1108/healing-visual-lab/tree/main/deep-blue-breath">深蓝呼吸 / Deep Blue Breath</a></td><td>在最深的蓝里，总有一点金色会升起来。</td><td class="tech-tags">25K Particles · Fmaj7 Chords</td></tr>
+      <tr><td>&#129504; <a href="https://github.com/shasha1108/healing-visual-lab/tree/main/overthinking-engine">过载脑区 / Overthinking Engine</a></td><td>你不是想太多。你只是忘了给自己按暂停。</td><td class="tech-tags">GSAP · Typewriter · CSS Animation</td></tr>
+      <tr><td>&#129683; <a href="https://github.com/shasha1108/healing-visual-lab/tree/main/breathing-boundary">呼吸边界 / Breathing Boundary</a></td><td>有些边界不是为了隔开——是为了让理解，有节奏地发生。</td><td class="tech-tags">Custom GLSL · Binural Beats</td></tr>
+    </table>
+
+    <p style="text-align:center;margin-top:16px;">&#8594; <a href="https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95" style="color:#8B9DC3;">查看全部作品</a></p>
+  </section>
+
+  <!-- ═══════════ TECH SPECTRUM ═══════════ -->
+  <section id="tech">
+    <h2>&#55356;&#57208; 技术光谱</h2>
+
+    <div class="tech-spectrum">Three.js WebGL &#9472;&#9472; &#9670;&#9670;&#9670;&#9670;&#9670;&#9670;&#9670;&#9670;&#9472;&#9472; 10K–500K &#31890;&#23376;&#31995;&#32479;
+Custom GLSL &#9472;&#9472;&#9472;&#9472; &#9670;&#9670;&#9670;&#9670;&#9670;&#9671;&#9671;&#9671;&#9472;&#9472; Simplex Noise · FBM · Smoothstep
+Web Audio API &#9472;&#9472; &#9670;&#9670;&#9670;&#9670;&#9671;&#9671;&#9671;&#9671;&#9472;&#9472; 432Hz &#39042;&#38069; · Brown &#22122;&#22768; · Binural Beats
+Touch Design &#9472;&#9472;&#9472; &#9670;&#9670;&#9670;&#9670;&#9670;&#9671;&#9671;&#9671;&#9472;&#9472; &#25302;&#25341;&#29289;&#29702; · &#38271;&#25353;&#26816;&#27979; · &#21628;&#21560;&#21516;&#27493;
+CSS 3D / GSAP &#9472;&#9472; &#9670;&#9670;&#9670;&#9671;&#9671;&#9671;&#9671;&#9671;&#9472;&#9472; &#35270;&#24046;&#28378;&#21160; · CRT &#25928;&#26524; · &#25171;&#23383;&#26426;&#21465;&#20107;</div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p><em>If one of these pieces made you feel seen — that's the only reason this exists.</em></p>
+    <p><em>如果其中某件作品让你感到被看见——那就是这些代码存在的全部意义。</em></p>
+
+    <p style="margin-top:24px;">
+      <a href="https://github.com/shasha1108/healing-visual-lab">
+        <img src="https://img.shields.io/github/stars/shasha1108/healing-visual-lab?style=social" alt="Stars" style="height:20px;">
+      </a>
+      &ensp;
+      <span style="font-size:11px;">如果某件作品触动了你，&#11088; Star 让更多人也能找到它。</span>
+    </p>
+
+    <p style="margin-top:32px;">Sha.w.z · 云野自由 · Healing Visual Lab · 2026</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
