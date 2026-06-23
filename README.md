@@ -32,14 +32,8 @@
 
 <!-- ═══════════ SHARE ═══════════ -->
 <a href="https://shasha1108.github.io/shasha1108/">
-  <img src="https://img.shields.io/badge/%E2%97%88_Enter_the_Glass_Space_%E2%97%88-4a8a82?style=for-the-badge&logo=github&logoColor=white&labelColor=b4e3dc" alt="Enter the Glass Space · Frutiger Aero">
+  <img src="assets/share-badge.svg" alt="Share · 分享主页" width="240" style="transition: transform 0.2s ease;">
 </a>
-
-<br/>
-
-<sub>
-  <em>tap to open &middot; 全屏动效 &middot; 毛玻璃 Frutiger Aero &middot; 更适合传播分享</em>
-</sub>
 
 </div>
 
