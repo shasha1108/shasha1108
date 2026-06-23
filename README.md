@@ -14,10 +14,7 @@
 <br/>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/emotion-lines.svg">
-    <img src="assets/emotion-lines.svg" width="480" alt="焦虑的时候，什么都不想点开。难过的时候，什么都不想解释。开心的时候，什么都想分享。你点开了这里。所以这里，也有一个人在感受着。">
-  </picture>
+  <img src="assets/emotion-lines.svg" width="480" alt="焦虑的时候，什么都不想点开。难过的时候，什么都不想解释。开心的时候，什么都想分享。你来到了这里，有一个人和你一起感受着所有的情绪">
 </p>
 
 <br/>

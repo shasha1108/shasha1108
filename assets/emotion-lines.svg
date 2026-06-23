@@ -1,40 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="200" viewBox="0 0 560 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="220" viewBox="0 0 580 220">
   <defs>
-    <!-- Warm pulse glow on the last line -->
     <filter id="warmGlow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <style>
-    .line { font-family: "Noto Serif SC", "Songti SC", serif; font-size: 15px; font-weight: 300; letter-spacing: 3px; }
-    .l1   { fill: #7B93A8; animation: fader 8s ease-in-out infinite; }
-    .l2   { fill: #8899AE; animation: fader 8s ease-in-out 0.6s infinite; }
-    .l3   { fill: #A099A8; animation: fader 8s ease-in-out 1.2s infinite; }
-    .l4   { fill: #B8928E; animation: fader 8s ease-in-out 1.8s infinite; }
-    .l5   { fill: #C4A46C; animation: l5Pulse 8s ease-in-out 2.4s infinite; filter: url(#warmGlow); }
+  <!-- Subtle semi-transparent dark pill background for readability on any theme -->
+  <rect x="20" y="4" width="540" height="212" rx="12" fill="rgba(10,10,18,0.35)"/>
 
-    @keyframes fader {
-      0%, 18%  { opacity: 0.45; }
-      22%, 38% { opacity: 0.85; }
-      42%, 100% { opacity: 0.55; }
-    }
-    @keyframes l5Pulse {
-      0%, 18%  { opacity: 0.4; }
-      22%, 38% { opacity: 0.9; }
-      42%, 54% { opacity: 0.6; }
-      56%, 68% { opacity: 0.9; }
-      72%, 100% { opacity: 0.7; }
-    }
+  <style>
+    .line { font-family: "Noto Serif SC", "Songti SC", "STSong", serif; font-size: 15px; font-weight: 300; letter-spacing: 3px; }
+    .l1   { fill: #99B2C8; }
+    .l2   { fill: #A4B2C4; }
+    .l3   { fill: #B5AEBE; }
+    .l4   { fill: #C8A8A8; }
+    .l5   { fill: #D4B880; filter: url(#warmGlow); }
   </style>
 
-  <!-- Lines centered, no dots, no italic -->
   <text text-anchor="middle" class="line">
-    <tspan x="280" y="32"  class="l1">焦虑的时候，什么都不想点开。</tspan>
-    <tspan x="280" y="64"  class="l2">难过的时候，什么都不想解释。</tspan>
-    <tspan x="280" y="96"  class="l3">开心的时候，什么都想分享。</tspan>
-    <tspan x="280" y="134" class="l4">你点开了这里。</tspan>
-    <tspan x="280" y="170" class="l5">所以这里，也有一个人在感受着。</tspan>
+    <tspan x="290" y="42"  class="l1">焦虑的时候，什么都不想点开。</tspan>
+    <tspan x="290" y="76"  class="l2">难过的时候，什么都不想解释。</tspan>
+    <tspan x="290" y="110" class="l3">开心的时候，什么都想分享。</tspan>
+    <tspan x="290" y="152" class="l4">你来到了这里，</tspan>
+    <tspan x="290" y="190" class="l5">有一个人和你一起感受着所有的情绪</tspan>
   </text>
 </svg>
