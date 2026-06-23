@@ -119,7 +119,7 @@ SECTIONS = {
     "about-section": build_about,
     "tech-section":  build_tech,
     "hvl-desc":      build_hvl_description,
-    "footer-text":   build_footer,
+    # footer-text excluded — index.html has its own footer with language toggle
 }
 
 
