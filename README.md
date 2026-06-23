@@ -13,12 +13,6 @@
 
 <br/>
 
-<p align="center">
-  <img src="assets/emotion-lines.svg?v=4" width="480" alt="焦虑的时候，什么都不想点开。难过的时候，什么都不想解释。开心的时候，什么都想分享。你来到了这里，有一个人和你一起感受着所有的情绪">
-</p>
-
-<br/>
-
 <p>
   <a href="mailto:zhangwensha1108@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
