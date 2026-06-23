@@ -28,6 +28,19 @@
   </a>
 </p>
 
+<br/>
+
+<!-- ═══════════ SHARE ═══════════ -->
+<a href="https://shasha1108.github.io/shasha1108/">
+  <img src="https://img.shields.io/badge/%E2%97%88_Enter_the_Glass_Space_%E2%97%88-4a8a82?style=for-the-badge&logo=github&logoColor=white&labelColor=b4e3dc" alt="Enter the Glass Space · Frutiger Aero">
+</a>
+
+<br/>
+
+<sub>
+  <em>tap to open &middot; 全屏动效 &middot; 毛玻璃 Frutiger Aero &middot; 更适合传播分享</em>
+</sub>
+
 </div>
 
 ---
