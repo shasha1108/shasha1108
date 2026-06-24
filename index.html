@@ -535,9 +535,9 @@ CSS 3D / GSAP ── ◆◆◆◇◇◇◇◇── 视差滚动 · CRT 效果 �
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script>
-// ── 背景像素鱼 ──
+// ── 背景像素海洋生物：鱼 + 章鱼 + 水母 ──
 const PX = 5;
-let bgFish = [];
+let bgCreatures = [];
 
 new p5(function(p) {
   p.setup = function() {
@@ -545,42 +545,110 @@ new p5(function(p) {
     c.parent('fish-layer');
     p.pixelDensity(1); p.noSmooth();
 
-    for (let i = 0; i < 4; i++) {
-      bgFish.push({
-        x: p.random(p.width), y: p.random(p.height * 0.4, p.height * 0.8),
-        vx: p.random(0.3, 0.8) * (p.random() > 0.5 ? 1 : -1),
+    const types = ['fish','fish','fish','fish','octopus','octopus','jellyfish','jellyfish'];
+    for (let i = 0; i < types.length; i++) {
+      let t = types[i];
+      bgCreatures.push({
+        type: t,
+        x: p.random(p.width), y: p.random(p.height * 0.35, p.height * 0.82),
+        vx: p.random(0.25, 0.6) * (p.random() > 0.5 ? 1 : -1),
         vy: 0, bob: p.random(p.TWO_PI),
         palette: p.random([
           { body: '#87ceeb', fin: '#5f9ea0' },
           { body: '#ffb6c1', fin: '#ff69b4' },
           { body: '#ffe4b5', fin: '#ffa07a' },
           { body: '#98fb98', fin: '#3cb371' },
+          { body: '#dda0dd', fin: '#ba55d3' },
+          { body: '#f0e68c', fin: '#daa520' },
         ])
       });
     }
   };
 
+  function drawFish(f) {
+    p.push();
+    p.translate(p.round(f.x), p.round(f.y));
+    if (f.vx < 0) p.scale(-1, 1);
+    p.noStroke();
+    // Body + fins + tail
+    p.fill(f.palette.body);
+    p.rect(-PX*2, -PX, PX*4, PX*2.5);
+    p.rect(-PX, -PX*2, PX*2, PX);
+    // Waving tail
+    let tailWag = p.sin(p.frameCount * 0.15 + f.bob) > 0 ? 0 : PX;
+    p.rect(-PX*3, -PX*0.5 + tailWag, PX, PX*1.5);
+    p.fill(f.palette.fin || '#fff');
+    p.rect(PX, -PX*0.3, PX, PX*0.8);
+    p.fill(0); p.rect(PX*1.2, -PX*0.3, PX*0.5, PX*0.5);
+    p.pop();
+  }
+
+  function drawOctopus(f) {
+    p.push();
+    p.translate(p.round(f.x), p.round(f.y));
+    p.noStroke();
+    // Round head
+    p.fill(f.palette.body);
+    p.rect(-PX*1.5, -PX*3, PX*3, PX*3, 2);
+    p.rect(-PX*2, -PX*2.5, PX, PX*1.5);
+    p.rect(PX, -PX*2.5, PX, PX*1.5);
+    // Eyes
+    p.fill(255);
+    p.rect(-PX*0.8, -PX*2, PX*0.8, PX*0.8);
+    p.rect(PX*0.3, -PX*2, PX*0.8, PX*0.8);
+    p.fill(0);
+    p.rect(-PX*0.6, -PX*1.8, PX*0.5, PX*0.5);
+    p.rect(PX*0.5, -PX*1.8, PX*0.5, PX*0.5);
+    // 4 wiggly tentacles
+    let w = p.sin(p.frameCount * 0.12 + f.bob) * PX;
+    let w2 = p.cos(p.frameCount * 0.14 + f.bob) * PX;
+    p.fill(f.palette.fin || f.palette.body);
+    p.rect(-PX*2 + w, -PX*0.2, PX, PX*2.5);
+    p.rect(-PX*0.5 + w2, PX*0.5, PX, PX*2.5);
+    p.rect(PX*0.5 - w, PX*0.5, PX, PX*2.5);
+    p.rect(PX*1.5 - w2, -PX*0.2, PX, PX*2.5);
+    p.pop();
+  }
+
+  function drawJellyfish(f) {
+    p.push();
+    p.translate(p.round(f.x), p.round(f.y));
+    p.noStroke();
+    // Dome
+    p.fill(f.palette.body);
+    p.rect(-PX*2, -PX*3, PX*4, PX*2, 2);
+    p.rect(-PX*1.5, -PX*3.5, PX, PX);
+    p.rect(PX*0.5, -PX*3.5, PX, PX);
+    p.fill(f.palette.fin || p.palette.body);
+    // Pulsing tentacles
+    let t1 = p.sin(p.frameCount * 0.1 + f.bob) * PX * 0.8;
+    let t2 = p.cos(p.frameCount * 0.12 + f.bob) * PX * 0.8;
+    let t3 = p.sin(p.frameCount * 0.09 + f.bob + 1) * PX * 0.8;
+    p.rect(-PX*1.5 + t1, -PX*0.5, PX*0.8, PX*3);
+    p.rect(-PX*0.3 + t2, -PX*0.5, PX*0.8, PX*3.5);
+    p.rect(PX*0.8 + t3, -PX*0.5, PX*0.8, PX*2.8);
+    // Eyes
+    p.fill(255);
+    p.rect(-PX*0.5, -PX*2, PX*0.6, PX*0.6);
+    p.rect(PX*0.3, -PX*2, PX*0.6, PX*0.6);
+    p.pop();
+  }
+
   p.draw = function() {
     p.clear();
-    for (let f of bgFish) {
-      f.x += f.vx; f.y += p.sin(p.frameCount * 0.02 + f.bob) * 0.3;
-      if (f.x > p.width + 60) { f.x = -60; f.y = p.random(p.height * 0.3, p.height * 0.85); }
-      if (f.x < -60) { f.x = p.width + 60; f.y = p.random(p.height * 0.3, p.height * 0.85); }
+    for (let c of bgCreatures) {
+      // Movement
+      c.x += c.vx;
+      c.y += p.sin(p.frameCount * 0.018 + c.bob) * 0.25;
+      // Jellyfish pulse up/down
+      if (c.type === 'jellyfish') c.y += p.sin(p.frameCount * 0.04 + c.bob) * 0.4;
+      // Wrap around
+      if (c.x > p.width + 80) { c.x = -80; c.y = p.random(p.height * 0.3, p.height * 0.85); }
+      if (c.x < -80) { c.x = p.width + 80; c.y = p.random(p.height * 0.3, p.height * 0.85); }
 
-      p.push();
-      p.translate(p.round(f.x), p.round(f.y));
-      if (f.vx < 0) p.scale(-1, 1);
-      p.noStroke();
-
-      // Simple 6×4 fish sprite
-      p.fill(f.palette.body);
-      p.rect(-PX*2, -PX, PX*4, PX*2.5);
-      p.rect(-PX, -PX*2, PX*2, PX);
-      p.rect(-PX*3, -PX*0.5 + (p.sin(p.frameCount*0.15+f.bob)>0?0:PX), PX, PX*1.5);
-      p.fill(f.palette.fin || '#fff');
-      p.rect(PX, -PX*0.3, PX, PX*0.8);
-      p.fill(0); p.rect(PX*1.2, -PX*0.3, PX*0.5, PX*0.5);
-      p.pop();
+      if (c.type === 'octopus') drawOctopus(c);
+      else if (c.type === 'jellyfish') drawJellyfish(c);
+      else drawFish(c);
     }
   };
 
