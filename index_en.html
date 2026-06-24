@@ -386,9 +386,13 @@
     color: #1a4a44;
   }
 
+  #fish-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.2; }
+  #fish-layer canvas { position: fixed; inset: 0; }
+
   @media (prefers-reduced-motion: reduce) {
     .bg-layer { filter: blur(8px) saturate(1); opacity: 0.1; }
     .bg-overlay::before, .bg-overlay::after { animation: none; }
+    #fish-layer { display: none; }
   }
 </style>
 </head>
@@ -397,6 +401,7 @@
 <a href="index.html" class="lang-toggle">中</a>
 
 <div class="bg-layer" aria-hidden="true"></div>
+<div id="fish-layer" aria-hidden="true"></div>
 <div class="bg-overlay" aria-hidden="true"></div>
 
 <main>
@@ -530,6 +535,34 @@ CSS 3D / GSAP ── ◆◆◆◇◇◇◇◇── Parallax · CRT effects · T
   </footer>
 
 </main>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+const PX=5;let bgFish=[];
+new p5(function(p){
+  p.setup=function(){
+    let c=p.createCanvas(p.windowWidth,p.windowHeight);
+    c.parent("fish-layer");p.pixelDensity(1);p.noSmooth();
+    for(let i=0;i<4;i++)bgFish.push({x:p.random(p.width),y:p.random(p.height*.4,p.height*.8),vx:p.random(.3,.8)*(p.random()>.5?1:-1),vy:0,bob:p.random(p.TWO_PI),palette:p.random([{body:"#87ceeb",fin:"#5f9ea0"},{body:"#ffb6c1",fin:"#ff69b4"},{body:"#ffe4b5",fin:"#ffa07a"},{body:"#98fb98",fin:"#3cb371"}])});
+  };
+  p.draw=function(){
+    p.clear();
+    for(let f of bgFish){
+      f.x+=f.vx;f.y+=p.sin(p.frameCount*.02+f.bob)*.3;
+      if(f.x>p.width+60){f.x=-60;f.y=p.random(p.height*.3,p.height*.85)}
+      if(f.x<-60){f.x=p.width+60;f.y=p.random(p.height*.3,p.height*.85)}
+      p.push();p.translate(p.round(f.x),p.round(f.y));
+      if(f.vx<0)p.scale(-1,1);p.noStroke();
+      p.fill(f.palette.body);p.rect(-PX*2,-PX,PX*4,PX*2.5);p.rect(-PX,-PX*2,PX*2,PX);
+      p.rect(-PX*3,-PX*.5+(p.sin(p.frameCount*.15+f.bob)>0?0:PX),PX,PX*1.5);
+      p.fill(f.palette.fin||"#fff");p.rect(PX,-PX*.3,PX,PX*.8);
+      p.fill(0);p.rect(PX*1.2,-PX*.3,PX*.5,PX*.5);p.pop();
+    }
+  };
+  p.windowResized=function(){p.resizeCanvas(p.windowWidth,p.windowHeight);p.pixelDensity(1)};
+});
+</script>
 
 </body>
 </html>
