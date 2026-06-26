@@ -63,7 +63,7 @@
 ### ✦ 精选作品
 
 <table width="100%">
-<tr><th width="20%">方向</th><th width="40%">作品</th><th  width="40%">一句话</th></tr>
+<tr><th width="15%">方向</th><th width="35%">作品</th><th  width="50%">一句话</th></tr>
 <tr><td>🎨 粒子</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">墨池心境 / Inkmeditation</a></b></td><td>十万粒子如墨入水，随呼吸节律沉浮</td></tr>
 <tr><td>🔮 流体</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">息流幻镜 / Breath Mirror</a></b></td><td>摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像</td></tr>
 <tr><td>🎵 音频</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">释·茧 / Unbound Mind</a></b></td><td>150K 粒子如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环</td></tr>
@@ -94,7 +94,7 @@
 ## 🛠️ 能力光谱
 
 <table width="100%">
-<tr><th width="25%">能力</th><th>说明</th></tr>
+<tr><th width="30%">能力</th><th width="70%">说明</th></tr>
 <tr><td>🔀 系统化拆解</td><td>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代</td></tr>
 <tr><td>🤖 Agent & Skill 开发</td><td>从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统</td></tr>
 <tr><td>🎬 AI 内容创作</td><td>图文 · 视频 · 文案 · 应用。用什么工具不重要，能准确表达就行</td></tr>
@@ -107,7 +107,7 @@
 ## 🎯 更多作品 @shasha1108
 
 <table width="100%">
-<tr><th width="25%">仓库</th><th>简介</th></tr>
+<tr><th width="25%">仓库</th><th  width="75%">简介</th></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验</td></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器</td></tr>
 <tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>像素艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
