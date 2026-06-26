@@ -50,9 +50,7 @@
 ## 🎨 画廊
 
 <p align="center">
-  <sub>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</sub><br>
-  <b>🖱️ 左右滑动浏览更多</b><br>
-  <sub>Scroll to explore →</sub>
+  <b>🖱️ 左右滑动浏览更多 →</b>
 </p>
 
 <pre style="background:transparent;border:none;font:inherit;padding:8px 0;margin:0;overflow-x:auto;">
