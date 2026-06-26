@@ -82,7 +82,7 @@
 
 ## 🌀 Healing Visual Lab · 视觉疗愈实验室
 
-> 不是艺术。是工具。不是作品展示。是情绪急救箱。
+> 代码翻译语言说不清的东西。零摩擦，少即是多，交互胜过说明，情绪值得工程化。
 
 一个持续生长的数字交互疗愈作品集——每个都是独立的 H5 作品，每件只需浏览器打开即可体验。无需登录和付费——你只需要看、听、触碰、和算法一起呼吸。
 
@@ -99,12 +99,12 @@
 
 | 作品 | 一句话 | 技术核心 |
 |------|--------|----------|
-| 🦋 **[释·茧 / Unbound Mind](https://github.com/shasha1108/healing-visual-lab/tree/main/unbound-mind)** | 你不需要挣脱——轻轻抚摸，茧会自己松开。 | WebGL · GLSL · Web Audio · Spring Physics |
-| ⏳ **[时间流转 / Particle Clock](https://github.com/shasha1108/healing-visual-lab/tree/main/time-particle-clock)** | 时间不是推着你的秒针，是你掌心可以放慢的河。 | ShaderMaterial · Web Audio Ticks |
-| 🏔️ **[万里江山图 / Grand Jiangshan](https://github.com/shasha1108/healing-visual-lab/tree/main/grand-jiangshan)** | 站远一点看——所有的焦虑，其实都很小。 | GLSL Terrain · OrbitControls |
-| 🫧 **[深蓝呼吸 / Deep Blue Breath](https://github.com/shasha1108/healing-visual-lab/tree/main/deep-blue-breath)** | 在最深的蓝里，总有一点金色会升起来。 | 25K Particles · Fmaj7 Chords |
-| 🧠 **[过载脑区 / Overthinking Engine](https://github.com/shasha1108/healing-visual-lab/tree/main/overthinking-engine)** | 你不是想太多。你只是忘了给自己按暂停。 | GSAP · Typewriter · CSS Animation |
-| 🫁 **[呼吸边界 / Breathing Boundary](https://github.com/shasha1108/healing-visual-lab/tree/main/breathing-boundary)** | 有些边界不是为了隔开——是为了让理解，有节奏地发生。 | Custom GLSL · Binural Beats |
+| 🦋 **[释·茧 / Unbound Mind](https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html)** | 你不需要挣脱——轻轻抚摸，茧会自己松开。 | WebGL · GLSL · Web Audio · Spring Physics |
+| ⏳ **[时间流转 / Particle Clock](https://shasha1108.github.io/healing-visual-lab/time-particle-clock/time-particle-clock.html)** | 时间不是推着你的秒针，是你掌心可以放慢的河。 | ShaderMaterial · Web Audio Ticks |
+| 🏔️ **[万里江山图 / Grand Jiangshan](https://shasha1108.github.io/healing-visual-lab/grand-jiangshan/grand-jiangshan.html)** | 站远一点看——所有的焦虑，其实都很小。 | GLSL Terrain · OrbitControls |
+| 🫧 **[深蓝呼吸 / Deep Blue Breath](https://shasha1108.github.io/healing-visual-lab/deep-blue-breath/deep-blue-breath.html)** | 在最深的蓝里，总有一点金色会升起来。 | 25K Particles · Fmaj7 Chords |
+| 🧠 **[过载脑区 / Overthinking Engine](https://shasha1108.github.io/healing-visual-lab/overthinking-engine/overthinking-engine.html)** | 你不是想太多。你只是忘了给自己按暂停。 | GSAP · Typewriter · CSS Animation |
+| 🫁 **[呼吸边界 / Breathing Boundary](https://shasha1108.github.io/healing-visual-lab/breathing-boundary/breathing-boundary.html)** | 有些边界不是为了隔开——是为了让理解，有节奏地发生。 | Custom GLSL · Binural Beats |
 
 → [查看全部作品](https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95)
 
