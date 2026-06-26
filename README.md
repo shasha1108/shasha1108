@@ -2,7 +2,7 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="让每个说不清的情绪，都能被看见、被理解。" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+Agent+Skill+%E5%BC%80%E5%8F%91+%C2%B7+%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C;Three.js+%C2%B7+WebGL+%C2%B7+Particle+Systems+%C2%B7+Web+Audio" alt="Healing Visual Lab" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+Agent%2FSkill+%E5%BC%80%E5%8F%91+%C2%B7+%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C" alt="Healing Visual Lab" />
 
 <p>
   <a href="mailto:zhangwensha1108@gmail.com">
