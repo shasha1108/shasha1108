@@ -49,9 +49,7 @@
 
 ## 🎨 画廊
 
-<p align="center">
-  <h3><a>🖱️ 左右滑动浏览更多 →</a></h3>
-</p>
+<h3 align="center" style="color:#4493f8;">🖱️ 左右滑动浏览更多 →</h3>
 
 <pre style="background:transparent;border:none;font:inherit;padding:8px 0;margin:0;overflow-x:auto;">
 <img src="assets/gallery/115.png" width="290" style="border-radius:6px;"><img src="assets/gallery/114.png" width="290" style="border-radius:6px;"><img src="assets/gallery/116.png" width="290" style="border-radius:6px;"><img src="assets/gallery/100.png" width="290" style="border-radius:6px;"><img src="assets/gallery/102.png" width="290" style="border-radius:6px;"><img src="assets/gallery/103.png" width="290" style="border-radius:6px;"><img src="assets/gallery/104.png" width="290" style="border-radius:6px;"><img src="assets/gallery/105.png" width="290" style="border-radius:6px;"><img src="assets/gallery/106.png" width="290" style="border-radius:6px;"><img src="assets/gallery/107.png" width="290" style="border-radius:6px;"><img src="assets/gallery/108.png" width="290" style="border-radius:6px;"><img src="assets/gallery/109.png" width="290" style="border-radius:6px;"><img src="assets/gallery/110.png" width="290" style="border-radius:6px;"><img src="assets/gallery/111.png" width="290" style="border-radius:6px;"><img src="assets/gallery/112.png" width="290" style="border-radius:6px;"><img src="assets/gallery/113.png" width="290" style="border-radius:6px;"><img src="assets/gallery/117.png" width="290" style="border-radius:6px;"><img src="assets/gallery/118.png" width="290" style="border-radius:6px;"><img src="assets/gallery/119.jpg" width="290" style="border-radius:6px;"><img src="assets/gallery/120.png" width="290" style="border-radius:6px;"><img src="assets/gallery/121.png" width="290" style="border-radius:6px;">
@@ -94,8 +92,8 @@
 
 ## 🛠️ 能力光谱
 
-<table>
-<tr><th>能力</th><th>说明</th></tr>
+<table style="width:100%">
+<tr><th width="20%">能力</th><th>说明</th></tr>
 <tr><td>🔀 系统化拆解</td><td>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代</td></tr>
 <tr><td>🤖 Agent & Skill 开发</td><td>从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统</td></tr>
 <tr><td>🎬 AI 内容创作</td><td>图文 · 视频 · 文案 · 应用。用什么工具不重要，能准确表达就行</td></tr>
@@ -107,8 +105,8 @@
 
 ## 🎯 更多作品 @shasha1108
 
-<table>
-<tr><th>Repo</th><th>What</th></tr>
+<table style="width:100%">
+<tr><th width="25%">Repo</th><th>What</th></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验</td></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器</td></tr>
 <tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>像素艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
