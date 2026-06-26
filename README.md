@@ -2,7 +2,7 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="让每个说不清的情绪，都能被看见、被理解。" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Healing+Visual+Lab+%C2%B7+%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%95%B0%E5%AD%97%E7%96%97%E6%84%88;Three.js+%C2%B7+WebGL+%C2%B7+Particle+Systems+%C2%B7+Web+Audio" alt="Healing Visual Lab" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+Agent+Skill+%E5%BC%80%E5%8F%91+%C2%B7+%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C;Three.js+%C2%B7+WebGL+%C2%B7+Particle+Systems+%C2%B7+Web+Audio" alt="Healing Visual Lab" />
 
 <p>
   <a href="mailto:zhangwensha1108@gmail.com">
@@ -39,11 +39,11 @@
 
 所以现在的我，用了更多的时间去做这件事：
 
-> 创作情绪插图、文案、和交互式数字体验。
-> 把那些无形的、无名的、无处安放的情绪，
-> 翻译成可以被看见、被触碰、被释放的形状。
->
-> 让每一个说不清的情绪，都有一个具体的表达。
+创作情绪插图、文案、和交互式数字体验。
+把那些无形的、无名的、无处安放的情绪，
+翻译成可以被看见、被触碰、被释放的形状。
+
+让每一个说不清的情绪，都有一个具体的表达。
 
 ---
 
@@ -64,8 +64,6 @@
 
 ## 🌀 Healing Visual Lab · 视觉疗愈实验室
 
-> 15 件交互式数字疗愈实验。浏览器打开即体验。
-
 ### ✦ 精选作品
 
 | 方向 | 作品 | 一句话 |
@@ -73,7 +71,7 @@
 | 🎨 粒子 | **[墨池心境 / Inkmeditation](https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html)** | 十万粒子如墨入水，随呼吸节律沉浮 |
 | 🔮 流体 | **[息流幻镜 / Breath Mirror](https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html)** | 摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像 |
 | 🎵 音频 | **[释·茧 / Unbound Mind](https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html)** | 150K 粒子如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环 |
-| 🧠 叙事 | **[过载脑区 / Overthinking Engine](https://shasha1108.github.io/healing-visual-lab/overthinking-engine/overthinking-engine.html)** | CRT 终端里，过度思考被逐字敲出，10 秒后自动释怀 |
+| 🏔️ 国风 | **[青绿层峦 / Layered Mountains](https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html)** | 250K 粒子堆叠青绿山水，触之即散，聚散随缘 |
 | 🐠 像素 | **[像素水族箱 / Pixel Aquarium](https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html)** | 像素小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃 |
 
 <h3 align="center">
@@ -84,20 +82,20 @@
 
 ## 🛠️ 能力光谱
 
-> **🔀 系统化拆解**
-> 把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代
->
-> **🤖 Agent & Skill 开发**
-> 从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统
->
-> **🎬 AI 内容创作**
-> 图文 · 视频 · 文案 · 应用。用什么工具不重要，能准确表达就行
->
-> **🎯 创作判断力**
-> 知道什么内容能打动人，什么形式适合什么情绪，什么不值得做
->
-> **🧬 知识工程化**
-> 把个人经验变成结构化规则。系统越用越聪明，人不在了规则还在
+**🔀 系统化拆解**
+把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代
+
+**🤖 Agent & Skill 开发**
+从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统
+
+**🎬 AI 内容创作**
+图文 · 视频 · 文案 · 应用。用什么工具不重要，能准确表达就行
+
+**🎯 创作判断力**
+知道什么内容能打动人，什么形式适合什么情绪，什么不值得做
+
+**🧬 知识工程化**
+把个人经验变成结构化规则。系统越用越聪明，人不在了规则还在
 
 ---
 
