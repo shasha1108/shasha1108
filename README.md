@@ -62,7 +62,7 @@
 
 ### ✦ 精选作品
 
-<table style="width:100%">
+<table style="width:100%;table-layout:fixed;">
 <tr><th width="10%">方向</th><th width="35%">作品</th><th>一句话</th></tr>
 <tr><td>🎨 粒子</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">墨池心境 / Inkmeditation</a></b></td><td>十万粒子如墨入水，随呼吸节律沉浮</td></tr>
 <tr><td>🔮 流体</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">息流幻镜 / Breath Mirror</a></b></td><td>摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像</td></tr>
@@ -93,7 +93,7 @@
 
 ## 🛠️ 能力光谱
 
-<table style="width:100%">
+<table style="width:100%;table-layout:fixed;">
 <tr><th width="20%">能力</th><th>说明</th></tr>
 <tr><td>🔀 系统化拆解</td><td>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代</td></tr>
 <tr><td>🤖 Agent & Skill 开发</td><td>从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统</td></tr>
@@ -106,7 +106,7 @@
 
 ## 🎯 更多作品 @shasha1108
 
-<table style="width:100%">
+<table style="width:100%;table-layout:fixed;">
 <tr><th width="25%">仓库</th><th>简介</th></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验</td></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器</td></tr>
