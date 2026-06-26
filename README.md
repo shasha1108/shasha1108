@@ -27,7 +27,7 @@
 
 ---
 
-## 我的故事
+## 关于我
 
 开发 → 自动化测试 → 数据产品经理 → AI 创作者。
 
@@ -64,31 +64,23 @@
 
 ## 🌀 Healing Visual Lab · 视觉疗愈实验室
 
-> 代码翻译语言说不清的东西。零摩擦，少即是多，交互胜过说明，情绪值得工程化。
-
-一个持续生长的数字交互疗愈作品集——每个都是独立的 H5 作品，每件只需浏览器打开即可体验。无需登录和付费——你只需要看、听、触碰、和算法一起呼吸。
+> 15 件交互式数字疗愈实验。浏览器打开即体验。
 
 <p align="center">
   <a href="https://github.com/shasha1108/healing-visual-lab">
-    <img src="https://img.shields.io/badge/Explore_the_Collection_→-C4A46C?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="Explore"/>
-  </a>
-  <a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">
-    <img src="https://img.shields.io/badge/Live_Demo_→-8B9DC3?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=1a1a2e" alt="Live"/>
+    <img src="https://img.shields.io/badge/探索全部作品_→-C4A46C?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="探索全部作品"/>
   </a>
 </p>
 
 ### ✦ 精选作品
 
-| 作品 | 一句话 | 技术核心 |
-|------|--------|----------|
-| 🦋 **[释·茧 / Unbound Mind](https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html)** | 你不需要挣脱——轻轻抚摸，茧会自己松开。 | WebGL · GLSL · Web Audio · Spring Physics |
-| ⏳ **[时间流转 / Particle Clock](https://shasha1108.github.io/healing-visual-lab/time-particle-clock/time-particle-clock.html)** | 时间不是推着你的秒针，是你掌心可以放慢的河。 | ShaderMaterial · Web Audio Ticks |
-| 🏔️ **[万里江山图 / Grand Jiangshan](https://shasha1108.github.io/healing-visual-lab/grand-jiangshan/grand-jiangshan.html)** | 站远一点看——所有的焦虑，其实都很小。 | GLSL Terrain · OrbitControls |
-| 🫧 **[深蓝呼吸 / Deep Blue Breath](https://shasha1108.github.io/healing-visual-lab/deep-blue-breath/deep-blue-breath.html)** | 在最深的蓝里，总有一点金色会升起来。 | 25K Particles · Fmaj7 Chords |
-| 🧠 **[过载脑区 / Overthinking Engine](https://shasha1108.github.io/healing-visual-lab/overthinking-engine/overthinking-engine.html)** | 你不是想太多。你只是忘了给自己按暂停。 | GSAP · Typewriter · CSS Animation |
-| 🫁 **[呼吸边界 / Breathing Boundary](https://shasha1108.github.io/healing-visual-lab/breathing-boundary/breathing-boundary.html)** | 有些边界不是为了隔开——是为了让理解，有节奏地发生。 | Custom GLSL · Binural Beats |
-
-→ [查看全部作品](https://github.com/shasha1108/healing-visual-lab#-works--%E4%BD%9C%E5%93%81%E7%9B%AE%E5%BD%95)
+| 方向 | 作品 | 一句话 |
+|:--:|------|--------|
+| 🎨 粒子 | **[墨池心境 / Inkmeditation](https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html)** | 十万粒子如墨入水，随呼吸节律沉浮 |
+| 🔮 流体 | **[息流幻镜 / Breath Mirror](https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html)** | 摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像 |
+| 🎵 音频 | **[呼吸边界 / Breathing Boundary](https://shasha1108.github.io/healing-visual-lab/breathing-boundary/breathing-boundary.html)** | 一层活着的膜在呼吸，双耳节拍引导脑波 |
+| 🖥️ CSS3D | **[过载脑区 / Overthinking Engine](https://shasha1108.github.io/healing-visual-lab/overthinking-engine/overthinking-engine.html)** | CRT 终端里，过度思考被逐字敲出，10 秒后自动释怀 |
+| 🐠 像素 | **[像素水族箱 / Pixel Aquarium](https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html)** | 像素小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃 |
 
 ---
 
@@ -96,7 +88,7 @@
 
 <dl>
 <dt><b>系统化拆解</b></dt>
-<dd>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代。15 年 PM 本能。</dd>
+<dd>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代。</dd>
 
 <dt><b>Agent & Skill 开发</b></dt>
 <dd>从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统。</dd>
