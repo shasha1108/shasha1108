@@ -62,13 +62,14 @@
 
 ### ✦ 精选作品
 
-| 方向 | 作品 | 一句话 |
-|:--:|------|--------|
-| 🎨 粒子 | **[墨池心境 / Inkmeditation](https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html)** | 十万粒子如墨入水，随呼吸节律沉浮 |
-| 🔮 流体 | **[息流幻镜 / Breath Mirror](https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html)** | 摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像 |
-| 🎵 音频 | **[释·茧 / Unbound Mind](https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html)** | 150K 粒子如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环 |
-| 🏔️ 国风 | **[青绿层峦 / Layered Mountains](https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html)** | 250K 粒子堆叠青绿山水，触之即散，聚散随缘 |
-| 🐠 像素 | **[像素水族箱 / Pixel Aquarium](https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html)** | 像素小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃 |
+<table style="width:100%">
+<tr><th width="10%">方向</th><th width="35%">作品</th><th>一句话</th></tr>
+<tr><td>🎨 粒子</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">墨池心境 / Inkmeditation</a></b></td><td>十万粒子如墨入水，随呼吸节律沉浮</td></tr>
+<tr><td>🔮 流体</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">息流幻镜 / Breath Mirror</a></b></td><td>摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像</td></tr>
+<tr><td>🎵 音频</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">释·茧 / Unbound Mind</a></b></td><td>150K 粒子如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环</td></tr>
+<tr><td>🏔️ 国风</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html">青绿层峦 / Layered Mountains</a></b></td><td>250K 粒子堆叠青绿山水，触之即散，聚散随缘</td></tr>
+<tr><td>🐠 像素</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html">像素水族箱 / Pixel Aquarium</a></b></td><td>像素小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃</td></tr>
+</table>
 
 <h3 align="center">
   <a href="https://github.com/shasha1108/healing-visual-lab">探索全部作品 →</a>
@@ -117,8 +118,6 @@
 ---
 
 <p align="center">
-  <sub>Sha.w.z · 云野自由 · Healing Visual Lab · 2026</sub>
-  <br/>
-  <sub><a href="README_EN.md">English</a></sub>
+  <sub>Sha.w.z</sub>
 
 <p align="center"><sub>Source code under <a href="LICENSE">MIT License</a> | 网站源代码采用 MIT 协议</sub></p></p>
