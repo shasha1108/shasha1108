@@ -66,42 +66,38 @@
 
 > 15 件交互式数字疗愈实验。浏览器打开即体验。
 
-<p align="center">
-  <a href="https://github.com/shasha1108/healing-visual-lab">
-    <img src="https://img.shields.io/badge/探索全部作品_→-C4A46C?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e" alt="探索全部作品"/>
-  </a>
-</p>
-
 ### ✦ 精选作品
 
 | 方向 | 作品 | 一句话 |
 |:--:|------|--------|
 | 🎨 粒子 | **[墨池心境 / Inkmeditation](https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html)** | 十万粒子如墨入水，随呼吸节律沉浮 |
 | 🔮 流体 | **[息流幻镜 / Breath Mirror](https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html)** | 摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像 |
-| 🎵 音频 | **[呼吸边界 / Breathing Boundary](https://shasha1108.github.io/healing-visual-lab/breathing-boundary/breathing-boundary.html)** | 一层活着的膜在呼吸，双耳节拍引导脑波 |
-| 🖥️ CSS3D | **[过载脑区 / Overthinking Engine](https://shasha1108.github.io/healing-visual-lab/overthinking-engine/overthinking-engine.html)** | CRT 终端里，过度思考被逐字敲出，10 秒后自动释怀 |
+| 🎵 音频 | **[释·茧 / Unbound Mind](https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html)** | 150K 粒子如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环 |
+| 🧠 叙事 | **[过载脑区 / Overthinking Engine](https://shasha1108.github.io/healing-visual-lab/overthinking-engine/overthinking-engine.html)** | CRT 终端里，过度思考被逐字敲出，10 秒后自动释怀 |
 | 🐠 像素 | **[像素水族箱 / Pixel Aquarium](https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html)** | 像素小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃 |
+
+<h3 align="center">
+  <a href="https://github.com/shasha1108/healing-visual-lab">探索全部作品 →</a>
+</h3>
 
 ---
 
 ## 🛠️ 能力光谱
 
-<dl>
-<dt><b>系统化拆解</b></dt>
-<dd>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代。</dd>
-
-<dt><b>Agent & Skill 开发</b></dt>
-<dd>从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统。</dd>
-
-<dt><b>AI 内容创作</b></dt>
-<dd>图文、视频、文案、应用。用什么工具不重要，能准确表达就行。</dd>
-
-<dt><b>创作判断力</b></dt>
-<dd>知道什么内容能打动人，什么形式适合什么情绪，什么不值得做。</dd>
-
-<dt><b>知识工程化</b></dt>
-<dd>把个人经验变成结构化规则。系统越用越聪明，人不在了规则还在。</dd>
-</dl>
+> **🔀 系统化拆解**
+> 把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代
+>
+> **🤖 Agent & Skill 开发**
+> 从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统
+>
+> **🎬 AI 内容创作**
+> 图文 · 视频 · 文案 · 应用。用什么工具不重要，能准确表达就行
+>
+> **🎯 创作判断力**
+> 知道什么内容能打动人，什么形式适合什么情绪，什么不值得做
+>
+> **🧬 知识工程化**
+> 把个人经验变成结构化规则。系统越用越聪明，人不在了规则还在
 
 ---
 
