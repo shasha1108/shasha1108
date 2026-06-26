@@ -107,7 +107,7 @@
 ## 🎯 更多作品 @shasha1108
 
 <table style="width:100%">
-<tr><th width="25%">Repo</th><th>What</th></tr>
+<tr><th width="25%">仓库</th><th>简介</th></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验</td></tr>
 <tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器</td></tr>
 <tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>像素艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
@@ -118,6 +118,6 @@
 ---
 
 <p align="center">
-  <sub>Sha.w.z</sub>
+  <sub>Sha.w.z · <a href="README_EN.md">English</a></sub>
 
 <p align="center"><sub>Source code under <a href="LICENSE">MIT License</a> | 网站源代码采用 MIT 协议</sub></p></p>
