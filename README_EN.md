@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=900&pause=100000&lines=Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Product+Manager+%C2%B7+Agent%2FSkill+Dev+%C2%B7+Content+Creation" alt="Product Manager · Agent/Skill Dev · Content Creation" />
 
