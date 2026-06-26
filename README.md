@@ -63,7 +63,7 @@
 ### ✦ 精选作品
 
 <table width="100%">
-<tr><th width="15%">方向</th><th width="35%">作品</th><th  width="50%">一句话</th></tr>
+<tr><th width="15%">方向</th><th width="30%">作品</th><th  width="55%">一句话</th></tr>
 <tr><td>🎨 粒子</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">墨池心境 / Inkmeditation</a></b></td><td>十万粒子如墨入水，随呼吸节律沉浮</td></tr>
 <tr><td>🔮 流体</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">息流幻镜 / Breath Mirror</a></b></td><td>摄像头将你的影像化为 GPU 流体雾面，呼吸即镜像</td></tr>
 <tr><td>🎵 音频</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">释·茧 / Unbound Mind</a></b></td><td>150K 粒子如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环</td></tr>
