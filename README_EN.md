@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=900&pause=100000&lines=Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=900&pause=100000&lines=%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82" alt="Giving every unspoken emotion a shape that can be seen and understood." />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+Agent%2FSkill+%E5%BC%80%E5%8F%91+%C2%B7+%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C" alt="Product Manager · Agent/Skill Dev · Content Creation" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+Agent%2FSkill+%E5%BC%80%E5%8F%91+%C2%B7+%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C" alt="Healing Visual Lab" />
 
 <p>
   <a href="mailto:zhangwensha1108@gmail.com">
@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="Email"/>
   </a>
   <a href="https://xhslink.com/m/1kVPy4geTiQ">
-    <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="Xiaohongshu"/>
+    <img src="https://img.shields.io/badge/Xiaohongshu-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="Xiaohongshu"/>
   </a>
   <a href="https://shasha1108.github.io/shasha1108/">
     <img src="https://img.shields.io/badge/GitHub-shasha1108-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
@@ -27,7 +27,7 @@
 
 ---
 
-## 🫧 About Me
+## 🫧 关于我
 
 Developer → QA Automation → Data PM → AI Creator.
 
@@ -47,7 +47,7 @@ Giving every unspoken emotion a concrete expression.
 
 ---
 
-## 🎨 Gallery
+## 🎨 画廊
 
 <h3 align="center" style="color:#4493f8;">🖱️ Scroll to explore →</h3>
 
@@ -64,21 +64,21 @@ Giving every unspoken emotion a concrete expression.
 
 <table width="100%">
 <tr><th width="15%">Category</th><th width="30%">Work</th><th  width="55%">In One Line</th></tr>
-<tr><td>🎨 粒子</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">Inkmeditation</a></b></td><td>100K particles like ink in water, breathing with your rhythm</td></tr>
-<tr><td>🔮 流体</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">Breath Mirror</a></b></td><td>Camera turns your reflection into GPU fluid fog — breathing is the mirror</td></tr>
-<tr><td>🎵 音频</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">Unbound Mind</a></b></td><td>150K particle cocoon dissolves under your fingertips, 432Hz singing bowl, 4-7-8 breathing</td></tr>
-<tr><td>🏔️ 国风</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html">Layered Mountains</a></b></td><td>250K particles form layered Chinese landscape — touch scatters, time gathers</td></tr>
-<tr><td>🐠 像素</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html">Pixel Aquarium</a></b></td><td>6 pixel fish in a frosted glass tank — tap to feed, double-tap to knock</td></tr>
+<tr><td>🎨 Particles</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">Inkmeditation</a></b></td><td>十万Particles如墨入水，随呼吸节律沉浮</td></tr>
+<tr><td>🔮 Fluid</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">Breath Mirror</a></b></td><td>摄像头将你的影像化为 GPU Fluid雾面，呼吸即镜像</td></tr>
+<tr><td>🎵 Audio</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">Unbound Mind</a></b></td><td>150K Particles如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环</td></tr>
+<tr><td>🏔️ Shanshui</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html">Layered Mountains</a></b></td><td>250K Particles堆叠青绿山水，触之即散，聚散随缘</td></tr>
+<tr><td>🐠 Pixel</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html">Pixel水族箱 / Pixel Aquarium</a></b></td><td>Pixel小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃</td></tr>
 </table>
 
 <h3 align="center">
-  <a href="https://github.com/shasha1108/healing-visual-lab">Explore All Works →</a>
+  <a href="https://github.com/shasha1108/healing-visual-lab">探索全部Work →</a>
 </h3>
 
 <p align="center">
   <em>If one of these pieces made you feel seen — that's the only reason this exists.</em>
   <br/>
-  <em>如果其中某件作品让你感到被看见——那就是这些代码存在的全部意义。</em>
+  <em>如果其中某件Work让你感到被看见——那就是这些代码存在的全部意义。</em>
 </p>
 
 <p align="center">
@@ -86,7 +86,7 @@ Giving every unspoken emotion a concrete expression.
     <img src="https://img.shields.io/github/stars/shasha1108/healing-visual-lab?style=social" alt="Stars"/>
   </a>
   &ensp;
-  <sub>If a piece touched you, ⭐ Star helps others find it too.</sub>
+  <sub>如果某件Work触动了你，⭐ Star 让更多人也能找到它。</sub>
 </p>
 
 ---
@@ -104,20 +104,20 @@ Giving every unspoken emotion a concrete expression.
 
 ---
 
-## 🎯 More from @shasha1108
+## 🎯 更多Work @shasha1108
 
 <table width="100%">
 <tr><th width="25%">Repo</th><th  width="75%">About</th></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>Interactive digital healing experiments — 15 Three.js/WebGL works</td></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>Touch-driven healing H5 generator — GPU fluid, WebGL shaders</td></tr>
-<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>Pixel art × Frutiger Aero — cyber pets, digital aquariums</td></tr>
-<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>Xiaohongshu emotional content creation — metaphor mining, scene writing, visual storytelling</td></tr>
+<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈Work集——15 件 Three.js/WebGL 交互实验</td></tr>
+<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU Fluid、WebGL 着色器</td></tr>
+<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>Pixel艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
+<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>Xiaohongshu情绪内容创作——隐喻挖掘、场景写作、视觉叙事</td></tr>
 <tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>One-command H5 publishing to GitHub Pages — drop folder to live site</td></tr>
 </table>
 
 ---
 
 <p align="center">
-  <sub>Sha.w.z · <a href="README.md">中文</a></sub>
+  <sub>Sha.w.z · <a href="README_EN.md">English</a></sub>
 
 <p align="center"><sub>Source code under <a href="LICENSE">MIT License</a> | MIT License</sub></p></p>
