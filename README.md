@@ -138,14 +138,15 @@ CSS 3D / GSAP ── ◆◆◆◇◇◇◇◇── 视差滚动 · CRT 效果 �
 
 ---
 
-## 🔗 Related / 更多项目
+## 🔗 More from @shasha1108
 
-<p align="center">
-  <a href="https://github.com/shasha1108/healing-visual-lab">Healing Visual Lab</a> &ensp;·&ensp;
-  <a href="https://github.com/shasha1108/healing-space">Healing Space</a> &ensp;·&ensp;
-  <a href="https://github.com/shasha1108/emotional-content-studio">Emotional Content Studio</a> &ensp;·&ensp;
-  <a href="https://github.com/shasha1108/h5-publish-skill">h5-publish</a>
-</p>
+| Repo | What |
+|------|------|
+| [healing-visual-lab](https://github.com/shasha1108/healing-visual-lab) | 交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验 |
+| [healing-space](https://github.com/shasha1108/healing-space) | 触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器 |
+| [pixel-bloom](https://github.com/shasha1108/pixel-bloom) | 像素艺术 × 毛玻璃美学——赛博养宠、电子水族箱 |
+| [inner-voice](https://github.com/shasha1108/inner-voice) | 小红书情绪内容创作——隐喻挖掘、场景写作、视觉叙事 |
+| [h5-publish-skill](https://github.com/shasha1108/h5-publish-skill) | 一键发布 H5 到 GitHub Pages——拖入文件夹即上线 |
 
 ---
 
