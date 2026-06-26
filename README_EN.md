@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Hi,+I'm+Sha.w.z.++Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=750&pause=100000&lines=Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Product+Manager+%C2%B7+Agent%2FSkill+Dev+%C2%B7+Content+Creation" alt="Product Manager · Agent/Skill Dev · Content Creation" />
 
@@ -27,19 +27,9 @@
 
 ---
 
-## About Me
+## 🫧 About Me
 
 Developer → QA Automation → Data PM → AI Creator.
-
-Over 15 years, one thing held true: any repeatable work can be broken down, turned into rules, and automated.
-
-From test automation scripts, to data platforms that freed hundreds from repetitive queries, to full AI content creation pipelines — each leap was about eliminating the repetitive parts of the previous job.
-
-The tools change. The pattern doesn't: break the work into rules, build the rules into a system, let AI execute. What gets delivered isn't a prompt — it's a working judgment engine with fallback logic.
-
----
-
-### My Story
 
 I've spent years reading code and data. The most complex systems can all be modeled, rendered, and optimized.
 
