@@ -1,6 +1,15 @@
 name: Sync Latest Works
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "works.json"              # direct data change
+      - "README.md"               # manual edit
+      - "README_EN.md"
+      - "index.html"
+      - "index_en.html"
+      - "scripts/sync-latest-works.py"
   schedule:
     # Every Wednesday at 10:00 AM Beijing time (UTC+8) = 02:00 UTC
     - cron: "0 2 * * 3"
@@ -31,8 +40,8 @@ jobs:
           else
             git config user.name "Sha.w.z"
             git config user.email "your-email@example.com"
-            git add README.md
-            git commit -m "auto: sync latest works [skip ci]"
+            git add README.md README_EN.md index.html index_en.html
+            git commit -m "auto: sync latest works across all 4 pages [skip ci]"
             git push
             echo "Pushed ✓"
           fi
