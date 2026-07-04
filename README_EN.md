@@ -65,11 +65,11 @@ Giving every unspoken emotion a concrete expression.
 <!-- LATEST_WORKS_START -->
 <table width="100%">
 <tr><th width="30%">Work</th><th  width="70%">In One Line</th></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html">Crystal Turntable</a></b></td><td>屋外雪花纷飞，这里的旋律永远为你温暖。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-treasure/sunken-treasure.html">Sunken Treasure</a></b></td><td>像素鱼游进掌机传送门，逃逸到 3D 水晶水体中，蜕变为优雅的矢量鱼</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/drift-bottle/drift-bottle.html">Drift Bottle</a></b></td><td>轻触漂流瓶，唤醒瓶中平行世界</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-ipod/sunken-ipod.html">Sunken iPod</a></b></td><td>深海之底，一首七里香。触碰水面，音符如气泡升起。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/dreamcore-summer-rain/dreamcore-summer-rain.html">Dreamcore Summer Night</a></b></td><td>极致冷暖光碰撞 — 深黑蓝天 vs 售货机刺眼白光 vs 铁路脉冲红灯</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html">Crystal Turntable</a></b></td><td>Crystal Turntable</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-treasure/sunken-treasure.html">Sunken Treasure</a></b></td><td>Sunken Treasure</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/drift-bottle/drift-bottle.html">Drift Bottle</a></b></td><td>Drift Bottle</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-ipod/sunken-ipod.html">Sunken iPod</a></b></td><td>Sunken iPod</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/dreamcore-summer-rain/dreamcore-summer-rain.html">Dreamcore Summer Night</a></b></td><td>Dreamcore Summer Night</td></tr>
 </table>
 <!-- LATEST_WORKS_END -->
 

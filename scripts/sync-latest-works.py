@@ -78,16 +78,39 @@ def build_table(works, lang="cn"):
 
 
 def update_file(filepath, table_html):
-    """Replace content between LATEST_WORKS_START and LATEST_WORKS_END markers."""
+    """Replace content between LATEST_WORKS_START and LATEST_WORKS_END markers.
+    Only touches the marked block — all other content is preserved exactly."""
     content = filepath.read_text()
+
+    # ── Safety 1: verify exactly 1 marker pair exists ──
+    start_count = content.count("<!-- LATEST_WORKS_START -->")
+    end_count = content.count("<!-- LATEST_WORKS_END -->")
+    if start_count != 1 or end_count != 1:
+        return f"BAD_MARKERS (START={start_count}, END={end_count})"
+
+    # ── Safety 2: generated table must not contain marker strings ──
+    if "LATEST_WORKS" in table_html:
+        return "TABLE_CONTAINS_MARKER (refusing to write)"
+
+    # ── Replace ONLY between markers ──
     pattern = r"(<!-- LATEST_WORKS_START -->).*?(<!-- LATEST_WORKS_END -->)"
     replacement = f"\\1\n{table_html}\n\\2"
-
     new_content, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
-    if count == 0:
-        return "NO_MARKER"
+    if count != 1:
+        return "REGEX_FAILED"  # should not happen since we validated counts
+
     if new_content == content:
+        # ── Safety 3: verify markers intact in unchanged file ──
+        if new_content.count("<!-- LATEST_WORKS_START -->") != 1:
+            return "MARKERS_CORRUPTED"
         return "UNCHANGED"
+
+    # ── Safety 4: post-write marker count ──
+    if new_content.count("<!-- LATEST_WORKS_START -->") != 1 or \
+       new_content.count("<!-- LATEST_WORKS_END -->") != 1:
+        return "MARKERS_LOST_ON_WRITE (aborted)"
+    if new_content.count("LATEST_WORKS_START") != start_count:
+        return "MARKER_COUNT_CHANGED (aborted)"
 
     filepath.write_text(new_content)
     return "UPDATED"
@@ -116,32 +139,49 @@ if __name__ == "__main__":
 
     any_updated = False
     errors = []
+    results = {}
 
     for fname in CN_FILES:
         status = update_file(ROOT / fname, cn_table)
-        print(f"  {fname}: {status}")
+        results[fname] = status
         if status == "UPDATED":
             any_updated = True
-        elif status == "NO_MARKER":
-            errors.append(f"{fname}: LATEST_WORKS_START/END markers missing")
+        elif status.startswith("BAD_MARKERS") or status.startswith("TABLE_CONTAINS") \
+             or status.startswith("MARKERS_LOST") or status.startswith("MARKER_COUNT") \
+             or status.startswith("REGEX_FAILED"):
+            errors.append(f"{fname}: {status}")
 
     for fname in EN_FILES:
         status = update_file(ROOT / fname, en_table)
-        print(f"  {fname}: {status}")
+        results[fname] = status
         if status == "UPDATED":
             any_updated = True
-        elif status == "NO_MARKER":
-            errors.append(f"{fname}: LATEST_WORKS_START/END markers missing")
+        elif status.startswith("BAD_MARKERS") or status.startswith("TABLE_CONTAINS") \
+             or status.startswith("MARKERS_LOST") or status.startswith("MARKER_COUNT") \
+             or status.startswith("REGEX_FAILED"):
+            errors.append(f"{fname}: {status}")
+
+    # ── Report ──
+    print(f"\n{'─'*40}")
+    print("Sync scope: ONLY content between LATEST_WORKS markers")
+    print("Files touched vs untouched:")
+    for fname, status in sorted(results.items()):
+        marker = "✏️" if status == "UPDATED" else ("❌" if "BAD" in status or "LOST" in status or "CONTAINS" in status or "FAILED" in status else "✓")
+        print(f"  {marker} {fname}: {status}")
+    print(f"{'─'*40}")
 
     if errors:
-        print(f"\n⚠️  WARNING: {len(errors)} file(s) missing sync markers:")
+        print(f"\n❌ FATAL: {len(errors)} safety violation(s) — sync ABORTED, no files written:")
         for e in errors:
             print(f"  - {e}")
-        print("  These files will NOT be auto-synced until markers are restored.")
+        sys.exit(1)
 
     if not any_updated:
         print("\nAll files already up to date — nothing to commit.")
         sys.exit(0)
 
-    print("\n✓ Files updated. Diff:")
+    print(f"\n✓ {sum(1 for s in results.values() if s == 'UPDATED')} file(s) updated.")
+    print("  Other sections (About Me, Gallery, Skills, banners, badges) were NOT touched.")
+    print("\nDiff:")
     subprocess.run(["git", "-C", str(ROOT), "diff", "--stat"], check=False)
+    subprocess.run(["git", "-C", str(ROOT), "diff"], check=False)
