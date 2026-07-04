@@ -38,8 +38,12 @@ def fetch_works():
 
 def build_table(works, lang="cn"):
     """Build the HTML table for top N works."""
-    h_title = "作品" if lang == "cn" else "Work"
-    h_tagline = "一句话" if lang == "cn" else "In One Line"
+    if lang == "cn":
+        h_title = "作品"
+        h_tagline = "一句话"
+    else:
+        h_title = "Work"
+        h_tagline = "In One Line"
 
     rows = []
     for w in works[:TOP_N]:
@@ -48,8 +52,14 @@ def build_table(works, lang="cn"):
         title_en = w.get("title_en", "")
         tagline = (w.get("tagline", "") or "")[:70]
         url = f"{PAGES_BASE}/{slug}/{slug}.html"
+
+        if lang == "cn":
+            display_title = f"{title_zh} / {title_en}"
+        else:
+            display_title = title_en  # English pages: title_en only
+
         rows.append(
-            f'<tr><td><b><a href="{url}">{title_zh} / {title_en}</a></b></td>'
+            f'<tr><td><b><a href="{url}">{display_title}</a></b></td>'
             f'<td>{tagline}</td></tr>'
         )
     return (
