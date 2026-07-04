@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 """
-Sync profile README's '✦ 最新作品' section with the 5 most recent works
+Sync '最新作品 / Latest Works' section across all 4 profile pages
 from healing-visual-lab/works.json.
 
+Files updated:
+  README.md     → CN table (作品 / 一句话)
+  README_EN.md  → EN table (Work / In One Line)
+  index.html    → CN table
+  index_en.html → EN table
+
 Run: python3 scripts/sync-latest-works.py [--dry-run]
-Cron: 10:07 every Wednesday (see CLAUDE.md or CronCreate config)
+Cron: GitHub Actions — Wed 10:00 Beijing time
 """
 import json, re, sys, subprocess
 from pathlib import Path
-from datetime import date
 
 ROOT = Path(__file__).resolve().parent.parent
 WORKS_RAW_URL = "https://raw.githubusercontent.com/shasha1108/healing-visual-lab/main/works.json"
 PAGES_BASE = "https://shasha1108.github.io/healing-visual-lab"
 TOP_N = 5
+
+# Which files get which table variant
+CN_FILES = ["README.md", "index.html"]
+EN_FILES = ["README_EN.md", "index_en.html"]
 
 
 def fetch_works():
@@ -27,8 +36,11 @@ def fetch_works():
     return json.loads(result.stdout)
 
 
-def build_table(works):
-    """Build the HTML table rows for the top N works."""
+def build_table(works, lang="cn"):
+    """Build the HTML table for top N works."""
+    h_title = "作品" if lang == "cn" else "Work"
+    h_tagline = "一句话" if lang == "cn" else "In One Line"
+
     rows = []
     for w in works[:TOP_N]:
         slug = w["slug"]
@@ -41,55 +53,66 @@ def build_table(works):
             f'<td>{tagline}</td></tr>'
         )
     return (
-        '<table width="100%">\n'
-        '<tr><th width="30%">作品</th><th  width="70%">一句话</th></tr>\n'
+        f'<table width="100%">\n'
+        f'<tr><th width="30%">{h_title}</th><th  width="70%">{h_tagline}</th></tr>\n'
         + "\n".join(rows)
         + "\n</table>"
     )
 
 
-def update_readme(table_html):
+def update_file(filepath, table_html):
     """Replace content between LATEST_WORKS_START and LATEST_WORKS_END markers."""
-    readme_path = ROOT / "README.md"
-    content = readme_path.read_text()
-
+    content = filepath.read_text()
     pattern = r"(<!-- LATEST_WORKS_START -->).*?(<!-- LATEST_WORKS_END -->)"
     replacement = f"\\1\n{table_html}\n\\2"
 
     new_content, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
     if count == 0:
-        print("ERROR: LATEST_WORKS_START/END markers not found in README.md")
-        return False
+        return "NO_MARKER"
     if new_content == content:
-        print("No changes — already up to date.")
-        return False
+        return "UNCHANGED"
 
-    readme_path.write_text(new_content)
-    return True
+    filepath.write_text(new_content)
+    return "UPDATED"
 
 
 if __name__ == "__main__":
     dry_run = "--dry-run" in sys.argv
 
-    print("Fetching works from shasha1108/healing-visual-lab ...")
+    print("Fetching works from healing-visual-lab ...")
     data = fetch_works()
     works = data["works"]
     print(f"  {len(works)} works total, top {TOP_N}:")
-
     for i, w in enumerate(works[:TOP_N], 1):
         print(f"  {i}. [{w['date']}] {w['slug']} — {w.get('tagline','')[:50]}")
 
-    table = build_table(works)
+    cn_table = build_table(works, "cn")
+    en_table = build_table(works, "en")
 
     if dry_run:
         print("\n[dry-run] Would write:\n")
-        print(table)
+        print("── CN table (README.md, index.html) ──")
+        print(cn_table)
+        print("\n── EN table (README_EN.md, index_en.html) ──")
+        print(en_table)
         sys.exit(0)
 
-    if update_readme(table):
-        print("\nREADME.md updated ✓")
-    else:
+    any_updated = False
+    for fname in CN_FILES:
+        status = update_file(ROOT / fname, cn_table)
+        print(f"  {fname}: {status}")
+        if status == "UPDATED":
+            any_updated = True
+
+    for fname in EN_FILES:
+        status = update_file(ROOT / fname, en_table)
+        print(f"  {fname}: {status}")
+        if status == "UPDATED":
+            any_updated = True
+
+    if not any_updated:
+        print("\nAll files already up to date — nothing to commit.")
         sys.exit(0)
 
-    # Show diff
+    print("\n✓ Files updated. Diff:")
     subprocess.run(["git", "-C", str(ROOT), "diff", "--stat"], check=False)

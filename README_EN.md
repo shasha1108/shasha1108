@@ -60,19 +60,21 @@ Giving every unspoken emotion a concrete expression.
 
 ## 🌀 Healing Visual Lab
 
-### ✦ Featured Works
+### ✦ Latest Works
 
+<!-- LATEST_WORKS_START -->
 <table width="100%">
-<tr><th width="15%">Category</th><th width="30%">Work</th><th  width="55%">In One Line</th></tr>
-<tr><td>🎨 Particles</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html">Inkmeditation</a></b></td><td>十万Particles如墨入水，随呼吸节律沉浮</td></tr>
-<tr><td>🔮 Fluid</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html">Breath Mirror</a></b></td><td>摄像头将你的影像化为 GPU Fluid雾面，呼吸即镜像</td></tr>
-<tr><td>🎵 Audio</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html">Unbound Mind</a></b></td><td>150K Particles如茧被指尖抚开，432Hz 颂钵，4-7-8 呼吸循环</td></tr>
-<tr><td>🏔️ Shanshui</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html">Layered Mountains</a></b></td><td>250K Particles堆叠青绿山水，触之即散，聚散随缘</td></tr>
-<tr><td>🐠 Pixel</td><td><b><a href="https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html">Pixel水族箱 / Pixel Aquarium</a></b></td><td>Pixel小鱼在毛玻璃水箱游动，点击投食、双击敲玻璃</td></tr>
+<tr><th width="30%">Work</th><th  width="70%">In One Line</th></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html">雪夜晶莹唱片机 / Crystal Turntable</a></b></td><td>屋外雪花纷飞，这里的旋律永远为你温暖。</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-treasure/sunken-treasure.html">Console Spawned Ecosystem / Sunken Treasure</a></b></td><td>像素鱼游进掌机传送门，逃逸到 3D 水晶水体中，蜕变为优雅的矢量鱼</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/drift-bottle/drift-bottle.html">平行世界 · 漂流瓶生态系统 / Drift Bottle</a></b></td><td>轻触漂流瓶，唤醒瓶中平行世界</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-ipod/sunken-ipod.html">沉水 MP3 / Sunken iPod</a></b></td><td>深海之底，一首七里香。触碰水面，音符如气泡升起。</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/dreamcore-summer-rain/dreamcore-summer-rain.html">七里香 / Dreamcore Summer Night</a></b></td><td>极致冷暖光碰撞 — 深黑蓝天 vs 售货机刺眼白光 vs 铁路脉冲红灯</td></tr>
 </table>
+<!-- LATEST_WORKS_END -->
 
 <h3 align="center">
-  <a href="https://github.com/shasha1108/healing-visual-lab">探索全部Work →</a>
+  <a href="https://shasha1108.github.io/healing-visual-lab/">探索全部Work →</a>
 </h3>
 
 <p align="center">
