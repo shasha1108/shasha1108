@@ -11,21 +11,20 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parent.parent
+WORKS_RAW_URL = "https://raw.githubusercontent.com/shasha1108/healing-visual-lab/main/works.json"
 PAGES_BASE = "https://shasha1108.github.io/healing-visual-lab"
 TOP_N = 5
 
 
 def fetch_works():
-    """Fetch works.json from healing-visual-lab via gh api."""
+    """Fetch works.json via curl (public repo, no auth needed)."""
     result = subprocess.run(
-        ["gh", "api", "repos/shasha1108/healing-visual-lab/contents/works.json",
-         "--jq", ".content"],
+        ["curl", "-sS", "--retry", "2", "-f", WORKS_RAW_URL],
         capture_output=True, text=True, timeout=15
     )
     if result.returncode != 0:
-        raise RuntimeError(f"gh api failed: {result.stderr}")
-    import base64
-    return json.loads(base64.b64decode(result.stdout.strip()))
+        raise RuntimeError(f"curl failed: {result.stderr}")
+    return json.loads(result.stdout)
 
 
 def build_table(works):
@@ -93,5 +92,4 @@ if __name__ == "__main__":
         sys.exit(0)
 
     # Show diff
-    import subprocess
     subprocess.run(["git", "-C", str(ROOT), "diff", "--stat"], check=False)

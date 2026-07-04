@@ -1,0 +1,38 @@
+name: Sync Latest Works
+
+on:
+  schedule:
+    # Every Wednesday at 10:00 AM Beijing time (UTC+8) = 02:00 UTC
+    - cron: "0 2 * * 3"
+  workflow_dispatch:  # allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needed to push commits
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run sync script
+        run: python3 scripts/sync-latest-works.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes — already up to date."
+          else
+            git config user.name "Sha.w.z"
+            git config user.email "your-email@example.com"
+            git add README.md
+            git commit -m "auto: sync latest works [skip ci]"
+            git push
+            echo "Pushed ✓"
+          fi
