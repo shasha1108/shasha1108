@@ -54,7 +54,10 @@ def build_table(works, lang="cn"):
         url = f"{PAGES_BASE}/{slug}/{slug}.html"
 
         if lang == "cn":
-            display_title = f"{title_zh} / {title_en}" if title_zh else title_en
+            if title_zh and title_zh != title_en:
+                display_title = f"{title_zh} / {title_en}"
+            else:
+                display_title = title_en  # same text or no zh → just show once
             display_tagline = tagline
         else:
             # EN: only English title; use English title as tagline
