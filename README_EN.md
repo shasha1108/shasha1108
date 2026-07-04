@@ -27,7 +27,7 @@
 
 ---
 
-## 🫧 关于我
+## 🫧 About Me
 
 Developer → QA Automation → Data PM → AI Creator.
 
@@ -47,7 +47,7 @@ Giving every unspoken emotion a concrete expression.
 
 ---
 
-## 🎨 画廊
+## 🎨 Gallery
 
 <h3 align="center" style="color:#4493f8;">🖱️ Scroll to explore →</h3>
 
@@ -74,13 +74,13 @@ Giving every unspoken emotion a concrete expression.
 <!-- LATEST_WORKS_END -->
 
 <h3 align="center">
-  <a href="https://shasha1108.github.io/healing-visual-lab/">探索全部Work →</a>
+  <a href="https://shasha1108.github.io/healing-visual-lab/">Explore All Works →</a>
 </h3>
 
 <p align="center">
   <em>If one of these pieces made you feel seen — that's the only reason this exists.</em>
   <br/>
-  <em>如果其中某件Work让你感到被看见——那就是这些代码存在的全部意义。</em>
+  <em>If one of these pieces made you feel seen — that's the only reason these lines of code exist.</em>
 </p>
 
 <p align="center">
@@ -88,7 +88,7 @@ Giving every unspoken emotion a concrete expression.
     <img src="https://img.shields.io/github/stars/shasha1108/healing-visual-lab?style=social" alt="Stars"/>
   </a>
   &ensp;
-  <sub>如果某件Work触动了你，⭐ Star 让更多人也能找到它。</sub>
+  <sub>If a piece resonated with you, ⭐ Star to help others find it too.</sub>
 </p>
 
 ---
@@ -106,20 +106,20 @@ Giving every unspoken emotion a concrete expression.
 
 ---
 
-## 🎯 更多Work @shasha1108
+## 🎯 More from @shasha1108
 
 <table width="100%">
 <tr><th width="25%">Repo</th><th  width="75%">About</th></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈Work集——15 件 Three.js/WebGL 交互实验</td></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU Fluid、WebGL 着色器</td></tr>
-<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>Pixel艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
-<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>Xiaohongshu情绪内容创作——隐喻挖掘、场景写作、视觉叙事</td></tr>
-<tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>One-command H5 publishing to GitHub Pages — drop folder to live site</td></tr>
+<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>Interactive digital healing works — 24 Three.js/WebGL & Canvas experiments</td></tr>
+<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>Touch-driven healing H5 generator — GPU fluid simulation, WebGL shaders</td></tr>
+<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>Pixel art × glassmorphism — cyber pets, digital aquariums</td></tr>
+<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>Emotional content creation — metaphor mining, scene writing, visual storytelling</td></tr>
+<tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>One-command H5 publishing to GitHub Pages — drag, drop, live</td></tr>
 </table>
 
 ---
 
 <p align="center">
-  <sub>Sha.w.z · <a href="README_EN.md">English</a></sub>
+  <sub>Sha.w.z · <a href="README.md">中文</a></sub>
 
-<p align="center"><sub>Source code under <a href="LICENSE">MIT License</a> | MIT License</sub></p></p>
+<p align="center"><sub>Source code under <a href="LICENSE">MIT License</a></sub></p></p>
