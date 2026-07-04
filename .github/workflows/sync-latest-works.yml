@@ -1,15 +1,6 @@
 name: Sync Latest Works
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "works.json"              # direct data change
-      - "README.md"               # manual edit
-      - "README_EN.md"
-      - "index.html"
-      - "index_en.html"
-      - "scripts/sync-latest-works.py"
   schedule:
     # Every Wednesday at 10:00 AM Beijing time (UTC+8) = 02:00 UTC
     - cron: "0 2 * * 3"
@@ -19,7 +10,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # needed to push commits
+      contents: write
 
     steps:
       - name: Checkout
