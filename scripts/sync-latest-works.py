@@ -54,13 +54,17 @@ def build_table(works, lang="cn"):
         url = f"{PAGES_BASE}/{slug}/{slug}.html"
 
         if lang == "cn":
-            display_title = f"{title_zh} / {title_en}"
+            display_title = f"{title_zh} / {title_en}" if title_zh else title_en
+            display_tagline = tagline
         else:
-            display_title = title_en  # English pages: title_en only
+            # EN: only English title; use English title as tagline
+            # (works.json has no English taglines — Chinese must NOT leak into EN pages)
+            display_title = title_en
+            display_tagline = title_en
 
         rows.append(
             f'<tr><td><b><a href="{url}">{display_title}</a></b></td>'
-            f'<td>{tagline}</td></tr>'
+            f'<td>{display_tagline}</td></tr>'
         )
     return (
         f'<table width="100%">\n'
@@ -108,17 +112,29 @@ if __name__ == "__main__":
         sys.exit(0)
 
     any_updated = False
+    errors = []
+
     for fname in CN_FILES:
         status = update_file(ROOT / fname, cn_table)
         print(f"  {fname}: {status}")
         if status == "UPDATED":
             any_updated = True
+        elif status == "NO_MARKER":
+            errors.append(f"{fname}: LATEST_WORKS_START/END markers missing")
 
     for fname in EN_FILES:
         status = update_file(ROOT / fname, en_table)
         print(f"  {fname}: {status}")
         if status == "UPDATED":
             any_updated = True
+        elif status == "NO_MARKER":
+            errors.append(f"{fname}: LATEST_WORKS_START/END markers missing")
+
+    if errors:
+        print(f"\n⚠️  WARNING: {len(errors)} file(s) missing sync markers:")
+        for e in errors:
+            print(f"  - {e}")
+        print("  These files will NOT be auto-synced until markers are restored.")
 
     if not any_updated:
         print("\nAll files already up to date — nothing to commit.")
