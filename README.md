@@ -106,17 +106,6 @@
 
 ---
 
-## 🎯 更多作品 @shasha1108
-
-<table width="100%">
-<tr><th width="25%">仓库</th><th  width="75%">简介</th></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验</td></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器</td></tr>
-<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>像素艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
-<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>小红书情绪内容创作——隐喻挖掘、场景写作、视觉叙事</td></tr>
-<tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>一键发布 H5 到 GitHub Pages——拖入文件夹即上线</td></tr>
-</table>
-
 ---
 
 <p align="center">
