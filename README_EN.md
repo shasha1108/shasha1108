@@ -65,11 +65,11 @@ Giving every unspoken emotion a concrete expression.
 <!-- LATEST_WORKS_START -->
 <table width="100%">
 <tr><th width="30%">Work</th><th  width="70%">In One Line</th></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html">Tidal Moon Moss</a></b></td><td>Tidal Moon Moss</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/pocket-forest-radio/pocket-forest-radio.html">Pocket Forest Radio</a></b></td><td>Pocket Forest Radio</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html">Inner Weather Diary · 60s Oxygen Chamber</a></b></td><td>Inner Weather Diary · 60s Oxygen Chamber</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/luminous-sea-bottle/luminous-sea-bottle.html">Luminous Sea Bottle</a></b></td><td>Luminous Sea Bottle</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html">Crystal Turntable</a></b></td><td>Crystal Turntable</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-treasure/sunken-treasure.html">Sunken Treasure</a></b></td><td>Sunken Treasure</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/drift-bottle/drift-bottle.html">Drift Bottle</a></b></td><td>Drift Bottle</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sunken-ipod/sunken-ipod.html">Sunken iPod</a></b></td><td>Sunken iPod</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/dreamcore-summer-rain/dreamcore-summer-rain.html">Dreamcore Summer Night</a></b></td><td>Dreamcore Summer Night</td></tr>
 </table>
 <!-- LATEST_WORKS_END -->
 
