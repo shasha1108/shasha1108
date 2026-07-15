@@ -65,11 +65,11 @@
 <!-- LATEST_WORKS_START -->
 <table width="100%">
 <tr><th width="30%">作品</th><th  width="70%">一句话</th></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/transparent-dream-stratigraph/transparent-dream-stratigraph.html">透明梦境地层仪 / Transparent Dream Stratigraph</a></b></td><td>转动冠轮，地层仪将未说出口的梦压入一层发光的地质年轮。</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html">密封瓶里的萤火种子 / Firefly Seed Jar</a></b></td><td>你碰到哪颗琥珀晶种，它就短暂相信春天来了，探出一根被拴住的萤光触角。</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/clockwork-tidal-gauge/clockwork-tidal-gauge.html">发条潮汐仪 / Clockwork Tidal Gauge</a></b></td><td>触碰玻璃舱体，月相齿轮转动一格，潮汐随之涨落——一台封存在像素胶囊里的发条潮汐仪。</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html">玻璃钟罩里的潮汐月苔 / Tidal Moon Moss</a></b></td><td>你碰了一下玻璃，罩里的月苔轻轻醒来，像一小片夜晚被照料。</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/pocket-forest-radio/pocket-forest-radio.html">露光口袋森林电台 / Pocket Forest Radio</a></b></td><td>轻拨调谐环，把一片像素森林调到你的频率上。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html">内心气象日记 · 60s 氧气舱 / Inner Weather Diary · 60s Oxygen Chamber</a></b></td><td>60秒情绪氧气舱——选一种天气，让内心在玻璃小屋里安静呼吸</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/luminous-sea-bottle/luminous-sea-bottle.html">玻璃瓶里的夜光海 / Luminous Sea Bottle</a></b></td><td>一个封存在像素玻璃瓶里的发光海洋——触碰唤醒生物荧光，然后慢慢暗回宁静</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html">雪夜晶莹唱片机 / Crystal Turntable</a></b></td><td>屋外雪花纷飞，这里的旋律永远为你温暖。</td></tr>
 </table>
 <!-- LATEST_WORKS_END -->
 
