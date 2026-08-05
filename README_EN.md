@@ -65,11 +65,11 @@ Giving every unspoken emotion a concrete expression.
 <!-- LATEST_WORKS_START -->
 <table width="100%">
 <tr><th width="30%">Work</th><th  width="70%">In One Line</th></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html">Sealed Summer Jar</a></b></td><td>Sealed Summer Jar</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html">Waiting for the Moon</a></b></td><td>Waiting for the Moon</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html">The Old Signal</a></b></td><td>The Old Signal</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html">Tide Keeping Station</a></b></td><td>Tide Keeping Station</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html">Aquarium 2003</a></b></td><td>Aquarium 2003</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/first-light/first-light.html">First Light</a></b></td><td>First Light</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html">The Tree That Remembers Wind</a></b></td><td>The Tree That Remembers Wind</td></tr>
 </table>
 <!-- LATEST_WORKS_END -->
 

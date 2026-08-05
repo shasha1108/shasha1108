@@ -65,11 +65,11 @@
 <!-- LATEST_WORKS_START -->
 <table width="100%">
 <tr><th width="30%">作品</th><th  width="70%">一句话</th></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html">封存的四点钟 / Sealed Summer Jar</a></b></td><td>一只玻璃罐，把一个不会结束的夏日下午四点钟封存了起来。</td></tr>
+<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html">等月亮 / Waiting for the Moon</a></b></td><td>A quiet moonlit window where a cat slowly falls asleep.</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html">旧信号 / The Old Signal</a></b></td><td>一台信号不好的旧电视，红青两个色版错开着呼吸；你每碰它一次，它就调准一点——直到屏幕里那个旧日的自己，回头看你一眼。</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html">潮汐保管处 / Tide Keeping Station</a></b></td><td>把缠成一团的事交给潮汐，它会替你拆开、带走，并留下回应。</td></tr>
 <tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html">2003 水族馆 / Aquarium 2003</a></b></td><td>你小时候盯过的那个屏保活了——缸里的鱼记得你</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/first-light/first-light.html">第一束光 / First Light</a></b></td><td>一颗黑色像素种子，在你的温度里长出第一束光。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html">记得风的树 / The Tree That Remembers Wind</a></b></td><td>释放与辽阔 —— 一座悬浮小岛上，像素树把每一次拂过树冠的手势变成一阵沿枝传播的风。</td></tr>
 </table>
 <!-- LATEST_WORKS_END -->
 
