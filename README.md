@@ -5,12 +5,6 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+Agent%2FSkill+%E5%BC%80%E5%8F%91+%C2%B7+%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C" alt="Healing Visual Lab" />
 
 <p>
-  <a href="mailto:zhangwensha1108@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
-  </a>
-  <a href="mailto:wensha_zhang@163.com">
-    <img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="Email"/>
-  </a>
   <a href="https://xhslink.com/m/1kVPy4geTiQ">
     <img src="https://img.shields.io/badge/小红书-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"/>
   </a>
@@ -29,21 +23,19 @@
 
 ## 🫧 关于我
 
-开发 → 自动化测试 → 数据产品经理 → AI 创作者。
+开发 → 自动化测试 → 数据产品经理。
 
-这些年，我看过无数的代码和数据。最复杂的系统，都可以被建模、被呈现、被优化。
+这些年，我看过无数的代码和数据。无论多复杂的系统，都可以被建模、被呈现、被直观的体验。
 
 但人的内心不行。
 
-那些堵在胸口、卡在喉咙、说又说不清的感受——没有接口、没有日志、没有任何调试工具能告诉你它卡在哪一行。
+那些堵在胸口、卡在喉咙、说又说不清的感受——没有接口、没有日志、没有任何调试工具能告诉你，它到底卡在哪里。
 
-所以现在的我，用了更多的时间去做这件事：
+所以现在的我，想用更多的时间想去做这些事：
 
-创作情绪插图、文案、和交互式数字体验。
-把那些无形的、无名的、无处安放的情绪，
-翻译成可以被看见、被触碰、被释放的形状。
-
-让每一个说不清的情绪，都有一个具体的表达。
+🦋 把那些说不清的感受，做成能被感知的作品。
+🌱 把那些无形的、无名的、无处安放的情绪，翻译成可以被看见、被触碰、被释放的形状和视觉体验。
+⭐ 我希望每一个说不清的情绪，都有一个具体的表达和呈现。
 
 ---
 
