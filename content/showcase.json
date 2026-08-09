@@ -3,43 +3,46 @@
   "source_snapshot": "content/healing-visual-lab.snapshot.json",
   "identity": {
     "name": "Sha.w.z",
-    "site_zh": "活体仪器室",
-    "site_en": "Living Instrument Room",
+    "site_zh": "让情绪被看见",
+    "site_en": "Where Feelings Become Visible",
     "language_switch_zh": "English",
     "language_switch_en": "中文",
     "xhs_url": "https://xhslink.com/m/1kVPy4geTiQ",
     "lab_url": "https://shasha1108.github.io/healing-visual-lab/",
     "signature_zh": "Sha.w.z / 云野自由",
     "signature_en": "Sha.w.z / 云野自由 (Yunye Ziyou)",
-    "role_zh": "AI 系统构建者",
-    "role_en": "AI Systems Builder",
+    "role_zh": "产品经理 · AI 系统与 Skill 开发 · 数字创作",
+    "role_en": "Product · AI Systems & Skills · Digital Creation",
     "github_url": "https://github.com/shasha1108"
   },
   "entrance": {
-    "eyebrow_zh": "SHA.W.Z / 云野自由 / AI 系统构建者 / 活体仪器室",
-    "eyebrow_en": "SHA.W.Z / YUNYE ZIYOU / AI SYSTEMS BUILDER / LIVING INSTRUMENT ROOM",
-    "title_zh": "给说不清的东西，留一台会回应的仪器。",
-    "title_en": "A responsive instrument for what cannot yet be said.",
-    "body_zh": "这里不是项目陈列柜，也不是一张技能清单。它是一间仍在工作的仪器室：图像、手势、时间与记忆被放进可被重访的小系统，等人靠近，才开始发生。",
-    "body_en": "This is neither a project cabinet nor a skills list. It is a working instrument room: images, gestures, time, and memory are held inside revisitable systems that begin only when someone comes close.",
-    "primary_zh": "打开一件仪器",
-    "primary_en": "Open an instrument",
-    "secondary_zh": "看看这些画面",
-    "secondary_en": "See the frames",
+    "eyebrow_zh": "SHA.W.Z / 云野自由",
+    "eyebrow_en": "SHA.W.Z / YUNYE ZIYOU",
+    "title_zh": "让每个说不清的情绪，都能被看见、被理解。",
+    "title_en": "Let every feeling that is hard to name be seen and understood.",
+    "body_zh": "我用图像、声音和交互，做一些可以被触碰、被重访的小世界。它们从难以命名的感受开始，也把最后的解释留给你。",
+    "body_en": "I use images, sound, and interaction to make small worlds you can touch and return to. They begin with feelings that are hard to name, while leaving the final meaning with you.",
+    "primary_zh": "从这些画面认识我",
+    "primary_en": "Meet me through these frames",
+    "secondary_zh": "走进一个小世界",
+    "secondary_en": "Enter a small world",
     "core_positioning_zh": [
-      "我不做万能 Agent。",
-      "我做能接住一种具体创作判断的仪器。",
-      "有的接住说不清的情绪，有的接住创作，有的接住证据。"
+      "开发 → 自动化测试 → 数据产品经理。",
+      "我习惯把复杂的系统变得可见，却越来越在意那些没有接口、没有日志、说也说不清的感受。",
+      "所以我开始用图像、声音和交互，为它们做一些可以停留的小世界。"
     ],
     "core_positioning_en": [
-      "I do not build one-size-fits-all Agents.",
-      "I build instruments that can hold a specific creative judgment.",
-      "Some hold the unspoken emotions; some hold creative work; some hold evidence."
+      "Development → QA automation → data product management.",
+      "I learned to make complex systems visible, then became more interested in feelings with no interface, no logs, and no easy name.",
+      "So I began using images, sound, and interaction to give those feelings a small world in which to stay."
     ]
   },
   "flagship_works": [
     {
       "slug": "eternal-bloom",
+      "preview_image": "assets/previews/eternal-bloom.jpg",
+      "note_zh": "调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。",
+      "note_en": "Tune every part of a flower, seal it beneath glass, and it will keep blooming for you.",
       "five_parts": {
         "zh": [
           {
@@ -89,6 +92,9 @@
     },
     {
       "slug": "bottled-cosmos",
+      "preview_image": "assets/previews/bottled-cosmos.jpg",
+      "note_zh": "把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。",
+      "note_en": "Place an entire cosmos inside a glass bottle—each star has only thirty seconds to live.",
       "five_parts": {
         "zh": [
           {
@@ -138,6 +144,9 @@
     },
     {
       "slug": "layered-mountains",
+      "preview_image": "assets/previews/layered-mountains.jpg",
+      "note_zh": "触之即散，聚散随缘。",
+      "note_en": "Touch, and the mountains scatter. Gathering and parting follow their own course.",
       "five_parts": {
         "zh": [
           {
@@ -505,34 +514,34 @@
   "workbenches": [
     {
       "id": "01",
-      "name_zh": "感受仪器",
-      "name_en": "Feeling Instruments",
+      "name_zh": "把感受变成体验",
+      "name_en": "Turning Feeling into Experience",
       "members_zh": "healing-space / pixel-bloom / Healing Visual Lab",
       "members_en": "healing-space / pixel-bloom / Healing Visual Lab",
-      "role_zh": "把难以命名的感受做成必须由人完成、并会给出回应状态的体验。",
-      "role_en": "Turns hard-to-name feelings into experiences that require a human action and return a response state.",
+      "role_zh": "从难以命名的感受出发，寻找一个只有亲手完成才有意义的动作。",
+      "role_en": "Starts with a feeling that is hard to name, then finds an action that only means something when a person completes it.",
       "flow_zh": "感受 → 隐喻 → 不可替代动作 → 回应状态",
       "flow_en": "Feeling → metaphor → irreplaceable action → response state"
     },
     {
       "id": "02",
-      "name_zh": "创作仪器",
-      "name_en": "Creative Instruments",
+      "name_zh": "让创作流程更可靠",
+      "name_en": "Making Creative Workflows Reliable",
       "members_zh": "content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish",
       "members_en": "content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish",
-      "role_zh": "把创作输入交给场景判断与专业执行器，并把最终确认保留给用户。",
-      "role_en": "Routes creative input through scene judgment and specialist executors while keeping final confirmation with the user.",
+      "role_zh": "把灵感交给适合的创作工具，同时把最后的决定留在创作者手里。",
+      "role_en": "Gives each idea to the right creative tool while leaving the final decision with the creator.",
       "flow_zh": "输入 → 场景判断 → handoff → 专业执行器 → 用户确认",
       "flow_en": "Input → scene judgment → handoff → specialist executor → user confirmation"
     },
     {
       "id": "03",
-      "name_zh": "证据仪器",
-      "name_en": "Evidence Instruments",
+      "name_zh": "让判断经得起验证",
+      "name_en": "Keeping Judgment Evidence-Bound",
       "members_zh": "content-growth-advisor / yunye-growth-lab / creator-growth-workbench",
       "members_en": "content-growth-advisor / yunye-growth-lab / creator-growth-workbench",
-      "role_zh": "把增长与创作判断拆回事实、推断和待验证项，再以可复盘的实验继续。",
-      "role_en": "Separates growth and creative judgment back into facts, inferences, and open validations before continuing with reviewable experiments.",
+      "role_zh": "分清事实、推断与待验证，让增长不盖过真实读者和作品本身。",
+      "role_en": "Keeps facts, inferences, and open questions separate so growth never eclipses real readers or the work itself.",
       "flow_zh": "事实 → 推断 → 待验证 → 单变量实验 → 真实复盘",
       "flow_en": "Facts → inference → to be verified → single-variable experiment → real retrospective"
     }
@@ -564,10 +573,10 @@
     }
   ],
   "path": {
-    "title_zh": "个人路径与入口",
-    "title_en": "Path and entrances",
-    "body_zh": "开发 → 自动化测试 → 数据产品 → 把创作判断工程化的 AI 系统构建者",
-    "body_en": "Development → QA automation → data products → an AI systems builder who engineers creative judgment",
+    "title_zh": "从代码走到感受",
+    "title_en": "From code toward feeling",
+    "body_zh": "开发 → 自动化测试 → 数据产品经理 → 用技术把感受与创作变成可以被体验的东西",
+    "body_en": "Development → QA automation → data product management → using technology to turn feelings and creative ideas into experiences",
     "entrances": [
       {
         "id": "portfolio",

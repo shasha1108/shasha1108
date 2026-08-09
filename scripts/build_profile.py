@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the two profile READMEs and the two static profile pages from showcase.json."""
+"""Build the bilingual profile READMEs and static pages from showcase.json."""
 
 from __future__ import annotations
 
@@ -12,127 +12,92 @@ from pathlib import Path
 from manage_showcase import ROOT, load_data, source_catalog, validate
 
 
-TARGETS = {
-    "README.md": "zh",
-    "README_EN.md": "en",
-    "index.html": "zh",
-    "index_en.html": "en",
-}
-
-
-# GitHub derives these fragments from the corresponding Markdown headings.  Keep the
-# rendered headings and the two top-of-README links in one explicit contract so a
-# descriptive line below a heading cannot accidentally become its anchor again.
-README_SECTION_CONTRACT = {
-    "zh": {
-        "gallery_heading": "01 / 画面档案",
-        "gallery_fragment": "#01--画面档案",
-        "flagship_heading": "02 / 三件旗舰",
-        "flagship_fragment": "#02--三件旗舰",
-    },
-    "en": {
-        "gallery_heading": "01 / Frame archive",
-        "gallery_fragment": "#01--frame-archive",
-        "flagship_heading": "02 / Three flagships",
-        "flagship_fragment": "#02--three-flagships",
-    },
-}
-
 UI = {
     "zh": {
         "lang": "zh-CN",
-        "gallery_index": "01 / 画面档案",
+        "about": "关于我",
+        "about_title": "从代码走到感受",
+        "about_lead": "这些年，我看过无数代码和数据。复杂的系统可以被建模、被呈现、被调试——但人的内心不行。",
+        "about_end": "我不替你定义感受，也不让自动化替创作者做最后的决定。技术只是把这些微小体验做出来的方法。",
+        "gallery_kicker": "一段视觉记忆",
         "gallery_title": "也许你从这些画面认识我。",
-        "gallery_body": "21 张画面，按自己的速度经过。拖动这条长卷，或展开成完整网格；页面不会替你滚动，也不会替你解释。",
-        "expand": "展开完整网格",
-        "collapse": "收回长卷",
-        "gallery_hint": "拖拽、触屏或用方向键移动；位置会被记住。",
-        "gallery_alt": "画廊图像",
+        "gallery_body": "它们记录了我反复回到的颜色、光线和情绪。你可以慢慢拖动这条长卷，也可以展开来看完整画廊。",
+        "gallery_hint": "拖动、触屏滑动或使用方向键",
+        "expand": "展开画廊",
+        "collapse": "收起画廊",
+        "gallery_alt": "云野自由的画面",
         "gallery_xhs": "小红书原帖",
-        "gallery_work": "关联 H5",
-        "flagship_index": "02 / 三件旗舰",
-        "flagship_title": "不是展示页，是三种交互因果。",
-        "flagship_body": "每件作品都要回答同一组问题：它接住什么、你必须做什么、系统如何判断、世界怎样回应、为什么只能这样交互。",
-        "world_index": "03 / 会回应的小世界",
-        "world_title": "可以占有，也可以回来。",
-        "world_body": "它们不在主页里偷偷运行。只有在你点击进入时，才各自开始一段小小的天气。",
-        "enter": "进入这件作品",
-        "bench_index": "04 / 三张系统工作台",
-        "bench_title": "系统只展示职责与脱敏流程。",
-        "bench_body": "这些是私有工作台：公开的是工作如何被认真对待，不公开源码、客户资料或自动化捷径。",
-        "private": "PRIVATE SYSTEM / NO SOURCE LINK",
-        "members": "成员",
-        "redacted_flow": "脱敏流程",
-        "reject_index": "05 / 我拒绝自动化什么",
-        "reject_title": "保留人的决定权。",
-        "path_index": "06 / 个人路径与入口",
-        "source_note": "作品事实来源：Healing Visual Lab 的本地只读快照（origin/main）。",
-        "lightbox_close": "关闭画面",
-        "open": "打开",
-        "footer": "没有后台 iframe，没有自动播放的 H5；所有仪器都等一次明确的进入。",
-        "readme_gallery": "静态横向识别画廊（与独立站同一配置、同一顺序）",
-        "readme_flagship": "三件旗舰",
-        "readme_worlds": "会回应的小世界",
-        "readme_benches": "三张系统工作台",
-        "readme_rejections": "我拒绝自动化什么",
-        "readme_path": "个人路径与入口",
-        "readme_source": "来源",
+        "gallery_work": "进入关联作品",
+        "featured_kicker": "三个可以走进去的瞬间",
+        "featured_title": "我把这些感受，做成了小世界。",
+        "featured_body": "不是为了替你解释，而是让一次触碰、一段停留，真的改变眼前的世界。",
+        "open_work": "进入作品",
+        "worlds_kicker": "会记得被触碰的小世界",
+        "worlds_title": "它们安静地活着，也等你回来。",
+        "worlds_body": "每一件都有自己的天气、呼吸和回应。打开它们时，作品才真正开始。",
+        "behind_kicker": "作品背后",
+        "behind_title": "让细腻的体验可靠地发生。",
+        "behind_body": "我的技术工作不站在作品前面。它负责让交互成立、让创作流程可靠，也让每一个判断经得起验证。",
+        "members": "相关项目",
+        "path_kicker": "走到这里",
+        "links_title": "继续看看",
+        "lightbox_close": "关闭",
+        "readme_worlds": "它们安静地活着，也等你回来",
+        "readme_behind": "如果你也关心这些体验是怎样发生的",
+        "closing": "如果其中某件作品让你感到被看见——那就是这些代码存在的全部意义。",
     },
     "en": {
         "lang": "en",
-        "gallery_index": "01 / FRAME ARCHIVE",
-        "gallery_title": "Perhaps these frames are how you come to know me.",
-        "gallery_body": "Twenty-one frames, passed at your own pace. Drag the long reel or expand it into a full grid; the page will neither scroll nor explain for you.",
-        "expand": "Expand full grid",
-        "collapse": "Return to reel",
-        "gallery_hint": "Drag, swipe, or use arrow keys; your position is remembered.",
-        "gallery_alt": "Gallery image",
+        "about": "About",
+        "about_title": "From code toward feeling",
+        "about_lead": "I have spent years with code and data. Complex systems can be modelled, visualised, and debugged—but an inner life cannot.",
+        "about_end": "I do not define a feeling for you, or let automation make a creator's final decision. Technology is simply how these small experiences become possible.",
+        "gallery_kicker": "A visual memory",
+        "gallery_title": "Perhaps these are the images through which you know me.",
+        "gallery_body": "They hold the colours, light, and feelings I return to. Move through the long reel slowly, or open the complete gallery.",
+        "gallery_hint": "Drag, swipe, or use the arrow keys",
+        "expand": "Open the gallery",
+        "collapse": "Close the gallery",
+        "gallery_alt": "An image by Yunye Ziyou",
         "gallery_xhs": "Xiaohongshu post",
-        "gallery_work": "Related H5",
-        "flagship_index": "02 / THREE FLAGSHIPS",
-        "flagship_title": "Not showpieces: three interaction causalities.",
-        "flagship_body": "Each work answers the same five questions: what it holds, what you must do, how the system decides, how the world responds, and why it must work this way.",
-        "world_index": "03 / RESPONSIVE SMALL WORLDS",
-        "world_title": "Things to keep, and to return to.",
-        "world_body": "They do not run secretly inside this homepage. Each begins a little weather system only after you choose to enter.",
-        "enter": "Enter this work",
-        "bench_index": "04 / THREE SYSTEM BENCHES",
-        "bench_title": "Only roles and redacted flows are shown.",
-        "bench_body": "These are private benches: public is the care in the work, not source code, client material, or an automation shortcut.",
-        "private": "PRIVATE SYSTEM / NO SOURCE LINK",
-        "members": "Members",
-        "redacted_flow": "Redacted flow",
-        "reject_index": "05 / WHAT I REFUSE TO AUTOMATE",
-        "reject_title": "Keep decision-making human.",
-        "path_index": "06 / PATH AND ENTRANCES",
-        "source_note": "Work facts come from a local read-only Healing Visual Lab snapshot (origin/main).",
-        "lightbox_close": "Close frame",
-        "open": "Open",
-        "footer": "No background iframes, no autoplaying H5: every instrument waits for an explicit entry.",
-        "readme_gallery": "Static horizontal recognition gallery (same configuration and order as the site)",
-        "readme_flagship": "Three flagships",
-        "readme_worlds": "Responsive small worlds",
-        "readme_benches": "Three system benches",
-        "readme_rejections": "What I refuse to automate",
-        "readme_path": "Path and entrances",
-        "readme_source": "Source",
+        "gallery_work": "Enter related work",
+        "featured_kicker": "Three moments you can enter",
+        "featured_title": "I turn these feelings into small worlds.",
+        "featured_body": "They do not explain a feeling for you. A touch or a pause changes the world in front of you.",
+        "open_work": "Enter the work",
+        "worlds_kicker": "Small worlds that remember touch",
+        "worlds_title": "They live quietly, and wait for your return.",
+        "worlds_body": "Each has its own weather, breath, and response. The work begins only when you open it.",
+        "behind_kicker": "Behind the work",
+        "behind_title": "Making delicate experiences happen reliably.",
+        "behind_body": "My technical work stays behind the experience. It makes interaction meaningful, creative workflows reliable, and judgment accountable.",
+        "members": "Related projects",
+        "path_kicker": "How I arrived here",
+        "links_title": "Keep exploring",
+        "lightbox_close": "Close",
+        "readme_worlds": "They live quietly, and wait for your return",
+        "readme_behind": "If you also wonder how these experiences are made",
+        "closing": "If one of these pieces made you feel seen—that is the only reason this code exists.",
     },
 }
 
 
 SITE_CSS = r"""
 :root {
-  --paper: #f4efe4;
-  --paper-deep: #e8decb;
-  --ink: #1b1b18;
-  --ink-soft: #4c4a43;
-  --glass: #3d8892;
-  --amber: #ae6d22;
-  --moss: #4e6955;
-  --signal: #a33a31;
-  --rule: rgba(27, 27, 24, .22);
-  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --night: #173b5a;
+  --ink: #274a63;
+  --soft-ink: #56758a;
+  --water: #dff7fb;
+  --sky: #edfaff;
+  --foam: #fbffff;
+  --cyan: #69cbd5;
+  --leaf: #63ad96;
+  --sunset: #f1ad82;
+  --lavender: #9faee5;
+  --line: rgba(39, 74, 99, .14);
+  --shadow: 0 24px 70px rgba(41, 105, 137, .16);
   --serif: Iowan Old Style, Songti SC, STSong, Noto Serif CJK SC, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -141,237 +106,252 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(90deg, transparent 0 49%, rgba(81, 70, 48, .025) 49% 51%, transparent 51%),
-    var(--paper);
-  font-family: var(--serif);
-  line-height: 1.7;
+    radial-gradient(circle at 9% 8%, rgba(255,255,255,.96) 0 5%, transparent 23%),
+    radial-gradient(circle at 86% 19%, rgba(112,218,223,.24), transparent 28%),
+    linear-gradient(180deg, #e9faff 0%, #f9ffff 32%, #eef9f6 72%, #f7fbff 100%);
+  font: 16px/1.75 var(--sans);
+  overflow-x: hidden;
 }
-button, a { font: inherit; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .34;
+  background-image: radial-gradient(rgba(50,109,140,.16) .7px, transparent .7px);
+  background-size: 17px 17px;
+  mask-image: linear-gradient(to bottom, #000, transparent 70%);
+}
 a { color: inherit; }
-a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
-.page-shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+button, a { font: inherit; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--sunset); outline-offset: 4px; }
+.shell { width: min(1120px, calc(100% - 38px)); margin: 0 auto; }
 .topbar {
-  display: flex; justify-content: space-between; align-items: center; gap: 18px;
-  padding: 18px 0; border-bottom: 1px solid var(--rule);
+  position: relative; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 24px 0; color: var(--night); font-size: .9rem;
 }
-.wordmark, .meta, .section-index, .instrument-code, .world-number, .bench-id, .private-tag {
-  font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase;
+.signature { font-family: var(--serif); font-size: 1.08rem; font-weight: 600; text-decoration: none; letter-spacing: .02em; }
+.topnav { display: flex; align-items: center; gap: 20px; }
+.topnav a { text-decoration: none; border-bottom: 1px solid transparent; }
+.topnav a:hover { border-color: currentColor; }
+.hero {
+  position: relative; min-height: 820px; display: grid; grid-template-columns: minmax(0, .92fr) minmax(390px, .78fr);
+  align-items: center; gap: clamp(36px, 7vw, 100px); padding: 54px 0 110px;
 }
-.wordmark { font-size: .78rem; text-decoration: none; }
-.language-link { font-size: .82rem; text-underline-offset: .25em; }
-.hero { min-height: 88vh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .72fr); align-items: center; gap: clamp(36px, 7vw, 112px); padding: 62px 0 86px; }
-.eyebrow, .section-index { margin: 0 0 18px; color: var(--moss); font-size: .73rem; }
-.hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 6vw, 5.7rem); line-height: 1.05; font-weight: 500; letter-spacing: -.045em; }
-.hero-role { margin: 17px 0 0; color: var(--signal); font: .74rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-.hero-copy { max-width: 600px; margin: 26px 0 0; color: var(--ink-soft); font-size: clamp(1rem, 1.6vw, 1.19rem); }
-.core-positioning { max-width: 680px; margin: 24px 0 0; padding: 13px 0 13px 18px; border-left: 2px solid var(--glass); }
-.core-positioning p { margin: 0; font-size: clamp(1rem, 1.55vw, 1.18rem); line-height: 1.55; }
-.core-positioning p + p { margin-top: 5px; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
-.action {
-  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px;
-  border: 1px solid var(--ink); text-decoration: none; transition: transform .2s ease, background .2s ease;
+.hero-copy { position: relative; z-index: 2; }
+.eyebrow, .kicker { margin: 0 0 17px; color: var(--leaf); font-size: .78rem; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; }
+.hero h1 {
+  max-width: 700px; margin: 0; color: var(--night); font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.35rem);
+  font-weight: 500; line-height: 1.16; letter-spacing: -.04em;
 }
-.action:hover { transform: translateY(-2px); }
-.action-primary { background: var(--ink); color: var(--paper); }
-.action-secondary { border-color: var(--glass); color: var(--glass); }
-.jar-stage { position: relative; min-height: 405px; display: grid; place-items: center; }
-.jar-stage::before { content: ""; position: absolute; width: 78%; height: 1px; background: var(--signal); transform: rotate(-12deg); }
-.jar-svg { position: relative; width: min(100%, 390px); overflow: visible; }
-.jar-label { position: absolute; right: 0; bottom: 20px; color: var(--signal); font: .68rem/1.4 var(--mono); letter-spacing: .07em; }
-.section { position: relative; padding: clamp(72px, 9vw, 122px) 0; border-top: 1px solid var(--rule); }
-.section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 28px; align-items: end; margin-bottom: 38px; }
-.section-heading h2 { margin: 0; font-size: clamp(2rem, 4.4vw, 4rem); line-height: 1.06; font-weight: 500; letter-spacing: -.035em; }
-.section-heading p:last-child { margin: 0; max-width: 590px; color: var(--ink-soft); }
-.unspoken-line { position: relative; height: 27px; margin: 0 0 26px; color: var(--signal); }
-.unspoken-line::before { content: ""; position: absolute; top: 14px; left: 0; width: 100%; height: 1px; background: currentColor; }
-.unspoken-line span { position: absolute; top: 0; left: 0; padding-right: 9px; background: var(--paper); font: .64rem var(--mono); letter-spacing: .09em; }
-.line-track { color: var(--glass); }
-.line-track::after { content: ""; position: absolute; top: 10px; left: 29%; width: 9px; height: 9px; border: 1px solid currentColor; border-radius: 50%; background: var(--paper); }
-.line-stem { color: var(--amber); }
-.line-stem::before { transform: rotate(-1.2deg); transform-origin: left; }
-.line-stem::after { content: ""; position: absolute; top: 5px; left: 57%; width: 10px; height: 10px; background: var(--moss); border-radius: 100% 0 100% 0; transform: rotate(25deg); }
-.line-contour { color: var(--moss); }
-.line-contour::before { height: 11px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; background: transparent; }
-.line-state { color: var(--signal); }
-.line-state::after { content: "○—○—○"; position: absolute; top: 2px; right: 0; background: var(--paper); padding-left: 10px; font: .8rem var(--mono); }
-.line-evidence { color: var(--amber); }
-.line-evidence::after { content: "◇—◇—◇"; position: absolute; top: 2px; right: 0; background: var(--paper); padding-left: 10px; font: .8rem var(--mono); }
-.gallery-controls { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin: 0 0 15px; }
-.gallery-controls p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
-.grid-toggle { appearance: none; border: 1px solid var(--ink); padding: 8px 12px; cursor: pointer; color: var(--ink); background: transparent; }
-.gallery-rail { display: flex; gap: 18px; overflow-x: auto; padding: 8px 1px 22px; scroll-snap-type: x proximity; scrollbar-color: var(--moss) var(--paper-deep); touch-action: pan-y pinch-zoom; cursor: grab; }
+.hero-intro { max-width: 610px; margin: 28px 0 0; color: var(--soft-ink); font-size: clamp(1.05rem, 1.7vw, 1.25rem); }
+.role { margin: 22px 0 0; color: var(--ink); font-size: .88rem; letter-spacing: .04em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+.button {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 18px;
+  border: 1px solid rgba(39,74,99,.38); border-radius: 999px; text-decoration: none; transition: .25s ease;
+}
+.button.primary { color: #fff; border-color: var(--night); background: var(--night); box-shadow: 0 12px 30px rgba(23,59,90,.2); }
+.button:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(41,105,137,.18); }
+.memory-orbit { position: relative; min-height: 590px; }
+.memory-orbit::before, .memory-orbit::after {
+  content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.9);
+  background: radial-gradient(circle at 28% 24%, #fff 0 8%, rgba(211,249,251,.68) 25%, rgba(104,203,213,.12) 63%, rgba(255,255,255,.45));
+  box-shadow: inset -12px -14px 28px rgba(62,161,183,.12), 0 18px 40px rgba(78,166,194,.12); backdrop-filter: blur(2px);
+}
+.memory-orbit::before { width: 134px; height: 134px; top: 10px; right: -8px; animation: float 8s ease-in-out infinite; }
+.memory-orbit::after { width: 72px; height: 72px; left: -32px; bottom: 55px; animation: float 6s ease-in-out infinite reverse; }
+.memory-frame {
+  position: absolute; margin: 0; overflow: hidden; border: 8px solid rgba(255,255,255,.72); border-radius: 30px;
+  background: #dff5f8; box-shadow: var(--shadow); transform: rotate(var(--tilt));
+}
+.memory-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.memory-main { --tilt: 2.2deg; width: 72%; height: 470px; top: 62px; right: 0; }
+.memory-left { --tilt: -7deg; width: 46%; height: 290px; left: 0; bottom: 5px; }
+.memory-small { --tilt: 7deg; width: 35%; height: 210px; left: 16px; top: 4px; }
+.drifter { position: absolute; z-index: 1; width: 34px; height: 16px; border-radius: 70% 50% 50% 70%; background: rgba(74,153,173,.44); animation: swim 16s linear infinite; }
+.drifter::after { content: ""; position: absolute; left: -11px; top: 2px; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 13px solid rgba(74,153,173,.36); }
+.drifter.one { top: 27%; left: -8vw; }
+.drifter.two { top: 78%; left: 12vw; width: 22px; height: 11px; opacity: .6; animation-duration: 22s; animation-delay: -9s; }
+.section { position: relative; padding: clamp(82px, 10vw, 138px) 0; }
+.section-head { max-width: 760px; margin-bottom: 42px; }
+.section h2 { margin: 0; color: var(--night); font: 500 clamp(2.2rem, 4.7vw, 4.25rem)/1.18 var(--serif); letter-spacing: -.035em; }
+.section-intro { max-width: 650px; margin: 20px 0 0; color: var(--soft-ink); font-size: 1.05rem; }
+.gallery-section::before {
+  content: ""; position: absolute; inset: 8% -10% 3%; z-index: -1; transform: rotate(-1deg);
+  border-radius: 48% 52% 44% 56%; background: rgba(255,255,255,.52); box-shadow: inset 0 0 70px rgba(122,211,218,.11);
+}
+.gallery-controls { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 18px; color: var(--soft-ink); font-size: .88rem; }
+.gallery-controls p { margin: 0; }
+.gallery-toggle { border: 0; border-bottom: 1px solid currentColor; padding: 3px 0; color: var(--ink); background: transparent; cursor: pointer; }
+.gallery-rail { display: flex; gap: 22px; overflow-x: auto; padding: 12px 5px 28px; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: var(--cyan) transparent; cursor: grab; touch-action: pan-y pinch-zoom; }
 .gallery-rail.is-dragging { cursor: grabbing; user-select: none; }
-.gallery-rail::-webkit-scrollbar { height: 8px; }
-.gallery-rail::-webkit-scrollbar-track { background: var(--paper-deep); }
-.gallery-rail::-webkit-scrollbar-thumb { background: var(--moss); }
-.gallery-frame { width: min(65vw, 274px); flex: 0 0 auto; margin: 0; scroll-snap-align: start; }
-.gallery-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: left; }
-.gallery-open img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--ink); filter: saturate(.88); transition: filter .2s ease, transform .2s ease; }
-.gallery-open:hover img { filter: saturate(1); transform: translateY(-3px); }
-.gallery-frame figcaption { padding: 9px 2px 0; }
-.gallery-frame strong { display: block; font-weight: 500; }
-.gallery-frame small { display: block; color: var(--ink-soft); font-size: .78rem; line-height: 1.45; }
-.gallery-rail.is-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(154px, 1fr)); overflow: visible; cursor: default; }
+.gallery-frame { flex: 0 0 auto; width: min(67vw, 270px); margin: 0; scroll-snap-align: start; }
+.gallery-open { display: block; width: 100%; padding: 0; border: 0; border-radius: 24px; background: transparent; cursor: zoom-in; }
+.gallery-open img { display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 7px solid rgba(255,255,255,.7); border-radius: 24px; box-shadow: 0 15px 42px rgba(49,117,148,.14); transition: transform .28s ease, box-shadow .28s ease; }
+.gallery-open:hover img { transform: translateY(-7px) rotate(-.5deg); box-shadow: 0 22px 55px rgba(49,117,148,.22); }
+.gallery-frame figcaption { padding: 10px 6px 0; color: var(--soft-ink); font-size: .83rem; }
+.gallery-frame strong, .gallery-frame small { display: block; }
+.gallery-frame a { display: inline-block; margin: 5px 12px 0 0; text-underline-offset: .2em; }
+.gallery-rail.is-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); overflow: visible; cursor: default; }
 .gallery-rail.is-grid .gallery-frame { width: auto; }
-.flagships { display: grid; gap: 68px; }
-.flagship { display: grid; grid-template-columns: minmax(102px, .23fr) minmax(0, 1fr); gap: 28px; padding-bottom: 58px; border-bottom: 1px solid var(--rule); }
-.flagship:last-child { border-bottom: 0; padding-bottom: 0; }
-.instrument-code { color: var(--amber); font-size: .73rem; padding-top: 8px; }
-.flagship h3 { margin: 0; font-size: clamp(1.8rem, 3.5vw, 3.2rem); line-height: 1.08; font-weight: 500; letter-spacing: -.03em; }
-.flagship-tagline { margin: 14px 0 28px; color: var(--ink-soft); }
-.five-parts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
-.five-parts li { padding: 15px 13px 0 0; min-height: 180px; border-right: 1px solid var(--rule); }
-.five-parts li + li { padding-left: 13px; }
-.five-parts li:last-child { border-right: 0; }
-.five-parts span { display: block; color: var(--signal); font: .64rem var(--mono); letter-spacing: .06em; }
-.five-parts strong { display: block; margin: 10px 0; font-size: .9rem; font-weight: 600; }
-.five-parts p { margin: 0; color: var(--ink-soft); font-size: .86rem; line-height: 1.55; }
-.instrument-link { display: inline-block; margin-top: 23px; color: var(--glass); text-underline-offset: .24em; }
-.responsive-list { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-flow: dense; gap: 1px; border-top: 1px solid var(--rule); background: var(--rule); }
-.responsive-world { display: flex; flex-direction: column; grid-column: span 4; min-height: 280px; gap: 13px; padding: 24px; background: var(--paper); border: 0; }
-.responsive-world.specimen-large { grid-column: span 7; min-height: 415px; padding: 33px; }
-.responsive-world.specimen-tall { grid-column: span 5; min-height: 415px; padding: 30px; }
-.responsive-world.specimen-wide { grid-column: span 8; min-height: 322px; padding: 30px; }
-.responsive-world.specimen-compact { grid-column: span 4; min-height: 322px; }
-.responsive-world.specimen-medium { grid-column: span 5; min-height: 348px; padding: 28px; }
-.responsive-world.specimen-tall-right { grid-column: span 7; min-height: 348px; padding: 31px; }
-.world-number { color: var(--moss); font-size: .72rem; }
-.responsive-world h3 { margin: 0; font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 500; line-height: 1.15; }
-.responsive-world p { margin: 12px 0 0; color: var(--ink-soft); }
-.world-spec { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .91rem; }
-.world-spec p { margin: 0 0 10px; }
-.world-spec b { color: var(--glass); font-weight: 600; }
-.benches { border-top: 1px solid var(--rule); }
-.bench { display: grid; grid-template-columns: 72px minmax(0, .72fr) minmax(0, 1fr); gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
-.bench-id { color: var(--amber); font-size: .75rem; }
-.bench h3 { margin: 0; font-size: 1.25rem; font-weight: 500; }
-.bench p { margin: 7px 0 0; color: var(--ink-soft); }
-.bench-members { color: var(--moss) !important; font: .73rem/1.5 var(--mono); }
-.private-tag { display: inline-block; margin-top: 12px; color: var(--signal); font-size: .63rem; }
-.bench-flow { align-self: center; padding-left: 20px; border-left: 2px solid var(--moss); font: .76rem/1.6 var(--mono); color: var(--ink-soft); }
-.rejection-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 38px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
-.rejection-list li { padding: 19px 0; border-bottom: 1px solid var(--rule); }
-.rejection-list span { display: inline-block; width: 30px; color: var(--signal); font: .69rem var(--mono); }
-.path-section { padding-bottom: 70px; }
-.path-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 34px; }
-.path-grid p { margin: 0; font-size: clamp(1.1rem, 2vw, 1.45rem); }
-.entrances { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.entrances a { color: var(--glass); text-underline-offset: .23em; }
-.source-note { margin-top: 35px !important; color: var(--ink-soft); font-size: .78rem !important; }
-.site-footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; color: var(--ink-soft); font-size: .78rem; }
-dialog { width: min(90vw, 720px); max-height: 92vh; padding: 16px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); }
-dialog::backdrop { background: rgba(27, 27, 24, .62); }
-.lightbox-close { display: block; margin-left: auto; border: 1px solid var(--ink); background: transparent; padding: 6px 10px; cursor: pointer; }
-.lightbox-image { display: block; width: auto; max-width: 100%; max-height: 75vh; margin: 12px auto; }
-.lightbox-caption { margin: 0; text-align: center; }
-@media (max-width: 800px) {
-  .hero, .section-heading, .path-grid { grid-template-columns: 1fr; }
-  .hero { padding-top: 42px; min-height: auto; }
-  .jar-stage { min-height: 280px; order: -1; }
-  .jar-svg { width: min(75vw, 320px); }
-  .five-parts { grid-template-columns: 1fr; }
-  .five-parts li, .five-parts li + li { min-height: auto; padding: 16px 0; border-right: 0; border-bottom: 1px solid var(--rule); }
-  .flagship, .bench { grid-template-columns: 1fr; gap: 11px; }
-  .responsive-list { grid-template-columns: 1fr; }
-  .responsive-world, .responsive-world.specimen-large, .responsive-world.specimen-tall, .responsive-world.specimen-wide, .responsive-world.specimen-compact, .responsive-world.specimen-medium, .responsive-world.specimen-tall-right { grid-column: 1; min-height: auto; padding: 24px; }
-  .instrument-code, .world-number, .bench-id { padding-top: 0; }
-  .bench-flow { padding: 12px 0 0; border-left: 0; border-top: 2px solid var(--moss); }
-  .rejection-list { grid-template-columns: 1fr; }
-  .section { padding: 70px 0; }
+.featured-section { padding-top: 110px; }
+.featured-list { display: grid; gap: 40px; }
+.featured-work {
+  display: grid; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); overflow: hidden;
+  border-radius: 38px; background: rgba(255,255,255,.64); box-shadow: 0 22px 70px rgba(43,111,143,.12);
 }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+.featured-work:nth-child(even) .featured-preview { order: 2; }
+.featured-preview { position: relative; min-height: 390px; overflow: hidden; background: linear-gradient(145deg, #bceaf1, #324e70); }
+.featured-preview img { width: 100%; height: 100%; object-fit: cover; }
+.featured-content { display: flex; flex-direction: column; justify-content: center; padding: clamp(34px, 6vw, 70px); }
+.featured-number { color: var(--leaf); font-size: .75rem; letter-spacing: .13em; }
+.featured-content h3 { margin: 14px 0 0; color: var(--night); font: 500 clamp(2rem, 4vw, 3.65rem)/1.12 var(--serif); }
+.featured-content p { margin: 22px 0 0; color: var(--soft-ink); font-size: 1.05rem; }
+.text-link { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; margin-top: 26px; color: var(--night); text-decoration: none; border-bottom: 1px solid rgba(23,59,90,.4); }
+.text-link::after { content: "↗"; transition: transform .2s ease; }
+.text-link:hover::after { transform: translate(3px,-3px); }
+.worlds-section::before { content: ""; position: absolute; inset: 7% -10%; z-index: -1; background: radial-gradient(ellipse at center, rgba(161,225,211,.24), transparent 68%); }
+.world-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.small-world { position: relative; display: flex; flex-direction: column; min-height: 300px; grid-column: span 4; padding: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,.78); border-radius: 32px; text-decoration: none; box-shadow: 0 16px 50px rgba(62,126,148,.09); transition: .28s ease; }
+.small-world:nth-child(1), .small-world:nth-child(6) { grid-column: span 7; }
+.small-world:nth-child(2), .small-world:nth-child(5) { grid-column: span 5; }
+.small-world:nth-child(1) { background: linear-gradient(145deg, rgba(195,241,249,.92), rgba(111,190,213,.56)); }
+.small-world:nth-child(2) { background: linear-gradient(145deg, rgba(221,246,226,.94), rgba(117,183,151,.48)); }
+.small-world:nth-child(3) { background: linear-gradient(145deg, rgba(255,242,209,.94), rgba(239,176,104,.43)); }
+.small-world:nth-child(4) { background: linear-gradient(145deg, rgba(228,230,255,.94), rgba(144,165,219,.46)); }
+.small-world:nth-child(5) { background: linear-gradient(145deg, rgba(207,242,239,.94), rgba(101,177,166,.48)); }
+.small-world:nth-child(6) { background: linear-gradient(145deg, rgba(214,233,250,.94), rgba(157,165,221,.44)); }
+.small-world::after { content: ""; position: absolute; width: 150px; height: 150px; right: -42px; top: -42px; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; box-shadow: inset -18px -18px 30px rgba(57,122,148,.08); }
+.small-world:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(62,126,148,.16); }
+.world-index { color: rgba(39,74,99,.65); font-size: .74rem; letter-spacing: .12em; }
+.small-world h3 { max-width: 560px; margin: auto 0 0; color: var(--night); font: 500 clamp(1.65rem, 3vw, 2.7rem)/1.18 var(--serif); }
+.small-world p { max-width: 600px; margin: 17px 0 0; color: rgba(39,74,99,.8); }
+.world-arrow { margin-top: 22px; font-size: 1.25rem; }
+.about-section { padding-top: 100px; }
+.about-wrap { display: grid; grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr); gap: clamp(40px, 8vw, 100px); align-items: center; }
+.about-image { position: relative; margin: 0; }
+.about-image img { display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 9px solid rgba(255,255,255,.72); border-radius: 42% 42% 32px 32px; box-shadow: var(--shadow); }
+.about-image::after { content: ""; position: absolute; width: 90px; height: 90px; right: -24px; bottom: -28px; border-radius: 50%; background: rgba(105,203,213,.25); border: 1px solid rgba(255,255,255,.8); }
+.about-copy h2 { max-width: 620px; }
+.about-lead { margin: 28px 0 0; color: var(--night); font: 500 clamp(1.25rem, 2.3vw, 1.7rem)/1.6 var(--serif); }
+.story { margin-top: 26px; }
+.story p { margin: 0; color: var(--soft-ink); }
+.story p + p { margin-top: 13px; }
+.about-end { margin-top: 28px; padding-left: 20px; border-left: 2px solid var(--sunset); color: var(--ink); }
+.behind-section { padding-top: 85px; }
+.behind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.behind-item { padding: 28px 0; border-top: 1px solid rgba(39,74,99,.28); }
+.behind-item h3 { margin: 0; color: var(--night); font: 500 1.55rem/1.3 var(--serif); }
+.behind-item p { margin: 16px 0 0; color: var(--soft-ink); }
+.behind-members { display: block; margin-top: 20px; color: rgba(86,117,138,.8); font-size: .73rem; line-height: 1.55; word-break: break-word; }
+.closing-section { padding: 100px 0 70px; }
+.closing-card { padding: clamp(38px, 7vw, 74px); border-radius: 42px; color: #fff; background: linear-gradient(135deg, #24557a, #4e91a0 58%, #6aac98); box-shadow: var(--shadow); }
+.closing-card h2 { color: #fff; }
+.path-copy { max-width: 800px; margin: 20px 0 0; color: rgba(255,255,255,.8); }
+.entrances { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.entrances a { padding: 9px 15px; border: 1px solid rgba(255,255,255,.44); border-radius: 999px; color: #fff; text-decoration: none; }
+.entrances a:hover { background: rgba(255,255,255,.12); }
+.site-footer { padding: 0 0 48px; color: var(--soft-ink); text-align: center; font-family: var(--serif); }
+dialog { width: min(92vw, 760px); max-height: 92vh; padding: 14px; border: 0; border-radius: 28px; color: var(--ink); background: var(--foam); box-shadow: var(--shadow); }
+dialog::backdrop { background: rgba(18,49,72,.72); backdrop-filter: blur(7px); }
+.lightbox-close { display: block; margin-left: auto; border: 0; padding: 7px 10px; color: var(--ink); background: transparent; cursor: pointer; }
+.lightbox-image { display: block; width: auto; max-width: 100%; max-height: 76vh; margin: 4px auto 12px; border-radius: 18px; }
+.lightbox-caption { margin: 0; text-align: center; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+@keyframes swim { from { transform: translateX(-12vw); } to { transform: translateX(118vw); } }
+@media (max-width: 820px) {
+  .topnav a:not(.language-link) { display: none; }
+  .hero { min-height: auto; grid-template-columns: 1fr; padding: 45px 0 90px; }
+  .hero h1 { font-size: clamp(2.75rem, 12vw, 4.7rem); }
+  .memory-orbit { min-height: 520px; order: -1; }
+  .memory-main { height: 410px; }
+  .memory-left { height: 235px; }
+  .memory-small { height: 175px; }
+  .featured-work { grid-template-columns: 1fr; }
+  .featured-work:nth-child(even) .featured-preview { order: 0; }
+  .featured-preview { min-height: 330px; }
+  .world-grid { grid-template-columns: 1fr; }
+  .small-world, .small-world:nth-child(1), .small-world:nth-child(2), .small-world:nth-child(5), .small-world:nth-child(6) { grid-column: 1; min-height: 280px; }
+  .about-wrap, .behind-grid { grid-template-columns: 1fr; }
+  .about-image { width: min(76vw, 420px); }
+}
+@media (max-width: 520px) {
+  .shell { width: min(100% - 26px, 1120px); }
+  .topbar { padding-top: 17px; }
+  .hero { padding-top: 22px; }
+  .memory-orbit { min-height: 430px; }
+  .memory-main { width: 74%; height: 330px; top: 50px; }
+  .memory-left { width: 45%; height: 190px; }
+  .memory-small { height: 145px; }
+  .section { padding: 82px 0; }
+  .featured-preview { min-height: 290px; }
+  .featured-content, .small-world { padding: 28px; }
+  .gallery-frame { width: 72vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
 """
 
 
 SITE_JS = r"""
 (() => {
   const rail = document.getElementById("gallery-rail");
-  const toggle = document.getElementById("gallery-grid-toggle");
+  const toggle = document.getElementById("gallery-toggle");
   const dialog = document.getElementById("gallery-lightbox");
-  const dialogImage = document.getElementById("lightbox-image");
-  const dialogCaption = document.getElementById("lightbox-caption");
-  const dialogClose = document.getElementById("lightbox-close");
+  const image = document.getElementById("lightbox-image");
+  const caption = document.getElementById("lightbox-caption");
+  const close = document.getElementById("lightbox-close");
 
   if (rail) {
-    const storageKey = `shasha1108.gallery.position.${document.documentElement.lang}.v3`;
+    const key = `shasha1108.gallery.${document.documentElement.lang}.v4`;
     try {
-      const saved = Number(window.localStorage.getItem(storageKey));
+      const saved = Number(localStorage.getItem(key));
       if (Number.isFinite(saved) && saved > 0) requestAnimationFrame(() => { rail.scrollLeft = saved; });
     } catch (_) {}
-
-    let saveFrame = 0;
+    let frame = 0;
     rail.addEventListener("scroll", () => {
-      cancelAnimationFrame(saveFrame);
-      saveFrame = requestAnimationFrame(() => {
-        try { window.localStorage.setItem(storageKey, String(Math.round(rail.scrollLeft))); } catch (_) {}
-      });
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => { try { localStorage.setItem(key, String(Math.round(rail.scrollLeft))); } catch (_) {} });
     }, { passive: true });
-
     rail.addEventListener("keydown", (event) => {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
       event.preventDefault();
-      rail.scrollBy({ left: event.key === "ArrowLeft" ? -Math.min(rail.clientWidth * .78, 430) : Math.min(rail.clientWidth * .78, 430), behavior: "smooth" });
+      rail.scrollBy({ left: event.key === 'ArrowLeft' ? -380 : 380, behavior: 'smooth' });
     });
-
-    let pointerId = null;
-    let startX = 0;
-    let startLeft = 0;
-    let moved = false;
-    let suppressClick = false;
+    let pointer = null, startX = 0, startLeft = 0, moved = false, suppress = false;
     rail.addEventListener("pointerdown", (event) => {
-      if (rail.classList.contains("is-grid") || event.pointerType === "mouse" && event.button !== 0) return;
-      pointerId = event.pointerId;
-      startX = event.clientX;
-      startLeft = rail.scrollLeft;
-      moved = false;
-      rail.classList.add("is-dragging");
-      rail.setPointerCapture(pointerId);
+      if (rail.classList.contains('is-grid') || (event.pointerType === 'mouse' && event.button !== 0)) return;
+      pointer = event.pointerId; startX = event.clientX; startLeft = rail.scrollLeft; moved = false;
+      rail.classList.add('is-dragging'); rail.setPointerCapture(pointer);
     });
     rail.addEventListener("pointermove", (event) => {
-      if (pointerId !== event.pointerId) return;
-      const delta = event.clientX - startX;
-      if (Math.abs(delta) > 4) moved = true;
+      if (event.pointerId !== pointer) return;
+      const delta = event.clientX - startX; if (Math.abs(delta) > 4) moved = true;
       if (moved) rail.scrollLeft = startLeft - delta;
     });
     const release = (event) => {
-      if (pointerId !== event.pointerId) return;
-      if (moved) {
-        suppressClick = true;
-        window.setTimeout(() => { suppressClick = false; }, 0);
-      }
-      if (rail.hasPointerCapture(pointerId)) rail.releasePointerCapture(pointerId);
-      pointerId = null;
-      rail.classList.remove("is-dragging");
+      if (event.pointerId !== pointer) return;
+      if (moved) { suppress = true; setTimeout(() => { suppress = false; }, 0); }
+      if (rail.hasPointerCapture(pointer)) rail.releasePointerCapture(pointer);
+      pointer = null; rail.classList.remove('is-dragging');
     };
-    rail.addEventListener("pointerup", release);
-    rail.addEventListener("pointercancel", release);
-    rail.addEventListener("click", (event) => {
-      if (!suppressClick) return;
-      event.preventDefault();
-      event.stopPropagation();
-    }, true);
+    rail.addEventListener('pointerup', release); rail.addEventListener('pointercancel', release);
+    rail.addEventListener('click', (event) => { if (suppress) { event.preventDefault(); event.stopPropagation(); } }, true);
   }
-
-  if (toggle && rail) {
-    toggle.addEventListener("click", () => {
-      const expanded = rail.classList.toggle("is-grid");
-      toggle.setAttribute("aria-expanded", String(expanded));
-      toggle.textContent = expanded ? toggle.dataset.collapse : toggle.dataset.expand;
-    });
-  }
-
-  document.querySelectorAll(".gallery-open").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (!dialog || !dialogImage || !dialogCaption) return;
-      dialogImage.src = button.dataset.full || "";
-      dialogImage.alt = button.dataset.title || "";
-      dialogCaption.textContent = button.dataset.title || "";
-      dialog.showModal();
-    });
+  if (toggle && rail) toggle.addEventListener('click', () => {
+    const expanded = rail.classList.toggle('is-grid');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? toggle.dataset.collapse : toggle.dataset.expand;
   });
-  if (dialogClose && dialog) dialogClose.addEventListener("click", () => dialog.close());
-  if (dialog) dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+  document.querySelectorAll('.gallery-open').forEach((button) => button.addEventListener('click', () => {
+    if (!dialog || !image || !caption) return;
+    image.src = button.dataset.full || ''; image.alt = button.dataset.title || ''; caption.textContent = button.dataset.title || '';
+    dialog.showModal();
+  }));
+  if (close && dialog) close.addEventListener('click', () => dialog.close());
+  if (dialog) dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 })();
 """
 
@@ -386,21 +366,12 @@ def text_for(entry: dict, prefix: str, language: str) -> str:
 
 def work_data(snapshot: dict) -> dict[str, dict]:
     catalog = source_catalog(snapshot)
-    detailed = {entry["slug"]: entry for entry in snapshot.get("works", []) if isinstance(entry, dict) and "slug" in entry}
-    result: dict[str, dict] = {}
-    for slug, item in catalog.items():
-        merged = dict(item)
-        merged.update(detailed.get(slug, {}))
-        result[slug] = merged
-    return result
+    details = {work["slug"]: work for work in snapshot.get("works", []) if isinstance(work, dict) and "slug" in work}
+    return {slug: {**item, **details.get(slug, {})} for slug, item in catalog.items()}
 
 
 def title_for(work: dict, language: str) -> str:
     return str(work[f"title_{language}"])
-
-
-def entry_link(url: str, label: str) -> str:
-    return f'<a href="{esc(url)}" target="_blank" rel="noopener">{esc(label)} ↗</a>'
 
 
 def gallery_items(config: dict) -> list[dict]:
@@ -408,306 +379,167 @@ def gallery_items(config: dict) -> list[dict]:
 
 
 def render_readme(config: dict, works: dict[str, dict], language: str) -> str:
-    ui = UI[language]
-    sections = README_SECTION_CONTRACT[language]
-    identity = config["identity"]
-    entrance = config["entrance"]
-    path = config["path"]
+    ui, identity, entrance, path = UI[language], config["identity"], config["entrance"], config["path"]
     gallery = gallery_items(config)
-    title = f"{text_for(identity, 'signature', language)} · {text_for(identity, 'site', language)}"
+    other_readme = "README_EN.md" if language == "zh" else "README.md"
     lines = [
-        f"# {title}",
-        "",
-        f"**{text_for(identity, 'role', language)}**",
-        "",
-        f"> {text_for(entrance, 'title', language)}",
-        "",
-        text_for(entrance, "body", language),
-        "",
+        '<div align="center">',
+        f'<h1>{esc(text_for(entrance, "title", language))}</h1>',
+        f'<p>{esc(text_for(identity, "role", language))}</p>',
+        f'<p>{esc(text_for(entrance, "body", language))}</p>',
+        f'<p><a href="{esc(identity["xhs_url"])}">小红书 / Xiaohongshu</a> · <a href="{esc(identity["lab_url"])}">Healing Visual Lab</a> · <a href="{esc(other_readme)}">{esc(identity["language_switch_" + language])}</a></p>',
+        '</div>', '',
+        '<table><tr>',
     ]
-    lines.extend(f"> {statement}" for statement in entrance[f"core_positioning_{language}"])
-    lines.extend([
-        "",
-        f"[{text_for(entrance, 'primary', language)}]({sections['flagship_fragment']}) · [{text_for(entrance, 'secondary', language)}]({sections['gallery_fragment']}) · [{esc(identity['language_switch_' + language])}]({'README_EN.md' if language == 'zh' else 'README.md'})",
-        "",
-        f"## {sections['gallery_heading']}",
-        "",
-        f"_{ui['readme_gallery']}_",
-        "",
-        "<table>",
-        "<tr>",
-    ])
+    for item in gallery[:3]:
+        lines.append(f'<td width="33%"><img src="{esc(item["webp_image"])}" width="100%" alt="{esc(ui["gallery_alt"])}"/></td>')
+    lines.extend(['</tr></table>', '', f'## 🫧 {ui["about"]}', '', ui["about_lead"], ''])
+    for paragraph in entrance[f"core_positioning_{language}"]:
+        lines.extend([paragraph, ''])
+    lines.extend([ui["about_end"], '', f'## {ui["gallery_title"]}', '', ui["gallery_body"], '', '<table><tr>'])
     for item in gallery:
-        title_text = text_for(item, "title", language)
-        name = title_text or f"{ui['gallery_alt']} {item['id']}"
+        alt = text_for(item, "title", language) or ui["gallery_alt"]
+        lines.append(f'<td align="center" data-gallery-id="{esc(item["id"])}"><img src="{esc(item["webp_image"])}" width="240" alt="{esc(alt)}"/></td>')
+    lines.extend(['</tr></table>', '', f'## {ui["featured_title"]}', '', ui["featured_body"], '', '<table><tr>'])
+    for item in config["flagship_works"]:
+        work = works[item["slug"]]
+        image = item["preview_image"]
         lines.extend([
-            f'<td align="center" data-gallery-id="{esc(item["id"])}">',
-            f'<img src="{esc(item["webp_image"])}" width="154" alt="{esc(name)}"/>',
+            '<td width="33%" valign="top">',
+            f'<a href="{esc(work["page_url"])}"><img src="{esc(image)}" width="100%" alt="{esc(title_for(work, language))}"/></a><br/>',
+            f'<strong>{esc(title_for(work, language))}</strong><br/>',
+            f'<sub>{esc(text_for(item, "note", language))}</sub><br/><br/>',
+            f'<a href="{esc(work["page_url"])}">{esc(ui["open_work"])} ↗</a>',
+            '</td>',
         ])
-        if title_text:
-            lines.append(f"<br/><sub>{esc(title_text)}</sub>")
-        lines.append("</td>")
-    lines.extend(["</tr>", "</table>", "", f"_{ui['source_note']}_", ""])
-
-    lines.extend([f"## {sections['flagship_heading']}", ""])
-    for work_config in config["flagship_works"]:
-        work = works[work_config["slug"]]
-        lines.extend([
-            f"### [{title_for(work, language)}]({work['page_url']})",
-            "",
-        ])
-        if language == "zh":
-            lines.extend([f"> {work['tagline']}", ""])
-        for index, part in enumerate(work_config["five_parts"][language], 1):
-            lines.append(f"{index}. **{part['label']}** — {part['text']}")
-        lines.extend(["", entry_link(work["page_url"], ui["open"]), ""])
-
-    lines.extend([f"## 03 / {ui['readme_worlds']}", ""])
-    for world_config in config["responsive_worlds"]:
-        work = works[world_config["slug"]]
-        lines.extend([
-            f"### [{title_for(work, language)}]({work['page_url']})",
-            "",
-            text_for(world_config, "reason", language),
-            "",
-            text_for(world_config, "action", language),
-            "",
-            text_for(world_config, "response", language),
-            "",
-            entry_link(work["page_url"], ui["enter"]),
-            "",
-        ])
-
-    lines.extend([f"## 04 / {ui['readme_benches']}", ""])
+    lines.extend(['</tr></table>', '', f'## {ui["readme_worlds"]}', ''])
+    for item in config["responsive_worlds"]:
+        work = works[item["slug"]]
+        note = work.get("tagline") if language == "zh" else text_for(item, "reason", language)
+        lines.extend([f'### [{esc(title_for(work, language))}]({esc(work["page_url"])})', '', str(note), ''])
+    lines.extend([f'<details><summary><strong>{esc(ui["readme_behind"])}</strong></summary>', ''])
     for bench in config["workbenches"]:
-        lines.extend([
-            f"### {bench['id']} · {text_for(bench, 'name', language)}",
-            "",
-            f"**{ui['private']}**",
-            "",
-            f"**{ui['members']}** — {text_for(bench, 'members', language)}",
-            "",
-            text_for(bench, "role", language),
-            "",
-            f"**{ui['redacted_flow']}** — `{text_for(bench, 'flow', language)}`",
-            "",
-        ])
-
-    lines.extend([f"## 05 / {ui['readme_rejections']}", ""])
-    for rejection in config["rejections"]:
-        lines.append(f"- {rejection[language]}")
-    lines.extend(["", f"## 06 / {ui['readme_path']}", "", text_for(path, "body", language), ""])
-    entrance_links = " · ".join(
-        f"[{text_for(entry, 'label', language)}]({entry['url']})" for entry in path["entrances"]
-    )
-    lines.extend([
-        entrance_links,
-        "",
-        f"<sub>{ui['footer']}</sub>",
-        "",
-    ])
+        lines.extend([f'### {esc(text_for(bench, "name", language))}', '', text_for(bench, "role", language), '', f'<sub>{esc(text_for(bench, "members", language))}</sub>', ''])
+    lines.extend(['</details>', '', f'## {esc(text_for(path, "title", language))}', '', esc(text_for(path, "body", language)), ''])
+    lines.append(' · '.join(f'[{esc(text_for(link, "label", language))}]({esc(link["url"])})' for link in path["entrances"]))
+    lines.extend(['', '---', '', f'<div align="center"><em>{esc(ui["closing"])}</em><br/><br/>{esc(text_for(identity, "signature", language))}</div>', ''])
     return "\n".join(lines)
 
 
-def jar_svg() -> str:
-    return """
-<svg class="jar-svg" viewBox="0 0 460 560" role="img" aria-label="Bottled Cosmos">
-  <defs>
-    <linearGradient id="jar-glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e1f3ee" stop-opacity=".82"/><stop offset=".5" stop-color="#70b5ba" stop-opacity=".35"/><stop offset="1" stop-color="#1b5260" stop-opacity=".5"/></linearGradient>
-    <radialGradient id="jar-cosmos"><stop stop-color="#f5c66d"/><stop offset=".23" stop-color="#a55d91"/><stop offset=".64" stop-color="#28576a"/><stop offset="1" stop-color="#142833"/></radialGradient>
-  </defs>
-  <path d="M173 72h114l-11 53c0 18 70 23 83 75 19 75 26 237-10 299-26 45-78 69-119 69s-93-24-119-69c-36-62-29-224-10-299 13-52 83-57 83-75z" fill="url(#jar-glass)" stroke="#1b1b18" stroke-width="3"/>
-  <path d="M159 74h142l-12-38H171z" fill="#ae6d22" stroke="#1b1b18" stroke-width="3"/>
-  <ellipse cx="230" cy="316" rx="116" ry="164" fill="url(#jar-cosmos)" opacity=".91"/>
-  <g fill="#f5efe4"><circle cx="183" cy="216" r="3"/><circle cx="260" cy="190" r="4"/><circle cx="299" cy="252" r="2"/><circle cx="161" cy="333" r="2"/><circle cx="269" cy="394" r="3"/><circle cx="202" cy="445" r="2"/></g>
-  <path d="M149 168c-16 85-15 227 19 298" fill="none" stroke="#fff" stroke-opacity=".63" stroke-width="8" stroke-linecap="round"/>
-  <path d="M212 273c20-22 42-4 24 17-19 22-45 12-27-17 17-26 58-11 62 20" fill="none" stroke="#f5c66d" stroke-width="2"/>
-  <path d="M92 498h276" stroke="#a33a31" stroke-width="2"/>
-</svg>
-""".strip()
-
-
 def render_gallery(config: dict, works: dict[str, dict], language: str) -> str:
-    ui = UI[language]
-    frames = []
+    ui, frames = UI[language], []
     for item in gallery_items(config):
-        title = text_for(item, "title", language)
-        description = text_for(item, "description", language)
-        alt = title or f"{ui['gallery_alt']} {item['id']}"
+        title, description = text_for(item, "title", language), text_for(item, "description", language)
+        alt = title or f'{ui["gallery_alt"]} {item["id"]}'
         links = []
-        if item["xhs_url"] is not None:
-            links.append(f'<a class="instrument-link" href="{esc(item["xhs_url"])}" target="_blank" rel="noopener">{esc(ui["gallery_xhs"])} ↗</a>')
-        if item["work_slug"] is not None:
-            links.append(f'<a class="instrument-link" href="{esc(works[item["work_slug"]]["page_url"])}" target="_blank" rel="noopener">{esc(ui["gallery_work"])} ↗</a>')
-        caption = ""
+        if item["xhs_url"]:
+            links.append(f'<a href="{esc(item["xhs_url"])}" target="_blank" rel="noopener">{esc(ui["gallery_xhs"])} ↗</a>')
+        if item["work_slug"]:
+            links.append(f'<a href="{esc(works[item["work_slug"]]["page_url"])}" target="_blank" rel="noopener">{esc(ui["gallery_work"])} ↗</a>')
+        caption = ''
         if title or description or links:
-            title_html = f"<strong>{esc(title)}</strong>" if title else ""
-            description_html = f"<small>{esc(description)}</small>" if description else ""
-            caption = f"<figcaption>{title_html}{description_html}{''.join(links)}</figcaption>"
-        caption_line = f"\n  {caption}" if caption else ""
-        frames.append(
-            f'''<figure class="gallery-frame">
+            caption = f'<figcaption>{f"<strong>{esc(title)}</strong>" if title else ""}{f"<small>{esc(description)}</small>" if description else ""}{"".join(links)}</figcaption>'
+        frames.append(f'''<figure class="gallery-frame">
   <button class="gallery-open" type="button" data-gallery-id="{esc(item['id'])}" data-full="{esc(item['image'])}" data-title="{esc(alt)}">
     <img src="{esc(item['webp_image'])}" loading="lazy" decoding="async" width="376" height="500" alt="{esc(alt)}">
-  </button>{caption_line}
-</figure>'''
-        )
+  </button>{caption}
+</figure>''')
     return "\n".join(frames)
 
 
-def render_flagships(config: dict, works: dict[str, dict], language: str) -> str:
+def render_featured(config: dict, works: dict[str, dict], language: str) -> str:
     ui = UI[language]
-    rendered = []
-    for index, work_config in enumerate(config["flagship_works"], 1):
-        work = works[work_config["slug"]]
-        parts = "\n".join(
-            f'''<li><span>{part_index:02d}</span><strong>{esc(part['label'])}</strong><p>{esc(part['text'])}</p></li>'''
-            for part_index, part in enumerate(work_config["five_parts"][language], 1)
-        )
-        tagline = f'<p class="flagship-tagline">{esc(work["tagline"])}</p>' if language == "zh" else ""
-        tagline_line = f"\n    {tagline}" if tagline else ""
-        rendered.append(
-            f'''<article class="flagship">
-  <div class="instrument-code">{index:02d} / instrument</div>
-  <div>
-    <h3>{esc(title_for(work, language))}</h3>{tagline_line}
-    <ol class="five-parts">{parts}</ol>
-    <a class="instrument-link" href="{esc(work['page_url'])}" target="_blank" rel="noopener">{esc(ui['open'])} ↗</a>
-  </div>
-</article>'''
-        )
-    return "\n".join(rendered)
+    result = []
+    for index, item in enumerate(config["flagship_works"], 1):
+        work = works[item["slug"]]
+        image = item["preview_image"]
+        result.append(f'''<article class="featured-work">
+  <a class="featured-preview" href="{esc(work['page_url'])}" target="_blank" rel="noopener"><img src="{esc(image)}" loading="lazy" alt="{esc(title_for(work, language))}"></a>
+  <div class="featured-content"><span class="featured-number">0{index}</span><h3>{esc(title_for(work, language))}</h3><p>{esc(text_for(item, 'note', language))}</p><a class="text-link" href="{esc(work['page_url'])}" target="_blank" rel="noopener">{esc(ui['open_work'])}</a></div>
+</article>''')
+    return "\n".join(result)
 
 
 def render_worlds(config: dict, works: dict[str, dict], language: str) -> str:
-    ui = UI[language]
-    automatic_sizes = ("large", "tall", "wide", "compact", "medium", "tall-right")
-    rendered = []
-    for index, world in enumerate(config["responsive_worlds"], 1):
-        work = works[world["slug"]]
-        specimen_size = world.get("specimen_size")
-        if specimen_size == "auto" or specimen_size is None:
-            specimen_size = automatic_sizes[(index - 1) % len(automatic_sizes)]
-        rendered.append(
-            f'''<article class="responsive-world specimen-{esc(specimen_size)}">
-  <div class="world-number">{index:02d}</div>
-  <div>
-    <h3>{esc(title_for(work, language))}</h3>
-    <p>{esc(text_for(world, 'reason', language))}</p>
-    <a class="instrument-link" href="{esc(work['page_url'])}" target="_blank" rel="noopener">{esc(ui['enter'])} ↗</a>
-  </div>
-  <div class="world-spec">
-    <p><b>{esc(text_for(world, 'action', language).split('：')[0] if language == 'zh' else 'Primary gesture')}</b><br>{esc(text_for(world, 'action', language))}</p>
-    <p><b>{esc(text_for(world, 'response', language).split('：')[0] if language == 'zh' else 'Response')}</b><br>{esc(text_for(world, 'response', language))}</p>
-  </div>
-</article>'''
-        )
-    return "\n".join(rendered)
+    result = []
+    for index, item in enumerate(config["responsive_worlds"], 1):
+        work = works[item["slug"]]
+        note = work.get("tagline") if language == "zh" else text_for(item, "reason", language)
+        result.append(f'''<a class="small-world" href="{esc(work['page_url'])}" target="_blank" rel="noopener">
+  <span class="world-index">0{index}</span><h3>{esc(title_for(work, language))}</h3><p>{esc(note)}</p><span class="world-arrow" aria-hidden="true">↗</span>
+</a>''')
+    return "\n".join(result)
 
 
-def render_benches(config: dict, language: str) -> str:
+def render_behind(config: dict, language: str) -> str:
     ui = UI[language]
     return "\n".join(
-        f'''<article class="bench">
-  <div class="bench-id">{esc(bench['id'])}</div>
-  <div><h3>{esc(text_for(bench, 'name', language))}</h3><p class="bench-members">{esc(ui['members'])} / {esc(text_for(bench, 'members', language))}</p><p>{esc(text_for(bench, 'role', language))}</p><span class="private-tag">{esc(ui['private'])}</span></div>
-  <div class="bench-flow">{esc(ui['redacted_flow'])}<br>{esc(text_for(bench, 'flow', language))}</div>
-</article>'''
-        for bench in config["workbenches"]
-    )
-
-
-def render_rejections(config: dict, language: str) -> str:
-    return "\n".join(
-        f'<li><span>{index:02d}</span>{esc(rejection[language])}</li>'
-        for index, rejection in enumerate(config["rejections"], 1)
+        f'''<article class="behind-item"><h3>{esc(text_for(item, 'name', language))}</h3><p>{esc(text_for(item, 'role', language))}</p><small class="behind-members">{esc(ui['members'])}<br>{esc(text_for(item, 'members', language))}</small></article>'''
+        for item in config["workbenches"]
     )
 
 
 def render_site(config: dict, works: dict[str, dict], language: str) -> str:
-    ui = UI[language]
-    identity = config["identity"]
-    entrance = config["entrance"]
-    path = config["path"]
+    ui, identity, entrance, path = UI[language], config["identity"], config["entrance"], config["path"]
+    gallery = gallery_items(config)
     switch_file = "index_en.html" if language == "zh" else "index.html"
-    title = f"{text_for(identity, 'signature', language)} · {text_for(identity, 'site', language)}"
-    entrance_links = "".join(
-        f'<a href="{esc(entry["url"])}" target="_blank" rel="noopener">{esc(text_for(entry, "label", language))} ↗</a>'
-        for entry in path["entrances"]
-    )
+    links = "".join(f'<a href="{esc(item["url"])}" target="_blank" rel="noopener">{esc(text_for(item, "label", language))}</a>' for item in path["entrances"])
+    story = "".join(f'<p>{esc(paragraph)}</p>' for paragraph in entrance[f"core_positioning_{language}"])
     return f'''<!doctype html>
 <html lang="{ui['lang']}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{esc(text_for(entrance, 'body', language))}">
-  <meta name="theme-color" content="#f4efe4">
-  <title>{esc(title)}</title>
+  <meta name="theme-color" content="#e9faff">
+  <title>{esc(text_for(identity, 'signature', language))} · {esc(text_for(entrance, 'title', language))}</title>
   <style>{SITE_CSS}</style>
 </head>
 <body>
-  <div class="page-shell">
+  <span class="drifter one" aria-hidden="true"></span><span class="drifter two" aria-hidden="true"></span>
+  <div class="shell">
     <header class="topbar">
-      <a class="wordmark" href="#entrance">{esc(text_for(identity, 'signature', language))} / {esc(text_for(identity, 'site', language))}</a>
-      <a class="language-link" href="{switch_file}" lang="{'en' if language == 'zh' else 'zh-CN'}">{esc(identity['language_switch_' + language])}</a>
+      <a class="signature" href="#top">{esc(text_for(identity, 'signature', language))}</a>
+      <nav class="topnav" aria-label="Primary"><a href="#gallery">{esc(ui['gallery_kicker'])}</a><a href="#worlds">{esc(ui['worlds_kicker'])}</a><a href="#about">{esc(ui['about'])}</a><a class="language-link" href="{switch_file}">{esc(identity['language_switch_' + language])}</a></nav>
     </header>
     <main>
-      <section class="hero" id="entrance">
-        <div>
-          <p class="eyebrow">{esc(text_for(entrance, 'eyebrow', language))}</p>
-          <h1>{esc(text_for(entrance, 'title', language))}</h1>
-          <p class="hero-role">{esc(text_for(identity, 'role', language))}</p>
-          <p class="hero-copy">{esc(text_for(entrance, 'body', language))}</p>
-          <div class="core-positioning">{''.join(f'<p>{esc(statement)}</p>' for statement in entrance[f'core_positioning_{language}'])}</div>
-          <div class="hero-actions">
-            <a class="action action-primary" href="#flagship-works">{esc(text_for(entrance, 'primary', language))}</a>
-            <a class="action action-secondary" href="#gallery">{esc(text_for(entrance, 'secondary', language))}</a>
-          </div>
+      <section class="hero" id="top">
+        <div class="hero-copy"><p class="eyebrow">{esc(text_for(entrance, 'eyebrow', language))}</p><h1>{esc(text_for(entrance, 'title', language))}</h1><p class="hero-intro">{esc(text_for(entrance, 'body', language))}</p><p class="role">{esc(text_for(identity, 'role', language))}</p><div class="hero-actions"><a class="button primary" href="#gallery">{esc(text_for(entrance, 'primary', language))}</a><a class="button" href="#worlds">{esc(text_for(entrance, 'secondary', language))}</a></div></div>
+        <div class="memory-orbit" aria-label="{esc(ui['gallery_title'])}">
+          <figure class="memory-frame memory-main"><img src="{esc(gallery[0]['webp_image'])}" alt="{esc(ui['gallery_alt'])}"></figure>
+          <figure class="memory-frame memory-left"><img src="{esc(gallery[1]['webp_image'])}" alt="{esc(ui['gallery_alt'])}"></figure>
+          <figure class="memory-frame memory-small"><img src="{esc(gallery[2]['webp_image'])}" alt="{esc(ui['gallery_alt'])}"></figure>
         </div>
-        <div class="jar-stage">{jar_svg()}<span class="jar-label">BOTTLED COSMOS / 30 SEC</span></div>
       </section>
 
       <section class="section gallery-section" id="gallery">
-        <div class="unspoken-line line-track"><span>UNNAMED LINE / TRACK</span></div>
-        <div class="section-heading"><div><p class="section-index">{esc(ui['gallery_index'])}</p><h2>{esc(ui['gallery_title'])}</h2></div><p>{esc(ui['gallery_body'])}</p></div>
-        <div class="gallery-controls"><p>{esc(ui['gallery_hint'])}</p><button class="grid-toggle" id="gallery-grid-toggle" type="button" aria-expanded="false" data-expand="{esc(ui['expand'])}" data-collapse="{esc(ui['collapse'])}">{esc(ui['expand'])}</button></div>
-        <div class="gallery-rail" id="gallery-rail" tabindex="0" aria-label="{esc(ui['gallery_title'])}">
-          {render_gallery(config, works, language)}
-        </div>
+        <header class="section-head"><p class="kicker">{esc(ui['gallery_kicker'])}</p><h2>{esc(ui['gallery_title'])}</h2><p class="section-intro">{esc(ui['gallery_body'])}</p></header>
+        <div class="gallery-controls"><p>{esc(ui['gallery_hint'])}</p><button class="gallery-toggle" id="gallery-toggle" type="button" aria-expanded="false" data-expand="{esc(ui['expand'])}" data-collapse="{esc(ui['collapse'])}">{esc(ui['expand'])}</button></div>
+        <div class="gallery-rail" id="gallery-rail" tabindex="0" aria-label="{esc(ui['gallery_title'])}">{render_gallery(config, works, language)}</div>
       </section>
 
-      <section class="section" id="flagship-works">
-        <div class="unspoken-line line-stem"><span>UNNAMED LINE / STEM</span></div>
-        <div class="section-heading"><div><p class="section-index">{esc(ui['flagship_index'])}</p><h2>{esc(ui['flagship_title'])}</h2></div><p>{esc(ui['flagship_body'])}</p></div>
-        <div class="flagships">{render_flagships(config, works, language)}</div>
+      <section class="section featured-section" id="featured">
+        <header class="section-head"><p class="kicker">{esc(ui['featured_kicker'])}</p><h2>{esc(ui['featured_title'])}</h2><p class="section-intro">{esc(ui['featured_body'])}</p></header>
+        <div class="featured-list">{render_featured(config, works, language)}</div>
       </section>
 
-      <section class="section" id="responsive-worlds">
-        <div class="unspoken-line line-contour"><span>UNNAMED LINE / CONTOUR</span></div>
-        <div class="section-heading"><div><p class="section-index">{esc(ui['world_index'])}</p><h2>{esc(ui['world_title'])}</h2></div><p>{esc(ui['world_body'])}</p></div>
-        <div class="responsive-list">{render_worlds(config, works, language)}</div>
+      <section class="section worlds-section" id="worlds">
+        <header class="section-head"><p class="kicker">{esc(ui['worlds_kicker'])}</p><h2>{esc(ui['worlds_title'])}</h2><p class="section-intro">{esc(ui['worlds_body'])}</p></header>
+        <div class="world-grid">{render_worlds(config, works, language)}</div>
       </section>
 
-      <section class="section" id="system-benches">
-        <div class="unspoken-line line-state"><span>UNNAMED LINE / STATE MACHINE</span></div>
-        <div class="section-heading"><div><p class="section-index">{esc(ui['bench_index'])}</p><h2>{esc(ui['bench_title'])}</h2></div><p>{esc(ui['bench_body'])}</p></div>
-        <div class="benches">{render_benches(config, language)}</div>
+      <section class="section about-section" id="about">
+        <div class="about-wrap"><figure class="about-image"><img src="{esc(gallery[2]['webp_image'])}" loading="lazy" alt="{esc(ui['gallery_alt'])}"></figure><div class="about-copy"><p class="kicker">{esc(ui['about'])}</p><h2>{esc(ui['about_title'])}</h2><p class="about-lead">{esc(ui['about_lead'])}</p><div class="story">{story}</div><p class="about-end">{esc(ui['about_end'])}</p></div></div>
       </section>
 
-      <section class="section" id="rejections">
-        <div class="unspoken-line line-evidence"><span>UNNAMED LINE / EVIDENCE CHAIN</span></div>
-        <div class="section-heading"><div><p class="section-index">{esc(ui['reject_index'])}</p><h2>{esc(ui['reject_title'])}</h2></div></div>
-        <ol class="rejection-list">{render_rejections(config, language)}</ol>
+      <section class="section behind-section" id="behind">
+        <header class="section-head"><p class="kicker">{esc(ui['behind_kicker'])}</p><h2>{esc(ui['behind_title'])}</h2><p class="section-intro">{esc(ui['behind_body'])}</p></header>
+        <div class="behind-grid">{render_behind(config, language)}</div>
       </section>
 
-      <section class="section path-section" id="path">
-        <div class="unspoken-line"><span>UNNAMED LINE / OPEN EXIT</span></div>
-        <div class="section-heading"><div><p class="section-index">{esc(ui['path_index'])}</p><h2>{esc(text_for(path, 'title', language))}</h2></div></div>
-        <div class="path-grid"><p>{esc(text_for(path, 'body', language))}</p><div class="entrances">{entrance_links}</div></div>
-        <p class="source-note">{esc(ui['source_note'])}</p>
-      </section>
+      <section class="closing-section" id="path"><div class="closing-card"><p class="kicker">{esc(ui['path_kicker'])}</p><h2>{esc(text_for(path, 'title', language))}</h2><p class="path-copy">{esc(text_for(path, 'body', language))}</p><div class="entrances" aria-label="{esc(ui['links_title'])}">{links}</div></div></section>
     </main>
-    <footer class="site-footer">{esc(ui['footer'])}</footer>
+    <footer class="site-footer">{esc(ui['closing'])}<br>{esc(text_for(identity, 'signature', language))}</footer>
   </div>
   <dialog id="gallery-lightbox" aria-labelledby="lightbox-caption"><button class="lightbox-close" id="lightbox-close" type="button">{esc(ui['lightbox_close'])}</button><img class="lightbox-image" id="lightbox-image" alt=""><p class="lightbox-caption" id="lightbox-caption"></p></dialog>
   <script>{SITE_JS}</script>
@@ -717,32 +549,23 @@ def render_site(config: dict, works: dict[str, dict], language: str) -> str:
 
 
 def validate_rendered(outputs: dict[str, str], config: dict) -> None:
-    expected_gallery = [item["id"] for item in gallery_items(config)]
+    gallery = [item["id"] for item in gallery_items(config)]
+    headline_zh = config["entrance"]["title_zh"]
+    banned = ("活体仪器室", "标本抽屉", "系统如何判断", "PRIVATE SYSTEM", "UNNAMED LINE")
     for filename, content in outputs.items():
-        found_gallery = re.findall(r'data-gallery-id="([^"]+)"', content)
-        if found_gallery != expected_gallery:
+        if re.findall(r'data-gallery-id="([^"]+)"', content) != gallery:
             raise ValueError(f"{filename} does not preserve the configured gallery order")
+        if any(term in content for term in banned):
+            raise ValueError(f"{filename} still contains retired public-facing terminology")
+        if filename in ("README.md", "index.html") and headline_zh not in content:
+            raise ValueError(f"{filename} is missing the personal emotional statement")
         if filename.endswith(".html"):
             ids = re.findall(r'\bid="([^"]+)"', content)
-            duplicated = sorted({item_id for item_id in ids if ids.count(item_id) > 1})
-            if duplicated:
-                raise ValueError(f"{filename} has duplicate DOM id(s): {', '.join(duplicated)}")
+            duplicates = sorted({item for item in ids if ids.count(item) > 1})
+            if duplicates:
+                raise ValueError(f"{filename} has duplicate DOM ids: {', '.join(duplicates)}")
             if "<iframe" in content.lower() or "<canvas" in content.lower():
-                raise ValueError(f"{filename} must not preload H5 via iframe or canvas")
-    for filename, language in (("README.md", "zh"), ("README_EN.md", "en")):
-        content = outputs[filename]
-        sections = README_SECTION_CONTRACT[language]
-        entrance = config["entrance"]
-        expected_nav = (
-            f"[{text_for(entrance, 'primary', language)}]({sections['flagship_fragment']}) · "
-            f"[{text_for(entrance, 'secondary', language)}]({sections['gallery_fragment']})"
-        )
-        if expected_nav not in content:
-            raise ValueError(f"{filename} top navigation does not match its section-anchor contract")
-        for section in ("gallery", "flagship"):
-            heading = f"## {sections[f'{section}_heading']}"
-            if heading not in content:
-                raise ValueError(f"{filename} is missing its {section} heading for the anchor contract")
+                raise ValueError(f"{filename} must not preload interactive works")
 
 
 def build_outputs() -> dict[str, str]:
@@ -762,15 +585,14 @@ def build_outputs() -> dict[str, str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build the Living Instrument Room profile outputs.")
-    parser.add_argument("--check", action="store_true", help="verify generated files match the configuration without writing")
+    parser = argparse.ArgumentParser(description="Build the Sha.w.z bilingual profile outputs.")
+    parser.add_argument("--check", action="store_true", help="verify generated files match showcase.json")
     args = parser.parse_args()
     try:
         outputs = build_outputs()
     except ValueError as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 1
-
     drift = []
     for filename, expected in outputs.items():
         path = ROOT / filename
@@ -779,16 +601,13 @@ def main() -> int:
             drift.append(filename)
             if not args.check:
                 path.write_text(expected, encoding="utf-8")
-
     if args.check:
         if drift:
             print("profile build check: DRIFT " + ", ".join(drift), file=sys.stderr)
             return 1
         print("profile build check: OK (README.md, README_EN.md, index.html, index_en.html)")
         return 0
-
-    changed = ", ".join(drift) if drift else "none"
-    print(f"profile build: OK (updated: {changed})")
+    print(f"profile build: OK (updated: {', '.join(drift) if drift else 'none'})")
     return 0
 
 

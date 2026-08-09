@@ -33,23 +33,25 @@ FIVE_PARTS_EN = [
 ]
 REQUIRED_SIGNATURE_ZH = "Sha.w.z / 云野自由"
 REQUIRED_SIGNATURE_EN = "Sha.w.z / 云野自由 (Yunye Ziyou)"
-REQUIRED_ROLE_ZH = "AI 系统构建者"
-REQUIRED_ROLE_EN = "AI Systems Builder"
+REQUIRED_ROLE_ZH = "产品经理 · AI 系统与 Skill 开发 · 数字创作"
+REQUIRED_ROLE_EN = "Product · AI Systems & Skills · Digital Creation"
+REQUIRED_TITLE_ZH = "让每个说不清的情绪，都能被看见、被理解。"
+REQUIRED_TITLE_EN = "Let every feeling that is hard to name be seen and understood."
 REQUIRED_CORE_POSITIONING_ZH = [
-    "我不做万能 Agent。",
-    "我做能接住一种具体创作判断的仪器。",
-    "有的接住说不清的情绪，有的接住创作，有的接住证据。",
+    "开发 → 自动化测试 → 数据产品经理。",
+    "我习惯把复杂的系统变得可见，却越来越在意那些没有接口、没有日志、说也说不清的感受。",
+    "所以我开始用图像、声音和交互，为它们做一些可以停留的小世界。",
 ]
 REQUIRED_CORE_POSITIONING_EN = [
-    "I do not build one-size-fits-all Agents.",
-    "I build instruments that can hold a specific creative judgment.",
-    "Some hold the unspoken emotions; some hold creative work; some hold evidence.",
+    "Development → QA automation → data product management.",
+    "I learned to make complex systems visible, then became more interested in feelings with no interface, no logs, and no easy name.",
+    "So I began using images, sound, and interaction to give those feelings a small world in which to stay.",
 ]
 REQUIRED_BENCHES = [
     {
         "id": "01",
-        "name_zh": "感受仪器",
-        "name_en": "Feeling Instruments",
+        "name_zh": "把感受变成体验",
+        "name_en": "Turning Feeling into Experience",
         "members_zh": "healing-space / pixel-bloom / Healing Visual Lab",
         "members_en": "healing-space / pixel-bloom / Healing Visual Lab",
         "flow_zh": "感受 → 隐喻 → 不可替代动作 → 回应状态",
@@ -57,8 +59,8 @@ REQUIRED_BENCHES = [
     },
     {
         "id": "02",
-        "name_zh": "创作仪器",
-        "name_en": "Creative Instruments",
+        "name_zh": "让创作流程更可靠",
+        "name_en": "Making Creative Workflows Reliable",
         "members_zh": "content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish",
         "members_en": "content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish",
         "flow_zh": "输入 → 场景判断 → handoff → 专业执行器 → 用户确认",
@@ -66,8 +68,8 @@ REQUIRED_BENCHES = [
     },
     {
         "id": "03",
-        "name_zh": "证据仪器",
-        "name_en": "Evidence Instruments",
+        "name_zh": "让判断经得起验证",
+        "name_en": "Keeping Judgment Evidence-Bound",
         "members_zh": "content-growth-advisor / yunye-growth-lab / creator-growth-workbench",
         "members_en": "content-growth-advisor / yunye-growth-lab / creator-growth-workbench",
         "flow_zh": "事实 → 推断 → 待验证 → 单变量实验 → 真实复盘",
@@ -90,8 +92,8 @@ REQUIRED_REJECTIONS_EN = [
     "I do not let a click become an effect with no metaphorical meaning.",
     "I do not use a one-size-fits-all Agent to conceal the absence of professional judgment.",
 ]
-REQUIRED_PATH_ZH = "开发 → 自动化测试 → 数据产品 → 把创作判断工程化的 AI 系统构建者"
-REQUIRED_PATH_EN = "Development → QA automation → data products → an AI systems builder who engineers creative judgment"
+REQUIRED_PATH_ZH = "开发 → 自动化测试 → 数据产品经理 → 用技术把感受与创作变成可以被体验的东西"
+REQUIRED_PATH_EN = "Development → QA automation → data product management → using technology to turn feelings and creative ideas into experiences"
 REQUIRED_ENTRANCES = [
     ("portfolio", "完整作品集", "Complete portfolio", "https://shasha1108.github.io/healing-visual-lab/"),
     ("xiaohongshu", "小红书", "Xiaohongshu", "https://xhslink.com/m/1kVPy4geTiQ"),
@@ -173,7 +175,7 @@ def validate(config: dict, snapshot: dict) -> list[str]:
         if identity.get("signature_zh") != REQUIRED_SIGNATURE_ZH:
             errors.append("identity must retain the Sha.w.z / 云野自由 signature")
         if identity.get("role_zh") != REQUIRED_ROLE_ZH:
-            errors.append("identity must retain the AI 系统构建者 role")
+            errors.append("identity must retain the approved Chinese role line")
         if identity.get("signature_en") != REQUIRED_SIGNATURE_EN:
             errors.append("identity must retain the approved English signature")
         if identity.get("role_en") != REQUIRED_ROLE_EN:
@@ -183,6 +185,10 @@ def validate(config: dict, snapshot: dict) -> list[str]:
     if not isinstance(entrance, dict):
         errors.append("entrance must be an object")
     else:
+        if entrance.get("title_zh") != REQUIRED_TITLE_ZH:
+            errors.append("entrance must retain the personal Chinese emotional statement")
+        if entrance.get("title_en") != REQUIRED_TITLE_EN:
+            errors.append("entrance must retain the English emotional statement")
         if entrance.get("core_positioning_zh") != REQUIRED_CORE_POSITIONING_ZH:
             errors.append("entrance must retain the three approved Chinese positioning statements")
         core_en = entrance.get("core_positioning_en")
@@ -206,6 +212,12 @@ def validate(config: dict, snapshot: dict) -> list[str]:
             slug = entry.get("slug")
             if slug not in catalog:
                 errors.append(f"flagship {slug!r} is absent from the source catalog")
+            for key in ("note_zh", "note_en"):
+                if not nonempty_text(entry.get(key)):
+                    errors.append(f"flagship {slug} must define {key}")
+            preview = entry.get("preview_image")
+            if not nonempty_text(preview) or not (ROOT / str(preview)).is_file():
+                errors.append(f"flagship {slug} must reference an existing local preview_image")
             parts = entry.get("five_parts")
             if not isinstance(parts, dict):
                 errors.append(f"flagship {slug} must include five_parts")
