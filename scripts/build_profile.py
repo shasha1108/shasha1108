@@ -487,7 +487,14 @@ def typing_svg_url(text: str, *, size: int, color: str, width: int, weight: int 
 def render_readme(config: dict, works: dict[str, dict], language: str) -> str:
     ui, identity, entrance, path = UI[language], config["identity"], config["entrance"], config["path"]
     gallery = gallery_items(config)
-    other_readme = "README_EN.md" if language == "zh" else "README.md"
+    profile_site = "https://shasha1108.github.io/shasha1108/index.html"
+    profile_site_label = "个人主页" if language == "zh" else "Personal site"
+    language_url = (
+        "https://github.com/shasha1108/shasha1108/blob/main/README_EN.md"
+        if language == "zh"
+        else "https://github.com/shasha1108/shasha1108/blob/main/README.md"
+    )
+    language_label = "English" if language == "zh" else "中文"
     headline = text_for(entrance, "title", language)
     role = text_for(identity, "role", language)
     lines = [
@@ -496,7 +503,7 @@ def render_readme(config: dict, works: dict[str, dict], language: str) -> str:
         '',
         f'<img src="{esc(typing_svg_url(role, size=15, color="8B9DC3", width=700))}" alt="{esc(role)}"/>',
         f'<p>{esc(text_for(entrance, "body", language))}</p>',
-        f'<p><a href="{esc(identity["xhs_url"])}">小红书 / Xiaohongshu</a> · <a href="{esc(identity["lab_url"])}">Healing Visual Lab</a> · <a href="{esc(other_readme)}">{esc(identity["language_switch_" + language])}</a></p>',
+        f'<p><a href="{esc(identity["xhs_url"])}">小红书 / Xiaohongshu</a> · <a href="{esc(identity["lab_url"])}">Healing Visual Lab</a> · <a href="{profile_site}">{profile_site_label}</a></p>',
         '</div>', '',
         '<table><tr>',
     ]
@@ -531,7 +538,11 @@ def render_readme(config: dict, works: dict[str, dict], language: str) -> str:
     for bench in config["workbenches"]:
         lines.extend([f'### {esc(text_for(bench, "name", language))}', '', text_for(bench, "role", language), '', f'<sub>{esc(text_for(bench, "members", language))}</sub>', ''])
     lines.extend(['</details>', '', f'## {esc(text_for(path, "title", language))}', '', esc(text_for(path, "body", language)), ''])
-    lines.append(' · '.join(f'[{esc(text_for(link, "label", language))}]({esc(link["url"])})' for link in path["entrances"]))
+    lines.extend([
+        '<div align="center">',
+        f'<h3><a href="{language_url}">{language_label} →</a></h3>',
+        '</div>',
+    ])
     lines.extend(['', '---', '', f'<div align="center"><em>{esc(ui["closing"])}</em><br/><br/>{esc(text_for(identity, "signature", language))}</div>', ''])
     return "\n".join(lines)
 

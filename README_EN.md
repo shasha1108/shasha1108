@@ -1,9 +1,9 @@
 <div align="center">
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=20&amp;color=C4A46C&amp;center=true&amp;vCenter=true&amp;width=750&amp;pause=100000&amp;lines=Let+every+feeling+that+is+hard+to+name+be+seen+and+understood.&amp;weight=600" alt="Let every feeling that is hard to name be seen and understood."/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=Product+%C2%B7+AI+Systems+%26+Skills+%C2%B7+Digital+Creation" alt="Product · AI Systems &amp; Skills · Digital Creation"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=Product+%C2%B7+AI+Agent+%26+Skill+Development+%C2%B7+Digital+Content+Creation" alt="Product · AI Agent &amp; Skill Development · Digital Content Creation"/>
 <p>I use images, sound, and interaction to make small worlds you can touch and return to. They begin with feelings that are hard to name, while leaving the final meaning with you.</p>
-<p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="README.md">中文</a></p>
+<p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="https://shasha1108.github.io/shasha1108/index.html">Personal site</a></p>
 </div>
 
 <table><tr>
@@ -111,7 +111,9 @@ Keeps facts, inferences, and open questions separate so growth never eclipses re
 
 Development → QA automation → data product management → using technology to turn feelings and creative ideas into experiences
 
-[Complete portfolio](https://shasha1108.github.io/healing-visual-lab/) · [Xiaohongshu](https://xhslink.com/m/1kVPy4geTiQ) · [Personal profile](https://github.com/shasha1108)
+<div align="center">
+<h3><a href="https://github.com/shasha1108/shasha1108/blob/main/README.md">中文 →</a></h3>
+</div>
 
 ---
 

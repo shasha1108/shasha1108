@@ -1,9 +1,9 @@
 <div align="center">
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=20&amp;color=C4A46C&amp;center=true&amp;vCenter=true&amp;width=750&amp;pause=100000&amp;lines=%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82&amp;weight=600" alt="让每个说不清的情绪，都能被看见、被理解。"/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+AI+%E7%B3%BB%E7%BB%9F%E4%B8%8E+Skill+%E5%BC%80%E5%8F%91+%C2%B7+%E6%95%B0%E5%AD%97%E5%88%9B%E4%BD%9C" alt="产品经理 · AI 系统与 Skill 开发 · 数字创作"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+AI+Agent%E4%B8%8E+Skill+%E5%BC%80%E5%8F%91+%C2%B7+%E6%95%B0%E5%AD%97%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C" alt="产品经理 · AI Agent与 Skill 开发 · 数字内容创作"/>
 <p>我用图像、声音和交互，做一些可以被触碰、被重访的小世界。它们从难以命名的感受开始，也把最后的解释留给你。</p>
-<p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="README_EN.md">English</a></p>
+<p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="https://shasha1108.github.io/shasha1108/index.html">个人主页</a></p>
 </div>
 
 <table><tr>
@@ -111,7 +111,9 @@
 
 开发 → 自动化测试 → 数据产品经理 → 用技术把感受与创作变成可以被体验的东西
 
-[完整作品集](https://shasha1108.github.io/healing-visual-lab/) · [小红书](https://xhslink.com/m/1kVPy4geTiQ) · [个人主页](https://github.com/shasha1108)
+<div align="center">
+<h3><a href="https://github.com/shasha1108/shasha1108/blob/main/README_EN.md">English →</a></h3>
+</div>
 
 ---
 

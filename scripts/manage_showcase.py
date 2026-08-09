@@ -33,8 +33,8 @@ FIVE_PARTS_EN = [
 ]
 REQUIRED_SIGNATURE_ZH = "Sha.w.z / 云野自由"
 REQUIRED_SIGNATURE_EN = "Sha.w.z / 云野自由 (Yunye Ziyou)"
-REQUIRED_ROLE_ZH = "产品经理 · AI 系统与 Skill 开发 · 数字创作"
-REQUIRED_ROLE_EN = "Product · AI Systems & Skills · Digital Creation"
+REQUIRED_ROLE_ZH = "产品经理 · AI Agent与 Skill 开发 · 数字内容创作"
+REQUIRED_ROLE_EN = "Product · AI Agent & Skill Development · Digital Content Creation"
 REQUIRED_TITLE_ZH = "让每个说不清的情绪，都能被看见、被理解。"
 REQUIRED_TITLE_EN = "Let every feeling that is hard to name be seen and understood."
 REQUIRED_CORE_POSITIONING_ZH = [
