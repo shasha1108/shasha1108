@@ -1,0 +1,421 @@
+{
+  "source": {
+    "kind": "local, read-only profile snapshot",
+    "upstream_manifest": "https://github.com/shasha1108/healing-visual-lab/blob/main/works.json",
+    "upstream_ref": "origin/main",
+    "upstream_commit": "be87b9de1fbe7cf9d7ca541145861c534026009a",
+    "captured_on": "2026-08-09",
+    "upstream_work_count": 38,
+    "pages_base": "https://shasha1108.github.io/healing-visual-lab/",
+    "note_zh": "本快照仅保留本主页需要的作品事实；标题、slug、技术、数量与预览信息均抄录自上游 works.json。",
+    "note_en": "This is a read-only, profile-scoped snapshot. Titles, slugs, technical facts, counts, and preview information come from the upstream works.json."
+  },
+  "catalog": [
+  {
+    "slug": "eternal-bloom",
+    "title_zh": "永生花工坊",
+    "title_en": "Eternal Bloom",
+    "tagline": "调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html",
+    "preview_asset": "eternal-bloom_1.gif"
+  },
+  {
+    "slug": "bottled-cosmos",
+    "title_zh": "瓶装宇宙",
+    "title_en": "BOTTLED COSMOS",
+    "tagline": "把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html",
+    "preview_asset": "bottled-cosmos_1.gif"
+  },
+  {
+    "slug": "sealed-summer-jar",
+    "title_zh": "封存的四点钟",
+    "title_en": "Sealed Summer Jar",
+    "tagline": "一只玻璃罐，把一个不会结束的夏日下午四点钟封存了起来。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html",
+    "preview_asset": "sealed-summer-jar_1.gif"
+  },
+  {
+    "slug": "moon-cat",
+    "title_zh": "等月亮",
+    "title_en": "Waiting for the Moon",
+    "tagline": "A quiet moonlit window where a cat slowly falls asleep.",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html",
+    "preview_asset": "moon-cat_1.gif"
+  },
+  {
+    "slug": "the-old-signal",
+    "title_zh": "旧信号",
+    "title_en": "The Old Signal",
+    "tagline": "一台信号不好的旧电视，红青两个色版错开着呼吸；你每碰它一次，它就调准一点——直到屏幕里那个旧日的自己，回头看你一眼。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html",
+    "preview_asset": "the-old-signal_1.gif"
+  },
+  {
+    "slug": "tide-keeping-station",
+    "title_zh": "潮汐保管处",
+    "title_en": "Tide Keeping Station",
+    "tagline": "把缠成一团的事交给潮汐，它会替你拆开、带走，并留下回应。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html",
+    "preview_asset": "tide-keeping-station_1.gif"
+  },
+  {
+    "slug": "aquarium-2003",
+    "title_zh": "2003 水族馆",
+    "title_en": "Aquarium 2003",
+    "tagline": "你小时候盯过的那个屏保活了——缸里的鱼记得你",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html",
+    "preview_asset": "aquarium-2003_1.gif"
+  },
+  {
+    "slug": "first-light",
+    "title_zh": "第一束光",
+    "title_en": "First Light",
+    "tagline": "一颗黑色像素种子，在你的温度里长出第一束光。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/first-light/first-light.html",
+    "preview_asset": "first-light_1.gif"
+  },
+  {
+    "slug": "tree-remembers-wind",
+    "title_zh": "记得风的树",
+    "title_en": "The Tree That Remembers Wind",
+    "tagline": "释放与辽阔 —— 一座悬浮小岛上，像素树把每一次拂过树冠的手势变成一阵沿枝传播的风。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "migratory-bird-lighthouse",
+    "title_zh": "雾中候鸟灯塔",
+    "title_en": "Migratory Bird Lighthouse",
+    "tagline": "光落处，漂泊暂歇",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/migratory-bird-lighthouse/migratory-bird-lighthouse.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "overwork",
+    "title_zh": "下班回家了，脑子却还在加班",
+    "title_en": "Overwork",
+    "tagline": "把下班后仍在脑内重播的短语交出去，让语言松解成微光并自然沉底。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/overwork/overwork.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "transparent-dream-stratigraph",
+    "title_zh": "透明梦境地层仪",
+    "title_en": "Transparent Dream Stratigraph",
+    "tagline": "转动冠轮，地层仪将未说出口的梦压入一层发光的地质年轮。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/transparent-dream-stratigraph/transparent-dream-stratigraph.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "firefly-seed-jar",
+    "title_zh": "密封瓶里的萤火种子",
+    "title_en": "Firefly Seed Jar",
+    "tagline": "你碰到哪颗琥珀晶种，它就短暂相信春天来了，探出一根被拴住的萤光触角。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "clockwork-tidal-gauge",
+    "title_zh": "发条潮汐仪",
+    "title_en": "Clockwork Tidal Gauge",
+    "tagline": "触碰玻璃舱体，月相齿轮转动一格，潮汐随之涨落——一台封存在像素胶囊里的发条潮汐仪。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/clockwork-tidal-gauge/clockwork-tidal-gauge.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "tidal-moon-moss",
+    "title_zh": "玻璃钟罩里的潮汐月苔",
+    "title_en": "Tidal Moon Moss",
+    "tagline": "你碰了一下玻璃，罩里的月苔轻轻醒来，像一小片夜晚被照料。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "pocket-forest-radio",
+    "title_zh": "露光口袋森林电台",
+    "title_en": "Pocket Forest Radio",
+    "tagline": "轻拨调谐环，把一片像素森林调到你的频率上。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/pocket-forest-radio/pocket-forest-radio.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "oxygen-chamber",
+    "title_zh": "内心气象日记 · 60s 氧气舱",
+    "title_en": "Inner Weather Diary · 60s Oxygen Chamber",
+    "tagline": "60秒情绪氧气舱——选一种天气，让内心在玻璃小屋里安静呼吸",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "luminous-sea-bottle",
+    "title_zh": "玻璃瓶里的夜光海",
+    "title_en": "Luminous Sea Bottle",
+    "tagline": "一个封存在像素玻璃瓶里的发光海洋——触碰唤醒生物荧光，然后慢慢暗回宁静",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/luminous-sea-bottle/luminous-sea-bottle.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "crystal-turntable",
+    "title_zh": "雪夜晶莹唱片机",
+    "title_en": "Crystal Turntable",
+    "tagline": "屋外雪花纷飞，这里的旋律永远为你温暖。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html",
+    "preview_asset": "crystal-turntable_1.gif"
+  },
+  {
+    "slug": "sunken-treasure",
+    "title_zh": "Sunken Treasure",
+    "title_en": "Sunken Treasure",
+    "tagline": "像素鱼游进掌机传送门，逃逸到 3D 水晶水体中，蜕变为优雅的矢量鱼",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/sunken-treasure/sunken-treasure.html",
+    "preview_asset": "sunken-treasure_1.gif"
+  },
+  {
+    "slug": "drift-bottle",
+    "title_zh": "平行世界 · 漂流瓶生态系统",
+    "title_en": "Drift Bottle",
+    "tagline": "轻触漂流瓶，唤醒瓶中平行世界",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/drift-bottle/drift-bottle.html",
+    "preview_asset": "drift-bottle_1.gif"
+  },
+  {
+    "slug": "sunken-ipod",
+    "title_zh": "沉水 MP3",
+    "title_en": "Sunken iPod",
+    "tagline": "深海之底，一首七里香。触碰水面，音符如气泡升起。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/sunken-ipod/sunken-ipod.html",
+    "preview_asset": "sunken-ipod_1.gif"
+  },
+  {
+    "slug": "dreamcore-summer-rain",
+    "title_zh": "七里香",
+    "title_en": "Dreamcore Summer Night",
+    "tagline": "极致冷暖光碰撞 — 深黑蓝天 vs 售货机刺眼白光 vs 铁路脉冲红灯",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/dreamcore-summer-rain/dreamcore-summer-rain.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "windmill-valley",
+    "title_zh": "山谷里的风",
+    "title_en": "Windmill Valley",
+    "tagline": "风车在听，风铃在回答。一个你可以走进去的Frutiger Aero山谷",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/windmill-valley/windmill-valley.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "rice-fragrance",
+    "title_zh": "稻香",
+    "title_en": "Rice Fragrance",
+    "tagline": "稻香里的童年记忆",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/rice-fragrance/rice-fragrance.html",
+    "preview_asset": "rice-fragrance_1.gif"
+  },
+  {
+    "slug": "aero-slime",
+    "title_zh": "电子情绪宠物",
+    "title_en": "Aero Slime",
+    "tagline": "点击色块投喂情绪，双击玻璃释放惊吓——一只住在亚克力盒子里的电子史莱姆，用颜文字回应你的每一种心情",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/aero-slime/aero-slime.html",
+    "preview_asset": "aero-slime_1.gif"
+  },
+  {
+    "slug": "falling-verse",
+    "title_zh": "宇宙时钟",
+    "title_en": "Falling Verse",
+    "tagline": "时间的字符拓扑。数字从行星环上剥落，金→珊瑚粉→星空蓝，沉入幽蓝水面。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/falling-verse/falling-verse.html",
+    "preview_asset": "falling-verse_1.gif"
+  },
+  {
+    "slug": "pixel-aquarium",
+    "title_zh": "像素水族箱",
+    "title_en": "Pixel Aquarium",
+    "tagline": "晶莹剔透的 Frutiger Aero 水族箱，像素小鱼在毛玻璃内游动。单击投食，双击敲玻璃。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html",
+    "preview_asset": "pixel-aquarium_1.gif"
+  },
+  {
+    "slug": "unbound-mind",
+    "title_zh": "释·茧",
+    "title_en": "Unbound Mind",
+    "tagline": "这团乱麻，是你此刻的思绪吗？试着长按屏幕，慢慢抚平它们...",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html",
+    "preview_asset": "unbound-mind_1.png"
+  },
+  {
+    "slug": "grand-jiangshan",
+    "title_zh": "万里江山图 - 宏大视界",
+    "title_en": "Grand Jiangshan",
+    "tagline": "我见青山多妩媚，料青山见我应如是",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/grand-jiangshan/grand-jiangshan.html",
+    "preview_asset": "grand-jiangshan_1.png"
+  },
+  {
+    "slug": "time-particle-clock",
+    "title_zh": "时间流转 - 粒子时钟",
+    "title_en": "Time Particle Clock",
+    "tagline": "时间是流动的粒子——拖拽加速，松开即止，每一秒都有声音",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/time-particle-clock/time-particle-clock.html",
+    "preview_asset": "time-particle-clock_1.png"
+  },
+  {
+    "slug": "breathing-boundary",
+    "title_zh": "呼吸边界",
+    "title_en": "Breathing Boundary",
+    "tagline": "看似隔绝，实则翻译——这是一层活着的、会呼吸的边界",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/breathing-boundary/breathing-boundary.html",
+    "preview_asset": "breathing-boundary_1.png"
+  },
+  {
+    "slug": "silent-translator",
+    "title_zh": "无声的翻译官",
+    "title_en": "Silent Translator",
+    "tagline": "身体替你说了说不出的话",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/silent-translator/silent-translator.html",
+    "preview_asset": "silent-translator_1.png"
+  },
+  {
+    "slug": "breath-mirror",
+    "title_zh": "息流 · 幻镜",
+    "title_en": "Breath Mirror",
+    "tagline": "这里没有深渊，也没有波澜",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html",
+    "preview_asset": "breath-mirror_1.png"
+  },
+  {
+    "slug": "sumi-e-taichi",
+    "title_zh": "水墨太极",
+    "title_en": "Sumi-e Taichi",
+    "tagline": "一滴墨落入宣纸——既是破坏，也是开始",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/sumi-e-taichi/sumi-e-taichi.html",
+    "preview_asset": "sumi-e-taichi.jpg"
+  },
+  {
+    "slug": "inkmeditation",
+    "title_zh": "墨池心境",
+    "title_en": "Inkmeditation",
+    "tagline": "算法物理学 × 视觉设计 × 心理疗愈",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html",
+    "preview_asset": "inkmeditation.jpg"
+  },
+  {
+    "slug": "cosmic-recollection",
+    "title_zh": "宇宙回响 V78",
+    "title_en": "Cosmic Recollection",
+    "tagline": "万物皆有裂痕——那是光照进来的地方",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/cosmic-recollection/cosmic-recollection.html",
+    "preview_asset": "cosmic-recollection.jpg"
+  },
+  {
+    "slug": "layered-mountains",
+    "title_zh": "青绿·层峦",
+    "title_en": "Layered Mountains",
+    "tagline": "触之即散，聚散随缘",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html",
+    "preview_asset": "layered-mountains.jpg"
+  }
+]
+  ,
+  "works": [
+    {
+      "slug": "eternal-bloom",
+      "title_zh": "永生花工坊",
+      "title_en": "Eternal Bloom",
+      "tagline": "调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js", "Canvas 2D", "Web Audio API"],
+      "particle_count": "N/A",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html",
+      "preview_asset": "eternal-bloom_1.gif"
+    },
+    {
+      "slug": "bottled-cosmos",
+      "title_zh": "瓶装宇宙",
+      "title_en": "BOTTLED COSMOS",
+      "tagline": "把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。",
+      "render": "WebGL (Three.js)",
+      "tech": ["p5.js", "Three.js", "Canvas 2D"],
+      "particle_count": "N/A",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html",
+      "preview_asset": "bottled-cosmos_1.gif"
+    },
+    {
+      "slug": "layered-mountains",
+      "title_zh": "青绿·层峦",
+      "title_en": "Layered Mountains",
+      "tagline": "触之即散，聚散随缘",
+      "render": "WebGL (Three.js)",
+      "tech": ["Three.js WebGL", "250K particles", "layered landscape rendering", "raycaster interaction"],
+      "particle_count": "250K",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html",
+      "preview_asset": "layered-mountains.jpg"
+    },
+    {
+      "slug": "aquarium-2003",
+      "title_zh": "2003 水族馆",
+      "title_en": "Aquarium 2003",
+      "tagline": "你小时候盯过的那个屏保活了——缸里的鱼记得你",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js", "Canvas 2D", "Web Audio API", "localStorage"],
+      "particle_count": "N/A",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html",
+      "preview_asset": "aquarium-2003_1.gif"
+    },
+    {
+      "slug": "tree-remembers-wind",
+      "title_zh": "记得风的树",
+      "title_en": "The Tree That Remembers Wind",
+      "tagline": "释放与辽阔 —— 一座悬浮小岛上，像素树把每一次拂过树冠的手势变成一阵沿枝传播的风。",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js", "Canvas 2D", "Web Audio API", "Pointer Events", "Graph-Distance Wind Propagation"],
+      "particle_count": "~80 dust motes + 6 fireflies + ~200 leaves + dynamic stars + ~40 grass blades",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html",
+      "preview_asset": null
+    },
+    {
+      "slug": "firefly-seed-jar",
+      "title_zh": "密封瓶里的萤火种子",
+      "title_en": "Firefly Seed Jar",
+      "tagline": "你碰到哪颗琥珀晶种，它就短暂相信春天来了，探出一根被拴住的萤光触角。",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js", "Canvas 2D", "Canvas Glass Pipeline", "Web Audio API", "Touch Interaction"],
+      "particle_count": "~130 seeds + sprout motes + ripples concurrently active",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html",
+      "preview_asset": null
+    },
+    {
+      "slug": "tidal-moon-moss",
+      "title_zh": "玻璃钟罩里的潮汐月苔",
+      "title_en": "Tidal Moon Moss",
+      "tagline": "你碰了一下玻璃，罩里的月苔轻轻醒来，像一小片夜晚被照料。",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js", "Canvas 2D", "Canvas Glass Pipeline", "Web Audio API", "Touch Wave Propagation"],
+      "particle_count": "variable (~60 spores + wakeWaves + ripples concurrently active)",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html",
+      "preview_asset": null
+    },
+    {
+      "slug": "windmill-valley",
+      "title_zh": "山谷里的风",
+      "title_en": "Windmill Valley",
+      "tagline": "风车在听，风铃在回答。一个你可以走进去的Frutiger Aero山谷",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js", "Canvas2D", "CSS Glassmorphism", "Web Audio API"],
+      "particle_count": "N/A",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/windmill-valley/windmill-valley.html",
+      "preview_asset": null
+    },
+    {
+      "slug": "oxygen-chamber",
+      "title_zh": "内心气象日记 · 60s 氧气舱",
+      "title_en": "Inner Weather Diary · 60s Oxygen Chamber",
+      "tagline": "60秒情绪氧气舱——选一种天气，让内心在玻璃小屋里安静呼吸",
+      "render": "Canvas2D (p5.js)",
+      "tech": ["p5.js Canvas 2D", "Web Audio API OscillatorNode", "BiquadFilterNode ambient synthesis", "mood-based particle system"],
+      "particle_count": "yes",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html",
+      "preview_asset": "oxygen-chamber_1.gif"
+    }
+  ]
+}

@@ -1,125 +1,230 @@
-<div align="center">
+# Sha.w.z / 云野自由 (Yunye Ziyou) · Living Instrument Room
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=20&color=C4A46C&center=true&vCenter=true&width=900&pause=100000&lines=Giving+every+unspoken+emotion+a+shape+that+can+be+seen+and+understood." alt="Giving every unspoken emotion a shape that can be seen and understood." />
+**AI Systems Builder**
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=8B9DC3&center=true&vCenter=true&width=700&pause=100000&lines=Product+Manager+%C2%B7+Agent%2FSkill+Dev+%C2%B7+Content+Creation" alt="Healing Visual Lab" />
+> A responsive instrument for what cannot yet be said.
 
-<p>
-  <a href="mailto:zhangwensha1108@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"/>
-  </a>
-  <a href="mailto:wensha_zhang@163.com">
-    <img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-C20C0C?style=flat-square&logo=maildotru&logoColor=white" alt="Email"/>
-  </a>
-  <a href="https://xhslink.com/m/1kVPy4geTiQ">
-    <img src="https://img.shields.io/badge/Xiaohongshu-云野自由-FF2442?style=flat-square&logo=xiaohongshu&logoColor=white" alt="Xiaohongshu"/>
-  </a>
-  <a href="https://shasha1108.github.io/shasha1108/">
-    <img src="https://img.shields.io/badge/GitHub-shasha1108-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-</p>
+This is neither a project cabinet nor a skills list. It is a working instrument room: images, gestures, time, and memory are held inside revisitable systems that begin only when someone comes close.
 
-<br/>
+> I do not build one-size-fits-all Agents.
+> I build instruments that can hold a specific creative judgment.
+> Some hold the unspoken emotions; some hold creative work; some hold evidence.
 
-<!-- ═══════════ SHARE ═══════════ -->
+[Open an instrument](#02--three-flagships) · [See the frames](#01--frame-archive) · [中文](README.md)
 
-</div>
+## 01 / Frame archive
 
----
+_Static horizontal recognition gallery (same configuration and order as the site)_
 
-## 🫧 About Me
-
-Developer → QA Automation → Data PM → AI Creator.
-
-I've spent years reading code and data. The most complex systems can all be modeled, rendered, and optimized.
-
-But the human heart cannot.
-
-Those feelings stuck in your chest, caught in your throat — indescribable, yet so real — have no API, no logs, no debugging tool to tell you where they're stuck.
-
-So now, this is what I spend my time on:
-
-Creating emotional illustrations, copywriting, and interactive digital experiences.
-Translating the formless, nameless, homeless emotions
-into shapes that can be seen, touched, and released.
-
-Giving every unspoken emotion a concrete expression.
-
----
-
-## 🎨 Gallery
-
-<h3 align="center" style="color:#4493f8;">🖱️ Scroll to explore →</h3>
-
-<pre style="background:transparent;border:none;font:inherit;padding:8px 0;margin:0;overflow-x:auto;">
-<img src="assets/gallery/115.png" width="290" style="border-radius:6px;"><img src="assets/gallery/114.png" width="290" style="border-radius:6px;"><img src="assets/gallery/116.png" width="290" style="border-radius:6px;"><img src="assets/gallery/100.png" width="290" style="border-radius:6px;"><img src="assets/gallery/102.png" width="290" style="border-radius:6px;"><img src="assets/gallery/103.png" width="290" style="border-radius:6px;"><img src="assets/gallery/104.png" width="290" style="border-radius:6px;"><img src="assets/gallery/105.png" width="290" style="border-radius:6px;"><img src="assets/gallery/106.png" width="290" style="border-radius:6px;"><img src="assets/gallery/107.png" width="290" style="border-radius:6px;"><img src="assets/gallery/108.png" width="290" style="border-radius:6px;"><img src="assets/gallery/109.png" width="290" style="border-radius:6px;"><img src="assets/gallery/110.png" width="290" style="border-radius:6px;"><img src="assets/gallery/111.png" width="290" style="border-radius:6px;"><img src="assets/gallery/112.png" width="290" style="border-radius:6px;"><img src="assets/gallery/113.png" width="290" style="border-radius:6px;"><img src="assets/gallery/117.png" width="290" style="border-radius:6px;"><img src="assets/gallery/118.png" width="290" style="border-radius:6px;"><img src="assets/gallery/119.jpg" width="290" style="border-radius:6px;"><img src="assets/gallery/120.png" width="290" style="border-radius:6px;"><img src="assets/gallery/121.png" width="290" style="border-radius:6px;">
-</pre>
-</div>
-
----
-
-## 🌀 Healing Visual Lab
-
-### ✦ Latest Works
-
-<!-- LATEST_WORKS_START -->
-<table width="100%">
-<tr><th width="30%">Work</th><th  width="70%">In One Line</th></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html">Sealed Summer Jar</a></b></td><td>Sealed Summer Jar</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html">Waiting for the Moon</a></b></td><td>Waiting for the Moon</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html">The Old Signal</a></b></td><td>The Old Signal</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html">Tide Keeping Station</a></b></td><td>Tide Keeping Station</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html">Aquarium 2003</a></b></td><td>Aquarium 2003</td></tr>
-</table>
-<!-- LATEST_WORKS_END -->
-
-<h3 align="center">
-  <a href="https://shasha1108.github.io/healing-visual-lab/">Explore All Works →</a>
-</h3>
-
-<p align="center">
-  <em>If one of these pieces made you feel seen — that's the only reason this exists.</em>
-  <br/>
-  <em>If one of these pieces made you feel seen — that's the only reason these lines of code exist.</em>
-</p>
-
-<p align="center">
-  <a href="https://github.com/shasha1108/healing-visual-lab">
-    <img src="https://img.shields.io/github/stars/shasha1108/healing-visual-lab?style=social" alt="Stars"/>
-  </a>
-  &ensp;
-  <sub>If a piece resonated with you, ⭐ Star to help others find it too.</sub>
-</p>
-
----
-
-## 🛠️ Skills
-
-<table width="100%">
-<tr><th width="30%">Skill</th><th width="70%">Description</th></tr>
-<tr><td>🔀 Systematic Decomposition</td><td>Breaking chaotic requirements into closed loops — input → judgment → output → feedback → iteration</td></tr>
-<tr><td>🤖 Agent & Skill Dev</td><td>From rule definition to fallback logic, building AI that actually does the work. Not writing prompts — designing systems</td></tr>
-<tr><td>🎬 AI Content Creation</td><td>Images · Video · Copy · Apps. The tool doesn't matter — precise expression does</td></tr>
-<tr><td>🎯 Creative Judgment</td><td>Knowing what resonates, what form suits what emotion, what's not worth making</td></tr>
-<tr><td>🧬 Knowledge Engineering</td><td>Turning personal experience into structured rules. The system gets smarter, and the rules outlast you</td></tr>
+<table>
+<tr>
+<td align="center" data-gallery-id="115">
+<img src="assets/gallery/115.webp" width="154" alt="Gallery image 115"/>
+</td>
+<td align="center" data-gallery-id="114">
+<img src="assets/gallery/114.webp" width="154" alt="Gallery image 114"/>
+</td>
+<td align="center" data-gallery-id="116">
+<img src="assets/gallery/116.webp" width="154" alt="Gallery image 116"/>
+</td>
+<td align="center" data-gallery-id="100">
+<img src="assets/gallery/100.webp" width="154" alt="Gallery image 100"/>
+</td>
+<td align="center" data-gallery-id="102">
+<img src="assets/gallery/102.webp" width="154" alt="Gallery image 102"/>
+</td>
+<td align="center" data-gallery-id="103">
+<img src="assets/gallery/103.webp" width="154" alt="Gallery image 103"/>
+</td>
+<td align="center" data-gallery-id="104">
+<img src="assets/gallery/104.webp" width="154" alt="Gallery image 104"/>
+</td>
+<td align="center" data-gallery-id="105">
+<img src="assets/gallery/105.webp" width="154" alt="Gallery image 105"/>
+</td>
+<td align="center" data-gallery-id="106">
+<img src="assets/gallery/106.webp" width="154" alt="Gallery image 106"/>
+</td>
+<td align="center" data-gallery-id="107">
+<img src="assets/gallery/107.webp" width="154" alt="Gallery image 107"/>
+</td>
+<td align="center" data-gallery-id="108">
+<img src="assets/gallery/108.webp" width="154" alt="Gallery image 108"/>
+</td>
+<td align="center" data-gallery-id="109">
+<img src="assets/gallery/109.webp" width="154" alt="Gallery image 109"/>
+</td>
+<td align="center" data-gallery-id="110">
+<img src="assets/gallery/110.webp" width="154" alt="Gallery image 110"/>
+</td>
+<td align="center" data-gallery-id="111">
+<img src="assets/gallery/111.webp" width="154" alt="Gallery image 111"/>
+</td>
+<td align="center" data-gallery-id="112">
+<img src="assets/gallery/112.webp" width="154" alt="Gallery image 112"/>
+</td>
+<td align="center" data-gallery-id="113">
+<img src="assets/gallery/113.webp" width="154" alt="Gallery image 113"/>
+</td>
+<td align="center" data-gallery-id="117">
+<img src="assets/gallery/117.webp" width="154" alt="Gallery image 117"/>
+</td>
+<td align="center" data-gallery-id="118">
+<img src="assets/gallery/118.webp" width="154" alt="Gallery image 118"/>
+</td>
+<td align="center" data-gallery-id="119">
+<img src="assets/gallery/119.webp" width="154" alt="Gallery image 119"/>
+</td>
+<td align="center" data-gallery-id="120">
+<img src="assets/gallery/120.webp" width="154" alt="Gallery image 120"/>
+</td>
+<td align="center" data-gallery-id="121">
+<img src="assets/gallery/121.webp" width="154" alt="Gallery image 121"/>
+</td>
+</tr>
 </table>
 
----
+_Work facts come from a local read-only Healing Visual Lab snapshot (origin/main)._
 
-## 🎯 More from @shasha1108
+## 02 / Three flagships
 
-<table width="100%">
-<tr><th width="25%">Repo</th><th  width="75%">About</th></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>Interactive digital healing works — 24 Three.js/WebGL & Canvas experiments</td></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>Touch-driven healing H5 generator — GPU fluid simulation, WebGL shaders</td></tr>
-<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>Pixel art × glassmorphism — cyber pets, digital aquariums</td></tr>
-<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>Emotional content creation — metaphor mining, scene writing, visual storytelling</td></tr>
-<tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>One-command H5 publishing to GitHub Pages — drag, drop, live</td></tr>
-</table>
+### [Eternal Bloom](https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html)
 
----
+1. **What it holds** — It holds the suspension of “I am afraid it will disappear”: a bloom is allowed to continue rather than being rushed into a single explanation.
+2. **What the visitor must do** — The visitor must tune the flower's colour, form, or rhythm first, rather than receiving comfort already completed for them.
+3. **How the system decides** — The system reads only explicit parameters and touch. It does not infer an emotion or name the flower for a person.
+4. **How the world responds** — Parameters and touch alter the bloom while sound arrives with it. The response is visible without demanding an account.
+5. **Why this interaction must be this way** — Only a small, deliberate choice makes the bell jar's continuing bloom care left by the visitor, rather than automated background animation.
 
-<p align="center">
-  <sub>Sha.w.z · <a href="README.md">中文</a></sub>
+<a href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html" target="_blank" rel="noopener">Open ↗</a>
 
-<p align="center"><sub>Source code under <a href="LICENSE">MIT License</a></sub></p></p>
+### [BOTTLED COSMOS](https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html)
+
+1. **What it holds** — It holds the immensity and brevity of “there is too much to see”: every star lives for thirty seconds, yet can rest in a bottle.
+2. **What the visitor must do** — The visitor must choose when to approach and open the bottle. The homepage does not run a cosmos in the background for anyone.
+3. **How the system decides** — The system treats that explicit entry as its only start condition, then gives stars a finite interval to appear, change, and go dark.
+4. **How the world responds** — After entry, the stars run within their thirty seconds. The glass boundary makes an immense scale feel holdable.
+5. **Why this interaction must be this way** — A cosmos must be opened by a person so brevity is not attention taken by an algorithm, but time deliberately chosen.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html" target="_blank" rel="noopener">Open ↗</a>
+
+### [Layered Mountains](https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html)
+
+1. **What it holds** — It holds moments that neither want to be fixed nor called lost: scattering is not loss, and gathering is not an obligation to stay.
+2. **What the visitor must do** — The visitor must rest a gaze or pointer on the ridges. No personal account is required, only a willingness to stay.
+3. **How the system decides** — The system uses the relation between raycasting and the particle landscape to decide local disturbance; it infers no psychological state from a visitor.
+4. **How the world responds** — Blue-green ridges loosen, appear, and gather anew in local relation. The reply is a mountain seen differently, not a popup.
+5. **Why this interaction must be this way** — Only an approach that changes the act of seeing preserves room for things to gather and scatter; turning it into a reward click would remove that room.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html" target="_blank" rel="noopener">Open ↗</a>
+
+## 03 / Responsive small worlds
+
+### [Aquarium 2003](https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html)
+
+A childhood screensaver aquarium is worth reopening because it keeps a memory of the visit.
+
+Primary gesture: feed, tap the glass softly, and stay to watch.
+
+Response: the fish, sound, and retained traces of a visit change together.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html" target="_blank" rel="noopener">Enter this work ↗</a>
+
+### [The Tree That Remembers Wind](https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html)
+
+A gesture over its canopy becomes wind travelling through branches, so every return can begin another small expanse.
+
+Primary gesture: brush across the canopy.
+
+Response: wind, leaves, and pentatonic sound travel outward by distance.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html" target="_blank" rel="noopener">Enter this work ↗</a>
+
+### [Firefly Seed Jar](https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html)
+
+It is a bottle that can be cared for: seeds do not need to be rushed, and looking in again is itself permission.
+
+Primary gesture: touch or hold an amber seed.
+
+Response: a seed briefly sprouts; luminous tendrils and ripples appear inside the glass.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html" target="_blank" rel="noopener">Enter this work ↗</a>
+
+### [Tidal Moon Moss](https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html)
+
+Night is reduced to a bell jar. It asks for no completion, only waits for the next gentle knock.
+
+Primary gesture: touch the bell jar.
+
+Response: moon moss wakes, sending glow and tide-like waves outward.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html" target="_blank" rel="noopener">Enter this work ↗</a>
+
+### [Windmill Valley](https://shasha1108.github.io/healing-visual-lab/windmill-valley/windmill-valley.html)
+
+The windmill listens and wind chimes answer; it is weather one can enter, not a one-time display.
+
+Primary gesture: enter the valley and move toward wind and chimes.
+
+Response: windmill, chimes, and ambient sound hand the reply from one to another.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/windmill-valley/windmill-valley.html" target="_blank" rel="noopener">Enter this work ↗</a>
+
+### [Inner Weather Diary · 60s Oxygen Chamber](https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html)
+
+An emotion need not be named at once. Choosing weather and taking sixty seconds to breathe is a diary entrance designed for return.
+
+Primary gesture: choose weather, then begin or end a 60-second breath.
+
+Response: weather, pixel particles, and ambient sound shift inside the glass room.
+
+<a href="https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html" target="_blank" rel="noopener">Enter this work ↗</a>
+
+## 04 / Three system benches
+
+### 01 · Feeling Instruments
+
+**PRIVATE SYSTEM / NO SOURCE LINK**
+
+**Members** — healing-space / pixel-bloom / Healing Visual Lab
+
+Turns hard-to-name feelings into experiences that require a human action and return a response state.
+
+**Redacted flow** — `Feeling → metaphor → irreplaceable action → response state`
+
+### 02 · Creative Instruments
+
+**PRIVATE SYSTEM / NO SOURCE LINK**
+
+**Members** — content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish
+
+Routes creative input through scene judgment and specialist executors while keeping final confirmation with the user.
+
+**Redacted flow** — `Input → scene judgment → handoff → specialist executor → user confirmation`
+
+### 03 · Evidence Instruments
+
+**PRIVATE SYSTEM / NO SOURCE LINK**
+
+**Members** — content-growth-advisor / yunye-growth-lab / creator-growth-workbench
+
+Separates growth and creative judgment back into facts, inferences, and open validations before continuing with reviewable experiments.
+
+**Redacted flow** — `Facts → inference → to be verified → single-variable experiment → real retrospective`
+
+## 05 / What I refuse to automate
+
+- I do not treat missing data as `0`.
+- I do not write a completed publication as proof that growth happened.
+- I do not confirm a user’s creative intent on their behalf.
+- I do not let a formula replace a real reader goal.
+- I do not let a click become an effect with no metaphorical meaning.
+- I do not use a one-size-fits-all Agent to conceal the absence of professional judgment.
+
+## 06 / Path and entrances
+
+Development → QA automation → data products → an AI systems builder who engineers creative judgment
+
+[Complete portfolio](https://shasha1108.github.io/healing-visual-lab/) · [Xiaohongshu](https://xhslink.com/m/1kVPy4geTiQ) · [GitHub](https://github.com/shasha1108) · [Contact via Xiaohongshu DM](https://xhslink.com/m/1kVPy4geTiQ)
+
+<sub>No background iframes, no autoplaying H5: every instrument waits for an explicit entry.</sub>

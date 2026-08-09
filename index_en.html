@@ -1,673 +1,569 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sha.w.z — Giving every unspoken emotion a shape that can be seen and understood. Healing Visual Lab · Interactive digital healing.">
-<meta name="theme-color" content="#74c5e3">
-<title>Sha.w.z</title>
-<style>
-  /* ── 基础重置 ── */
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="This is neither a project cabinet nor a skills list. It is a working instrument room: images, gestures, time, and memory are held inside revisitable systems that begin only when someone comes close.">
+  <meta name="theme-color" content="#f4efe4">
+  <title>Sha.w.z / 云野自由 (Yunye Ziyou) · Living Instrument Room</title>
+  <style>
+:root {
+  --paper: #f4efe4;
+  --paper-deep: #e8decb;
+  --ink: #1b1b18;
+  --ink-soft: #4c4a43;
+  --glass: #3d8892;
+  --amber: #ae6d22;
+  --moss: #4e6955;
+  --signal: #a33a31;
+  --rule: rgba(27, 27, 24, .22);
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --serif: Iowan Old Style, Songti SC, STSong, Noto Serif CJK SC, Georgia, serif;
+}
 
-  /* ── 核心排版：Frutiger Aero 标志性的无衬线字体 ── */
-  body {
-    font-family: "Segoe UI", "Frutiger", "Trebuchet MS", "PingFang SC", "Microsoft YaHei", sans-serif;
-    color: #1a4a5e;
-    background: linear-gradient(160deg, #a8e6f8 0%, #cdf0fa 30%, #e4f8f0 65%, #f4fcf9 100%);
-    line-height: 1.8;
-    min-height: 100vh;
-  }
-
-  /* ── 动效底层 ── */
-  .bg-layer {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background: url('assets/bg.gif') center/cover no-repeat;
-    opacity: 0.15;
-    filter: blur(8px) saturate(1.4) brightness(1.2);
-  }
-
-  /* ── Frutiger Aero 环境光与纯 CSS 高光气泡 ── */
-  .bg-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    background:
-      radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.7) 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 20%, rgba(90, 200, 240, 0.4) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 85%, rgba(140, 240, 190, 0.3) 0%, transparent 55%);
-    pointer-events: none;
-  }
-
-  /* 纯 CSS 果冻气泡效果 */
-  .bg-overlay::before, .bg-overlay::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    /* 玻璃气泡的高光材质 */
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.1) 60%, transparent);
-    box-shadow: inset -4px -4px 12px rgba(100, 200, 255, 0.3), 0 6px 15px rgba(0,0,0,0.06);
-  }
-  .bg-overlay::before {
-    width: 180px; height: 180px; top: 15%; left: 5%;
-    animation: aeroFloat 12s infinite ease-in-out;
-  }
-  .bg-overlay::after {
-    width: 90px; height: 90px; bottom: 20%; right: 10%;
-    animation: aeroFloat 15s infinite ease-in-out reverse;
-  }
-
-  @keyframes aeroFloat {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-30px) scale(1.05); }
-  }
-
-  /* ── 内容层 ── */
-  main {
-    position: relative;
-    z-index: 2;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 50px 24px 80px;
-  }
-
-  /* ── 英雄区 (Hero) ── */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 40px 0;
-  }
-
-  .hero .typing {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 4px 6px rgba(0, 100, 150, 0.15));
-  }
-
-  .hero .motto {
-    font-size: clamp(14px, 1.8vw, 17px);
-    letter-spacing: 6px;
-    color: #2a7a8a;
-    margin: 28px 0;
-    font-weight: 400;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-  }
-
-  .hero .badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .hero .badges img { 
-    height: 30px; 
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0, 80, 120, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .hero .badges img:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 150, 220, 0.3);
-  }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 40px;
-    font-size: 12px;
-    letter-spacing: 6px;
-    font-weight: bold;
-    color: #5aaccc;
-    animation: fadePulse 3s ease-in-out infinite;
-    text-shadow: 0 2px 4px rgba(255,255,255,0.9);
-  }
-
-  @keyframes fadePulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-  }
-
-  /* ── Windows Aero Glass 拟物玻璃卡片 ── */
-  section {
-    position: relative;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.6) 0%, rgba(240, 250, 255, 0.3) 100%);
-    backdrop-filter: blur(20px) saturate(1.3);
-    -webkit-backdrop-filter: blur(20px) saturate(1.3);
-    /* 高光描边与内发光 */
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 16px;
-    padding: 48px 40px;
-    margin-bottom: 35px;
-    box-shadow: 
-      0 12px 32px rgba(10, 80, 120, 0.12), 
-      inset 0 1px 2px rgba(255, 255, 255, 0.9);
-    overflow: hidden;
-  }
-
-  /* 卡片顶部仿玻璃反光层 */
-  section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 35%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-    pointer-events: none;
-    border-radius: 16px 16px 0 0;
-  }
-
-  section h2 {
-    position: relative;
-    font-size: clamp(20px, 2.8vw, 24px);
-    letter-spacing: 6px;
-    color: #2a7a9a; /* 光滑的深天蓝 */
-    font-weight: 600;
-    margin-bottom: 28px;
-    text-align: center;
-    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.9);
-  }
-
-  section h3 {
-    position: relative;
-    font-size: clamp(15px, 2vw, 17px);
-    letter-spacing: 4px;
-    color: #3a9ab8;
-    font-weight: 600;
-    margin: 24px 0 14px;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-  }
-
-  section p {
-    position: relative;
-    font-size: 15px;
-    color: #2a5a6a;
-    margin-bottom: 14px;
-  }
-
-  section blockquote {
-    position: relative;
-    /* 果冻感引用框 */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255,255,255,0.1) 100%);
-    border-left: 4px solid #5ab0ea;
-    border-radius: 4px;
-    padding: 16px 20px;
-    font-style: italic;
-    color: #2a6a80;
-    margin: 18px 0;
-    box-shadow: 0 4px 10px rgba(0, 100, 150, 0.05);
-  }
-
-  section strong {
-    color: #0078d7; /* 经典的 Windows Blue */
-    font-weight: 600;
-  }
-
-  /* ── 拟物感内凹代码/路径面板 ── */
-  .career-path, .tech-spectrum {
-    position: relative;
-    font-family: "Cascadia Code", "Courier New", monospace;
-    font-size: 13px;
-    color: #1a5a70;
-    /* 内发光与凹陷阴影 */
-    background: linear-gradient(180deg, rgba(230, 245, 250, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-top: 1px solid rgba(180, 210, 230, 0.6);
-    border-radius: 10px;
-    padding: 22px 26px;
-    margin: 20px 0;
-    white-space: pre;
-    overflow-x: auto;
-    line-height: 1.9;
-    box-shadow: inset 0 3px 8px rgba(0, 90, 140, 0.08), 0 2px 0 rgba(255,255,255,0.8);
-  }
-
-  /* ── 画廊滚动区 ── */
-  .gallery-strip {
-    position: relative;
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 15px 5px 25px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* 拟物风半透明滚动条 */
-  .gallery-strip::-webkit-scrollbar { height: 8px; }
-  .gallery-strip::-webkit-scrollbar-track { background: rgba(200, 230, 240, 0.4); border-radius: 4px; }
-  .gallery-strip::-webkit-scrollbar-thumb { 
-    background: linear-gradient(180deg, #99d6eb 0%, #5cbfe6 100%); 
-    border-radius: 4px; 
-    border: 1px solid rgba(255,255,255,0.8);
-  }
-
-  .gallery-strip img {
-    height: 220px;
-    width: auto;
-    border-radius: 8px;
-    border: 2px solid rgba(255,255,255,0.9);
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 80, 120, 0.15);
-  }
-
-  .gallery-strip img:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 120, 180, 0.25), 0 0 15px rgba(255,255,255,0.8);
-  }
-
-  /* ── 光泽感表格 ── */
-  .works-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 10px;
-    background: rgba(255,255,255,0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-  }
-
-  .works-table th {
-    text-align: left;
-    padding: 12px 14px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(230,245,255,0.7) 100%);
-    color: #005b8f;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 13px;
-    border-bottom: 2px solid rgba(130, 200, 230, 0.5);
-  }
-
-  .works-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    vertical-align: middle;
-    color: #1a4f66;
-  }
-
-  .works-table tr:hover td {
-    background: rgba(255, 255, 255, 0.5);
-  }
-
-  /* Aero 亮蓝色发光链接 */
-  .works-table a {
-    color: #0078d7;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .works-table a:hover { 
-    color: #00a2ed; 
-    text-shadow: 0 0 10px rgba(0, 162, 237, 0.4); 
-  }
-
-  .works-table .tech-tags {
-    font-size: 12px;
-    color: #55879e;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.8);
-  }
-
-  /* ── 按钮行 ── */
-  .btn-row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 28px 0;
-  }
-
-  .btn-row a img { 
-    height: 42px; 
-    border-radius: 6px; 
-    box-shadow: 0 4px 12px rgba(0, 100, 150, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .btn-row a:hover img {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 150, 220, 0.35);
-  }
-
-  /* ── 底部 (Footer) ── */
-  footer {
-    text-align: center;
-    padding: 40px 0 30px;
-    font-size: 13px;
-    color: #5a9aaa;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.7);
-  }
-
-  footer a { color: #5aaccc; text-decoration: none; font-weight: bold; }
-  footer a:hover { color: #0078d7; }
-
-  /* ── 移动端适配 ── */
-  @media (max-width: 768px) {
-    main { padding: 32px 14px 48px; }
-    .hero { min-height: 85vh; }
-    section { padding: 32px 20px; border-radius: 12px; }
-    .gallery-strip img { height: 160px; }
-    .works-table { font-size: 13px; }
-    .works-table th, .works-table td { padding: 10px 8px; }
-    .works-table .tech-tags { display: block; margin-top: 4px; }
-  }
-
-  /* ── 语言切换 ── */
-  .lang-toggle {
-    position: fixed; top: 20px; right: 24px; z-index: 10;
-    font-family: "Segoe UI", "Frutiger", "PingFang SC", sans-serif;
-    font-size: 12px; font-weight: 600; letter-spacing: 2px;
-    color: #3a6a64; text-decoration: none;
-    background: rgba(255,255,255,0.5); backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 20px; padding: 6px 16px;
-    box-shadow: 0 2px 10px rgba(0,80,100,0.08);
-    transition: all 0.3s ease;
-  }
-  .lang-toggle:hover {
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 4px 16px rgba(0,100,140,0.15);
-    color: #1a4a44;
-  }
-
-  #fish-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.2; }
-  #fish-layer canvas { position: fixed; inset: 0; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .bg-layer { filter: blur(8px) saturate(1); opacity: 0.1; }
-    .bg-overlay::before, .bg-overlay::after { animation: none; }
-    #fish-layer { display: none; }
-  }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 0 49%, rgba(81, 70, 48, .025) 49% 51%, transparent 51%),
+    var(--paper);
+  font-family: var(--serif);
+  line-height: 1.7;
+}
+button, a { font: inherit; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+.page-shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+.topbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 18px;
+  padding: 18px 0; border-bottom: 1px solid var(--rule);
+}
+.wordmark, .meta, .section-index, .instrument-code, .world-number, .bench-id, .private-tag {
+  font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase;
+}
+.wordmark { font-size: .78rem; text-decoration: none; }
+.language-link { font-size: .82rem; text-underline-offset: .25em; }
+.hero { min-height: 88vh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .72fr); align-items: center; gap: clamp(36px, 7vw, 112px); padding: 62px 0 86px; }
+.eyebrow, .section-index { margin: 0 0 18px; color: var(--moss); font-size: .73rem; }
+.hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 6vw, 5.7rem); line-height: 1.05; font-weight: 500; letter-spacing: -.045em; }
+.hero-role { margin: 17px 0 0; color: var(--signal); font: .74rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.hero-copy { max-width: 600px; margin: 26px 0 0; color: var(--ink-soft); font-size: clamp(1rem, 1.6vw, 1.19rem); }
+.core-positioning { max-width: 680px; margin: 24px 0 0; padding: 13px 0 13px 18px; border-left: 2px solid var(--glass); }
+.core-positioning p { margin: 0; font-size: clamp(1rem, 1.55vw, 1.18rem); line-height: 1.55; }
+.core-positioning p + p { margin-top: 5px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+.action {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px;
+  border: 1px solid var(--ink); text-decoration: none; transition: transform .2s ease, background .2s ease;
+}
+.action:hover { transform: translateY(-2px); }
+.action-primary { background: var(--ink); color: var(--paper); }
+.action-secondary { border-color: var(--glass); color: var(--glass); }
+.jar-stage { position: relative; min-height: 405px; display: grid; place-items: center; }
+.jar-stage::before { content: ""; position: absolute; width: 78%; height: 1px; background: var(--signal); transform: rotate(-12deg); }
+.jar-svg { position: relative; width: min(100%, 390px); overflow: visible; }
+.jar-label { position: absolute; right: 0; bottom: 20px; color: var(--signal); font: .68rem/1.4 var(--mono); letter-spacing: .07em; }
+.section { position: relative; padding: clamp(72px, 9vw, 122px) 0; border-top: 1px solid var(--rule); }
+.section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 28px; align-items: end; margin-bottom: 38px; }
+.section-heading h2 { margin: 0; font-size: clamp(2rem, 4.4vw, 4rem); line-height: 1.06; font-weight: 500; letter-spacing: -.035em; }
+.section-heading p:last-child { margin: 0; max-width: 590px; color: var(--ink-soft); }
+.unspoken-line { position: relative; height: 27px; margin: 0 0 26px; color: var(--signal); }
+.unspoken-line::before { content: ""; position: absolute; top: 14px; left: 0; width: 100%; height: 1px; background: currentColor; }
+.unspoken-line span { position: absolute; top: 0; left: 0; padding-right: 9px; background: var(--paper); font: .64rem var(--mono); letter-spacing: .09em; }
+.line-track { color: var(--glass); }
+.line-track::after { content: ""; position: absolute; top: 10px; left: 29%; width: 9px; height: 9px; border: 1px solid currentColor; border-radius: 50%; background: var(--paper); }
+.line-stem { color: var(--amber); }
+.line-stem::before { transform: rotate(-1.2deg); transform-origin: left; }
+.line-stem::after { content: ""; position: absolute; top: 5px; left: 57%; width: 10px; height: 10px; background: var(--moss); border-radius: 100% 0 100% 0; transform: rotate(25deg); }
+.line-contour { color: var(--moss); }
+.line-contour::before { height: 11px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; background: transparent; }
+.line-state { color: var(--signal); }
+.line-state::after { content: "○—○—○"; position: absolute; top: 2px; right: 0; background: var(--paper); padding-left: 10px; font: .8rem var(--mono); }
+.line-evidence { color: var(--amber); }
+.line-evidence::after { content: "◇—◇—◇"; position: absolute; top: 2px; right: 0; background: var(--paper); padding-left: 10px; font: .8rem var(--mono); }
+.gallery-controls { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin: 0 0 15px; }
+.gallery-controls p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.grid-toggle { appearance: none; border: 1px solid var(--ink); padding: 8px 12px; cursor: pointer; color: var(--ink); background: transparent; }
+.gallery-rail { display: flex; gap: 18px; overflow-x: auto; padding: 8px 1px 22px; scroll-snap-type: x proximity; scrollbar-color: var(--moss) var(--paper-deep); touch-action: pan-y pinch-zoom; cursor: grab; }
+.gallery-rail.is-dragging { cursor: grabbing; user-select: none; }
+.gallery-rail::-webkit-scrollbar { height: 8px; }
+.gallery-rail::-webkit-scrollbar-track { background: var(--paper-deep); }
+.gallery-rail::-webkit-scrollbar-thumb { background: var(--moss); }
+.gallery-frame { width: min(65vw, 274px); flex: 0 0 auto; margin: 0; scroll-snap-align: start; }
+.gallery-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: left; }
+.gallery-open img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--ink); filter: saturate(.88); transition: filter .2s ease, transform .2s ease; }
+.gallery-open:hover img { filter: saturate(1); transform: translateY(-3px); }
+.gallery-frame figcaption { padding: 9px 2px 0; }
+.gallery-frame strong { display: block; font-weight: 500; }
+.gallery-frame small { display: block; color: var(--ink-soft); font-size: .78rem; line-height: 1.45; }
+.gallery-rail.is-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(154px, 1fr)); overflow: visible; cursor: default; }
+.gallery-rail.is-grid .gallery-frame { width: auto; }
+.flagships { display: grid; gap: 68px; }
+.flagship { display: grid; grid-template-columns: minmax(102px, .23fr) minmax(0, 1fr); gap: 28px; padding-bottom: 58px; border-bottom: 1px solid var(--rule); }
+.flagship:last-child { border-bottom: 0; padding-bottom: 0; }
+.instrument-code { color: var(--amber); font-size: .73rem; padding-top: 8px; }
+.flagship h3 { margin: 0; font-size: clamp(1.8rem, 3.5vw, 3.2rem); line-height: 1.08; font-weight: 500; letter-spacing: -.03em; }
+.flagship-tagline { margin: 14px 0 28px; color: var(--ink-soft); }
+.five-parts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.five-parts li { padding: 15px 13px 0 0; min-height: 180px; border-right: 1px solid var(--rule); }
+.five-parts li + li { padding-left: 13px; }
+.five-parts li:last-child { border-right: 0; }
+.five-parts span { display: block; color: var(--signal); font: .64rem var(--mono); letter-spacing: .06em; }
+.five-parts strong { display: block; margin: 10px 0; font-size: .9rem; font-weight: 600; }
+.five-parts p { margin: 0; color: var(--ink-soft); font-size: .86rem; line-height: 1.55; }
+.instrument-link { display: inline-block; margin-top: 23px; color: var(--glass); text-underline-offset: .24em; }
+.responsive-list { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-flow: dense; gap: 1px; border-top: 1px solid var(--rule); background: var(--rule); }
+.responsive-world { display: flex; flex-direction: column; grid-column: span 4; min-height: 280px; gap: 13px; padding: 24px; background: var(--paper); border: 0; }
+.responsive-world.specimen-large { grid-column: span 7; min-height: 415px; padding: 33px; }
+.responsive-world.specimen-tall { grid-column: span 5; min-height: 415px; padding: 30px; }
+.responsive-world.specimen-wide { grid-column: span 8; min-height: 322px; padding: 30px; }
+.responsive-world.specimen-compact { grid-column: span 4; min-height: 322px; }
+.responsive-world.specimen-medium { grid-column: span 5; min-height: 348px; padding: 28px; }
+.responsive-world.specimen-tall-right { grid-column: span 7; min-height: 348px; padding: 31px; }
+.world-number { color: var(--moss); font-size: .72rem; }
+.responsive-world h3 { margin: 0; font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 500; line-height: 1.15; }
+.responsive-world p { margin: 12px 0 0; color: var(--ink-soft); }
+.world-spec { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .91rem; }
+.world-spec p { margin: 0 0 10px; }
+.world-spec b { color: var(--glass); font-weight: 600; }
+.benches { border-top: 1px solid var(--rule); }
+.bench { display: grid; grid-template-columns: 72px minmax(0, .72fr) minmax(0, 1fr); gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
+.bench-id { color: var(--amber); font-size: .75rem; }
+.bench h3 { margin: 0; font-size: 1.25rem; font-weight: 500; }
+.bench p { margin: 7px 0 0; color: var(--ink-soft); }
+.bench-members { color: var(--moss) !important; font: .73rem/1.5 var(--mono); }
+.private-tag { display: inline-block; margin-top: 12px; color: var(--signal); font-size: .63rem; }
+.bench-flow { align-self: center; padding-left: 20px; border-left: 2px solid var(--moss); font: .76rem/1.6 var(--mono); color: var(--ink-soft); }
+.rejection-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 38px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.rejection-list li { padding: 19px 0; border-bottom: 1px solid var(--rule); }
+.rejection-list span { display: inline-block; width: 30px; color: var(--signal); font: .69rem var(--mono); }
+.path-section { padding-bottom: 70px; }
+.path-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 34px; }
+.path-grid p { margin: 0; font-size: clamp(1.1rem, 2vw, 1.45rem); }
+.entrances { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.entrances a { color: var(--glass); text-underline-offset: .23em; }
+.source-note { margin-top: 35px !important; color: var(--ink-soft); font-size: .78rem !important; }
+.site-footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; color: var(--ink-soft); font-size: .78rem; }
+dialog { width: min(90vw, 720px); max-height: 92vh; padding: 16px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); }
+dialog::backdrop { background: rgba(27, 27, 24, .62); }
+.lightbox-close { display: block; margin-left: auto; border: 1px solid var(--ink); background: transparent; padding: 6px 10px; cursor: pointer; }
+.lightbox-image { display: block; width: auto; max-width: 100%; max-height: 75vh; margin: 12px auto; }
+.lightbox-caption { margin: 0; text-align: center; }
+@media (max-width: 800px) {
+  .hero, .section-heading, .path-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 42px; min-height: auto; }
+  .jar-stage { min-height: 280px; order: -1; }
+  .jar-svg { width: min(75vw, 320px); }
+  .five-parts { grid-template-columns: 1fr; }
+  .five-parts li, .five-parts li + li { min-height: auto; padding: 16px 0; border-right: 0; border-bottom: 1px solid var(--rule); }
+  .flagship, .bench { grid-template-columns: 1fr; gap: 11px; }
+  .responsive-list { grid-template-columns: 1fr; }
+  .responsive-world, .responsive-world.specimen-large, .responsive-world.specimen-tall, .responsive-world.specimen-wide, .responsive-world.specimen-compact, .responsive-world.specimen-medium, .responsive-world.specimen-tall-right { grid-column: 1; min-height: auto; padding: 24px; }
+  .instrument-code, .world-number, .bench-id { padding-top: 0; }
+  .bench-flow { padding: 12px 0 0; border-left: 0; border-top: 2px solid var(--moss); }
+  .rejection-list { grid-template-columns: 1fr; }
+  .section { padding: 70px 0; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 </style>
 </head>
 <body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#entrance">Sha.w.z / 云野自由 (Yunye Ziyou) / Living Instrument Room</a>
+      <a class="language-link" href="index.html" lang="zh-CN">中文</a>
+    </header>
+    <main>
+      <section class="hero" id="entrance">
+        <div>
+          <p class="eyebrow">SHA.W.Z / YUNYE ZIYOU / AI SYSTEMS BUILDER / LIVING INSTRUMENT ROOM</p>
+          <h1>A responsive instrument for what cannot yet be said.</h1>
+          <p class="hero-role">AI Systems Builder</p>
+          <p class="hero-copy">This is neither a project cabinet nor a skills list. It is a working instrument room: images, gestures, time, and memory are held inside revisitable systems that begin only when someone comes close.</p>
+          <div class="core-positioning"><p>I do not build one-size-fits-all Agents.</p><p>I build instruments that can hold a specific creative judgment.</p><p>Some hold the unspoken emotions; some hold creative work; some hold evidence.</p></div>
+          <div class="hero-actions">
+            <a class="action action-primary" href="#flagship-works">Open an instrument</a>
+            <a class="action action-secondary" href="#gallery">See the frames</a>
+          </div>
+        </div>
+        <div class="jar-stage"><svg class="jar-svg" viewBox="0 0 460 560" role="img" aria-label="Bottled Cosmos">
+  <defs>
+    <linearGradient id="jar-glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e1f3ee" stop-opacity=".82"/><stop offset=".5" stop-color="#70b5ba" stop-opacity=".35"/><stop offset="1" stop-color="#1b5260" stop-opacity=".5"/></linearGradient>
+    <radialGradient id="jar-cosmos"><stop stop-color="#f5c66d"/><stop offset=".23" stop-color="#a55d91"/><stop offset=".64" stop-color="#28576a"/><stop offset="1" stop-color="#142833"/></radialGradient>
+  </defs>
+  <path d="M173 72h114l-11 53c0 18 70 23 83 75 19 75 26 237-10 299-26 45-78 69-119 69s-93-24-119-69c-36-62-29-224-10-299 13-52 83-57 83-75z" fill="url(#jar-glass)" stroke="#1b1b18" stroke-width="3"/>
+  <path d="M159 74h142l-12-38H171z" fill="#ae6d22" stroke="#1b1b18" stroke-width="3"/>
+  <ellipse cx="230" cy="316" rx="116" ry="164" fill="url(#jar-cosmos)" opacity=".91"/>
+  <g fill="#f5efe4"><circle cx="183" cy="216" r="3"/><circle cx="260" cy="190" r="4"/><circle cx="299" cy="252" r="2"/><circle cx="161" cy="333" r="2"/><circle cx="269" cy="394" r="3"/><circle cx="202" cy="445" r="2"/></g>
+  <path d="M149 168c-16 85-15 227 19 298" fill="none" stroke="#fff" stroke-opacity=".63" stroke-width="8" stroke-linecap="round"/>
+  <path d="M212 273c20-22 42-4 24 17-19 22-45 12-27-17 17-26 58-11 62 20" fill="none" stroke="#f5c66d" stroke-width="2"/>
+  <path d="M92 498h276" stroke="#a33a31" stroke-width="2"/>
+</svg><span class="jar-label">BOTTLED COSMOS / 30 SEC</span></div>
+      </section>
 
-<a href="index.html" class="lang-toggle">中文</a>
+      <section class="section gallery-section" id="gallery">
+        <div class="unspoken-line line-track"><span>UNNAMED LINE / TRACK</span></div>
+        <div class="section-heading"><div><p class="section-index">01 / FRAME ARCHIVE</p><h2>Perhaps these frames are how you come to know me.</h2></div><p>Twenty-one frames, passed at your own pace. Drag the long reel or expand it into a full grid; the page will neither scroll nor explain for you.</p></div>
+        <div class="gallery-controls"><p>Drag, swipe, or use arrow keys; your position is remembered.</p><button class="grid-toggle" id="gallery-grid-toggle" type="button" aria-expanded="false" data-expand="Expand full grid" data-collapse="Return to reel">Expand full grid</button></div>
+        <div class="gallery-rail" id="gallery-rail" tabindex="0" aria-label="Perhaps these frames are how you come to know me.">
+          <figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="115" data-full="assets/gallery/115.png" data-title="Gallery image 115">
+    <img src="assets/gallery/115.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 115">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="114" data-full="assets/gallery/114.png" data-title="Gallery image 114">
+    <img src="assets/gallery/114.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 114">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="116" data-full="assets/gallery/116.png" data-title="Gallery image 116">
+    <img src="assets/gallery/116.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 116">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="100" data-full="assets/gallery/100.png" data-title="Gallery image 100">
+    <img src="assets/gallery/100.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 100">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="102" data-full="assets/gallery/102.png" data-title="Gallery image 102">
+    <img src="assets/gallery/102.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 102">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="103" data-full="assets/gallery/103.png" data-title="Gallery image 103">
+    <img src="assets/gallery/103.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 103">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="104" data-full="assets/gallery/104.png" data-title="Gallery image 104">
+    <img src="assets/gallery/104.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 104">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="105" data-full="assets/gallery/105.png" data-title="Gallery image 105">
+    <img src="assets/gallery/105.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 105">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="106" data-full="assets/gallery/106.png" data-title="Gallery image 106">
+    <img src="assets/gallery/106.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 106">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="107" data-full="assets/gallery/107.png" data-title="Gallery image 107">
+    <img src="assets/gallery/107.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 107">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="108" data-full="assets/gallery/108.png" data-title="Gallery image 108">
+    <img src="assets/gallery/108.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 108">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="109" data-full="assets/gallery/109.png" data-title="Gallery image 109">
+    <img src="assets/gallery/109.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 109">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="110" data-full="assets/gallery/110.png" data-title="Gallery image 110">
+    <img src="assets/gallery/110.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 110">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="111" data-full="assets/gallery/111.png" data-title="Gallery image 111">
+    <img src="assets/gallery/111.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 111">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="112" data-full="assets/gallery/112.png" data-title="Gallery image 112">
+    <img src="assets/gallery/112.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 112">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="113" data-full="assets/gallery/113.png" data-title="Gallery image 113">
+    <img src="assets/gallery/113.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 113">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="117" data-full="assets/gallery/117.png" data-title="Gallery image 117">
+    <img src="assets/gallery/117.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 117">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="118" data-full="assets/gallery/118.png" data-title="Gallery image 118">
+    <img src="assets/gallery/118.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 118">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="119" data-full="assets/gallery/119.jpg" data-title="Gallery image 119">
+    <img src="assets/gallery/119.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 119">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="120" data-full="assets/gallery/120.png" data-title="Gallery image 120">
+    <img src="assets/gallery/120.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 120">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="121" data-full="assets/gallery/121.png" data-title="Gallery image 121">
+    <img src="assets/gallery/121.webp" loading="lazy" decoding="async" width="376" height="500" alt="Gallery image 121">
+  </button>
+</figure>
+        </div>
+      </section>
 
-<div class="bg-layer" aria-hidden="true"></div>
-<div id="fish-layer" aria-hidden="true"></div>
-<div class="bg-overlay" aria-hidden="true"></div>
+      <section class="section" id="flagship-works">
+        <div class="unspoken-line line-stem"><span>UNNAMED LINE / STEM</span></div>
+        <div class="section-heading"><div><p class="section-index">02 / THREE FLAGSHIPS</p><h2>Not showpieces: three interaction causalities.</h2></div><p>Each work answers the same five questions: what it holds, what you must do, how the system decides, how the world responds, and why it must work this way.</p></div>
+        <div class="flagships"><article class="flagship">
+  <div class="instrument-code">01 / instrument</div>
+  <div>
+    <h3>Eternal Bloom</h3>
+    <ol class="five-parts"><li><span>01</span><strong>What it holds</strong><p>It holds the suspension of “I am afraid it will disappear”: a bloom is allowed to continue rather than being rushed into a single explanation.</p></li>
+<li><span>02</span><strong>What the visitor must do</strong><p>The visitor must tune the flower&#x27;s colour, form, or rhythm first, rather than receiving comfort already completed for them.</p></li>
+<li><span>03</span><strong>How the system decides</strong><p>The system reads only explicit parameters and touch. It does not infer an emotion or name the flower for a person.</p></li>
+<li><span>04</span><strong>How the world responds</strong><p>Parameters and touch alter the bloom while sound arrives with it. The response is visible without demanding an account.</p></li>
+<li><span>05</span><strong>Why this interaction must be this way</strong><p>Only a small, deliberate choice makes the bell jar&#x27;s continuing bloom care left by the visitor, rather than automated background animation.</p></li></ol>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html" target="_blank" rel="noopener">Open ↗</a>
+  </div>
+</article>
+<article class="flagship">
+  <div class="instrument-code">02 / instrument</div>
+  <div>
+    <h3>BOTTLED COSMOS</h3>
+    <ol class="five-parts"><li><span>01</span><strong>What it holds</strong><p>It holds the immensity and brevity of “there is too much to see”: every star lives for thirty seconds, yet can rest in a bottle.</p></li>
+<li><span>02</span><strong>What the visitor must do</strong><p>The visitor must choose when to approach and open the bottle. The homepage does not run a cosmos in the background for anyone.</p></li>
+<li><span>03</span><strong>How the system decides</strong><p>The system treats that explicit entry as its only start condition, then gives stars a finite interval to appear, change, and go dark.</p></li>
+<li><span>04</span><strong>How the world responds</strong><p>After entry, the stars run within their thirty seconds. The glass boundary makes an immense scale feel holdable.</p></li>
+<li><span>05</span><strong>Why this interaction must be this way</strong><p>A cosmos must be opened by a person so brevity is not attention taken by an algorithm, but time deliberately chosen.</p></li></ol>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html" target="_blank" rel="noopener">Open ↗</a>
+  </div>
+</article>
+<article class="flagship">
+  <div class="instrument-code">03 / instrument</div>
+  <div>
+    <h3>Layered Mountains</h3>
+    <ol class="five-parts"><li><span>01</span><strong>What it holds</strong><p>It holds moments that neither want to be fixed nor called lost: scattering is not loss, and gathering is not an obligation to stay.</p></li>
+<li><span>02</span><strong>What the visitor must do</strong><p>The visitor must rest a gaze or pointer on the ridges. No personal account is required, only a willingness to stay.</p></li>
+<li><span>03</span><strong>How the system decides</strong><p>The system uses the relation between raycasting and the particle landscape to decide local disturbance; it infers no psychological state from a visitor.</p></li>
+<li><span>04</span><strong>How the world responds</strong><p>Blue-green ridges loosen, appear, and gather anew in local relation. The reply is a mountain seen differently, not a popup.</p></li>
+<li><span>05</span><strong>Why this interaction must be this way</strong><p>Only an approach that changes the act of seeing preserves room for things to gather and scatter; turning it into a reward click would remove that room.</p></li></ol>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html" target="_blank" rel="noopener">Open ↗</a>
+  </div>
+</article></div>
+      </section>
 
-<main>
+      <section class="section" id="responsive-worlds">
+        <div class="unspoken-line line-contour"><span>UNNAMED LINE / CONTOUR</span></div>
+        <div class="section-heading"><div><p class="section-index">03 / RESPONSIVE SMALL WORLDS</p><h2>Things to keep, and to return to.</h2></div><p>They do not run secretly inside this homepage. Each begins a little weather system only after you choose to enter.</p></div>
+        <div class="responsive-list"><article class="responsive-world specimen-large">
+  <div class="world-number">01</div>
+  <div>
+    <h3>Aquarium 2003</h3>
+    <p>A childhood screensaver aquarium is worth reopening because it keeps a memory of the visit.</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html" target="_blank" rel="noopener">Enter this work ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>Primary gesture</b><br>Primary gesture: feed, tap the glass softly, and stay to watch.</p>
+    <p><b>Response</b><br>Response: the fish, sound, and retained traces of a visit change together.</p>
+  </div>
+</article>
+<article class="responsive-world specimen-tall">
+  <div class="world-number">02</div>
+  <div>
+    <h3>The Tree That Remembers Wind</h3>
+    <p>A gesture over its canopy becomes wind travelling through branches, so every return can begin another small expanse.</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html" target="_blank" rel="noopener">Enter this work ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>Primary gesture</b><br>Primary gesture: brush across the canopy.</p>
+    <p><b>Response</b><br>Response: wind, leaves, and pentatonic sound travel outward by distance.</p>
+  </div>
+</article>
+<article class="responsive-world specimen-wide">
+  <div class="world-number">03</div>
+  <div>
+    <h3>Firefly Seed Jar</h3>
+    <p>It is a bottle that can be cared for: seeds do not need to be rushed, and looking in again is itself permission.</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html" target="_blank" rel="noopener">Enter this work ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>Primary gesture</b><br>Primary gesture: touch or hold an amber seed.</p>
+    <p><b>Response</b><br>Response: a seed briefly sprouts; luminous tendrils and ripples appear inside the glass.</p>
+  </div>
+</article>
+<article class="responsive-world specimen-compact">
+  <div class="world-number">04</div>
+  <div>
+    <h3>Tidal Moon Moss</h3>
+    <p>Night is reduced to a bell jar. It asks for no completion, only waits for the next gentle knock.</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html" target="_blank" rel="noopener">Enter this work ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>Primary gesture</b><br>Primary gesture: touch the bell jar.</p>
+    <p><b>Response</b><br>Response: moon moss wakes, sending glow and tide-like waves outward.</p>
+  </div>
+</article>
+<article class="responsive-world specimen-medium">
+  <div class="world-number">05</div>
+  <div>
+    <h3>Windmill Valley</h3>
+    <p>The windmill listens and wind chimes answer; it is weather one can enter, not a one-time display.</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/windmill-valley/windmill-valley.html" target="_blank" rel="noopener">Enter this work ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>Primary gesture</b><br>Primary gesture: enter the valley and move toward wind and chimes.</p>
+    <p><b>Response</b><br>Response: windmill, chimes, and ambient sound hand the reply from one to another.</p>
+  </div>
+</article>
+<article class="responsive-world specimen-tall-right">
+  <div class="world-number">06</div>
+  <div>
+    <h3>Inner Weather Diary · 60s Oxygen Chamber</h3>
+    <p>An emotion need not be named at once. Choosing weather and taking sixty seconds to breathe is a diary entrance designed for return.</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html" target="_blank" rel="noopener">Enter this work ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>Primary gesture</b><br>Primary gesture: choose weather, then begin or end a 60-second breath.</p>
+    <p><b>Response</b><br>Response: weather, pixel particles, and ambient sound shift inside the glass room.</p>
+  </div>
+</article></div>
+      </section>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero" style="background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; border:none; box-shadow:none;">
-    <img class="typing" src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=22&color=3a8a7a&center=true&vCenter=true&width=750&pause=100000&lines=Giving every unspoken emotion a shape that can be seen and understood." alt="Giving every unspoken emotion a shape that can be seen and understood.">
+      <section class="section" id="system-benches">
+        <div class="unspoken-line line-state"><span>UNNAMED LINE / STATE MACHINE</span></div>
+        <div class="section-heading"><div><p class="section-index">04 / THREE SYSTEM BENCHES</p><h2>Only roles and redacted flows are shown.</h2></div><p>These are private benches: public is the care in the work, not source code, client material, or an automation shortcut.</p></div>
+        <div class="benches"><article class="bench">
+  <div class="bench-id">01</div>
+  <div><h3>Feeling Instruments</h3><p class="bench-members">Members / healing-space / pixel-bloom / Healing Visual Lab</p><p>Turns hard-to-name feelings into experiences that require a human action and return a response state.</p><span class="private-tag">PRIVATE SYSTEM / NO SOURCE LINK</span></div>
+  <div class="bench-flow">Redacted flow<br>Feeling → metaphor → irreplaceable action → response state</div>
+</article>
+<article class="bench">
+  <div class="bench-id">02</div>
+  <div><h3>Creative Instruments</h3><p class="bench-members">Members / content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish</p><p>Routes creative input through scene judgment and specialist executors while keeping final confirmation with the user.</p><span class="private-tag">PRIVATE SYSTEM / NO SOURCE LINK</span></div>
+  <div class="bench-flow">Redacted flow<br>Input → scene judgment → handoff → specialist executor → user confirmation</div>
+</article>
+<article class="bench">
+  <div class="bench-id">03</div>
+  <div><h3>Evidence Instruments</h3><p class="bench-members">Members / content-growth-advisor / yunye-growth-lab / creator-growth-workbench</p><p>Separates growth and creative judgment back into facts, inferences, and open validations before continuing with reviewable experiments.</p><span class="private-tag">PRIVATE SYSTEM / NO SOURCE LINK</span></div>
+  <div class="bench-flow">Redacted flow<br>Facts → inference → to be verified → single-variable experiment → real retrospective</div>
+</article></div>
+      </section>
 
-    <img class="typing" src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=5aaccc&center=true&vCenter=true&width=700&pause=100000&lines=Product+Manager+%C2%B7+Agent%2FSkill+Dev+%C2%B7+Content+Creation" alt="Healing Visual Lab">
+      <section class="section" id="rejections">
+        <div class="unspoken-line line-evidence"><span>UNNAMED LINE / EVIDENCE CHAIN</span></div>
+        <div class="section-heading"><div><p class="section-index">05 / WHAT I REFUSE TO AUTOMATE</p><h2>Keep decision-making human.</h2></div></div>
+        <ol class="rejection-list"><li><span>01</span>I do not treat missing data as `0`.</li>
+<li><span>02</span>I do not write a completed publication as proof that growth happened.</li>
+<li><span>03</span>I do not confirm a user’s creative intent on their behalf.</li>
+<li><span>04</span>I do not let a formula replace a real reader goal.</li>
+<li><span>05</span>I do not let a click become an effect with no metaphorical meaning.</li>
+<li><span>06</span>I do not use a one-size-fits-all Agent to conceal the absence of professional judgment.</li></ol>
+      </section>
 
-    
-    <!-- SYNC:badges -->
-    <div class="badges">
-      <a href="mailto:zhangwensha1108@gmail.com"><img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-3a8a7a?style=flat-square&logo=gmail&logoColor=white" alt="Gmail" style="filter:hue-rotate(-10deg)"></a>
-      <a href="mailto:wensha_zhang@163.com"><img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-5aaccc?style=flat-square&logo=maildotru&logoColor=white" alt="Email"></a>
-      <a href="https://xhslink.com/m/1kVPy4geTiQ"><img src="https://img.shields.io/badge/小红书-云野自由-c08090?style=flat-square&logo=xiaohongshu&logoColor=white" alt="Xiaohongshu"></a>
-      <a href="https://shasha1108.github.io/shasha1108/"><img src="https://img.shields.io/badge/GitHub-shasha1108-6a8a9a?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
-    </div>
-    <!-- /SYNC:badges -->
+      <section class="section path-section" id="path">
+        <div class="unspoken-line"><span>UNNAMED LINE / OPEN EXIT</span></div>
+        <div class="section-heading"><div><p class="section-index">06 / PATH AND ENTRANCES</p><h2>Path and entrances</h2></div></div>
+        <div class="path-grid"><p>Development → QA automation → data products → an AI systems builder who engineers creative judgment</p><div class="entrances"><a href="https://shasha1108.github.io/healing-visual-lab/" target="_blank" rel="noopener">Complete portfolio ↗</a><a href="https://xhslink.com/m/1kVPy4geTiQ" target="_blank" rel="noopener">Xiaohongshu ↗</a><a href="https://github.com/shasha1108" target="_blank" rel="noopener">GitHub ↗</a><a href="https://xhslink.com/m/1kVPy4geTiQ" target="_blank" rel="noopener">Contact via Xiaohongshu DM ↗</a></div></div>
+        <p class="source-note">Work facts come from a local read-only Healing Visual Lab snapshot (origin/main).</p>
+      </section>
+    </main>
+    <footer class="site-footer">No background iframes, no autoplaying H5: every instrument waits for an explicit entry.</footer>
+  </div>
+  <dialog id="gallery-lightbox" aria-labelledby="lightbox-caption"><button class="lightbox-close" id="lightbox-close" type="button">Close frame</button><img class="lightbox-image" id="lightbox-image" alt=""><p class="lightbox-caption" id="lightbox-caption"></p></dialog>
+  <script>
+(() => {
+  const rail = document.getElementById("gallery-rail");
+  const toggle = document.getElementById("gallery-grid-toggle");
+  const dialog = document.getElementById("gallery-lightbox");
+  const dialogImage = document.getElementById("lightbox-image");
+  const dialogCaption = document.getElementById("lightbox-caption");
+  const dialogClose = document.getElementById("lightbox-close");
 
-    <div class="scroll-hint">↓ SCROLL ↓</div>
-  </section>
+  if (rail) {
+    const storageKey = `shasha1108.gallery.position.${document.documentElement.lang}.v3`;
+    try {
+      const saved = Number(window.localStorage.getItem(storageKey));
+      if (Number.isFinite(saved) && saved > 0) requestAnimationFrame(() => { rail.scrollLeft = saved; });
+    } catch (_) {}
 
-  <!-- ═══════════ ABOUT ME ═══════════ -->
-  <section id="about">
-    <h2>🔮 About Me</h2>
-
-    <!-- SYNC:about-section -->
-    <!-- SYNC:about -->
-    <div class="career-path">Developer → QA Automation → Data PM → AI Creator.</div>
-    <p>I've spent years reading code and data. The most complex systems can all be modeled, rendered, and optimized.</p>
-    <p>But the human heart cannot.</p>
-    <p>Those feelings stuck in your chest, caught in your throat — indescribable, yet so real — have no API, no logs, no debugging tool to tell you where they're stuck.</p>
-    <p>So now, this is what I spend my time on:</p>
-    <p>Creating emotional illustrations, copywriting, and interactive digital experiences. Translating the formless, nameless, homeless emotions into shapes that can be seen, touched, and released.</p>
-    <p>Giving every unspoken emotion a concrete expression.</p>
-    <!-- /SYNC:about -->
-      <!-- /SYNC:about-section -->
-  </section>
-
-  <!-- ═══════════ GALLERY ═══════════ -->
-  <section id="gallery">
-    <h2>🎨 Gallery</h2>
-
-    <!-- SYNC:gallery-header -->
-    <p style="text-align:center;font-size:15px;color:#4493f8;letter-spacing:2px;font-weight:600;">🖱️ Scroll to explore →</p>
-    <!-- /SYNC:gallery-header -->
-
-    <div class="gallery-strip">
-<!-- GALLERY_IMAGES -->
-      <img src="assets/gallery/115.png" loading="lazy"><img src="assets/gallery/114.png" loading="lazy"><img src="assets/gallery/116.png" loading="lazy"><img src="assets/gallery/100.png" loading="lazy"><img src="assets/gallery/102.png" loading="lazy"><img src="assets/gallery/103.png" loading="lazy"><img src="assets/gallery/104.png" loading="lazy"><img src="assets/gallery/105.png" loading="lazy"><img src="assets/gallery/106.png" loading="lazy"><img src="assets/gallery/107.png" loading="lazy"><img src="assets/gallery/108.png" loading="lazy"><img src="assets/gallery/109.png" loading="lazy"><img src="assets/gallery/110.png" loading="lazy"><img src="assets/gallery/111.png" loading="lazy"><img src="assets/gallery/112.png" loading="lazy"><img src="assets/gallery/113.png" loading="lazy"><img src="assets/gallery/117.png" loading="lazy"><img src="assets/gallery/118.png" loading="lazy"><img src="assets/gallery/119.jpg" loading="lazy"><img src="assets/gallery/120.png" loading="lazy"><img src="assets/gallery/121.png" loading="lazy">
-<!-- /GALLERY_IMAGES --><img src="assets/gallery/114.png" loading="lazy"><img src="assets/gallery/116.png" loading="lazy"><img src="assets/gallery/100.png" loading="lazy"><img src="assets/gallery/102.png" loading="lazy"><img src="assets/gallery/103.png" loading="lazy"><img src="assets/gallery/104.png" loading="lazy"><img src="assets/gallery/105.png" loading="lazy"><img src="assets/gallery/106.png" loading="lazy"><img src="assets/gallery/107.png" loading="lazy"><img src="assets/gallery/108.png" loading="lazy"><img src="assets/gallery/109.png" loading="lazy"><img src="assets/gallery/110.png" loading="lazy"><img src="assets/gallery/111.png" loading="lazy"><img src="assets/gallery/112.png" loading="lazy"><img src="assets/gallery/113.png" loading="lazy"><img src="assets/gallery/117.png" loading="lazy"><img src="assets/gallery/118.png" loading="lazy"><img src="assets/gallery/119.jpg" loading="lazy"><img src="assets/gallery/120.png" loading="lazy"><img src="assets/gallery/121.png" loading="lazy">
-    </div>
-  </section>
-
-  <!-- ═══════════ HEALING VISUAL LAB ═══════════ -->
-  <section id="hvl">
-    <h2>🌀 Healing Visual Lab · 视觉疗愈实验室</h2>
-
-    
-
-    <!-- SYNC:hvl -->
-    <h3>✦ Latest Works</h3>
-
-    <!-- LATEST_WORKS_START -->
-<table width="100%">
-<tr><th width="30%">Work</th><th  width="70%">In One Line</th></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html">Sealed Summer Jar</a></b></td><td>Sealed Summer Jar</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html">Waiting for the Moon</a></b></td><td>Waiting for the Moon</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html">The Old Signal</a></b></td><td>The Old Signal</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html">Tide Keeping Station</a></b></td><td>Tide Keeping Station</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html">Aquarium 2003</a></b></td><td>Aquarium 2003</td></tr>
-</table>
-<!-- LATEST_WORKS_END -->
-
-    <h3 align="center">
-      <a href="https://shasha1108.github.io/healing-visual-lab/">Explore All Works →</a>
-    </h3>
-
-    <p align="center">
-      <em>If one of these pieces made you feel seen — that's the only reason this exists.</em>
-      <br/>
-      <em>If one of these pieces made you feel seen — that's the only reason these lines of code exist.</em>
-    </p>
-
-    <p align="center">
-      <a href="https://github.com/shasha1108/healing-visual-lab">
-        <img src="https://img.shields.io/github/stars/shasha1108/healing-visual-lab?style=social" alt="Stars"/>
-      </a>
-      &ensp;
-      <sub>If a piece resonated with you, ⭐ Star to help others find it too.</sub>
-    </p>
-    <!-- /SYNC:hvl -->
-  </section>
-
-  <!-- ═══════════ TECH SPECTRUM ═══════════ -->
-  <section id="skills">
-    <h2>🛠️ Skills</h2>
-
-    <!-- SYNC:skills -->
-    <table width="100%">
-<tr><th width="30%">Skill</th><th width="70%">Description</th></tr>
-<tr><td>🔀 Systematic Decomposition</td><td>Breaking chaotic requirements into closed loops — input → judgment → output → feedback → iteration</td></tr>
-<tr><td>🤖 Agent & Skill Dev</td><td>From rule definition to fallback logic, building AI that actually does the work. Not writing prompts — designing systems</td></tr>
-<tr><td>🎬 AI Content Creation</td><td>Images · Video · Copy · Apps. The tool doesn't matter — precise expression does</td></tr>
-<tr><td>🎯 Creative Judgment</td><td>Knowing what resonates, what form suits what emotion, what's not worth making</td></tr>
-<tr><td>🧬 Knowledge Engineering</td><td>Turning personal experience into structured rules. The system gets smarter, and the rules outlast you</td></tr>
-</table>
-    <!-- /SYNC:skills -->
-  </section>
-
-  <!-- ═══════════ MORE PROJECTS ═══════════ -->
-  <section id="more">
-    <h2>🎯 More from @shasha1108</h2>
-
-    <!-- SYNC:more -->
-    <table width="100%">
-<tr><th width="25%">Repo</th><th  width="75%">About</th></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>Interactive digital healing works — 24 Three.js/WebGL & Canvas experiments</td></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>Touch-driven healing H5 generator — GPU fluid simulation, WebGL shaders</td></tr>
-<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>Pixel art × glassmorphism — cyber pets, digital aquariums</td></tr>
-<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>Emotional content creation — metaphor mining, scene writing, visual storytelling</td></tr>
-<tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>One-command H5 publishing to GitHub Pages — drop folder to live site</td></tr>
-</table>
-    <!-- /SYNC:more -->
-  </section>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer>
-
-
-    <!-- SYNC:footer -->
-    <p align="center">
-  <sub>Sha.w.z · <a href="README.md">中文</a></sub>
-
-<p align="center"><sub>Source code under <a href="LICENSE">MIT License</a> | MIT License</sub></p>
-    <!-- /SYNC:footer -->
-  </footer>
-
-</main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-<script>
-// ── 背景像素海洋生物：鱼 + 章鱼 + 水母 ──
-const PX = 5;
-let bgCreatures = [];
-
-new p5(function(p) {
-  p.setup = function() {
-    let c = p.createCanvas(p.windowWidth, p.windowHeight);
-    c.parent('fish-layer');
-    p.pixelDensity(1); p.noSmooth();
-
-    const types = ['fish','fish','fish','fish','octopus','octopus','jellyfish','jellyfish'];
-    for (let i = 0; i < types.length; i++) {
-      let t = types[i];
-      bgCreatures.push({
-        type: t,
-        x: p.random(p.width), y: p.random(p.height * 0.35, p.height * 0.82),
-        vx: p.random(0.25, 0.6) * (p.random() > 0.5 ? 1 : -1),
-        vy: 0, bob: p.random(p.TWO_PI),
-        palette: p.random([
-          { body: '#87ceeb', fin: '#5f9ea0' },
-          { body: '#ffb6c1', fin: '#ff69b4' },
-          { body: '#ffe4b5', fin: '#ffa07a' },
-          { body: '#98fb98', fin: '#3cb371' },
-          { body: '#dda0dd', fin: '#ba55d3' },
-          { body: '#f0e68c', fin: '#daa520' },
-        ])
+    let saveFrame = 0;
+    rail.addEventListener("scroll", () => {
+      cancelAnimationFrame(saveFrame);
+      saveFrame = requestAnimationFrame(() => {
+        try { window.localStorage.setItem(storageKey, String(Math.round(rail.scrollLeft))); } catch (_) {}
       });
-    }
-  };
+    }, { passive: true });
 
-  function drawFish(f) {
-    p.push();
-    p.translate(p.round(f.x), p.round(f.y));
-    if (f.vx < 0) p.scale(-1, 1);
-    p.noStroke();
-    // Body + fins + tail
-    p.fill(f.palette.body);
-    p.rect(-PX*2, -PX, PX*4, PX*2.5);
-    p.rect(-PX, -PX*2, PX*2, PX);
-    // Waving tail
-    let tailWag = p.sin(p.frameCount * 0.15 + f.bob) > 0 ? 0 : PX;
-    p.rect(-PX*3, -PX*0.5 + tailWag, PX, PX*1.5);
-    p.fill(f.palette.fin || '#fff');
-    p.rect(PX, -PX*0.3, PX, PX*0.8);
-    p.fill(0); p.rect(PX*1.2, -PX*0.3, PX*0.5, PX*0.5);
-    p.pop();
+    rail.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      rail.scrollBy({ left: event.key === "ArrowLeft" ? -Math.min(rail.clientWidth * .78, 430) : Math.min(rail.clientWidth * .78, 430), behavior: "smooth" });
+    });
+
+    let pointerId = null;
+    let startX = 0;
+    let startLeft = 0;
+    let moved = false;
+    let suppressClick = false;
+    rail.addEventListener("pointerdown", (event) => {
+      if (rail.classList.contains("is-grid") || event.pointerType === "mouse" && event.button !== 0) return;
+      pointerId = event.pointerId;
+      startX = event.clientX;
+      startLeft = rail.scrollLeft;
+      moved = false;
+      rail.classList.add("is-dragging");
+      rail.setPointerCapture(pointerId);
+    });
+    rail.addEventListener("pointermove", (event) => {
+      if (pointerId !== event.pointerId) return;
+      const delta = event.clientX - startX;
+      if (Math.abs(delta) > 4) moved = true;
+      if (moved) rail.scrollLeft = startLeft - delta;
+    });
+    const release = (event) => {
+      if (pointerId !== event.pointerId) return;
+      if (moved) {
+        suppressClick = true;
+        window.setTimeout(() => { suppressClick = false; }, 0);
+      }
+      if (rail.hasPointerCapture(pointerId)) rail.releasePointerCapture(pointerId);
+      pointerId = null;
+      rail.classList.remove("is-dragging");
+    };
+    rail.addEventListener("pointerup", release);
+    rail.addEventListener("pointercancel", release);
+    rail.addEventListener("click", (event) => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
   }
 
-  function drawOctopus(f) {
-    p.push();
-    p.translate(p.round(f.x), p.round(f.y));
-    p.noStroke();
-    // Round head
-    p.fill(f.palette.body);
-    p.rect(-PX*1.5, -PX*3, PX*3, PX*3, 2);
-    p.rect(-PX*2, -PX*2.5, PX, PX*1.5);
-    p.rect(PX, -PX*2.5, PX, PX*1.5);
-    // Eyes
-    p.fill(255);
-    p.rect(-PX*0.8, -PX*2, PX*0.8, PX*0.8);
-    p.rect(PX*0.3, -PX*2, PX*0.8, PX*0.8);
-    p.fill(0);
-    p.rect(-PX*0.6, -PX*1.8, PX*0.5, PX*0.5);
-    p.rect(PX*0.5, -PX*1.8, PX*0.5, PX*0.5);
-    // 4 wiggly tentacles
-    let w = p.sin(p.frameCount * 0.12 + f.bob) * PX;
-    let w2 = p.cos(p.frameCount * 0.14 + f.bob) * PX;
-    p.fill(f.palette.fin || f.palette.body);
-    p.rect(-PX*2 + w, -PX*0.2, PX, PX*2.5);
-    p.rect(-PX*0.5 + w2, PX*0.5, PX, PX*2.5);
-    p.rect(PX*0.5 - w, PX*0.5, PX, PX*2.5);
-    p.rect(PX*1.5 - w2, -PX*0.2, PX, PX*2.5);
-    p.pop();
+  if (toggle && rail) {
+    toggle.addEventListener("click", () => {
+      const expanded = rail.classList.toggle("is-grid");
+      toggle.setAttribute("aria-expanded", String(expanded));
+      toggle.textContent = expanded ? toggle.dataset.collapse : toggle.dataset.expand;
+    });
   }
 
-  function drawJellyfish(f) {
-    p.push();
-    p.translate(p.round(f.x), p.round(f.y));
-    p.noStroke();
-    // Dome
-    p.fill(f.palette.body);
-    p.rect(-PX*2, -PX*3, PX*4, PX*2, 2);
-    p.rect(-PX*1.5, -PX*3.5, PX, PX);
-    p.rect(PX*0.5, -PX*3.5, PX, PX);
-    p.fill(f.palette.fin || p.palette.body);
-    // Pulsing tentacles
-    let t1 = p.sin(p.frameCount * 0.1 + f.bob) * PX * 0.8;
-    let t2 = p.cos(p.frameCount * 0.12 + f.bob) * PX * 0.8;
-    let t3 = p.sin(p.frameCount * 0.09 + f.bob + 1) * PX * 0.8;
-    p.rect(-PX*1.5 + t1, -PX*0.5, PX*0.8, PX*3);
-    p.rect(-PX*0.3 + t2, -PX*0.5, PX*0.8, PX*3.5);
-    p.rect(PX*0.8 + t3, -PX*0.5, PX*0.8, PX*2.8);
-    // Eyes
-    p.fill(255);
-    p.rect(-PX*0.5, -PX*2, PX*0.6, PX*0.6);
-    p.rect(PX*0.3, -PX*2, PX*0.6, PX*0.6);
-    p.pop();
-  }
-
-  p.draw = function() {
-    p.clear();
-    for (let c of bgCreatures) {
-      // Movement
-      c.x += c.vx;
-      c.y += p.sin(p.frameCount * 0.018 + c.bob) * 0.25;
-      // Jellyfish pulse up/down
-      if (c.type === 'jellyfish') c.y += p.sin(p.frameCount * 0.04 + c.bob) * 0.4;
-      // Wrap around
-      if (c.x > p.width + 80) { c.x = -80; c.y = p.random(p.height * 0.3, p.height * 0.85); }
-      if (c.x < -80) { c.x = p.width + 80; c.y = p.random(p.height * 0.3, p.height * 0.85); }
-
-      if (c.type === 'octopus') drawOctopus(c);
-      else if (c.type === 'jellyfish') drawJellyfish(c);
-      else drawFish(c);
-    }
-  };
-
-  p.windowResized = function() {
-    p.resizeCanvas(p.windowWidth, p.windowHeight);
-    p.pixelDensity(1);
-  };
-});
+  document.querySelectorAll(".gallery-open").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!dialog || !dialogImage || !dialogCaption) return;
+      dialogImage.src = button.dataset.full || "";
+      dialogImage.alt = button.dataset.title || "";
+      dialogCaption.textContent = button.dataset.title || "";
+      dialog.showModal();
+    });
+  });
+  if (dialogClose && dialog) dialogClose.addEventListener("click", () => dialog.close());
+  if (dialog) dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+})();
 </script>
-
 </body>
 </html>

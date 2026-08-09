@@ -1,673 +1,572 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sha.w.z · 云野自由 — 让每个说不清的情绪，都能被看见、被理解。Healing Visual Lab 交互式数字疗愈。">
-<meta name="theme-color" content="#74c5e3">
-<title>Sha.w.z · 云野自由</title>
-<style>
-  /* ── 基础重置 ── */
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="这里不是项目陈列柜，也不是一张技能清单。它是一间仍在工作的仪器室：图像、手势、时间与记忆被放进可被重访的小系统，等人靠近，才开始发生。">
+  <meta name="theme-color" content="#f4efe4">
+  <title>Sha.w.z / 云野自由 · 活体仪器室</title>
+  <style>
+:root {
+  --paper: #f4efe4;
+  --paper-deep: #e8decb;
+  --ink: #1b1b18;
+  --ink-soft: #4c4a43;
+  --glass: #3d8892;
+  --amber: #ae6d22;
+  --moss: #4e6955;
+  --signal: #a33a31;
+  --rule: rgba(27, 27, 24, .22);
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --serif: Iowan Old Style, Songti SC, STSong, Noto Serif CJK SC, Georgia, serif;
+}
 
-  /* ── 核心排版：Frutiger Aero 标志性的无衬线字体 ── */
-  body {
-    font-family: "Segoe UI", "Frutiger", "Trebuchet MS", "PingFang SC", "Microsoft YaHei", sans-serif;
-    color: #1a4a5e;
-    background: linear-gradient(160deg, #a8e6f8 0%, #cdf0fa 30%, #e4f8f0 65%, #f4fcf9 100%);
-    line-height: 1.8;
-    min-height: 100vh;
-  }
-
-  /* ── 动效底层 ── */
-  .bg-layer {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background: url('assets/bg.gif') center/cover no-repeat;
-    opacity: 0.15;
-    filter: blur(8px) saturate(1.4) brightness(1.2);
-  }
-
-  /* ── Frutiger Aero 环境光与纯 CSS 高光气泡 ── */
-  .bg-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    background:
-      radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.7) 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 20%, rgba(90, 200, 240, 0.4) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 85%, rgba(140, 240, 190, 0.3) 0%, transparent 55%);
-    pointer-events: none;
-  }
-
-  /* 纯 CSS 果冻气泡效果 */
-  .bg-overlay::before, .bg-overlay::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    /* 玻璃气泡的高光材质 */
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.1) 60%, transparent);
-    box-shadow: inset -4px -4px 12px rgba(100, 200, 255, 0.3), 0 6px 15px rgba(0,0,0,0.06);
-  }
-  .bg-overlay::before {
-    width: 180px; height: 180px; top: 15%; left: 5%;
-    animation: aeroFloat 12s infinite ease-in-out;
-  }
-  .bg-overlay::after {
-    width: 90px; height: 90px; bottom: 20%; right: 10%;
-    animation: aeroFloat 15s infinite ease-in-out reverse;
-  }
-
-  @keyframes aeroFloat {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-30px) scale(1.05); }
-  }
-
-  /* ── 内容层 ── */
-  main {
-    position: relative;
-    z-index: 2;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 50px 24px 80px;
-  }
-
-  /* ── 英雄区 (Hero) ── */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 40px 0;
-  }
-
-  .hero .typing {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 4px 6px rgba(0, 100, 150, 0.15));
-  }
-
-  .hero .motto {
-    font-size: clamp(14px, 1.8vw, 17px);
-    letter-spacing: 6px;
-    color: #2a7a8a;
-    margin: 28px 0;
-    font-weight: 400;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-  }
-
-  .hero .badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .hero .badges img { 
-    height: 30px; 
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0, 80, 120, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .hero .badges img:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 150, 220, 0.3);
-  }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 40px;
-    font-size: 12px;
-    letter-spacing: 6px;
-    font-weight: bold;
-    color: #5aaccc;
-    animation: fadePulse 3s ease-in-out infinite;
-    text-shadow: 0 2px 4px rgba(255,255,255,0.9);
-  }
-
-  @keyframes fadePulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-  }
-
-  /* ── Windows Aero Glass 拟物玻璃卡片 ── */
-  section {
-    position: relative;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.6) 0%, rgba(240, 250, 255, 0.3) 100%);
-    backdrop-filter: blur(20px) saturate(1.3);
-    -webkit-backdrop-filter: blur(20px) saturate(1.3);
-    /* 高光描边与内发光 */
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 16px;
-    padding: 48px 40px;
-    margin-bottom: 35px;
-    box-shadow: 
-      0 12px 32px rgba(10, 80, 120, 0.12), 
-      inset 0 1px 2px rgba(255, 255, 255, 0.9);
-    overflow: hidden;
-  }
-
-  /* 卡片顶部仿玻璃反光层 */
-  section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 35%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-    pointer-events: none;
-    border-radius: 16px 16px 0 0;
-  }
-
-  section h2 {
-    position: relative;
-    font-size: clamp(20px, 2.8vw, 24px);
-    letter-spacing: 6px;
-    color: #2a7a9a; /* 光滑的深天蓝 */
-    font-weight: 600;
-    margin-bottom: 28px;
-    text-align: center;
-    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.9);
-  }
-
-  section h3 {
-    position: relative;
-    font-size: clamp(15px, 2vw, 17px);
-    letter-spacing: 4px;
-    color: #3a9ab8;
-    font-weight: 600;
-    margin: 24px 0 14px;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
-  }
-
-  section p {
-    position: relative;
-    font-size: 15px;
-    color: #2a5a6a;
-    margin-bottom: 14px;
-  }
-
-  section blockquote {
-    position: relative;
-    /* 果冻感引用框 */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255,255,255,0.1) 100%);
-    border-left: 4px solid #5ab0ea;
-    border-radius: 4px;
-    padding: 16px 20px;
-    font-style: italic;
-    color: #2a6a80;
-    margin: 18px 0;
-    box-shadow: 0 4px 10px rgba(0, 100, 150, 0.05);
-  }
-
-  section strong {
-    color: #0078d7; /* 经典的 Windows Blue */
-    font-weight: 600;
-  }
-
-  /* ── 拟物感内凹代码/路径面板 ── */
-  .career-path, .tech-spectrum {
-    position: relative;
-    font-family: "Cascadia Code", "Courier New", monospace;
-    font-size: 13px;
-    color: #1a5a70;
-    /* 内发光与凹陷阴影 */
-    background: linear-gradient(180deg, rgba(230, 245, 250, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-top: 1px solid rgba(180, 210, 230, 0.6);
-    border-radius: 10px;
-    padding: 22px 26px;
-    margin: 20px 0;
-    white-space: pre;
-    overflow-x: auto;
-    line-height: 1.9;
-    box-shadow: inset 0 3px 8px rgba(0, 90, 140, 0.08), 0 2px 0 rgba(255,255,255,0.8);
-  }
-
-  /* ── 画廊滚动区 ── */
-  .gallery-strip {
-    position: relative;
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding: 15px 5px 25px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* 拟物风半透明滚动条 */
-  .gallery-strip::-webkit-scrollbar { height: 8px; }
-  .gallery-strip::-webkit-scrollbar-track { background: rgba(200, 230, 240, 0.4); border-radius: 4px; }
-  .gallery-strip::-webkit-scrollbar-thumb { 
-    background: linear-gradient(180deg, #99d6eb 0%, #5cbfe6 100%); 
-    border-radius: 4px; 
-    border: 1px solid rgba(255,255,255,0.8);
-  }
-
-  .gallery-strip img {
-    height: 220px;
-    width: auto;
-    border-radius: 8px;
-    border: 2px solid rgba(255,255,255,0.9);
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 80, 120, 0.15);
-  }
-
-  .gallery-strip img:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 120, 180, 0.25), 0 0 15px rgba(255,255,255,0.8);
-  }
-
-  /* ── 光泽感表格 ── */
-  .works-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 10px;
-    background: rgba(255,255,255,0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-  }
-
-  .works-table th {
-    text-align: left;
-    padding: 12px 14px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(230,245,255,0.7) 100%);
-    color: #005b8f;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 13px;
-    border-bottom: 2px solid rgba(130, 200, 230, 0.5);
-  }
-
-  .works-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    vertical-align: middle;
-    color: #1a4f66;
-  }
-
-  .works-table tr:hover td {
-    background: rgba(255, 255, 255, 0.5);
-  }
-
-  /* Aero 亮蓝色发光链接 */
-  .works-table a {
-    color: #0078d7;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .works-table a:hover { 
-    color: #00a2ed; 
-    text-shadow: 0 0 10px rgba(0, 162, 237, 0.4); 
-  }
-
-  .works-table .tech-tags {
-    font-size: 12px;
-    color: #55879e;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.8);
-  }
-
-  /* ── 按钮行 ── */
-  .btn-row {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 28px 0;
-  }
-
-  .btn-row a img { 
-    height: 42px; 
-    border-radius: 6px; 
-    box-shadow: 0 4px 12px rgba(0, 100, 150, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .btn-row a:hover img {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 150, 220, 0.35);
-  }
-
-  /* ── 底部 (Footer) ── */
-  footer {
-    text-align: center;
-    padding: 40px 0 30px;
-    font-size: 13px;
-    color: #5a9aaa;
-    letter-spacing: 2px;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.7);
-  }
-
-  footer a { color: #5aaccc; text-decoration: none; font-weight: bold; }
-  footer a:hover { color: #0078d7; }
-
-  /* ── 移动端适配 ── */
-  @media (max-width: 768px) {
-    main { padding: 32px 14px 48px; }
-    .hero { min-height: 85vh; }
-    section { padding: 32px 20px; border-radius: 12px; }
-    .gallery-strip img { height: 160px; }
-    .works-table { font-size: 13px; }
-    .works-table th, .works-table td { padding: 10px 8px; }
-    .works-table .tech-tags { display: block; margin-top: 4px; }
-  }
-
-  /* ── 语言切换 ── */
-  .lang-toggle {
-    position: fixed; top: 20px; right: 24px; z-index: 10;
-    font-family: "Segoe UI", "Frutiger", "PingFang SC", sans-serif;
-    font-size: 12px; font-weight: 600; letter-spacing: 2px;
-    color: #3a6a64; text-decoration: none;
-    background: rgba(255,255,255,0.5); backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 20px; padding: 6px 16px;
-    box-shadow: 0 2px 10px rgba(0,80,100,0.08);
-    transition: all 0.3s ease;
-  }
-  .lang-toggle:hover {
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 4px 16px rgba(0,100,140,0.15);
-    color: #1a4a44;
-  }
-
-  #fish-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.2; }
-  #fish-layer canvas { position: fixed; inset: 0; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .bg-layer { filter: blur(8px) saturate(1); opacity: 0.1; }
-    .bg-overlay::before, .bg-overlay::after { animation: none; }
-    #fish-layer { display: none; }
-  }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 0 49%, rgba(81, 70, 48, .025) 49% 51%, transparent 51%),
+    var(--paper);
+  font-family: var(--serif);
+  line-height: 1.7;
+}
+button, a { font: inherit; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; }
+.page-shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+.topbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 18px;
+  padding: 18px 0; border-bottom: 1px solid var(--rule);
+}
+.wordmark, .meta, .section-index, .instrument-code, .world-number, .bench-id, .private-tag {
+  font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase;
+}
+.wordmark { font-size: .78rem; text-decoration: none; }
+.language-link { font-size: .82rem; text-underline-offset: .25em; }
+.hero { min-height: 88vh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .72fr); align-items: center; gap: clamp(36px, 7vw, 112px); padding: 62px 0 86px; }
+.eyebrow, .section-index { margin: 0 0 18px; color: var(--moss); font-size: .73rem; }
+.hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 6vw, 5.7rem); line-height: 1.05; font-weight: 500; letter-spacing: -.045em; }
+.hero-role { margin: 17px 0 0; color: var(--signal); font: .74rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.hero-copy { max-width: 600px; margin: 26px 0 0; color: var(--ink-soft); font-size: clamp(1rem, 1.6vw, 1.19rem); }
+.core-positioning { max-width: 680px; margin: 24px 0 0; padding: 13px 0 13px 18px; border-left: 2px solid var(--glass); }
+.core-positioning p { margin: 0; font-size: clamp(1rem, 1.55vw, 1.18rem); line-height: 1.55; }
+.core-positioning p + p { margin-top: 5px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+.action {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px;
+  border: 1px solid var(--ink); text-decoration: none; transition: transform .2s ease, background .2s ease;
+}
+.action:hover { transform: translateY(-2px); }
+.action-primary { background: var(--ink); color: var(--paper); }
+.action-secondary { border-color: var(--glass); color: var(--glass); }
+.jar-stage { position: relative; min-height: 405px; display: grid; place-items: center; }
+.jar-stage::before { content: ""; position: absolute; width: 78%; height: 1px; background: var(--signal); transform: rotate(-12deg); }
+.jar-svg { position: relative; width: min(100%, 390px); overflow: visible; }
+.jar-label { position: absolute; right: 0; bottom: 20px; color: var(--signal); font: .68rem/1.4 var(--mono); letter-spacing: .07em; }
+.section { position: relative; padding: clamp(72px, 9vw, 122px) 0; border-top: 1px solid var(--rule); }
+.section-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 28px; align-items: end; margin-bottom: 38px; }
+.section-heading h2 { margin: 0; font-size: clamp(2rem, 4.4vw, 4rem); line-height: 1.06; font-weight: 500; letter-spacing: -.035em; }
+.section-heading p:last-child { margin: 0; max-width: 590px; color: var(--ink-soft); }
+.unspoken-line { position: relative; height: 27px; margin: 0 0 26px; color: var(--signal); }
+.unspoken-line::before { content: ""; position: absolute; top: 14px; left: 0; width: 100%; height: 1px; background: currentColor; }
+.unspoken-line span { position: absolute; top: 0; left: 0; padding-right: 9px; background: var(--paper); font: .64rem var(--mono); letter-spacing: .09em; }
+.line-track { color: var(--glass); }
+.line-track::after { content: ""; position: absolute; top: 10px; left: 29%; width: 9px; height: 9px; border: 1px solid currentColor; border-radius: 50%; background: var(--paper); }
+.line-stem { color: var(--amber); }
+.line-stem::before { transform: rotate(-1.2deg); transform-origin: left; }
+.line-stem::after { content: ""; position: absolute; top: 5px; left: 57%; width: 10px; height: 10px; background: var(--moss); border-radius: 100% 0 100% 0; transform: rotate(25deg); }
+.line-contour { color: var(--moss); }
+.line-contour::before { height: 11px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; background: transparent; }
+.line-state { color: var(--signal); }
+.line-state::after { content: "○—○—○"; position: absolute; top: 2px; right: 0; background: var(--paper); padding-left: 10px; font: .8rem var(--mono); }
+.line-evidence { color: var(--amber); }
+.line-evidence::after { content: "◇—◇—◇"; position: absolute; top: 2px; right: 0; background: var(--paper); padding-left: 10px; font: .8rem var(--mono); }
+.gallery-controls { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin: 0 0 15px; }
+.gallery-controls p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.grid-toggle { appearance: none; border: 1px solid var(--ink); padding: 8px 12px; cursor: pointer; color: var(--ink); background: transparent; }
+.gallery-rail { display: flex; gap: 18px; overflow-x: auto; padding: 8px 1px 22px; scroll-snap-type: x proximity; scrollbar-color: var(--moss) var(--paper-deep); touch-action: pan-y pinch-zoom; cursor: grab; }
+.gallery-rail.is-dragging { cursor: grabbing; user-select: none; }
+.gallery-rail::-webkit-scrollbar { height: 8px; }
+.gallery-rail::-webkit-scrollbar-track { background: var(--paper-deep); }
+.gallery-rail::-webkit-scrollbar-thumb { background: var(--moss); }
+.gallery-frame { width: min(65vw, 274px); flex: 0 0 auto; margin: 0; scroll-snap-align: start; }
+.gallery-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; text-align: left; }
+.gallery-open img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--ink); filter: saturate(.88); transition: filter .2s ease, transform .2s ease; }
+.gallery-open:hover img { filter: saturate(1); transform: translateY(-3px); }
+.gallery-frame figcaption { padding: 9px 2px 0; }
+.gallery-frame strong { display: block; font-weight: 500; }
+.gallery-frame small { display: block; color: var(--ink-soft); font-size: .78rem; line-height: 1.45; }
+.gallery-rail.is-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(154px, 1fr)); overflow: visible; cursor: default; }
+.gallery-rail.is-grid .gallery-frame { width: auto; }
+.flagships { display: grid; gap: 68px; }
+.flagship { display: grid; grid-template-columns: minmax(102px, .23fr) minmax(0, 1fr); gap: 28px; padding-bottom: 58px; border-bottom: 1px solid var(--rule); }
+.flagship:last-child { border-bottom: 0; padding-bottom: 0; }
+.instrument-code { color: var(--amber); font-size: .73rem; padding-top: 8px; }
+.flagship h3 { margin: 0; font-size: clamp(1.8rem, 3.5vw, 3.2rem); line-height: 1.08; font-weight: 500; letter-spacing: -.03em; }
+.flagship-tagline { margin: 14px 0 28px; color: var(--ink-soft); }
+.five-parts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.five-parts li { padding: 15px 13px 0 0; min-height: 180px; border-right: 1px solid var(--rule); }
+.five-parts li + li { padding-left: 13px; }
+.five-parts li:last-child { border-right: 0; }
+.five-parts span { display: block; color: var(--signal); font: .64rem var(--mono); letter-spacing: .06em; }
+.five-parts strong { display: block; margin: 10px 0; font-size: .9rem; font-weight: 600; }
+.five-parts p { margin: 0; color: var(--ink-soft); font-size: .86rem; line-height: 1.55; }
+.instrument-link { display: inline-block; margin-top: 23px; color: var(--glass); text-underline-offset: .24em; }
+.responsive-list { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-flow: dense; gap: 1px; border-top: 1px solid var(--rule); background: var(--rule); }
+.responsive-world { display: flex; flex-direction: column; grid-column: span 4; min-height: 280px; gap: 13px; padding: 24px; background: var(--paper); border: 0; }
+.responsive-world.specimen-large { grid-column: span 7; min-height: 415px; padding: 33px; }
+.responsive-world.specimen-tall { grid-column: span 5; min-height: 415px; padding: 30px; }
+.responsive-world.specimen-wide { grid-column: span 8; min-height: 322px; padding: 30px; }
+.responsive-world.specimen-compact { grid-column: span 4; min-height: 322px; }
+.responsive-world.specimen-medium { grid-column: span 5; min-height: 348px; padding: 28px; }
+.responsive-world.specimen-tall-right { grid-column: span 7; min-height: 348px; padding: 31px; }
+.world-number { color: var(--moss); font-size: .72rem; }
+.responsive-world h3 { margin: 0; font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 500; line-height: 1.15; }
+.responsive-world p { margin: 12px 0 0; color: var(--ink-soft); }
+.world-spec { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .91rem; }
+.world-spec p { margin: 0 0 10px; }
+.world-spec b { color: var(--glass); font-weight: 600; }
+.benches { border-top: 1px solid var(--rule); }
+.bench { display: grid; grid-template-columns: 72px minmax(0, .72fr) minmax(0, 1fr); gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--rule); }
+.bench-id { color: var(--amber); font-size: .75rem; }
+.bench h3 { margin: 0; font-size: 1.25rem; font-weight: 500; }
+.bench p { margin: 7px 0 0; color: var(--ink-soft); }
+.bench-members { color: var(--moss) !important; font: .73rem/1.5 var(--mono); }
+.private-tag { display: inline-block; margin-top: 12px; color: var(--signal); font-size: .63rem; }
+.bench-flow { align-self: center; padding-left: 20px; border-left: 2px solid var(--moss); font: .76rem/1.6 var(--mono); color: var(--ink-soft); }
+.rejection-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 38px; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.rejection-list li { padding: 19px 0; border-bottom: 1px solid var(--rule); }
+.rejection-list span { display: inline-block; width: 30px; color: var(--signal); font: .69rem var(--mono); }
+.path-section { padding-bottom: 70px; }
+.path-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 34px; }
+.path-grid p { margin: 0; font-size: clamp(1.1rem, 2vw, 1.45rem); }
+.entrances { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.entrances a { color: var(--glass); text-underline-offset: .23em; }
+.source-note { margin-top: 35px !important; color: var(--ink-soft); font-size: .78rem !important; }
+.site-footer { border-top: 1px solid var(--rule); padding: 26px 0 40px; color: var(--ink-soft); font-size: .78rem; }
+dialog { width: min(90vw, 720px); max-height: 92vh; padding: 16px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); }
+dialog::backdrop { background: rgba(27, 27, 24, .62); }
+.lightbox-close { display: block; margin-left: auto; border: 1px solid var(--ink); background: transparent; padding: 6px 10px; cursor: pointer; }
+.lightbox-image { display: block; width: auto; max-width: 100%; max-height: 75vh; margin: 12px auto; }
+.lightbox-caption { margin: 0; text-align: center; }
+@media (max-width: 800px) {
+  .hero, .section-heading, .path-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 42px; min-height: auto; }
+  .jar-stage { min-height: 280px; order: -1; }
+  .jar-svg { width: min(75vw, 320px); }
+  .five-parts { grid-template-columns: 1fr; }
+  .five-parts li, .five-parts li + li { min-height: auto; padding: 16px 0; border-right: 0; border-bottom: 1px solid var(--rule); }
+  .flagship, .bench { grid-template-columns: 1fr; gap: 11px; }
+  .responsive-list { grid-template-columns: 1fr; }
+  .responsive-world, .responsive-world.specimen-large, .responsive-world.specimen-tall, .responsive-world.specimen-wide, .responsive-world.specimen-compact, .responsive-world.specimen-medium, .responsive-world.specimen-tall-right { grid-column: 1; min-height: auto; padding: 24px; }
+  .instrument-code, .world-number, .bench-id { padding-top: 0; }
+  .bench-flow { padding: 12px 0 0; border-left: 0; border-top: 2px solid var(--moss); }
+  .rejection-list { grid-template-columns: 1fr; }
+  .section { padding: 70px 0; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 </style>
 </head>
 <body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#entrance">Sha.w.z / 云野自由 / 活体仪器室</a>
+      <a class="language-link" href="index_en.html" lang="en">English</a>
+    </header>
+    <main>
+      <section class="hero" id="entrance">
+        <div>
+          <p class="eyebrow">SHA.W.Z / 云野自由 / AI 系统构建者 / 活体仪器室</p>
+          <h1>给说不清的东西，留一台会回应的仪器。</h1>
+          <p class="hero-role">AI 系统构建者</p>
+          <p class="hero-copy">这里不是项目陈列柜，也不是一张技能清单。它是一间仍在工作的仪器室：图像、手势、时间与记忆被放进可被重访的小系统，等人靠近，才开始发生。</p>
+          <div class="core-positioning"><p>我不做万能 Agent。</p><p>我做能接住一种具体创作判断的仪器。</p><p>有的接住说不清的情绪，有的接住创作，有的接住证据。</p></div>
+          <div class="hero-actions">
+            <a class="action action-primary" href="#flagship-works">打开一件仪器</a>
+            <a class="action action-secondary" href="#gallery">看看这些画面</a>
+          </div>
+        </div>
+        <div class="jar-stage"><svg class="jar-svg" viewBox="0 0 460 560" role="img" aria-label="Bottled Cosmos">
+  <defs>
+    <linearGradient id="jar-glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#e1f3ee" stop-opacity=".82"/><stop offset=".5" stop-color="#70b5ba" stop-opacity=".35"/><stop offset="1" stop-color="#1b5260" stop-opacity=".5"/></linearGradient>
+    <radialGradient id="jar-cosmos"><stop stop-color="#f5c66d"/><stop offset=".23" stop-color="#a55d91"/><stop offset=".64" stop-color="#28576a"/><stop offset="1" stop-color="#142833"/></radialGradient>
+  </defs>
+  <path d="M173 72h114l-11 53c0 18 70 23 83 75 19 75 26 237-10 299-26 45-78 69-119 69s-93-24-119-69c-36-62-29-224-10-299 13-52 83-57 83-75z" fill="url(#jar-glass)" stroke="#1b1b18" stroke-width="3"/>
+  <path d="M159 74h142l-12-38H171z" fill="#ae6d22" stroke="#1b1b18" stroke-width="3"/>
+  <ellipse cx="230" cy="316" rx="116" ry="164" fill="url(#jar-cosmos)" opacity=".91"/>
+  <g fill="#f5efe4"><circle cx="183" cy="216" r="3"/><circle cx="260" cy="190" r="4"/><circle cx="299" cy="252" r="2"/><circle cx="161" cy="333" r="2"/><circle cx="269" cy="394" r="3"/><circle cx="202" cy="445" r="2"/></g>
+  <path d="M149 168c-16 85-15 227 19 298" fill="none" stroke="#fff" stroke-opacity=".63" stroke-width="8" stroke-linecap="round"/>
+  <path d="M212 273c20-22 42-4 24 17-19 22-45 12-27-17 17-26 58-11 62 20" fill="none" stroke="#f5c66d" stroke-width="2"/>
+  <path d="M92 498h276" stroke="#a33a31" stroke-width="2"/>
+</svg><span class="jar-label">BOTTLED COSMOS / 30 SEC</span></div>
+      </section>
 
-<a href="index_en.html" class="lang-toggle">EN</a>
+      <section class="section gallery-section" id="gallery">
+        <div class="unspoken-line line-track"><span>UNNAMED LINE / TRACK</span></div>
+        <div class="section-heading"><div><p class="section-index">01 / 画面档案</p><h2>也许你从这些画面认识我。</h2></div><p>21 张画面，按自己的速度经过。拖动这条长卷，或展开成完整网格；页面不会替你滚动，也不会替你解释。</p></div>
+        <div class="gallery-controls"><p>拖拽、触屏或用方向键移动；位置会被记住。</p><button class="grid-toggle" id="gallery-grid-toggle" type="button" aria-expanded="false" data-expand="展开完整网格" data-collapse="收回长卷">展开完整网格</button></div>
+        <div class="gallery-rail" id="gallery-rail" tabindex="0" aria-label="也许你从这些画面认识我。">
+          <figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="115" data-full="assets/gallery/115.png" data-title="画廊图像 115">
+    <img src="assets/gallery/115.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 115">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="114" data-full="assets/gallery/114.png" data-title="画廊图像 114">
+    <img src="assets/gallery/114.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 114">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="116" data-full="assets/gallery/116.png" data-title="画廊图像 116">
+    <img src="assets/gallery/116.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 116">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="100" data-full="assets/gallery/100.png" data-title="画廊图像 100">
+    <img src="assets/gallery/100.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 100">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="102" data-full="assets/gallery/102.png" data-title="画廊图像 102">
+    <img src="assets/gallery/102.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 102">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="103" data-full="assets/gallery/103.png" data-title="画廊图像 103">
+    <img src="assets/gallery/103.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 103">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="104" data-full="assets/gallery/104.png" data-title="画廊图像 104">
+    <img src="assets/gallery/104.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 104">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="105" data-full="assets/gallery/105.png" data-title="画廊图像 105">
+    <img src="assets/gallery/105.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 105">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="106" data-full="assets/gallery/106.png" data-title="画廊图像 106">
+    <img src="assets/gallery/106.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 106">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="107" data-full="assets/gallery/107.png" data-title="画廊图像 107">
+    <img src="assets/gallery/107.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 107">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="108" data-full="assets/gallery/108.png" data-title="画廊图像 108">
+    <img src="assets/gallery/108.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 108">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="109" data-full="assets/gallery/109.png" data-title="画廊图像 109">
+    <img src="assets/gallery/109.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 109">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="110" data-full="assets/gallery/110.png" data-title="画廊图像 110">
+    <img src="assets/gallery/110.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 110">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="111" data-full="assets/gallery/111.png" data-title="画廊图像 111">
+    <img src="assets/gallery/111.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 111">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="112" data-full="assets/gallery/112.png" data-title="画廊图像 112">
+    <img src="assets/gallery/112.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 112">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="113" data-full="assets/gallery/113.png" data-title="画廊图像 113">
+    <img src="assets/gallery/113.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 113">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="117" data-full="assets/gallery/117.png" data-title="画廊图像 117">
+    <img src="assets/gallery/117.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 117">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="118" data-full="assets/gallery/118.png" data-title="画廊图像 118">
+    <img src="assets/gallery/118.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 118">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="119" data-full="assets/gallery/119.jpg" data-title="画廊图像 119">
+    <img src="assets/gallery/119.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 119">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="120" data-full="assets/gallery/120.png" data-title="画廊图像 120">
+    <img src="assets/gallery/120.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 120">
+  </button>
+</figure>
+<figure class="gallery-frame">
+  <button class="gallery-open" type="button" data-gallery-id="121" data-full="assets/gallery/121.png" data-title="画廊图像 121">
+    <img src="assets/gallery/121.webp" loading="lazy" decoding="async" width="376" height="500" alt="画廊图像 121">
+  </button>
+</figure>
+        </div>
+      </section>
 
-<div class="bg-layer" aria-hidden="true"></div>
-<div id="fish-layer" aria-hidden="true"></div>
-<div class="bg-overlay" aria-hidden="true"></div>
+      <section class="section" id="flagship-works">
+        <div class="unspoken-line line-stem"><span>UNNAMED LINE / STEM</span></div>
+        <div class="section-heading"><div><p class="section-index">02 / 三件旗舰</p><h2>不是展示页，是三种交互因果。</h2></div><p>每件作品都要回答同一组问题：它接住什么、你必须做什么、系统如何判断、世界怎样回应、为什么只能这样交互。</p></div>
+        <div class="flagships"><article class="flagship">
+  <div class="instrument-code">01 / instrument</div>
+  <div>
+    <h3>永生花工坊</h3>
+    <p class="flagship-tagline">调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。</p>
+    <ol class="five-parts"><li><span>01</span><strong>它接住什么</strong><p>接住“我怕它会消失”的悬空感：一朵花被允许一直开着，而不是被催着在一刻说清自己。</p></li>
+<li><span>02</span><strong>用户必须做什么</strong><p>用户必须先亲手调节花的颜色、形态或节律；不是被动领取一份已经替她完成的安慰。</p></li>
+<li><span>03</span><strong>系统如何判断</strong><p>系统只读取明确的参数与触碰，不猜测情绪，也不替人给这朵花命名。</p></li>
+<li><span>04</span><strong>世界怎样回应</strong><p>参数与触碰改变花的状态，声音随之出现；回应可见，却不催促解释。</p></li>
+<li><span>05</span><strong>为什么只能这样交互</strong><p>只有先做出一个微小选择，钟罩里的“持续开着”才是来访者亲手留下的照料，而不是自动化的背景动画。</p></li></ol>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html" target="_blank" rel="noopener">打开 ↗</a>
+  </div>
+</article>
+<article class="flagship">
+  <div class="instrument-code">02 / instrument</div>
+  <div>
+    <h3>瓶装宇宙</h3>
+    <p class="flagship-tagline">把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。</p>
+    <ol class="five-parts"><li><span>01</span><strong>它接住什么</strong><p>接住“来不及看完这么多”的巨大与短暂：每颗恒星的一生只有三十秒，仍可以被安放进一只瓶。</p></li>
+<li><span>02</span><strong>用户必须做什么</strong><p>用户必须决定何时靠近并打开瓶口；主页不在背后替任何人运行宇宙。</p></li>
+<li><span>03</span><strong>系统如何判断</strong><p>系统只把“进入”这一次明确选择当作开始条件，并以有限时长组织恒星的显影、变化与熄灭。</p></li>
+<li><span>04</span><strong>世界怎样回应</strong><p>点击进入后，瓶内星体在自己的三十秒里运行；玻璃边界让巨大的尺度仍像能被捧住。</p></li>
+<li><span>05</span><strong>为什么只能这样交互</strong><p>宇宙必须由人亲自打开，短暂才不是被算法抢走的注意力，而是一段被选择的停留。</p></li></ol>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html" target="_blank" rel="noopener">打开 ↗</a>
+  </div>
+</article>
+<article class="flagship">
+  <div class="instrument-code">03 / instrument</div>
+  <div>
+    <h3>青绿·层峦</h3>
+    <p class="flagship-tagline">触之即散，聚散随缘</p>
+    <ol class="five-parts"><li><span>01</span><strong>它接住什么</strong><p>接住那些既不想被固定、也不想被视作消失的时刻：散开并不等于失去，聚拢也不等于必须留下。</p></li>
+<li><span>02</span><strong>用户必须做什么</strong><p>用户必须把视线或指针停在山势上；不需要提交一段自我说明，只需要愿意停留。</p></li>
+<li><span>03</span><strong>系统如何判断</strong><p>系统通过光标射线与粒子景观的相对位置判断局部扰动，不从来访者身上推断任何心理状态。</p></li>
+<li><span>04</span><strong>世界怎样回应</strong><p>青绿层峦在局部关系中松动、显现、重新聚合；回应不是弹窗，而是一处山势被重新看见。</p></li>
+<li><span>05</span><strong>为什么只能这样交互</strong><p>只有让靠近改变观看关系，作品才保留“聚散随缘”的余地；把它做成点击领奖会取消这种余地。</p></li></ol>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html" target="_blank" rel="noopener">打开 ↗</a>
+  </div>
+</article></div>
+      </section>
 
-<main>
+      <section class="section" id="responsive-worlds">
+        <div class="unspoken-line line-contour"><span>UNNAMED LINE / CONTOUR</span></div>
+        <div class="section-heading"><div><p class="section-index">03 / 会回应的小世界</p><h2>可以占有，也可以回来。</h2></div><p>它们不在主页里偷偷运行。只有在你点击进入时，才各自开始一段小小的天气。</p></div>
+        <div class="responsive-list"><article class="responsive-world specimen-large">
+  <div class="world-number">01</div>
+  <div>
+    <h3>2003 水族馆</h3>
+    <p>一只童年屏保里的鱼缸，因为记忆被保存，才值得被再次打开。</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html" target="_blank" rel="noopener">进入这件作品 ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>主要动作</b><br>主要动作：投食、轻叩玻璃、停下来观察。</p>
+    <p><b>回应方式</b><br>回应方式：鱼群、声音与保存下来的来访痕迹一起改变。</p>
+  </div>
+</article>
+<article class="responsive-world specimen-tall">
+  <div class="world-number">02</div>
+  <div>
+    <h3>记得风的树</h3>
+    <p>它把一次掠过树冠的手势留成沿枝传播的风，因此每次重访都能重新开始一阵辽阔。</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/tree-remembers-wind/tree-remembers-wind.html" target="_blank" rel="noopener">进入这件作品 ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>主要动作</b><br>主要动作：拂过树冠。</p>
+    <p><b>回应方式</b><br>回应方式：风、叶与五声音阶沿距离逐段传开。</p>
+  </div>
+</article>
+<article class="responsive-world specimen-wide">
+  <div class="world-number">03</div>
+  <div>
+    <h3>密封瓶里的萤火种子</h3>
+    <p>它是一只可被照料的瓶：种子并不需要被催熟，回来看一眼就是一次允许。</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/firefly-seed-jar/firefly-seed-jar.html" target="_blank" rel="noopener">进入这件作品 ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>主要动作</b><br>主要动作：触碰或按住一颗琥珀晶种。</p>
+    <p><b>回应方式</b><br>回应方式：晶种短暂发芽，萤光触角与涟漪在玻璃内出现。</p>
+  </div>
+</article>
+<article class="responsive-world specimen-compact">
+  <div class="world-number">04</div>
+  <div>
+    <h3>玻璃钟罩里的潮汐月苔</h3>
+    <p>夜晚被缩小到一只钟罩里；它不要求完成什么，只等下一次轻轻敲门。</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/tidal-moon-moss/tidal-moon-moss.html" target="_blank" rel="noopener">进入这件作品 ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>主要动作</b><br>主要动作：触碰钟罩。</p>
+    <p><b>回应方式</b><br>回应方式：月苔苏醒，微光与潮汐式波纹向外扩散。</p>
+  </div>
+</article>
+<article class="responsive-world specimen-medium">
+  <div class="world-number">05</div>
+  <div>
+    <h3>山谷里的风</h3>
+    <p>风车在听，风铃在回答；它像一处可以步入的天气，而不是一次性的展示。</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/windmill-valley/windmill-valley.html" target="_blank" rel="noopener">进入这件作品 ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>主要动作</b><br>主要动作：走进山谷，靠近风与风铃。</p>
+    <p><b>回应方式</b><br>回应方式：风车、风铃与环境声彼此接力。</p>
+  </div>
+</article>
+<article class="responsive-world specimen-tall-right">
+  <div class="world-number">06</div>
+  <div>
+    <h3>内心气象日记 · 60s 氧气舱</h3>
+    <p>情绪不必马上被命名；选一种天气，给自己六十秒重新吸气，是可以反复使用的日记入口。</p>
+    <a class="instrument-link" href="https://shasha1108.github.io/healing-visual-lab/oxygen-chamber/oxygen-chamber.html" target="_blank" rel="noopener">进入这件作品 ↗</a>
+  </div>
+  <div class="world-spec">
+    <p><b>主要动作</b><br>主要动作：选择天气，开始或结束 60 秒呼吸。</p>
+    <p><b>回应方式</b><br>回应方式：玻璃小屋的气象、像素粒子与环境音随心境切换。</p>
+  </div>
+</article></div>
+      </section>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero" style="background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; border:none; box-shadow:none;">
-    <img class="typing" src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&weight=600&size=22&color=3a8a7a&center=true&vCenter=true&width=750&pause=100000&lines=让每个说不清的情绪，都能被看见、被理解。" alt="让每个说不清的情绪，都能被看见、被理解。">
+      <section class="section" id="system-benches">
+        <div class="unspoken-line line-state"><span>UNNAMED LINE / STATE MACHINE</span></div>
+        <div class="section-heading"><div><p class="section-index">04 / 三张系统工作台</p><h2>系统只展示职责与脱敏流程。</h2></div><p>这些是私有工作台：公开的是工作如何被认真对待，不公开源码、客户资料或自动化捷径。</p></div>
+        <div class="benches"><article class="bench">
+  <div class="bench-id">01</div>
+  <div><h3>感受仪器</h3><p class="bench-members">成员 / healing-space / pixel-bloom / Healing Visual Lab</p><p>把难以命名的感受做成必须由人完成、并会给出回应状态的体验。</p><span class="private-tag">PRIVATE SYSTEM / NO SOURCE LINK</span></div>
+  <div class="bench-flow">脱敏流程<br>感受 → 隐喻 → 不可替代动作 → 回应状态</div>
+</article>
+<article class="bench">
+  <div class="bench-id">02</div>
+  <div><h3>创作仪器</h3><p class="bench-members">成员 / content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish</p><p>把创作输入交给场景判断与专业执行器，并把最终确认保留给用户。</p><span class="private-tag">PRIVATE SYSTEM / NO SOURCE LINK</span></div>
+  <div class="bench-flow">脱敏流程<br>输入 → 场景判断 → handoff → 专业执行器 → 用户确认</div>
+</article>
+<article class="bench">
+  <div class="bench-id">03</div>
+  <div><h3>证据仪器</h3><p class="bench-members">成员 / content-growth-advisor / yunye-growth-lab / creator-growth-workbench</p><p>把增长与创作判断拆回事实、推断和待验证项，再以可复盘的实验继续。</p><span class="private-tag">PRIVATE SYSTEM / NO SOURCE LINK</span></div>
+  <div class="bench-flow">脱敏流程<br>事实 → 推断 → 待验证 → 单变量实验 → 真实复盘</div>
+</article></div>
+      </section>
 
-    <img class="typing" src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&size=15&color=5aaccc&center=true&vCenter=true&width=700&pause=100000&lines=产品经理+·+Agent%2FSkill+开发+·+内容创作" alt="Healing Visual Lab">
+      <section class="section" id="rejections">
+        <div class="unspoken-line line-evidence"><span>UNNAMED LINE / EVIDENCE CHAIN</span></div>
+        <div class="section-heading"><div><p class="section-index">05 / 我拒绝自动化什么</p><h2>保留人的决定权。</h2></div></div>
+        <ol class="rejection-list"><li><span>01</span>不把缺失数据当成 `0`。</li>
+<li><span>02</span>不把发布完成写成增长成立。</li>
+<li><span>03</span>不替用户确认创作意图。</li>
+<li><span>04</span>不让公式替代真实读者目标。</li>
+<li><span>05</span>不让点击成为没有隐喻意义的特效。</li>
+<li><span>06</span>不用万能 Agent 掩盖专业判断的缺失。</li></ol>
+      </section>
 
-    
-    <!-- SYNC:badges -->
-    <div class="badges">
-      <a href="mailto:zhangwensha1108@gmail.com"><img src="https://img.shields.io/badge/Gmail-zhangwensha1108@gmail.com-3a8a7a?style=flat-square&logo=gmail&logoColor=white" alt="Gmail" style="filter:hue-rotate(-10deg)"></a>
-      <a href="mailto:wensha_zhang@163.com"><img src="https://img.shields.io/badge/📧-wensha__zhang@163.com-5aaccc?style=flat-square&logo=maildotru&logoColor=white" alt="Email"></a>
-      <a href="https://xhslink.com/m/1kVPy4geTiQ"><img src="https://img.shields.io/badge/小红书-云野自由-c08090?style=flat-square&logo=xiaohongshu&logoColor=white" alt="小红书"></a>
-      <a href="https://shasha1108.github.io/shasha1108/"><img src="https://img.shields.io/badge/GitHub-shasha1108-6a8a9a?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
-    </div>
-    <!-- /SYNC:badges -->
+      <section class="section path-section" id="path">
+        <div class="unspoken-line"><span>UNNAMED LINE / OPEN EXIT</span></div>
+        <div class="section-heading"><div><p class="section-index">06 / 个人路径与入口</p><h2>个人路径与入口</h2></div></div>
+        <div class="path-grid"><p>开发 → 自动化测试 → 数据产品 → 把创作判断工程化的 AI 系统构建者</p><div class="entrances"><a href="https://shasha1108.github.io/healing-visual-lab/" target="_blank" rel="noopener">完整作品集 ↗</a><a href="https://xhslink.com/m/1kVPy4geTiQ" target="_blank" rel="noopener">小红书 ↗</a><a href="https://github.com/shasha1108" target="_blank" rel="noopener">GitHub ↗</a><a href="https://xhslink.com/m/1kVPy4geTiQ" target="_blank" rel="noopener">小红书私信联系 ↗</a></div></div>
+        <p class="source-note">作品事实来源：Healing Visual Lab 的本地只读快照（origin/main）。</p>
+      </section>
+    </main>
+    <footer class="site-footer">没有后台 iframe，没有自动播放的 H5；所有仪器都等一次明确的进入。</footer>
+  </div>
+  <dialog id="gallery-lightbox" aria-labelledby="lightbox-caption"><button class="lightbox-close" id="lightbox-close" type="button">关闭画面</button><img class="lightbox-image" id="lightbox-image" alt=""><p class="lightbox-caption" id="lightbox-caption"></p></dialog>
+  <script>
+(() => {
+  const rail = document.getElementById("gallery-rail");
+  const toggle = document.getElementById("gallery-grid-toggle");
+  const dialog = document.getElementById("gallery-lightbox");
+  const dialogImage = document.getElementById("lightbox-image");
+  const dialogCaption = document.getElementById("lightbox-caption");
+  const dialogClose = document.getElementById("lightbox-close");
 
-    <div class="scroll-hint">↓ SCROLL ↓</div>
-  </section>
+  if (rail) {
+    const storageKey = `shasha1108.gallery.position.${document.documentElement.lang}.v3`;
+    try {
+      const saved = Number(window.localStorage.getItem(storageKey));
+      if (Number.isFinite(saved) && saved > 0) requestAnimationFrame(() => { rail.scrollLeft = saved; });
+    } catch (_) {}
 
-  <!-- ═══════════ ABOUT ME ═══════════ -->
-  <section id="about">
-    <h2>🔮 关于我</h2>
-
-    <!-- SYNC:about-section -->
-    <!-- SYNC:about -->
-    <div class="career-path">开发 → 自动化测试 → 数据产品经理 → AI 创作者。</div>
-    <p>这些年，我看过无数的代码和数据。最复杂的系统，都可以被建模、被呈现、被优化。</p>
-    <p>但人的内心不行。</p>
-    <p>那些堵在胸口、卡在喉咙、说又说不清的感受——没有接口、没有日志、没有任何调试工具能告诉你它卡在哪一行。</p>
-    <p>所以现在的我，用了更多的时间去做这件事：</p>
-    <p>创作情绪插图、文案、和交互式数字体验。 把那些无形的、无名的、无处安放的情绪， 翻译成可以被看见、被触碰、被释放的形状。</p>
-    <p>让每一个说不清的情绪，都有一个具体的表达。</p>
-    <!-- /SYNC:about -->
-      <!-- /SYNC:about-section -->
-  </section>
-
-  <!-- ═══════════ GALLERY ═══════════ -->
-  <section id="gallery">
-    <h2>🎨 画廊</h2>
-
-    <!-- SYNC:gallery-header -->
-    <p style="text-align:center;font-size:15px;color:#4493f8;letter-spacing:2px;font-weight:600;">🖱️ 左右滑动浏览更多 →</p>
-    <!-- /SYNC:gallery-header -->
-
-    <div class="gallery-strip">
-<!-- GALLERY_IMAGES -->
-      <img src="assets/gallery/115.png" loading="lazy"><img src="assets/gallery/114.png" loading="lazy"><img src="assets/gallery/116.png" loading="lazy"><img src="assets/gallery/100.png" loading="lazy"><img src="assets/gallery/102.png" loading="lazy"><img src="assets/gallery/103.png" loading="lazy"><img src="assets/gallery/104.png" loading="lazy"><img src="assets/gallery/105.png" loading="lazy"><img src="assets/gallery/106.png" loading="lazy"><img src="assets/gallery/107.png" loading="lazy"><img src="assets/gallery/108.png" loading="lazy"><img src="assets/gallery/109.png" loading="lazy"><img src="assets/gallery/110.png" loading="lazy"><img src="assets/gallery/111.png" loading="lazy"><img src="assets/gallery/112.png" loading="lazy"><img src="assets/gallery/113.png" loading="lazy"><img src="assets/gallery/117.png" loading="lazy"><img src="assets/gallery/118.png" loading="lazy"><img src="assets/gallery/119.jpg" loading="lazy"><img src="assets/gallery/120.png" loading="lazy"><img src="assets/gallery/121.png" loading="lazy">
-<!-- /GALLERY_IMAGES --><img src="assets/gallery/114.png" loading="lazy"><img src="assets/gallery/116.png" loading="lazy"><img src="assets/gallery/100.png" loading="lazy"><img src="assets/gallery/102.png" loading="lazy"><img src="assets/gallery/103.png" loading="lazy"><img src="assets/gallery/104.png" loading="lazy"><img src="assets/gallery/105.png" loading="lazy"><img src="assets/gallery/106.png" loading="lazy"><img src="assets/gallery/107.png" loading="lazy"><img src="assets/gallery/108.png" loading="lazy"><img src="assets/gallery/109.png" loading="lazy"><img src="assets/gallery/110.png" loading="lazy"><img src="assets/gallery/111.png" loading="lazy"><img src="assets/gallery/112.png" loading="lazy"><img src="assets/gallery/113.png" loading="lazy"><img src="assets/gallery/117.png" loading="lazy"><img src="assets/gallery/118.png" loading="lazy"><img src="assets/gallery/119.jpg" loading="lazy"><img src="assets/gallery/120.png" loading="lazy"><img src="assets/gallery/121.png" loading="lazy">
-    </div>
-  </section>
-
-  <!-- ═══════════ HEALING VISUAL LAB ═══════════ -->
-  <section id="hvl">
-    <h2>🌀 Healing Visual Lab · 视觉疗愈实验室</h2>
-
-    
-
-    <!-- SYNC:hvl -->
-    <h3>✦ 最新作品</h3>
-
-    <!-- LATEST_WORKS_START -->
-<table width="100%">
-<tr><th width="30%">作品</th><th  width="70%">一句话</th></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html">封存的四点钟 / Sealed Summer Jar</a></b></td><td>一只玻璃罐，把一个不会结束的夏日下午四点钟封存了起来。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html">等月亮 / Waiting for the Moon</a></b></td><td>A quiet moonlit window where a cat slowly falls asleep.</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html">旧信号 / The Old Signal</a></b></td><td>一台信号不好的旧电视，红青两个色版错开着呼吸；你每碰它一次，它就调准一点——直到屏幕里那个旧日的自己，回头看你一眼。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html">潮汐保管处 / Tide Keeping Station</a></b></td><td>把缠成一团的事交给潮汐，它会替你拆开、带走，并留下回应。</td></tr>
-<tr><td><b><a href="https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html">2003 水族馆 / Aquarium 2003</a></b></td><td>你小时候盯过的那个屏保活了——缸里的鱼记得你</td></tr>
-</table>
-<!-- LATEST_WORKS_END -->
-
-    <h3 align="center">
-      <a href="https://shasha1108.github.io/healing-visual-lab/">探索全部作品 →</a>
-    </h3>
-
-    <p align="center">
-      <em>If one of these pieces made you feel seen — that's the only reason this exists.</em>
-      <br/>
-      <em>如果其中某件作品让你感到被看见——那就是这些代码存在的全部意义。</em>
-    </p>
-
-    <p align="center">
-      <a href="https://github.com/shasha1108/healing-visual-lab">
-        <img src="https://img.shields.io/github/stars/shasha1108/healing-visual-lab?style=social" alt="Stars"/>
-      </a>
-      &ensp;
-      <sub>如果某件作品触动了你，⭐ Star 让更多人也能找到它。</sub>
-    </p>
-    <!-- /SYNC:hvl -->
-  </section>
-
-  <!-- ═══════════ TECH SPECTRUM ═══════════ -->
-  <section id="skills">
-    <h2>🛠️ 能力光谱</h2>
-
-    <!-- SYNC:skills -->
-    <table width="100%">
-<tr><th width="30%">能力</th><th width="70%">说明</th></tr>
-<tr><td>🔀 系统化拆解</td><td>把混乱需求拆成闭环 —— 输入 → 判断 → 输出 → 反馈 → 迭代</td></tr>
-<tr><td>🤖 Agent & Skill 开发</td><td>从规则定义到兜底逻辑，让 AI 真的能替人干活。不是写 prompt，是设计系统</td></tr>
-<tr><td>🎬 AI 内容创作</td><td>图文 · 视频 · 文案 · 应用。用什么工具不重要，能准确表达就行</td></tr>
-<tr><td>🎯 创作判断力</td><td>知道什么内容能打动人，什么形式适合什么情绪，什么不值得做</td></tr>
-<tr><td>🧬 知识工程化</td><td>把个人经验变成结构化规则。系统越用越聪明，人不在了规则还在</td></tr>
-</table>
-    <!-- /SYNC:skills -->
-  </section>
-
-  <!-- ═══════════ MORE PROJECTS ═══════════ -->
-  <section id="more">
-    <h2>🎯 更多作品 @shasha1108</h2>
-
-    <!-- SYNC:more -->
-    <table width="100%">
-<tr><th width="25%">仓库</th><th  width="75%">简介</th></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-visual-lab">healing-visual-lab</a></td><td>交互式数字疗愈作品集——15 件 Three.js/WebGL 交互实验</td></tr>
-<tr><td><a href="https://github.com/shasha1108/healing-space">healing-space</a></td><td>触觉驱动的交互式疗愈 H5 生成器——GPU 流体、WebGL 着色器</td></tr>
-<tr><td><a href="https://github.com/shasha1108/pixel-bloom">pixel-bloom</a></td><td>像素艺术 × 毛玻璃美学——赛博养宠、电子水族箱</td></tr>
-<tr><td><a href="https://github.com/shasha1108/inner-voice">inner-voice</a></td><td>小红书情绪内容创作——隐喻挖掘、场景写作、视觉叙事</td></tr>
-<tr><td><a href="https://github.com/shasha1108/h5-publish-skill">h5-publish-skill</a></td><td>一键发布 H5 到 GitHub Pages——拖入文件夹即上线</td></tr>
-</table>
-    <!-- /SYNC:more -->
-  </section>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer>
-
-
-    <!-- SYNC:footer -->
-    <p align="center">
-  <sub>Sha.w.z · <a href="README_EN.md">English</a></sub>
-
-<p align="center"><sub>Source code under <a href="LICENSE">MIT License</a> | 网站源代码采用 MIT 协议</sub></p>
-    <!-- /SYNC:footer -->
-  </footer>
-
-</main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-<script>
-// ── 背景像素海洋生物：鱼 + 章鱼 + 水母 ──
-const PX = 5;
-let bgCreatures = [];
-
-new p5(function(p) {
-  p.setup = function() {
-    let c = p.createCanvas(p.windowWidth, p.windowHeight);
-    c.parent('fish-layer');
-    p.pixelDensity(1); p.noSmooth();
-
-    const types = ['fish','fish','fish','fish','octopus','octopus','jellyfish','jellyfish'];
-    for (let i = 0; i < types.length; i++) {
-      let t = types[i];
-      bgCreatures.push({
-        type: t,
-        x: p.random(p.width), y: p.random(p.height * 0.35, p.height * 0.82),
-        vx: p.random(0.25, 0.6) * (p.random() > 0.5 ? 1 : -1),
-        vy: 0, bob: p.random(p.TWO_PI),
-        palette: p.random([
-          { body: '#87ceeb', fin: '#5f9ea0' },
-          { body: '#ffb6c1', fin: '#ff69b4' },
-          { body: '#ffe4b5', fin: '#ffa07a' },
-          { body: '#98fb98', fin: '#3cb371' },
-          { body: '#dda0dd', fin: '#ba55d3' },
-          { body: '#f0e68c', fin: '#daa520' },
-        ])
+    let saveFrame = 0;
+    rail.addEventListener("scroll", () => {
+      cancelAnimationFrame(saveFrame);
+      saveFrame = requestAnimationFrame(() => {
+        try { window.localStorage.setItem(storageKey, String(Math.round(rail.scrollLeft))); } catch (_) {}
       });
-    }
-  };
+    }, { passive: true });
 
-  function drawFish(f) {
-    p.push();
-    p.translate(p.round(f.x), p.round(f.y));
-    if (f.vx < 0) p.scale(-1, 1);
-    p.noStroke();
-    // Body + fins + tail
-    p.fill(f.palette.body);
-    p.rect(-PX*2, -PX, PX*4, PX*2.5);
-    p.rect(-PX, -PX*2, PX*2, PX);
-    // Waving tail
-    let tailWag = p.sin(p.frameCount * 0.15 + f.bob) > 0 ? 0 : PX;
-    p.rect(-PX*3, -PX*0.5 + tailWag, PX, PX*1.5);
-    p.fill(f.palette.fin || '#fff');
-    p.rect(PX, -PX*0.3, PX, PX*0.8);
-    p.fill(0); p.rect(PX*1.2, -PX*0.3, PX*0.5, PX*0.5);
-    p.pop();
+    rail.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      rail.scrollBy({ left: event.key === "ArrowLeft" ? -Math.min(rail.clientWidth * .78, 430) : Math.min(rail.clientWidth * .78, 430), behavior: "smooth" });
+    });
+
+    let pointerId = null;
+    let startX = 0;
+    let startLeft = 0;
+    let moved = false;
+    let suppressClick = false;
+    rail.addEventListener("pointerdown", (event) => {
+      if (rail.classList.contains("is-grid") || event.pointerType === "mouse" && event.button !== 0) return;
+      pointerId = event.pointerId;
+      startX = event.clientX;
+      startLeft = rail.scrollLeft;
+      moved = false;
+      rail.classList.add("is-dragging");
+      rail.setPointerCapture(pointerId);
+    });
+    rail.addEventListener("pointermove", (event) => {
+      if (pointerId !== event.pointerId) return;
+      const delta = event.clientX - startX;
+      if (Math.abs(delta) > 4) moved = true;
+      if (moved) rail.scrollLeft = startLeft - delta;
+    });
+    const release = (event) => {
+      if (pointerId !== event.pointerId) return;
+      if (moved) {
+        suppressClick = true;
+        window.setTimeout(() => { suppressClick = false; }, 0);
+      }
+      if (rail.hasPointerCapture(pointerId)) rail.releasePointerCapture(pointerId);
+      pointerId = null;
+      rail.classList.remove("is-dragging");
+    };
+    rail.addEventListener("pointerup", release);
+    rail.addEventListener("pointercancel", release);
+    rail.addEventListener("click", (event) => {
+      if (!suppressClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
   }
 
-  function drawOctopus(f) {
-    p.push();
-    p.translate(p.round(f.x), p.round(f.y));
-    p.noStroke();
-    // Round head
-    p.fill(f.palette.body);
-    p.rect(-PX*1.5, -PX*3, PX*3, PX*3, 2);
-    p.rect(-PX*2, -PX*2.5, PX, PX*1.5);
-    p.rect(PX, -PX*2.5, PX, PX*1.5);
-    // Eyes
-    p.fill(255);
-    p.rect(-PX*0.8, -PX*2, PX*0.8, PX*0.8);
-    p.rect(PX*0.3, -PX*2, PX*0.8, PX*0.8);
-    p.fill(0);
-    p.rect(-PX*0.6, -PX*1.8, PX*0.5, PX*0.5);
-    p.rect(PX*0.5, -PX*1.8, PX*0.5, PX*0.5);
-    // 4 wiggly tentacles
-    let w = p.sin(p.frameCount * 0.12 + f.bob) * PX;
-    let w2 = p.cos(p.frameCount * 0.14 + f.bob) * PX;
-    p.fill(f.palette.fin || f.palette.body);
-    p.rect(-PX*2 + w, -PX*0.2, PX, PX*2.5);
-    p.rect(-PX*0.5 + w2, PX*0.5, PX, PX*2.5);
-    p.rect(PX*0.5 - w, PX*0.5, PX, PX*2.5);
-    p.rect(PX*1.5 - w2, -PX*0.2, PX, PX*2.5);
-    p.pop();
+  if (toggle && rail) {
+    toggle.addEventListener("click", () => {
+      const expanded = rail.classList.toggle("is-grid");
+      toggle.setAttribute("aria-expanded", String(expanded));
+      toggle.textContent = expanded ? toggle.dataset.collapse : toggle.dataset.expand;
+    });
   }
 
-  function drawJellyfish(f) {
-    p.push();
-    p.translate(p.round(f.x), p.round(f.y));
-    p.noStroke();
-    // Dome
-    p.fill(f.palette.body);
-    p.rect(-PX*2, -PX*3, PX*4, PX*2, 2);
-    p.rect(-PX*1.5, -PX*3.5, PX, PX);
-    p.rect(PX*0.5, -PX*3.5, PX, PX);
-    p.fill(f.palette.fin || p.palette.body);
-    // Pulsing tentacles
-    let t1 = p.sin(p.frameCount * 0.1 + f.bob) * PX * 0.8;
-    let t2 = p.cos(p.frameCount * 0.12 + f.bob) * PX * 0.8;
-    let t3 = p.sin(p.frameCount * 0.09 + f.bob + 1) * PX * 0.8;
-    p.rect(-PX*1.5 + t1, -PX*0.5, PX*0.8, PX*3);
-    p.rect(-PX*0.3 + t2, -PX*0.5, PX*0.8, PX*3.5);
-    p.rect(PX*0.8 + t3, -PX*0.5, PX*0.8, PX*2.8);
-    // Eyes
-    p.fill(255);
-    p.rect(-PX*0.5, -PX*2, PX*0.6, PX*0.6);
-    p.rect(PX*0.3, -PX*2, PX*0.6, PX*0.6);
-    p.pop();
-  }
-
-  p.draw = function() {
-    p.clear();
-    for (let c of bgCreatures) {
-      // Movement
-      c.x += c.vx;
-      c.y += p.sin(p.frameCount * 0.018 + c.bob) * 0.25;
-      // Jellyfish pulse up/down
-      if (c.type === 'jellyfish') c.y += p.sin(p.frameCount * 0.04 + c.bob) * 0.4;
-      // Wrap around
-      if (c.x > p.width + 80) { c.x = -80; c.y = p.random(p.height * 0.3, p.height * 0.85); }
-      if (c.x < -80) { c.x = p.width + 80; c.y = p.random(p.height * 0.3, p.height * 0.85); }
-
-      if (c.type === 'octopus') drawOctopus(c);
-      else if (c.type === 'jellyfish') drawJellyfish(c);
-      else drawFish(c);
-    }
-  };
-
-  p.windowResized = function() {
-    p.resizeCanvas(p.windowWidth, p.windowHeight);
-    p.pixelDensity(1);
-  };
-});
+  document.querySelectorAll(".gallery-open").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!dialog || !dialogImage || !dialogCaption) return;
+      dialogImage.src = button.dataset.full || "";
+      dialogImage.alt = button.dataset.title || "";
+      dialogCaption.textContent = button.dataset.title || "";
+      dialog.showModal();
+    });
+  });
+  if (dialogClose && dialog) dialogClose.addEventListener("click", () => dialog.close());
+  if (dialog) dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+})();
 </script>
-
 </body>
 </html>

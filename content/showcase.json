@@ -1,0 +1,598 @@
+{
+  "schema_version": 1,
+  "source_snapshot": "content/healing-visual-lab.snapshot.json",
+  "identity": {
+    "name": "Sha.w.z",
+    "site_zh": "活体仪器室",
+    "site_en": "Living Instrument Room",
+    "language_switch_zh": "English",
+    "language_switch_en": "中文",
+    "xhs_url": "https://xhslink.com/m/1kVPy4geTiQ",
+    "lab_url": "https://shasha1108.github.io/healing-visual-lab/",
+    "signature_zh": "Sha.w.z / 云野自由",
+    "signature_en": "Sha.w.z / 云野自由 (Yunye Ziyou)",
+    "role_zh": "AI 系统构建者",
+    "role_en": "AI Systems Builder",
+    "github_url": "https://github.com/shasha1108"
+  },
+  "entrance": {
+    "eyebrow_zh": "SHA.W.Z / 云野自由 / AI 系统构建者 / 活体仪器室",
+    "eyebrow_en": "SHA.W.Z / YUNYE ZIYOU / AI SYSTEMS BUILDER / LIVING INSTRUMENT ROOM",
+    "title_zh": "给说不清的东西，留一台会回应的仪器。",
+    "title_en": "A responsive instrument for what cannot yet be said.",
+    "body_zh": "这里不是项目陈列柜，也不是一张技能清单。它是一间仍在工作的仪器室：图像、手势、时间与记忆被放进可被重访的小系统，等人靠近，才开始发生。",
+    "body_en": "This is neither a project cabinet nor a skills list. It is a working instrument room: images, gestures, time, and memory are held inside revisitable systems that begin only when someone comes close.",
+    "primary_zh": "打开一件仪器",
+    "primary_en": "Open an instrument",
+    "secondary_zh": "看看这些画面",
+    "secondary_en": "See the frames",
+    "core_positioning_zh": [
+      "我不做万能 Agent。",
+      "我做能接住一种具体创作判断的仪器。",
+      "有的接住说不清的情绪，有的接住创作，有的接住证据。"
+    ],
+    "core_positioning_en": [
+      "I do not build one-size-fits-all Agents.",
+      "I build instruments that can hold a specific creative judgment.",
+      "Some hold the unspoken emotions; some hold creative work; some hold evidence."
+    ]
+  },
+  "flagship_works": [
+    {
+      "slug": "eternal-bloom",
+      "five_parts": {
+        "zh": [
+          {
+            "label": "它接住什么",
+            "text": "接住“我怕它会消失”的悬空感：一朵花被允许一直开着，而不是被催着在一刻说清自己。"
+          },
+          {
+            "label": "用户必须做什么",
+            "text": "用户必须先亲手调节花的颜色、形态或节律；不是被动领取一份已经替她完成的安慰。"
+          },
+          {
+            "label": "系统如何判断",
+            "text": "系统只读取明确的参数与触碰，不猜测情绪，也不替人给这朵花命名。"
+          },
+          {
+            "label": "世界怎样回应",
+            "text": "参数与触碰改变花的状态，声音随之出现；回应可见，却不催促解释。"
+          },
+          {
+            "label": "为什么只能这样交互",
+            "text": "只有先做出一个微小选择，钟罩里的“持续开着”才是来访者亲手留下的照料，而不是自动化的背景动画。"
+          }
+        ],
+        "en": [
+          {
+            "label": "What it holds",
+            "text": "It holds the suspension of “I am afraid it will disappear”: a bloom is allowed to continue rather than being rushed into a single explanation."
+          },
+          {
+            "label": "What the visitor must do",
+            "text": "The visitor must tune the flower's colour, form, or rhythm first, rather than receiving comfort already completed for them."
+          },
+          {
+            "label": "How the system decides",
+            "text": "The system reads only explicit parameters and touch. It does not infer an emotion or name the flower for a person."
+          },
+          {
+            "label": "How the world responds",
+            "text": "Parameters and touch alter the bloom while sound arrives with it. The response is visible without demanding an account."
+          },
+          {
+            "label": "Why this interaction must be this way",
+            "text": "Only a small, deliberate choice makes the bell jar's continuing bloom care left by the visitor, rather than automated background animation."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "bottled-cosmos",
+      "five_parts": {
+        "zh": [
+          {
+            "label": "它接住什么",
+            "text": "接住“来不及看完这么多”的巨大与短暂：每颗恒星的一生只有三十秒，仍可以被安放进一只瓶。"
+          },
+          {
+            "label": "用户必须做什么",
+            "text": "用户必须决定何时靠近并打开瓶口；主页不在背后替任何人运行宇宙。"
+          },
+          {
+            "label": "系统如何判断",
+            "text": "系统只把“进入”这一次明确选择当作开始条件，并以有限时长组织恒星的显影、变化与熄灭。"
+          },
+          {
+            "label": "世界怎样回应",
+            "text": "点击进入后，瓶内星体在自己的三十秒里运行；玻璃边界让巨大的尺度仍像能被捧住。"
+          },
+          {
+            "label": "为什么只能这样交互",
+            "text": "宇宙必须由人亲自打开，短暂才不是被算法抢走的注意力，而是一段被选择的停留。"
+          }
+        ],
+        "en": [
+          {
+            "label": "What it holds",
+            "text": "It holds the immensity and brevity of “there is too much to see”: every star lives for thirty seconds, yet can rest in a bottle."
+          },
+          {
+            "label": "What the visitor must do",
+            "text": "The visitor must choose when to approach and open the bottle. The homepage does not run a cosmos in the background for anyone."
+          },
+          {
+            "label": "How the system decides",
+            "text": "The system treats that explicit entry as its only start condition, then gives stars a finite interval to appear, change, and go dark."
+          },
+          {
+            "label": "How the world responds",
+            "text": "After entry, the stars run within their thirty seconds. The glass boundary makes an immense scale feel holdable."
+          },
+          {
+            "label": "Why this interaction must be this way",
+            "text": "A cosmos must be opened by a person so brevity is not attention taken by an algorithm, but time deliberately chosen."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "layered-mountains",
+      "five_parts": {
+        "zh": [
+          {
+            "label": "它接住什么",
+            "text": "接住那些既不想被固定、也不想被视作消失的时刻：散开并不等于失去，聚拢也不等于必须留下。"
+          },
+          {
+            "label": "用户必须做什么",
+            "text": "用户必须把视线或指针停在山势上；不需要提交一段自我说明，只需要愿意停留。"
+          },
+          {
+            "label": "系统如何判断",
+            "text": "系统通过光标射线与粒子景观的相对位置判断局部扰动，不从来访者身上推断任何心理状态。"
+          },
+          {
+            "label": "世界怎样回应",
+            "text": "青绿层峦在局部关系中松动、显现、重新聚合；回应不是弹窗，而是一处山势被重新看见。"
+          },
+          {
+            "label": "为什么只能这样交互",
+            "text": "只有让靠近改变观看关系，作品才保留“聚散随缘”的余地；把它做成点击领奖会取消这种余地。"
+          }
+        ],
+        "en": [
+          {
+            "label": "What it holds",
+            "text": "It holds moments that neither want to be fixed nor called lost: scattering is not loss, and gathering is not an obligation to stay."
+          },
+          {
+            "label": "What the visitor must do",
+            "text": "The visitor must rest a gaze or pointer on the ridges. No personal account is required, only a willingness to stay."
+          },
+          {
+            "label": "How the system decides",
+            "text": "The system uses the relation between raycasting and the particle landscape to decide local disturbance; it infers no psychological state from a visitor."
+          },
+          {
+            "label": "How the world responds",
+            "text": "Blue-green ridges loosen, appear, and gather anew in local relation. The reply is a mountain seen differently, not a popup."
+          },
+          {
+            "label": "Why this interaction must be this way",
+            "text": "Only an approach that changes the act of seeing preserves room for things to gather and scatter; turning it into a reward click would remove that room."
+          }
+        ]
+      }
+    }
+  ],
+  "responsive_worlds": [
+    {
+      "slug": "aquarium-2003",
+      "specimen_size": "large",
+      "reason_zh": "一只童年屏保里的鱼缸，因为记忆被保存，才值得被再次打开。",
+      "reason_en": "A childhood screensaver aquarium is worth reopening because it keeps a memory of the visit.",
+      "action_zh": "主要动作：投食、轻叩玻璃、停下来观察。",
+      "action_en": "Primary gesture: feed, tap the glass softly, and stay to watch.",
+      "response_zh": "回应方式：鱼群、声音与保存下来的来访痕迹一起改变。",
+      "response_en": "Response: the fish, sound, and retained traces of a visit change together."
+    },
+    {
+      "slug": "tree-remembers-wind",
+      "specimen_size": "tall",
+      "reason_zh": "它把一次掠过树冠的手势留成沿枝传播的风，因此每次重访都能重新开始一阵辽阔。",
+      "reason_en": "A gesture over its canopy becomes wind travelling through branches, so every return can begin another small expanse.",
+      "action_zh": "主要动作：拂过树冠。",
+      "action_en": "Primary gesture: brush across the canopy.",
+      "response_zh": "回应方式：风、叶与五声音阶沿距离逐段传开。",
+      "response_en": "Response: wind, leaves, and pentatonic sound travel outward by distance."
+    },
+    {
+      "slug": "firefly-seed-jar",
+      "specimen_size": "wide",
+      "reason_zh": "它是一只可被照料的瓶：种子并不需要被催熟，回来看一眼就是一次允许。",
+      "reason_en": "It is a bottle that can be cared for: seeds do not need to be rushed, and looking in again is itself permission.",
+      "action_zh": "主要动作：触碰或按住一颗琥珀晶种。",
+      "action_en": "Primary gesture: touch or hold an amber seed.",
+      "response_zh": "回应方式：晶种短暂发芽，萤光触角与涟漪在玻璃内出现。",
+      "response_en": "Response: a seed briefly sprouts; luminous tendrils and ripples appear inside the glass."
+    },
+    {
+      "slug": "tidal-moon-moss",
+      "specimen_size": "compact",
+      "reason_zh": "夜晚被缩小到一只钟罩里；它不要求完成什么，只等下一次轻轻敲门。",
+      "reason_en": "Night is reduced to a bell jar. It asks for no completion, only waits for the next gentle knock.",
+      "action_zh": "主要动作：触碰钟罩。",
+      "action_en": "Primary gesture: touch the bell jar.",
+      "response_zh": "回应方式：月苔苏醒，微光与潮汐式波纹向外扩散。",
+      "response_en": "Response: moon moss wakes, sending glow and tide-like waves outward."
+    },
+    {
+      "slug": "windmill-valley",
+      "specimen_size": "medium",
+      "reason_zh": "风车在听，风铃在回答；它像一处可以步入的天气，而不是一次性的展示。",
+      "reason_en": "The windmill listens and wind chimes answer; it is weather one can enter, not a one-time display.",
+      "action_zh": "主要动作：走进山谷，靠近风与风铃。",
+      "action_en": "Primary gesture: enter the valley and move toward wind and chimes.",
+      "response_zh": "回应方式：风车、风铃与环境声彼此接力。",
+      "response_en": "Response: windmill, chimes, and ambient sound hand the reply from one to another."
+    },
+    {
+      "slug": "oxygen-chamber",
+      "specimen_size": "tall-right",
+      "reason_zh": "情绪不必马上被命名；选一种天气，给自己六十秒重新吸气，是可以反复使用的日记入口。",
+      "reason_en": "An emotion need not be named at once. Choosing weather and taking sixty seconds to breathe is a diary entrance designed for return.",
+      "action_zh": "主要动作：选择天气，开始或结束 60 秒呼吸。",
+      "action_en": "Primary gesture: choose weather, then begin or end a 60-second breath.",
+      "response_zh": "回应方式：玻璃小屋的气象、像素粒子与环境音随心境切换。",
+      "response_en": "Response: weather, pixel particles, and ambient sound shift inside the glass room."
+    }
+  ],
+  "gallery": [
+    {
+      "id": "115",
+      "image": "assets/gallery/115.png",
+      "webp_image": "assets/gallery/115.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "114",
+      "image": "assets/gallery/114.png",
+      "webp_image": "assets/gallery/114.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "116",
+      "image": "assets/gallery/116.png",
+      "webp_image": "assets/gallery/116.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "100",
+      "image": "assets/gallery/100.png",
+      "webp_image": "assets/gallery/100.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "102",
+      "image": "assets/gallery/102.png",
+      "webp_image": "assets/gallery/102.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "103",
+      "image": "assets/gallery/103.png",
+      "webp_image": "assets/gallery/103.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "104",
+      "image": "assets/gallery/104.png",
+      "webp_image": "assets/gallery/104.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "105",
+      "image": "assets/gallery/105.png",
+      "webp_image": "assets/gallery/105.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "106",
+      "image": "assets/gallery/106.png",
+      "webp_image": "assets/gallery/106.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "107",
+      "image": "assets/gallery/107.png",
+      "webp_image": "assets/gallery/107.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "108",
+      "image": "assets/gallery/108.png",
+      "webp_image": "assets/gallery/108.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "109",
+      "image": "assets/gallery/109.png",
+      "webp_image": "assets/gallery/109.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "110",
+      "image": "assets/gallery/110.png",
+      "webp_image": "assets/gallery/110.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "111",
+      "image": "assets/gallery/111.png",
+      "webp_image": "assets/gallery/111.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "112",
+      "image": "assets/gallery/112.png",
+      "webp_image": "assets/gallery/112.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "113",
+      "image": "assets/gallery/113.png",
+      "webp_image": "assets/gallery/113.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "117",
+      "image": "assets/gallery/117.png",
+      "webp_image": "assets/gallery/117.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "118",
+      "image": "assets/gallery/118.png",
+      "webp_image": "assets/gallery/118.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "119",
+      "image": "assets/gallery/119.jpg",
+      "webp_image": "assets/gallery/119.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "120",
+      "image": "assets/gallery/120.png",
+      "webp_image": "assets/gallery/120.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    },
+    {
+      "id": "121",
+      "image": "assets/gallery/121.png",
+      "webp_image": "assets/gallery/121.webp",
+      "title_zh": "",
+      "title_en": "",
+      "description_zh": "",
+      "description_en": "",
+      "xhs_url": null,
+      "work_slug": null,
+      "visible": true
+    }
+  ],
+  "workbenches": [
+    {
+      "id": "01",
+      "name_zh": "感受仪器",
+      "name_en": "Feeling Instruments",
+      "members_zh": "healing-space / pixel-bloom / Healing Visual Lab",
+      "members_en": "healing-space / pixel-bloom / Healing Visual Lab",
+      "role_zh": "把难以命名的感受做成必须由人完成、并会给出回应状态的体验。",
+      "role_en": "Turns hard-to-name feelings into experiences that require a human action and return a response state.",
+      "flow_zh": "感受 → 隐喻 → 不可替代动作 → 回应状态",
+      "flow_en": "Feeling → metaphor → irreplaceable action → response state"
+    },
+    {
+      "id": "02",
+      "name_zh": "创作仪器",
+      "name_en": "Creative Instruments",
+      "members_zh": "content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish",
+      "members_en": "content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish",
+      "role_zh": "把创作输入交给场景判断与专业执行器，并把最终确认保留给用户。",
+      "role_en": "Routes creative input through scene judgment and specialist executors while keeping final confirmation with the user.",
+      "flow_zh": "输入 → 场景判断 → handoff → 专业执行器 → 用户确认",
+      "flow_en": "Input → scene judgment → handoff → specialist executor → user confirmation"
+    },
+    {
+      "id": "03",
+      "name_zh": "证据仪器",
+      "name_en": "Evidence Instruments",
+      "members_zh": "content-growth-advisor / yunye-growth-lab / creator-growth-workbench",
+      "members_en": "content-growth-advisor / yunye-growth-lab / creator-growth-workbench",
+      "role_zh": "把增长与创作判断拆回事实、推断和待验证项，再以可复盘的实验继续。",
+      "role_en": "Separates growth and creative judgment back into facts, inferences, and open validations before continuing with reviewable experiments.",
+      "flow_zh": "事实 → 推断 → 待验证 → 单变量实验 → 真实复盘",
+      "flow_en": "Facts → inference → to be verified → single-variable experiment → real retrospective"
+    }
+  ],
+  "rejections": [
+    {
+      "zh": "不把缺失数据当成 `0`。",
+      "en": "I do not treat missing data as `0`."
+    },
+    {
+      "zh": "不把发布完成写成增长成立。",
+      "en": "I do not write a completed publication as proof that growth happened."
+    },
+    {
+      "zh": "不替用户确认创作意图。",
+      "en": "I do not confirm a user’s creative intent on their behalf."
+    },
+    {
+      "zh": "不让公式替代真实读者目标。",
+      "en": "I do not let a formula replace a real reader goal."
+    },
+    {
+      "zh": "不让点击成为没有隐喻意义的特效。",
+      "en": "I do not let a click become an effect with no metaphorical meaning."
+    },
+    {
+      "zh": "不用万能 Agent 掩盖专业判断的缺失。",
+      "en": "I do not use a one-size-fits-all Agent to conceal the absence of professional judgment."
+    }
+  ],
+  "path": {
+    "title_zh": "个人路径与入口",
+    "title_en": "Path and entrances",
+    "body_zh": "开发 → 自动化测试 → 数据产品 → 把创作判断工程化的 AI 系统构建者",
+    "body_en": "Development → QA automation → data products → an AI systems builder who engineers creative judgment",
+    "entrances": [
+      {
+        "id": "portfolio",
+        "label_zh": "完整作品集",
+        "label_en": "Complete portfolio",
+        "url": "https://shasha1108.github.io/healing-visual-lab/"
+      },
+      {
+        "id": "xiaohongshu",
+        "label_zh": "小红书",
+        "label_en": "Xiaohongshu",
+        "url": "https://xhslink.com/m/1kVPy4geTiQ"
+      },
+      {
+        "id": "github",
+        "label_zh": "GitHub",
+        "label_en": "GitHub",
+        "url": "https://github.com/shasha1108"
+      },
+      {
+        "id": "contact",
+        "label_zh": "小红书私信联系",
+        "label_en": "Contact via Xiaohongshu DM",
+        "url": "https://xhslink.com/m/1kVPy4geTiQ"
+      }
+    ]
+  }
+}
