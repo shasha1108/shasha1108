@@ -97,8 +97,7 @@ REQUIRED_PATH_EN = "Development → QA automation → data product management �
 REQUIRED_ENTRANCES = [
     ("portfolio", "完整作品集", "Complete portfolio", "https://shasha1108.github.io/healing-visual-lab/"),
     ("xiaohongshu", "小红书", "Xiaohongshu", "https://xhslink.com/m/1kVPy4geTiQ"),
-    ("github", "GitHub", "GitHub", "https://github.com/shasha1108"),
-    ("contact", "小红书私信联系", "Contact via Xiaohongshu DM", "https://xhslink.com/m/1kVPy4geTiQ"),
+    ("github", "个人主页", "Personal profile", "https://github.com/shasha1108"),
 ]
 WORK_URL = re.compile(
     r"^https://shasha1108\.github\.io/healing-visual-lab/([a-z0-9-]+)/\1\.html$"
@@ -337,7 +336,7 @@ def validate(config: dict, snapshot: dict) -> list[str]:
             errors.append("path must retain the approved English career path")
         entrances = path.get("entrances")
         if not isinstance(entrances, list) or len(entrances) != len(REQUIRED_ENTRANCES):
-            errors.append("path must contain the four required public entrances")
+            errors.append("path must contain the required public entrances")
         else:
             actual = [(entry.get("id"), entry.get("label_zh"), entry.get("label_en"), entry.get("url")) if isinstance(entry, dict) else None for entry in entrances]
             if actual != REQUIRED_ENTRANCES:

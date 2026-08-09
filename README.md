@@ -1,6 +1,7 @@
 <div align="center">
-<h1>让每个说不清的情绪，都能被看见、被理解。</h1>
-<p>产品经理 · AI 系统与 Skill 开发 · 数字创作</p>
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=20&amp;color=C4A46C&amp;center=true&amp;vCenter=true&amp;width=750&amp;pause=100000&amp;lines=%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82&amp;weight=600" alt="让每个说不清的情绪，都能被看见、被理解。"/>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+AI+%E7%B3%BB%E7%BB%9F%E4%B8%8E+Skill+%E5%BC%80%E5%8F%91+%C2%B7+%E6%95%B0%E5%AD%97%E5%88%9B%E4%BD%9C" alt="产品经理 · AI 系统与 Skill 开发 · 数字创作"/>
 <p>我用图像、声音和交互，做一些可以被触碰、被重访的小世界。它们从难以命名的感受开始，也把最后的解释留给你。</p>
 <p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="README_EN.md">English</a></p>
 </div>
@@ -27,29 +28,11 @@
 
 它们记录了我反复回到的颜色、光线和情绪。你可以慢慢拖动这条长卷，也可以展开来看完整画廊。
 
-<table><tr>
-<td align="center" data-gallery-id="115"><img src="assets/gallery/115.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="114"><img src="assets/gallery/114.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="116"><img src="assets/gallery/116.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="100"><img src="assets/gallery/100.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="102"><img src="assets/gallery/102.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="103"><img src="assets/gallery/103.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="104"><img src="assets/gallery/104.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="105"><img src="assets/gallery/105.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="106"><img src="assets/gallery/106.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="107"><img src="assets/gallery/107.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="108"><img src="assets/gallery/108.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="109"><img src="assets/gallery/109.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="110"><img src="assets/gallery/110.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="111"><img src="assets/gallery/111.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="112"><img src="assets/gallery/112.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="113"><img src="assets/gallery/113.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="117"><img src="assets/gallery/117.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="118"><img src="assets/gallery/118.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="119"><img src="assets/gallery/119.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="120"><img src="assets/gallery/120.webp" width="240" alt="云野自由的画面"/></td>
-<td align="center" data-gallery-id="121"><img src="assets/gallery/121.webp" width="240" alt="云野自由的画面"/></td>
-</tr></table>
+<h3 align="center">🖱️ 左右滑动浏览更多 →</h3>
+
+<pre style="background:transparent;border:none;font:inherit;padding:8px 0;margin:0;overflow-x:auto;">
+<img data-gallery-id="115" src="assets/gallery/115.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="114" src="assets/gallery/114.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="116" src="assets/gallery/116.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="100" src="assets/gallery/100.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="102" src="assets/gallery/102.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="103" src="assets/gallery/103.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="104" src="assets/gallery/104.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="105" src="assets/gallery/105.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="106" src="assets/gallery/106.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="107" src="assets/gallery/107.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="108" src="assets/gallery/108.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="109" src="assets/gallery/109.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="110" src="assets/gallery/110.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="111" src="assets/gallery/111.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="112" src="assets/gallery/112.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="113" src="assets/gallery/113.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="117" src="assets/gallery/117.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="118" src="assets/gallery/118.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="119" src="assets/gallery/119.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="120" src="assets/gallery/120.webp" width="290" alt="云野自由的画面"/><img data-gallery-id="121" src="assets/gallery/121.webp" width="290" alt="云野自由的画面"/>
+</pre>
 
 ## 我把这些感受，做成了小世界。
 
@@ -128,7 +111,7 @@
 
 开发 → 自动化测试 → 数据产品经理 → 用技术把感受与创作变成可以被体验的东西
 
-[完整作品集](https://shasha1108.github.io/healing-visual-lab/) · [小红书](https://xhslink.com/m/1kVPy4geTiQ) · [GitHub](https://github.com/shasha1108) · [小红书私信联系](https://xhslink.com/m/1kVPy4geTiQ)
+[完整作品集](https://shasha1108.github.io/healing-visual-lab/) · [小红书](https://xhslink.com/m/1kVPy4geTiQ) · [个人主页](https://github.com/shasha1108)
 
 ---
 

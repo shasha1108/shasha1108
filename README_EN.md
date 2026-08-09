@@ -1,6 +1,7 @@
 <div align="center">
-<h1>Let every feeling that is hard to name be seen and understood.</h1>
-<p>Product · AI Systems &amp; Skills · Digital Creation</p>
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=20&amp;color=C4A46C&amp;center=true&amp;vCenter=true&amp;width=750&amp;pause=100000&amp;lines=Let+every+feeling+that+is+hard+to+name+be+seen+and+understood.&amp;weight=600" alt="Let every feeling that is hard to name be seen and understood."/>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=Product+%C2%B7+AI+Systems+%26+Skills+%C2%B7+Digital+Creation" alt="Product · AI Systems &amp; Skills · Digital Creation"/>
 <p>I use images, sound, and interaction to make small worlds you can touch and return to. They begin with feelings that are hard to name, while leaving the final meaning with you.</p>
 <p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="README.md">中文</a></p>
 </div>
@@ -27,29 +28,11 @@ I do not define a feeling for you, or let automation make a creator's final deci
 
 They hold the colours, light, and feelings I return to. Move through the long reel slowly, or open the complete gallery.
 
-<table><tr>
-<td align="center" data-gallery-id="115"><img src="assets/gallery/115.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="114"><img src="assets/gallery/114.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="116"><img src="assets/gallery/116.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="100"><img src="assets/gallery/100.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="102"><img src="assets/gallery/102.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="103"><img src="assets/gallery/103.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="104"><img src="assets/gallery/104.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="105"><img src="assets/gallery/105.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="106"><img src="assets/gallery/106.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="107"><img src="assets/gallery/107.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="108"><img src="assets/gallery/108.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="109"><img src="assets/gallery/109.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="110"><img src="assets/gallery/110.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="111"><img src="assets/gallery/111.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="112"><img src="assets/gallery/112.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="113"><img src="assets/gallery/113.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="117"><img src="assets/gallery/117.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="118"><img src="assets/gallery/118.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="119"><img src="assets/gallery/119.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="120"><img src="assets/gallery/120.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-<td align="center" data-gallery-id="121"><img src="assets/gallery/121.webp" width="240" alt="An image by Yunye Ziyou"/></td>
-</tr></table>
+<h3 align="center">🖱️ Scroll sideways to see more →</h3>
+
+<pre style="background:transparent;border:none;font:inherit;padding:8px 0;margin:0;overflow-x:auto;">
+<img data-gallery-id="115" src="assets/gallery/115.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="114" src="assets/gallery/114.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="116" src="assets/gallery/116.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="100" src="assets/gallery/100.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="102" src="assets/gallery/102.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="103" src="assets/gallery/103.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="104" src="assets/gallery/104.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="105" src="assets/gallery/105.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="106" src="assets/gallery/106.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="107" src="assets/gallery/107.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="108" src="assets/gallery/108.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="109" src="assets/gallery/109.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="110" src="assets/gallery/110.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="111" src="assets/gallery/111.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="112" src="assets/gallery/112.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="113" src="assets/gallery/113.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="117" src="assets/gallery/117.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="118" src="assets/gallery/118.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="119" src="assets/gallery/119.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="120" src="assets/gallery/120.webp" width="290" alt="An image by Yunye Ziyou"/><img data-gallery-id="121" src="assets/gallery/121.webp" width="290" alt="An image by Yunye Ziyou"/>
+</pre>
 
 ## I turn these feelings into small worlds.
 
@@ -128,7 +111,7 @@ Keeps facts, inferences, and open questions separate so growth never eclipses re
 
 Development → QA automation → data product management → using technology to turn feelings and creative ideas into experiences
 
-[Complete portfolio](https://shasha1108.github.io/healing-visual-lab/) · [Xiaohongshu](https://xhslink.com/m/1kVPy4geTiQ) · [GitHub](https://github.com/shasha1108) · [Contact via Xiaohongshu DM](https://xhslink.com/m/1kVPy4geTiQ)
+[Complete portfolio](https://shasha1108.github.io/healing-visual-lab/) · [Xiaohongshu](https://xhslink.com/m/1kVPy4geTiQ) · [Personal profile](https://github.com/shasha1108)
 
 ---
 

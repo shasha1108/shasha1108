@@ -8,6 +8,7 @@ import re
 import sys
 from html import escape
 from pathlib import Path
+from urllib.parse import urlencode
 
 from manage_showcase import ROOT, load_data, source_catalog, validate
 
@@ -125,7 +126,8 @@ body::before {
 a { color: inherit; }
 button, a { font: inherit; }
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--sunset); outline-offset: 4px; }
-.shell { width: min(1120px, calc(100% - 38px)); margin: 0 auto; }
+.ambient-fish { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; opacity: .72; }
+.shell { position: relative; z-index: 1; width: min(1120px, calc(100% - 38px)); margin: 0 auto; }
 .topbar {
   position: relative; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 24px;
   padding: 24px 0; color: var(--night); font-size: .9rem;
@@ -135,47 +137,45 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px s
 .topnav a { text-decoration: none; border-bottom: 1px solid transparent; }
 .topnav a:hover { border-color: currentColor; }
 .hero {
-  position: relative; min-height: 820px; display: grid; grid-template-columns: minmax(0, .92fr) minmax(390px, .78fr);
-  align-items: center; gap: clamp(36px, 7vw, 100px); padding: 54px 0 110px;
+  position: relative; min-height: min(690px, calc(100vh - 72px)); display: grid; grid-template-columns: minmax(0, .94fr) minmax(370px, .76fr);
+  align-items: center; gap: clamp(32px, 6vw, 84px); padding: 30px 0 66px;
 }
 .hero-copy { position: relative; z-index: 2; }
 .eyebrow, .kicker { margin: 0 0 17px; color: var(--leaf); font-size: .78rem; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; }
 .hero h1 {
-  max-width: 700px; margin: 0; color: var(--night); font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.35rem);
-  font-weight: 500; line-height: 1.16; letter-spacing: -.04em;
+  max-width: 660px; min-height: 2.65em; margin: 0; color: #3a8a7a;
+  font: 600 clamp(1.8rem, 2.65vw, 2.65rem)/1.32 "Cascadia Code", "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: .01em; text-shadow: 0 4px 14px rgba(58,138,122,.12);
 }
-.hero-intro { max-width: 610px; margin: 28px 0 0; color: var(--soft-ink); font-size: clamp(1.05rem, 1.7vw, 1.25rem); }
-.role { margin: 22px 0 0; color: var(--ink); font-size: .88rem; letter-spacing: .04em; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+.typing-text.is-typing::after { content: "_"; display: inline-block; margin-left: .08em; color: #5aaccc; animation: caretBlink .8s steps(1) infinite; }
+.hero-intro { max-width: 590px; margin: 20px 0 0; color: var(--soft-ink); font-size: clamp(.98rem, 1.35vw, 1.12rem); }
+.role { margin: 16px 0 0; color: var(--ink); font-size: .82rem; letter-spacing: .04em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 24px; }
 .button {
   display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 18px;
   border: 1px solid rgba(39,74,99,.38); border-radius: 999px; text-decoration: none; transition: .25s ease;
 }
 .button.primary { color: #fff; border-color: var(--night); background: var(--night); box-shadow: 0 12px 30px rgba(23,59,90,.2); }
 .button:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(41,105,137,.18); }
-.memory-orbit { position: relative; min-height: 590px; }
+.memory-orbit { position: relative; min-height: 500px; }
 .memory-orbit::before, .memory-orbit::after {
   content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.9);
   background: radial-gradient(circle at 28% 24%, #fff 0 8%, rgba(211,249,251,.68) 25%, rgba(104,203,213,.12) 63%, rgba(255,255,255,.45));
   box-shadow: inset -12px -14px 28px rgba(62,161,183,.12), 0 18px 40px rgba(78,166,194,.12); backdrop-filter: blur(2px);
 }
-.memory-orbit::before { width: 134px; height: 134px; top: 10px; right: -8px; animation: float 8s ease-in-out infinite; }
-.memory-orbit::after { width: 72px; height: 72px; left: -32px; bottom: 55px; animation: float 6s ease-in-out infinite reverse; }
+.memory-orbit::before { width: 118px; height: 118px; top: 16px; right: -8px; animation: float 8s ease-in-out infinite; }
+.memory-orbit::after { width: 66px; height: 66px; left: -26px; bottom: 45px; animation: float 6s ease-in-out infinite reverse; }
 .memory-frame {
   position: absolute; margin: 0; overflow: hidden; border: 8px solid rgba(255,255,255,.72); border-radius: 30px;
   background: #dff5f8; box-shadow: var(--shadow); transform: rotate(var(--tilt));
 }
 .memory-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.memory-main { --tilt: 2.2deg; width: 72%; height: 470px; top: 62px; right: 0; }
-.memory-left { --tilt: -7deg; width: 46%; height: 290px; left: 0; bottom: 5px; }
-.memory-small { --tilt: 7deg; width: 35%; height: 210px; left: 16px; top: 4px; }
-.drifter { position: absolute; z-index: 1; width: 34px; height: 16px; border-radius: 70% 50% 50% 70%; background: rgba(74,153,173,.44); animation: swim 16s linear infinite; }
-.drifter::after { content: ""; position: absolute; left: -11px; top: 2px; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 13px solid rgba(74,153,173,.36); }
-.drifter.one { top: 27%; left: -8vw; }
-.drifter.two { top: 78%; left: 12vw; width: 22px; height: 11px; opacity: .6; animation-duration: 22s; animation-delay: -9s; }
+.memory-main { --tilt: 2.2deg; width: 72%; height: 395px; top: 55px; right: 0; }
+.memory-left { --tilt: -7deg; width: 45%; height: 235px; left: 0; bottom: 3px; }
+.memory-small { --tilt: 7deg; width: 34%; height: 170px; left: 18px; top: 7px; }
 .section { position: relative; padding: clamp(82px, 10vw, 138px) 0; }
 .section-head { max-width: 760px; margin-bottom: 42px; }
-.section h2 { margin: 0; color: var(--night); font: 500 clamp(2.2rem, 4.7vw, 4.25rem)/1.18 var(--serif); letter-spacing: -.035em; }
+.section h2 { margin: 0; color: var(--night); font: 500 clamp(1.9rem, 3.6vw, 3.15rem)/1.2 var(--serif); letter-spacing: -.025em; }
 .section-intro { max-width: 650px; margin: 20px 0 0; color: var(--soft-ink); font-size: 1.05rem; }
 .gallery-section::before {
   content: ""; position: absolute; inset: 8% -10% 3%; z-index: -1; transform: rotate(-1deg);
@@ -259,12 +259,12 @@ dialog::backdrop { background: rgba(18,49,72,.72); backdrop-filter: blur(7px); }
 .lightbox-image { display: block; width: auto; max-width: 100%; max-height: 76vh; margin: 4px auto 12px; border-radius: 18px; }
 .lightbox-caption { margin: 0; text-align: center; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
-@keyframes swim { from { transform: translateX(-12vw); } to { transform: translateX(118vw); } }
+@keyframes caretBlink { 0%,45% { opacity: 1; } 46%,100% { opacity: 0; } }
 @media (max-width: 820px) {
   .topnav a:not(.language-link) { display: none; }
-  .hero { min-height: auto; grid-template-columns: 1fr; padding: 45px 0 90px; }
-  .hero h1 { font-size: clamp(2.75rem, 12vw, 4.7rem); }
-  .memory-orbit { min-height: 520px; order: -1; }
+  .hero { min-height: auto; grid-template-columns: 1fr; padding: 45px 0 80px; }
+  .hero h1 { min-height: 0; font-size: clamp(1.8rem, 7.5vw, 2.65rem); }
+  .memory-orbit { min-height: 500px; }
   .memory-main { height: 410px; }
   .memory-left { height: 235px; }
   .memory-small { height: 175px; }
@@ -280,7 +280,7 @@ dialog::backdrop { background: rgba(18,49,72,.72); backdrop-filter: blur(7px); }
   .shell { width: min(100% - 26px, 1120px); }
   .topbar { padding-top: 17px; }
   .hero { padding-top: 22px; }
-  .memory-orbit { min-height: 430px; }
+  .memory-orbit { min-height: 420px; }
   .memory-main { width: 74%; height: 330px; top: 50px; }
   .memory-left { width: 45%; height: 190px; }
   .memory-small { height: 145px; }
@@ -297,6 +297,96 @@ dialog::backdrop { background: rgba(18,49,72,.72); backdrop-filter: blur(7px); }
 
 SITE_JS = r"""
 (() => {
+  const typing = document.querySelector('[data-typewriter]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typing && !reduceMotion) {
+    const full = typing.dataset.typewriter || typing.textContent || '';
+    typing.textContent = '';
+    typing.classList.add('is-typing');
+    let index = 0;
+    const typeNext = () => {
+      index += 1;
+      typing.textContent = full.slice(0, index);
+      if (index < full.length) window.setTimeout(typeNext, index < 5 ? 125 : 78);
+      else window.setTimeout(() => typing.classList.remove('is-typing'), 900);
+    };
+    window.setTimeout(typeNext, 360);
+  }
+
+  const fishCanvas = document.getElementById('ambient-fish');
+  if (fishCanvas) {
+    const ctx = fishCanvas.getContext('2d');
+    const palettes = [
+      { type: 'angel', g1: '#6fc7bd', g2: '#9cb9dc', fin: 'rgba(112, 190, 190, .46)', size: 1.72 },
+      { type: 'disk', g1: '#9aaed8', g2: '#d4b8dc', fin: 'rgba(157, 174, 216, .42)', size: 1.48 },
+      { type: 'goldfish', g1: '#e5b493', g2: '#83c8bd', fin: 'rgba(216, 171, 142, .43)', size: 1.62 },
+      { type: 'angel', g1: '#82c9d4', g2: '#b5b4df', fin: 'rgba(118, 190, 204, .4)', size: 1.28 },
+      { type: 'disk', g1: '#77b9ae', g2: '#e1c49f', fin: 'rgba(112, 177, 164, .39)', size: 1.36 },
+      { type: 'goldfish', g1: '#a6b8df', g2: '#74c6c3', fin: 'rgba(145, 164, 214, .38)', size: 1.22 },
+    ];
+    const fish = palettes.map((palette, index) => ({
+      ...palette,
+      x: innerWidth * (.08 + index * .17),
+      y: innerHeight * (.18 + ((index * 29) % 61) / 100),
+      vx: (index % 2 ? -1 : 1) * (.18 + index * .025),
+      phase: index * 1.13,
+      drift: 13 + index * 3,
+      opacity: .48 + (index % 3) * .09,
+    }));
+    let width = 0, height = 0, dpr = 1, last = performance.now();
+    let pointerX = -1000, pointerY = -1000;
+    const resizeFish = () => {
+      width = innerWidth; height = innerHeight; dpr = Math.min(devicePixelRatio || 1, 2);
+      fishCanvas.width = Math.round(width * dpr); fishCanvas.height = Math.round(height * dpr);
+      fishCanvas.style.width = `${width}px`; fishCanvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    const drawFish = (item, time) => {
+      ctx.save();
+      ctx.translate(item.x, item.y);
+      if (item.vx < 0) ctx.scale(-1, 1);
+      ctx.globalAlpha = item.opacity;
+      const s = item.size;
+      const tailSway = Math.sin(time * .006 + item.phase) * 5;
+      const body = ctx.createLinearGradient(0, -12 * s, 0, 12 * s);
+      body.addColorStop(0, item.g1); body.addColorStop(.52, item.g2); body.addColorStop(1, '#dff7f6');
+      ctx.fillStyle = item.fin;
+      if (item.type === 'angel') {
+        ctx.beginPath(); ctx.moveTo(-5*s,-8*s); ctx.quadraticCurveTo(-15*s,-38*s+tailSway,-2*s,-12*s); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(-5*s,8*s); ctx.quadraticCurveTo(-15*s,38*s+tailSway,-2*s,12*s); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(-15*s,0); ctx.quadraticCurveTo(-32*s,-20*s+tailSway,-28*s,tailSway); ctx.quadraticCurveTo(-32*s,20*s+tailSway,-15*s,0); ctx.fill();
+        ctx.fillStyle = body; ctx.beginPath(); ctx.ellipse(0,0,16*s,12*s,0,0,Math.PI*2); ctx.fill();
+      } else if (item.type === 'goldfish') {
+        ctx.beginPath(); ctx.moveTo(-10*s,0); ctx.bezierCurveTo(-25*s,-24*s+tailSway,-36*s,-12*s+tailSway,-26*s,5*s+tailSway); ctx.bezierCurveTo(-36*s,22*s+tailSway,-22*s,26*s+tailSway,-10*s,0); ctx.fill();
+        ctx.fillStyle = body; ctx.beginPath(); ctx.ellipse(0,0,15*s,11*s,0,0,Math.PI*2); ctx.fill();
+      } else {
+        ctx.beginPath(); ctx.moveTo(-12*s,0); ctx.lineTo(-25*s,-14*s+tailSway); ctx.lineTo(-20*s,tailSway); ctx.lineTo(-25*s,14*s+tailSway); ctx.closePath(); ctx.fill();
+        ctx.fillStyle = body; ctx.beginPath(); ctx.ellipse(0,0,16*s,15*s,0,0,Math.PI*2); ctx.fill();
+      }
+      ctx.fillStyle = 'rgba(255,255,255,.86)'; ctx.beginPath(); ctx.arc(8*s,-3*s,3.2*s,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle = 'rgba(35,78,102,.82)'; ctx.beginPath(); ctx.arc(9.3*s,-3*s,1.55*s,0,Math.PI*2); ctx.fill();
+      ctx.restore();
+    };
+    const frameFish = (now) => {
+      const delta = Math.min(34, now - last); last = now; ctx.clearRect(0, 0, width, height);
+      fish.forEach((item) => {
+        const dx = item.x - pointerX, dy = item.y - pointerY;
+        if (dx*dx + dy*dy < 19000) item.vx += Math.sign(dx || 1) * .012;
+        item.vx *= .998; item.vx = Math.max(-.42, Math.min(.42, item.vx));
+        item.x += item.vx * delta;
+        item.y += Math.sin(now * .00055 + item.phase) * .055 * delta;
+        if (item.x > width + 70) item.x = -70;
+        if (item.x < -70) item.x = width + 70;
+        item.y = Math.max(55, Math.min(height - 55, item.y));
+        drawFish(item, now);
+      });
+      if (!reduceMotion) requestAnimationFrame(frameFish);
+    };
+    window.addEventListener('resize', resizeFish);
+    window.addEventListener('pointermove', (event) => { pointerX = event.clientX; pointerY = event.clientY; }, { passive: true });
+    resizeFish(); requestAnimationFrame(frameFish);
+  }
+
   const rail = document.getElementById("gallery-rail");
   const toggle = document.getElementById("gallery-toggle");
   const dialog = document.getElementById("gallery-lightbox");
@@ -378,14 +468,33 @@ def gallery_items(config: dict) -> list[dict]:
     return [item for item in config["gallery"] if item["visible"]]
 
 
+def typing_svg_url(text: str, *, size: int, color: str, width: int, weight: int | None = None) -> str:
+    params = {
+        "font": "Cascadia Code",
+        "size": size,
+        "color": color,
+        "center": "true",
+        "vCenter": "true",
+        "width": width,
+        "pause": 100000,
+        "lines": text,
+    }
+    if weight is not None:
+        params["weight"] = weight
+    return "https://readme-typing-svg.herokuapp.com?" + urlencode(params)
+
+
 def render_readme(config: dict, works: dict[str, dict], language: str) -> str:
     ui, identity, entrance, path = UI[language], config["identity"], config["entrance"], config["path"]
     gallery = gallery_items(config)
     other_readme = "README_EN.md" if language == "zh" else "README.md"
+    headline = text_for(entrance, "title", language)
+    role = text_for(identity, "role", language)
     lines = [
         '<div align="center">',
-        f'<h1>{esc(text_for(entrance, "title", language))}</h1>',
-        f'<p>{esc(text_for(identity, "role", language))}</p>',
+        f'<img src="{esc(typing_svg_url(headline, size=20, color="C4A46C", width=750, weight=600))}" alt="{esc(headline)}"/>',
+        '',
+        f'<img src="{esc(typing_svg_url(role, size=15, color="8B9DC3", width=700))}" alt="{esc(role)}"/>',
         f'<p>{esc(text_for(entrance, "body", language))}</p>',
         f'<p><a href="{esc(identity["xhs_url"])}">小红书 / Xiaohongshu</a> · <a href="{esc(identity["lab_url"])}">Healing Visual Lab</a> · <a href="{esc(other_readme)}">{esc(identity["language_switch_" + language])}</a></p>',
         '</div>', '',
@@ -396,11 +505,12 @@ def render_readme(config: dict, works: dict[str, dict], language: str) -> str:
     lines.extend(['</tr></table>', '', f'## 🫧 {ui["about"]}', '', ui["about_lead"], ''])
     for paragraph in entrance[f"core_positioning_{language}"]:
         lines.extend([paragraph, ''])
-    lines.extend([ui["about_end"], '', f'## {ui["gallery_title"]}', '', ui["gallery_body"], '', '<table><tr>'])
-    for item in gallery:
-        alt = text_for(item, "title", language) or ui["gallery_alt"]
-        lines.append(f'<td align="center" data-gallery-id="{esc(item["id"])}"><img src="{esc(item["webp_image"])}" width="240" alt="{esc(alt)}"/></td>')
-    lines.extend(['</tr></table>', '', f'## {ui["featured_title"]}', '', ui["featured_body"], '', '<table><tr>'])
+    lines.extend([ui["about_end"], '', f'## {ui["gallery_title"]}', '', ui["gallery_body"], '', '<h3 align="center">🖱️ 左右滑动浏览更多 →</h3>' if language == 'zh' else '<h3 align="center">🖱️ Scroll sideways to see more →</h3>', '', '<pre style="background:transparent;border:none;font:inherit;padding:8px 0;margin:0;overflow-x:auto;">'])
+    lines.append(''.join(
+        f'<img data-gallery-id="{esc(item["id"])}" src="{esc(item["webp_image"])}" width="290" alt="{esc(text_for(item, "title", language) or ui["gallery_alt"])}"/>'
+        for item in gallery
+    ))
+    lines.extend(['</pre>', '', f'## {ui["featured_title"]}', '', ui["featured_body"], '', '<table><tr>'])
     for item in config["flagship_works"]:
         work = works[item["slug"]]
         image = item["preview_image"]
@@ -496,7 +606,7 @@ def render_site(config: dict, works: dict[str, dict], language: str) -> str:
   <style>{SITE_CSS}</style>
 </head>
 <body>
-  <span class="drifter one" aria-hidden="true"></span><span class="drifter two" aria-hidden="true"></span>
+  <canvas class="ambient-fish" id="ambient-fish" aria-hidden="true"></canvas>
   <div class="shell">
     <header class="topbar">
       <a class="signature" href="#top">{esc(text_for(identity, 'signature', language))}</a>
@@ -504,7 +614,7 @@ def render_site(config: dict, works: dict[str, dict], language: str) -> str:
     </header>
     <main>
       <section class="hero" id="top">
-        <div class="hero-copy"><p class="eyebrow">{esc(text_for(entrance, 'eyebrow', language))}</p><h1>{esc(text_for(entrance, 'title', language))}</h1><p class="hero-intro">{esc(text_for(entrance, 'body', language))}</p><p class="role">{esc(text_for(identity, 'role', language))}</p><div class="hero-actions"><a class="button primary" href="#gallery">{esc(text_for(entrance, 'primary', language))}</a><a class="button" href="#worlds">{esc(text_for(entrance, 'secondary', language))}</a></div></div>
+        <div class="hero-copy"><p class="eyebrow">{esc(text_for(entrance, 'eyebrow', language))}</p><h1 aria-label="{esc(text_for(entrance, 'title', language))}"><span class="typing-text" data-typewriter="{esc(text_for(entrance, 'title', language))}" aria-hidden="true">{esc(text_for(entrance, 'title', language))}</span></h1><p class="hero-intro">{esc(text_for(entrance, 'body', language))}</p><p class="role">{esc(text_for(identity, 'role', language))}</p><div class="hero-actions"><a class="button primary" href="#gallery">{esc(text_for(entrance, 'primary', language))}</a><a class="button" href="#worlds">{esc(text_for(entrance, 'secondary', language))}</a></div></div>
         <div class="memory-orbit" aria-label="{esc(ui['gallery_title'])}">
           <figure class="memory-frame memory-main"><img src="{esc(gallery[0]['webp_image'])}" alt="{esc(ui['gallery_alt'])}"></figure>
           <figure class="memory-frame memory-left"><img src="{esc(gallery[1]['webp_image'])}" alt="{esc(ui['gallery_alt'])}"></figure>
@@ -564,8 +674,11 @@ def validate_rendered(outputs: dict[str, str], config: dict) -> None:
             duplicates = sorted({item for item in ids if ids.count(item) > 1})
             if duplicates:
                 raise ValueError(f"{filename} has duplicate DOM ids: {', '.join(duplicates)}")
-            if "<iframe" in content.lower() or "<canvas" in content.lower():
+            if "<iframe" in content.lower():
                 raise ValueError(f"{filename} must not preload interactive works")
+            canvas_ids = re.findall(r'<canvas[^>]+id="([^"]+)"', content)
+            if canvas_ids != ["ambient-fish"]:
+                raise ValueError(f"{filename} may only contain the decorative ambient-fish canvas")
 
 
 def build_outputs() -> dict[str, str]:

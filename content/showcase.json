@@ -592,15 +592,9 @@
       },
       {
         "id": "github",
-        "label_zh": "GitHub",
-        "label_en": "GitHub",
+        "label_zh": "个人主页",
+        "label_en": "Personal profile",
         "url": "https://github.com/shasha1108"
-      },
-      {
-        "id": "contact",
-        "label_zh": "小红书私信联系",
-        "label_en": "Contact via Xiaohongshu DM",
-        "url": "https://xhslink.com/m/1kVPy4geTiQ"
       }
     ]
   }
