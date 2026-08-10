@@ -40,12 +40,12 @@ REQUIRED_TITLE_EN = "Let every feeling that is hard to name be seen and understo
 REQUIRED_CORE_POSITIONING_ZH = [
     "开发 → 自动化测试 → 数据产品经理。",
     "我习惯把复杂的系统变得可见，却越来越在意那些没有接口、没有日志、说也说不清的感受。",
-    "所以我开始用图像、声音和交互，为它们做一些可以停留的小世界。",
+    "于是，我开始把画面、声音和互动做成一个个小世界，让那些说不清的感受，暂时有地方停留。",
 ]
 REQUIRED_CORE_POSITIONING_EN = [
     "Development → QA automation → data product management.",
     "I learned to make complex systems visible, then became more interested in feelings with no interface, no logs, and no easy name.",
-    "So I began using images, sound, and interaction to give those feelings a small world in which to stay.",
+    "So I began shaping images, sound, and interaction into small worlds—places where feelings that are hard to name can stay for a while.",
 ]
 REQUIRED_BENCHES = [
     {

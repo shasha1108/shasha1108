@@ -4,7 +4,7 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=20&amp;color=C4A46C&amp;center=true&amp;vCenter=true&amp;width=750&amp;pause=100000&amp;lines=%E8%AE%A9%E6%AF%8F%E4%B8%AA%E8%AF%B4%E4%B8%8D%E6%B8%85%E7%9A%84%E6%83%85%E7%BB%AA%EF%BC%8C%E9%83%BD%E8%83%BD%E8%A2%AB%E7%9C%8B%E8%A7%81%E3%80%81%E8%A2%AB%E7%90%86%E8%A7%A3%E3%80%82&amp;weight=600" alt="让每个说不清的情绪，都能被看见、被理解。"/>
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86+%C2%B7+AI+Agent+%E4%B8%8E+Skill+%E5%BC%80%E5%8F%91+%C2%B7+%E6%95%B0%E5%AD%97%E5%86%85%E5%AE%B9%E5%88%9B%E4%BD%9C" alt="产品经理 · AI Agent 与 Skill 开发 · 数字内容创作"/>
-<p>我用图像、声音和交互，做一些可以被触碰、被重访的小世界。它们从难以命名的感受开始，也把最后的解释留给你。</p>
+<p>我用画面、声音和互动，做一些可以亲手触碰、也可以一次次回到的小世界。它们从那些还没有名字的感受开始，把最后的解释留给你。</p>
 <p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="https://shasha1108.github.io/shasha1108/index.html">个人主页</a></p>
 </div>
 
@@ -22,7 +22,7 @@
 
 我习惯把复杂的系统变得可见，却越来越在意那些没有接口、没有日志、说也说不清的感受。
 
-所以我开始用图像、声音和交互，为它们做一些可以停留的小世界。
+于是，我开始把画面、声音和互动做成一个个小世界，让那些说不清的感受，暂时有地方停留。
 
 我不急着为一种感受下定义，也不替创作者做最后的选择。对我来说，技术更像一门手艺：把那些说不清的东西，慢慢做成可以被看见、被触碰的体验。
 

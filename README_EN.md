@@ -4,7 +4,7 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=20&amp;color=C4A46C&amp;center=true&amp;vCenter=true&amp;width=750&amp;pause=100000&amp;lines=Let+every+feeling+that+is+hard+to+name+be+seen+and+understood.&amp;weight=600" alt="Let every feeling that is hard to name be seen and understood."/>
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Cascadia+Code&amp;size=15&amp;color=8B9DC3&amp;center=true&amp;vCenter=true&amp;width=700&amp;pause=100000&amp;lines=Product+%C2%B7+AI+Agent+%26+Skill+Development+%C2%B7+Digital+Content+Creation" alt="Product · AI Agent &amp; Skill Development · Digital Content Creation"/>
-<p>I use images, sound, and interaction to make small worlds you can touch and return to. They begin with feelings that are hard to name, while leaving the final meaning with you.</p>
+<p>I use visual imagery, sound, and interaction to make small worlds you can touch and return to again and again. They begin with feelings that do not yet have a name, while leaving the final meaning with you.</p>
 <p><a href="https://xhslink.com/m/1kVPy4geTiQ">小红书 / Xiaohongshu</a> · <a href="https://shasha1108.github.io/healing-visual-lab/">Healing Visual Lab</a> · <a href="https://shasha1108.github.io/shasha1108/index.html">Personal site</a></p>
 </div>
 
@@ -22,7 +22,7 @@ Development → QA automation → data product management.
 
 I learned to make complex systems visible, then became more interested in feelings with no interface, no logs, and no easy name.
 
-So I began using images, sound, and interaction to give those feelings a small world in which to stay.
+So I began shaping images, sound, and interaction into small worlds—places where feelings that are hard to name can stay for a while.
 
 I do not rush to define a feeling or make a creator's final choice for them. To me, technology is more like a craft: slowly making what is hard to say into experiences that can be seen and touched.
 
