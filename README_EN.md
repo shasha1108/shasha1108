@@ -24,11 +24,11 @@ I learned to make complex systems visible, then became more interested in feelin
 
 So I began using images, sound, and interaction to give those feelings a small world in which to stay.
 
-I do not define a feeling for you, or let automation make a creator's final decision. Technology is simply how these small experiences become possible.
+I do not rush to define a feeling or make a creator's final choice for them. To me, technology is more like a craft: slowly making what is hard to say into experiences that can be seen and touched.
 
 ## Perhaps these are the images through which you know me.
 
-They hold the colours, light, and feelings I return to. Move through the long reel slowly, or open the complete gallery.
+These images hold colours and light I have always loved, along with feelings I have not yet found words for. Move through the long reel slowly, or open the complete gallery.
 
 <h3 align="center">🖱️ Scroll sideways to see more →</h3>
 
