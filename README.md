@@ -99,7 +99,7 @@
 
 把灵感交给适合的创作工具，同时把最后的决定留在创作者手里。
 
-<sub>content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish</sub>
+<sub>content-creation-router / inner-voice / echo-caption / spotform / social-video-editor / h5-publish</sub>
 
 ### 让判断经得起验证
 

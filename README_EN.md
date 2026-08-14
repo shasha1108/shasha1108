@@ -99,7 +99,7 @@ Starts with a feeling that is hard to name, then finds an action that only means
 
 Gives each idea to the right creative tool while leaving the final decision with the creator.
 
-<sub>content-creation-router / inner-voice / echo-caption / duotone-screenprint / social-video-editor / h5-publish</sub>
+<sub>content-creation-router / inner-voice / echo-caption / spotform / social-video-editor / h5-publish</sub>
 
 ### Keeping Judgment Evidence-Bound
 
