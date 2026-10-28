@@ -42,22 +42,22 @@ They do not explain a feeling for you. A touch or a pause changes the world in f
 
 <table><tr>
 <td width="33%" valign="top">
-<a href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html"><img src="assets/previews/eternal-bloom.jpg" width="100%" alt="Eternal Bloom"/></a><br/>
-<strong>Eternal Bloom</strong><br/>
-<sub>Tune every part of a flower, seal it beneath glass, and it will keep blooming for you.</sub><br/><br/>
-<a href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html">Enter the work ↗</a>
+<a href="https://shasha1108.github.io/healing-visual-lab/parting-the-rain/parting-the-rain.html"><img src="assets/previews/parting-the-rain.jpg" width="100%" alt="Parting The Rain"/></a><br/>
+<strong>Parting The Rain</strong><br/>
+<sub>Pinch the edge of the rain and pull left. Through the opening: sunset, a tram, and ten sparrows.</sub><br/><br/>
+<a href="https://shasha1108.github.io/healing-visual-lab/parting-the-rain/parting-the-rain.html">Enter the work ↗</a>
 </td>
 <td width="33%" valign="top">
-<a href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html"><img src="assets/previews/bottled-cosmos.jpg" width="100%" alt="BOTTLED COSMOS"/></a><br/>
-<strong>BOTTLED COSMOS</strong><br/>
-<sub>Place an entire cosmos inside a glass bottle—each star has only thirty seconds to live.</sub><br/><br/>
-<a href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html">Enter the work ↗</a>
+<a href="https://shasha1108.github.io/healing-visual-lab/cloud-laundry-pool/cloud-laundry-pool.html"><img src="assets/previews/cloud-laundry-pool.jpg" width="100%" alt="Cloud Laundry Pool"/></a><br/>
+<strong>Cloud Laundry Pool</strong><br/>
+<sub>Hang up the dampness and the thoughts you carry, and let them fall slowly into a pool of rain.</sub><br/><br/>
+<a href="https://shasha1108.github.io/healing-visual-lab/cloud-laundry-pool/cloud-laundry-pool.html">Enter the work ↗</a>
 </td>
 <td width="33%" valign="top">
-<a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html"><img src="assets/previews/layered-mountains.jpg" width="100%" alt="Layered Mountains"/></a><br/>
-<strong>Layered Mountains</strong><br/>
-<sub>Touch, and the mountains scatter. Gathering and parting follow their own course.</sub><br/><br/>
-<a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html">Enter the work ↗</a>
+<a href="https://shasha1108.github.io/healing-visual-lab/weather-on-the-line/weather-on-the-line.html"><img src="assets/previews/weather-on-the-line.jpg" width="100%" alt="Weather On The Line"/></a><br/>
+<strong>Weather On The Line</strong><br/>
+<sub>Hang the weather up, one piece at a time. Then take it down again.</sub><br/><br/>
+<a href="https://shasha1108.github.io/healing-visual-lab/weather-on-the-line/weather-on-the-line.html">Enter the work ↗</a>
 </td>
 </tr></table>
 

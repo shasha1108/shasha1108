@@ -39,157 +39,157 @@
   },
   "flagship_works": [
     {
-      "slug": "eternal-bloom",
-      "preview_image": "assets/previews/eternal-bloom.jpg",
-      "note_zh": "调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。",
-      "note_en": "Tune every part of a flower, seal it beneath glass, and it will keep blooming for you.",
+      "slug": "parting-the-rain",
+      "preview_image": "assets/previews/parting-the-rain.jpg",
+      "note_zh": "雨是一道幕。捏住它的边往左拉，缝后面是晚霞、电车和十只麻雀。",
+      "note_en": "Pinch the edge of the rain and pull left. Through the opening: sunset, a tram, and ten sparrows.",
       "five_parts": {
         "zh": [
           {
             "label": "它接住什么",
-            "text": "接住“我怕它会消失”的悬空感：一朵花被允许一直开着，而不是被催着在一刻说清自己。"
+            "text": "雨幕遮住晚霞、电车和麻雀，等待被亲手拉开。"
           },
           {
             "label": "用户必须做什么",
-            "text": "用户必须先亲手调节花的颜色、形态或节律；不是被动领取一份已经替她完成的安慰。"
+            "text": "捏住雨幕右缘，向左拖出一道缝。"
           },
           {
             "label": "系统如何判断",
-            "text": "系统只读取明确的参数与触碰，不猜测情绪，也不替人给这朵花命名。"
+            "text": "开口宽度跟随拖动幅度，松手后开始合拢。"
           },
           {
             "label": "世界怎样回应",
-            "text": "参数与触碰改变花的状态，声音随之出现；回应可见，却不催促解释。"
+            "text": "晚霞、电车和麻雀在缝中出现，雨声随拉开幅度变轻。"
           },
           {
             "label": "为什么只能这样交互",
-            "text": "只有先做出一个微小选择，钟罩里的“持续开着”才是来访者亲手留下的照料，而不是自动化的背景动画。"
+            "text": "开口需要手指维持；松手后雨幕慢慢合拢。"
           }
         ],
         "en": [
           {
             "label": "What it holds",
-            "text": "It holds the suspension of “I am afraid it will disappear”: a bloom is allowed to continue rather than being rushed into a single explanation."
+            "text": "A curtain of rain hides a sunset, a tram, and sparrows until it is pulled aside."
           },
           {
             "label": "What the visitor must do",
-            "text": "The visitor must tune the flower's colour, form, or rhythm first, rather than receiving comfort already completed for them."
+            "text": "Pinch the right edge of the rain and drag it left."
           },
           {
             "label": "How the system decides",
-            "text": "The system reads only explicit parameters and touch. It does not infer an emotion or name the flower for a person."
+            "text": "The opening follows the drag distance and begins to close after release."
           },
           {
             "label": "How the world responds",
-            "text": "Parameters and touch alter the bloom while sound arrives with it. The response is visible without demanding an account."
+            "text": "Sunset, a tram, and sparrows appear through the gap as the rain grows quieter."
           },
           {
             "label": "Why this interaction must be this way",
-            "text": "Only a small, deliberate choice makes the bell jar's continuing bloom care left by the visitor, rather than automated background animation."
+            "text": "The opening needs a hand to hold it; release lets the curtain slowly close."
           }
         ]
       }
     },
     {
-      "slug": "bottled-cosmos",
-      "preview_image": "assets/previews/bottled-cosmos.jpg",
-      "note_zh": "把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。",
-      "note_en": "Place an entire cosmos inside a glass bottle—each star has only thirty seconds to live.",
+      "slug": "cloud-laundry-pool",
+      "preview_image": "assets/previews/cloud-laundry-pool.jpg",
+      "note_zh": "把潮湿和心事挂起来，让它们慢慢落成一池雨。",
+      "note_en": "Hang up the dampness and the thoughts you carry, and let them fall slowly into a pool of rain.",
       "five_parts": {
         "zh": [
           {
             "label": "它接住什么",
-            "text": "接住“来不及看完这么多”的巨大与短暂：每颗恒星的一生只有三十秒，仍可以被安放进一只瓶。"
+            "text": "两朵潮湿的云挂在庭院里，下方是一方石池。"
           },
           {
             "label": "用户必须做什么",
-            "text": "用户必须决定何时靠近并打开瓶口；主页不在背后替任何人运行宇宙。"
+            "text": "按住云朵，或在云上拖动。"
           },
           {
             "label": "系统如何判断",
-            "text": "系统只把“进入”这一次明确选择当作开始条件，并以有限时长组织恒星的显影、变化与熄灭。"
+            "text": "触点成为云的临时低点，持续按压使云体下陷。"
           },
           {
             "label": "世界怎样回应",
-            "text": "点击进入后，瓶内星体在自己的三十秒里运行；玻璃边界让巨大的尺度仍像能被捧住。"
+            "text": "雨水沿新的低点落入池中，留下水花和涟漪。"
           },
           {
             "label": "为什么只能这样交互",
-            "text": "宇宙必须由人亲自打开，短暂才不是被算法抢走的注意力，而是一段被选择的停留。"
+            "text": "松手后云朵回弹，延迟落下的雨滴让水面慢慢回静。"
           }
         ],
         "en": [
           {
             "label": "What it holds",
-            "text": "It holds the immensity and brevity of “there is too much to see”: every star lives for thirty seconds, yet can rest in a bottle."
+            "text": "Two damp clouds hang in a courtyard above a stone pool."
           },
           {
             "label": "What the visitor must do",
-            "text": "The visitor must choose when to approach and open the bottle. The homepage does not run a cosmos in the background for anyone."
+            "text": "Hold a cloud or drag across its surface."
           },
           {
             "label": "How the system decides",
-            "text": "The system treats that explicit entry as its only start condition, then gives stars a finite interval to appear, change, and go dark."
+            "text": "The touch becomes a temporary low point, and sustained pressure draws the cloud down."
           },
           {
             "label": "How the world responds",
-            "text": "After entry, the stars run within their thirty seconds. The glass boundary makes an immense scale feel holdable."
+            "text": "Rain falls from the new low point into the pool, leaving splashes and ripples."
           },
           {
             "label": "Why this interaction must be this way",
-            "text": "A cosmos must be opened by a person so brevity is not attention taken by an algorithm, but time deliberately chosen."
+            "text": "Release lets the cloud spring back; a delayed raindrop carries the pool back toward stillness."
           }
         ]
       }
     },
     {
-      "slug": "layered-mountains",
-      "preview_image": "assets/previews/layered-mountains.jpg",
-      "note_zh": "触之即散，聚散随缘。",
-      "note_en": "Touch, and the mountains scatter. Gathering and parting follow their own course.",
+      "slug": "weather-on-the-line",
+      "preview_image": "assets/previews/weather-on-the-line.jpg",
+      "note_zh": "把天气一件件晾上去，再一件件摘下来。",
+      "note_en": "Hang the weather up, one piece at a time. Then take it down again.",
       "five_parts": {
         "zh": [
           {
             "label": "它接住什么",
-            "text": "接住那些既不想被固定、也不想被视作消失的时刻：散开并不等于失去，聚拢也不等于必须留下。"
+            "text": "一间紫色卧室，床头晾着七块天气布。"
           },
           {
             "label": "用户必须做什么",
-            "text": "用户必须把视线或指针停在山势上；不需要提交一段自我说明，只需要愿意停留。"
+            "text": "拨动布片，向下摘下，再拎回空着的夹位。"
           },
           {
             "label": "系统如何判断",
-            "text": "系统通过光标射线与粒子景观的相对位置判断局部扰动，不从来访者身上推断任何心理状态。"
+            "text": "拖动位置与受力决定布片的摆动、脱落和重新挂回。"
           },
           {
             "label": "世界怎样回应",
-            "text": "青绿层峦在局部关系中松动、显现、重新聚合；回应不是弹窗，而是一处山势被重新看见。"
+            "text": "绳、夹子和天气布一起晃动，布可以落在床上或地板上。"
           },
           {
             "label": "为什么只能这样交互",
-            "text": "只有让靠近改变观看关系，作品才保留“聚散随缘”的余地；把它做成点击领奖会取消这种余地。"
+            "text": "没有整理目标或计分，摘下与挂回都由来访者决定。"
           }
         ],
         "en": [
           {
             "label": "What it holds",
-            "text": "It holds moments that neither want to be fixed nor called lost: scattering is not loss, and gathering is not an obligation to stay."
+            "text": "Seven pieces of weather cloth hang above the bed in a purple room."
           },
           {
             "label": "What the visitor must do",
-            "text": "The visitor must rest a gaze or pointer on the ridges. No personal account is required, only a willingness to stay."
+            "text": "Nudge a cloth, pull it down, then carry it back to an empty clip."
           },
           {
             "label": "How the system decides",
-            "text": "The system uses the relation between raycasting and the particle landscape to decide local disturbance; it infers no psychological state from a visitor."
+            "text": "Drag position and force determine how the cloth swings, falls, and hangs again."
           },
           {
             "label": "How the world responds",
-            "text": "Blue-green ridges loosen, appear, and gather anew in local relation. The reply is a mountain seen differently, not a popup."
+            "text": "Rope, clips, and cloth sway together; cloth can land on the bed or floor."
           },
           {
             "label": "Why this interaction must be this way",
-            "text": "Only an approach that changes the act of seeing preserves room for things to gather and scatter; turning it into a reward click would remove that room."
+            "text": "There is no tidying target or score. The visitor chooses what to take down and hang again."
           }
         ]
       }

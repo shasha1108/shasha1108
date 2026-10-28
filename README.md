@@ -42,22 +42,22 @@
 
 <table><tr>
 <td width="33%" valign="top">
-<a href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html"><img src="assets/previews/eternal-bloom.jpg" width="100%" alt="永生花工坊"/></a><br/>
-<strong>永生花工坊</strong><br/>
-<sub>调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。</sub><br/><br/>
-<a href="https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html">进入作品 ↗</a>
+<a href="https://shasha1108.github.io/healing-visual-lab/parting-the-rain/parting-the-rain.html"><img src="assets/previews/parting-the-rain.jpg" width="100%" alt="把雨拉开一道缝"/></a><br/>
+<strong>把雨拉开一道缝</strong><br/>
+<sub>雨是一道幕。捏住它的边往左拉，缝后面是晚霞、电车和十只麻雀。</sub><br/><br/>
+<a href="https://shasha1108.github.io/healing-visual-lab/parting-the-rain/parting-the-rain.html">进入作品 ↗</a>
 </td>
 <td width="33%" valign="top">
-<a href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html"><img src="assets/previews/bottled-cosmos.jpg" width="100%" alt="瓶装宇宙"/></a><br/>
-<strong>瓶装宇宙</strong><br/>
-<sub>把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。</sub><br/><br/>
-<a href="https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html">进入作品 ↗</a>
+<a href="https://shasha1108.github.io/healing-visual-lab/cloud-laundry-pool/cloud-laundry-pool.html"><img src="assets/previews/cloud-laundry-pool.jpg" width="100%" alt="晾云池"/></a><br/>
+<strong>晾云池</strong><br/>
+<sub>把潮湿和心事挂起来，让它们慢慢落成一池雨。</sub><br/><br/>
+<a href="https://shasha1108.github.io/healing-visual-lab/cloud-laundry-pool/cloud-laundry-pool.html">进入作品 ↗</a>
 </td>
 <td width="33%" valign="top">
-<a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html"><img src="assets/previews/layered-mountains.jpg" width="100%" alt="青绿·层峦"/></a><br/>
-<strong>青绿·层峦</strong><br/>
-<sub>触之即散，聚散随缘。</sub><br/><br/>
-<a href="https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html">进入作品 ↗</a>
+<a href="https://shasha1108.github.io/healing-visual-lab/weather-on-the-line/weather-on-the-line.html"><img src="assets/previews/weather-on-the-line.jpg" width="100%" alt="天气晾在房间里"/></a><br/>
+<strong>天气晾在房间里</strong><br/>
+<sub>把天气一件件晾上去，再一件件摘下来。</sub><br/><br/>
+<a href="https://shasha1108.github.io/healing-visual-lab/weather-on-the-line/weather-on-the-line.html">进入作品 ↗</a>
 </td>
 </tr></table>
 

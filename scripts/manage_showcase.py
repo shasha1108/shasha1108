@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "content" / "showcase.json"
-FLAGSHIP_ORDER = ["eternal-bloom", "bottled-cosmos", "layered-mountains"]
+FLAGSHIP_ORDER = ["parting-the-rain", "cloud-laundry-pool", "weather-on-the-line"]
 RESPONSIVE_MIN = 3
 RESPONSIVE_MAX = 12
 SPECIMEN_SIZES = {"large", "tall", "wide", "compact", "medium", "tall-right", "auto"}

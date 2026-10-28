@@ -3,9 +3,9 @@
     "kind": "local, read-only profile snapshot",
     "upstream_manifest": "https://github.com/shasha1108/healing-visual-lab/blob/main/works.json",
     "upstream_ref": "origin/main",
-    "upstream_commit": "be87b9de1fbe7cf9d7ca541145861c534026009a",
-    "captured_on": "2026-08-09",
-    "upstream_work_count": 38,
+    "upstream_commit": "8d902673883b20dd3579da67618154002e84feee",
+    "captured_on": "2026-10-28",
+    "upstream_work_count": 55,
     "pages_base": "https://shasha1108.github.io/healing-visual-lab/",
     "note_zh": "本快照仅保留本主页需要的作品事实；标题、slug、技术、数量与预览信息均抄录自上游 works.json。",
     "note_en": "This is a read-only, profile-scoped snapshot. Titles, slugs, technical facts, counts, and preview information come from the upstream works.json."
@@ -17,7 +17,7 @@
     "title_en": "Eternal Bloom",
     "tagline": "调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html",
-    "preview_asset": "eternal-bloom_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "bottled-cosmos",
@@ -25,7 +25,7 @@
     "title_en": "BOTTLED COSMOS",
     "tagline": "把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html",
-    "preview_asset": "bottled-cosmos_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "sealed-summer-jar",
@@ -33,7 +33,7 @@
     "title_en": "Sealed Summer Jar",
     "tagline": "一只玻璃罐，把一个不会结束的夏日下午四点钟封存了起来。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/sealed-summer-jar/sealed-summer-jar.html",
-    "preview_asset": "sealed-summer-jar_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "moon-cat",
@@ -41,7 +41,7 @@
     "title_en": "Waiting for the Moon",
     "tagline": "A quiet moonlit window where a cat slowly falls asleep.",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/moon-cat/moon-cat.html",
-    "preview_asset": "moon-cat_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "the-old-signal",
@@ -49,7 +49,7 @@
     "title_en": "The Old Signal",
     "tagline": "一台信号不好的旧电视，红青两个色版错开着呼吸；你每碰它一次，它就调准一点——直到屏幕里那个旧日的自己，回头看你一眼。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/the-old-signal/the-old-signal.html",
-    "preview_asset": "the-old-signal_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "tide-keeping-station",
@@ -57,7 +57,7 @@
     "title_en": "Tide Keeping Station",
     "tagline": "把缠成一团的事交给潮汐，它会替你拆开、带走，并留下回应。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/tide-keeping-station/tide-keeping-station.html",
-    "preview_asset": "tide-keeping-station_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "aquarium-2003",
@@ -65,7 +65,7 @@
     "title_en": "Aquarium 2003",
     "tagline": "你小时候盯过的那个屏保活了——缸里的鱼记得你",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/aquarium-2003/aquarium-2003.html",
-    "preview_asset": "aquarium-2003_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "first-light",
@@ -73,7 +73,7 @@
     "title_en": "First Light",
     "tagline": "一颗黑色像素种子，在你的温度里长出第一束光。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/first-light/first-light.html",
-    "preview_asset": "first-light_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "tree-remembers-wind",
@@ -161,7 +161,7 @@
     "title_en": "Crystal Turntable",
     "tagline": "屋外雪花纷飞，这里的旋律永远为你温暖。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/crystal-turntable/crystal-turntable.html",
-    "preview_asset": "crystal-turntable_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "sunken-treasure",
@@ -169,7 +169,7 @@
     "title_en": "Sunken Treasure",
     "tagline": "像素鱼游进掌机传送门，逃逸到 3D 水晶水体中，蜕变为优雅的矢量鱼",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/sunken-treasure/sunken-treasure.html",
-    "preview_asset": "sunken-treasure_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "drift-bottle",
@@ -177,7 +177,7 @@
     "title_en": "Drift Bottle",
     "tagline": "轻触漂流瓶，唤醒瓶中平行世界",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/drift-bottle/drift-bottle.html",
-    "preview_asset": "drift-bottle_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "sunken-ipod",
@@ -185,7 +185,7 @@
     "title_en": "Sunken iPod",
     "tagline": "深海之底，一首七里香。触碰水面，音符如气泡升起。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/sunken-ipod/sunken-ipod.html",
-    "preview_asset": "sunken-ipod_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "dreamcore-summer-rain",
@@ -209,7 +209,7 @@
     "title_en": "Rice Fragrance",
     "tagline": "稻香里的童年记忆",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/rice-fragrance/rice-fragrance.html",
-    "preview_asset": "rice-fragrance_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "aero-slime",
@@ -217,7 +217,7 @@
     "title_en": "Aero Slime",
     "tagline": "点击色块投喂情绪，双击玻璃释放惊吓——一只住在亚克力盒子里的电子史莱姆，用颜文字回应你的每一种心情",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/aero-slime/aero-slime.html",
-    "preview_asset": "aero-slime_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "falling-verse",
@@ -225,7 +225,7 @@
     "title_en": "Falling Verse",
     "tagline": "时间的字符拓扑。数字从行星环上剥落，金→珊瑚粉→星空蓝，沉入幽蓝水面。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/falling-verse/falling-verse.html",
-    "preview_asset": "falling-verse_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "pixel-aquarium",
@@ -233,7 +233,7 @@
     "title_en": "Pixel Aquarium",
     "tagline": "晶莹剔透的 Frutiger Aero 水族箱，像素小鱼在毛玻璃内游动。单击投食，双击敲玻璃。",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/pixel-aquarium/pixel-aquarium.html",
-    "preview_asset": "pixel-aquarium_1.gif"
+    "preview_asset": null
   },
   {
     "slug": "unbound-mind",
@@ -241,7 +241,7 @@
     "title_en": "Unbound Mind",
     "tagline": "这团乱麻，是你此刻的思绪吗？试着长按屏幕，慢慢抚平它们...",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/unbound-mind/unbound-mind.html",
-    "preview_asset": "unbound-mind_1.png"
+    "preview_asset": null
   },
   {
     "slug": "grand-jiangshan",
@@ -249,7 +249,7 @@
     "title_en": "Grand Jiangshan",
     "tagline": "我见青山多妩媚，料青山见我应如是",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/grand-jiangshan/grand-jiangshan.html",
-    "preview_asset": "grand-jiangshan_1.png"
+    "preview_asset": null
   },
   {
     "slug": "time-particle-clock",
@@ -257,7 +257,7 @@
     "title_en": "Time Particle Clock",
     "tagline": "时间是流动的粒子——拖拽加速，松开即止，每一秒都有声音",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/time-particle-clock/time-particle-clock.html",
-    "preview_asset": "time-particle-clock_1.png"
+    "preview_asset": null
   },
   {
     "slug": "breathing-boundary",
@@ -265,7 +265,7 @@
     "title_en": "Breathing Boundary",
     "tagline": "看似隔绝，实则翻译——这是一层活着的、会呼吸的边界",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/breathing-boundary/breathing-boundary.html",
-    "preview_asset": "breathing-boundary_1.png"
+    "preview_asset": null
   },
   {
     "slug": "silent-translator",
@@ -273,7 +273,7 @@
     "title_en": "Silent Translator",
     "tagline": "身体替你说了说不出的话",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/silent-translator/silent-translator.html",
-    "preview_asset": "silent-translator_1.png"
+    "preview_asset": null
   },
   {
     "slug": "breath-mirror",
@@ -281,7 +281,7 @@
     "title_en": "Breath Mirror",
     "tagline": "这里没有深渊，也没有波澜",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/breath-mirror/breath-mirror.html",
-    "preview_asset": "breath-mirror_1.png"
+    "preview_asset": null
   },
   {
     "slug": "sumi-e-taichi",
@@ -289,7 +289,7 @@
     "title_en": "Sumi-e Taichi",
     "tagline": "一滴墨落入宣纸——既是破坏，也是开始",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/sumi-e-taichi/sumi-e-taichi.html",
-    "preview_asset": "sumi-e-taichi.jpg"
+    "preview_asset": null
   },
   {
     "slug": "inkmeditation",
@@ -297,7 +297,7 @@
     "title_en": "Inkmeditation",
     "tagline": "算法物理学 × 视觉设计 × 心理疗愈",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/inkmeditation/inkmeditation.html",
-    "preview_asset": "inkmeditation.jpg"
+    "preview_asset": null
   },
   {
     "slug": "cosmic-recollection",
@@ -305,7 +305,7 @@
     "title_en": "Cosmic Recollection",
     "tagline": "万物皆有裂痕——那是光照进来的地方",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/cosmic-recollection/cosmic-recollection.html",
-    "preview_asset": "cosmic-recollection.jpg"
+    "preview_asset": null
   },
   {
     "slug": "layered-mountains",
@@ -313,43 +313,178 @@
     "title_en": "Layered Mountains",
     "tagline": "触之即散，聚散随缘",
     "page_url": "https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html",
-    "preview_asset": "layered-mountains.jpg"
+    "preview_asset": null
+  },
+  {
+    "slug": "leaf-corner-summer",
+    "title_zh": "掀开落叶的一角",
+    "title_en": "Leaf Corner Summer",
+    "tagline": "叶子掀开一角，夏天还留在下面。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/leaf-corner-summer/leaf-corner-summer.html",
+    "preview_asset": "leaf-corner-summer_1.gif"
+  },
+  {
+    "slug": "yarn-knot-tonight",
+    "title_zh": "你今天是哪种结 · 线团团",
+    "title_en": "Yarn Knot Tonight",
+    "tagline": "一天下来，它把自己缠成了这样。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/yarn-knot-tonight/yarn-knot-tonight.html",
+    "preview_asset": "yarn-knot-tonight_1.gif"
+  },
+  {
+    "slug": "butterflies-back-to-wind",
+    "title_zh": "回到风里",
+    "title_en": "Butterflies Back To Wind",
+    "tagline": "Pull the cork free, and let what was held return to the wind.",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/butterflies-back-to-wind/butterflies-back-to-wind.html",
+    "preview_asset": "butterflies-back-to-wind_1.gif"
+  },
+  {
+    "slug": "parting-the-rain",
+    "title_zh": "把雨拉开一道缝",
+    "title_en": "Parting The Rain",
+    "tagline": "雨是一道幕。捏住它的边往左拉，缝后面是晚霞、电车和十只麻雀。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/parting-the-rain/parting-the-rain.html",
+    "preview_asset": "parting-the-rain_1.gif"
+  },
+  {
+    "slug": "dusk-projector",
+    "title_zh": "把黄昏倒回去",
+    "title_en": "Dusk Projector",
+    "tagline": "手摇的放映机对准地平线，顺时针转动摇柄，那一小片天空就一格一格退回黄昏；松开手，它会自己慢慢走回夜里。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/dusk-projector/dusk-projector.html",
+    "preview_asset": "dusk-projector_1.gif"
+  },
+  {
+    "slug": "weather-on-the-line",
+    "title_zh": "天气晾在房间里",
+    "title_en": "Weather On The Line",
+    "tagline": "把天气一件件晾上去，再一件件摘下来。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/weather-on-the-line/weather-on-the-line.html",
+    "preview_asset": "weather-on-the-line_1.gif"
+  },
+  {
+    "slug": "egret-sunrise",
+    "title_zh": "今天，由你升起",
+    "title_en": "Egret Sunrise",
+    "tagline": "拖一条晨光鱼喂给白鹭，它咬住滑轮上的绳，把太阳从海里一寸寸吊起来。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/egret-sunrise/egret-sunrise.html",
+    "preview_asset": "egret-sunrise_1.gif"
+  },
+  {
+    "slug": "duskfirefly-bottle",
+    "title_zh": "把未熄的交给夜",
+    "title_en": "Duskfirefly Bottle",
+    "tagline": "海退回时，把一只漂流瓶留在湿沙上——瓶里还有没熄的萤火，交给夜来认领。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/duskfirefly-bottle/duskfirefly-bottle.html",
+    "preview_asset": "duskfirefly-bottle_1.gif"
+  },
+  {
+    "slug": "streetlamp-slow-rain",
+    "title_zh": "路灯周围，雨会慢一点",
+    "title_en": "Streetlamp Slow Rain",
+    "tagline": "末班车走远后，最后一盏旧路灯还亮着。按住光，让灯下的雨慢一点。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/streetlamp-slow-rain/streetlamp-slow-rain.html",
+    "preview_asset": "streetlamp-slow-rain_1.gif"
+  },
+  {
+    "slug": "hammer-off",
+    "title_zh": "今天先砸到这儿",
+    "title_en": "Hammer Off",
+    "tagline": "在一条虚构的下班城市街道上游走，把还没放下的噪声交给一把会回应的锤子。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/hammer-off/hammer-off.html",
+    "preview_asset": null
+  },
+  {
+    "slug": "tang-sancai-fire",
+    "title_zh": "三彩釉火 · 洛阳窑记",
+    "title_en": "Tang Sancai Fire",
+    "tagline": "从白胎到窑火：在一匹唐三彩马身上，留下你的釉色与一则窑记。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/tang-sancai-fire/tang-sancai-fire.html",
+    "preview_asset": "tang-sancai-fire_1.gif"
+  },
+  {
+    "slug": "cloud-laundry-pool",
+    "title_zh": "晾云池",
+    "title_en": "Cloud Laundry Pool",
+    "tagline": "把潮湿和心事挂起来，让它们慢慢落成一池雨。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/cloud-laundry-pool/cloud-laundry-pool.html",
+    "preview_asset": "cloud-laundry-pool_1.gif"
+  },
+  {
+    "slug": "ink-in-forms",
+    "title_zh": "墨中有相",
+    "title_en": "Ink In Forms",
+    "tagline": "长按，把浮水中的彩墨交给一枚心印——太极、鹤影、山水、牡丹，成形后仍会呼吸，也仍会被指尖拨散。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/ink-in-forms/ink-in-forms.html",
+    "preview_asset": "ink-in-forms_1.gif"
+  },
+  {
+    "slug": "golden-ripples",
+    "title_zh": "潮汐拾光 · 梯级金浪",
+    "title_en": "Golden Ripples",
+    "tagline": "浮光跃金，潮落潮生——梯级金浪与行人剪影，一场慢节奏的海滩冥想",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/golden-ripples/golden-ripples.html",
+    "preview_asset": "golden-ripples_1.gif"
+  },
+  {
+    "slug": "glow-boat-bottle",
+    "title_zh": "夜航瓶",
+    "title_en": "Glow Boat Bottle",
+    "tagline": "玻璃瓶封着一小片夜海，发光的小船载着少年——拧开瓶塞，让它漂向真正的海。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/glow-boat-bottle/glow-boat-bottle.html",
+    "preview_asset": "glow-boat-bottle_1.gif"
+  },
+  {
+    "slug": "magpie-bridge-heist",
+    "title_zh": "鹊桥搞事现场",
+    "title_en": "Magpie Bridge Heist",
+    "tagline": "七夕夜路过鹊桥，撞上牛郎织女约会——其实，我当时有三个选择。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/magpie-bridge-heist/magpie-bridge-heist.html",
+    "preview_asset": "magpie-bridge-heist_1.gif"
+  },
+  {
+    "slug": "paper-boat-release",
+    "title_zh": "纸船放行",
+    "title_en": "Paper Boat Release",
+    "tagline": "点开瓶塞，让一只纸船替你把难以言说的心事带向海面。",
+    "page_url": "https://shasha1108.github.io/healing-visual-lab/paper-boat-release/paper-boat-release.html",
+    "preview_asset": "paper-boat-release_1.gif"
   }
-]
-  ,
+  ],
   "works": [
     {
-      "slug": "eternal-bloom",
-      "title_zh": "永生花工坊",
-      "title_en": "Eternal Bloom",
-      "tagline": "调好一朵花的每个参数，封进玻璃钟罩，它就替你一直开着。",
+      "slug": "parting-the-rain",
+      "title_zh": "把雨拉开一道缝",
+      "title_en": "Parting The Rain",
+      "tagline": "雨是一道幕。捏住它的边往左拉，缝后面是晚霞、电车和十只麻雀。",
+      "render": "Canvas 2D",
+      "tech": ["Canvas 2D", "Web Audio API"],
+      "particle_count": "N/A",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/parting-the-rain/parting-the-rain.html",
+      "preview_asset": "parting-the-rain_1.gif"
+    },
+    {
+      "slug": "cloud-laundry-pool",
+      "title_zh": "晾云池",
+      "title_en": "Cloud Laundry Pool",
+      "tagline": "把潮湿和心事挂起来，让它们慢慢落成一池雨。",
       "render": "Canvas2D (p5.js)",
-      "tech": ["p5.js", "Canvas 2D", "Web Audio API"],
+      "tech": ["p5.js", "Canvas 2D"],
       "particle_count": "N/A",
-      "page_url": "https://shasha1108.github.io/healing-visual-lab/eternal-bloom/eternal-bloom.html",
-      "preview_asset": "eternal-bloom_1.gif"
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/cloud-laundry-pool/cloud-laundry-pool.html",
+      "preview_asset": "cloud-laundry-pool_1.gif"
     },
     {
-      "slug": "bottled-cosmos",
-      "title_zh": "瓶装宇宙",
-      "title_en": "BOTTLED COSMOS",
-      "tagline": "把整个宇宙装进一只玻璃瓶——每颗恒星的一生，只有三十秒。",
-      "render": "WebGL (Three.js)",
-      "tech": ["p5.js", "Three.js", "Canvas 2D"],
-      "particle_count": "N/A",
-      "page_url": "https://shasha1108.github.io/healing-visual-lab/bottled-cosmos/bottled-cosmos.html",
-      "preview_asset": "bottled-cosmos_1.gif"
-    },
-    {
-      "slug": "layered-mountains",
-      "title_zh": "青绿·层峦",
-      "title_en": "Layered Mountains",
-      "tagline": "触之即散，聚散随缘",
-      "render": "WebGL (Three.js)",
-      "tech": ["Three.js WebGL", "250K particles", "layered landscape rendering", "raycaster interaction"],
-      "particle_count": "250K",
-      "page_url": "https://shasha1108.github.io/healing-visual-lab/layered-mountains/layered-mountains.html",
-      "preview_asset": "layered-mountains.jpg"
+      "slug": "weather-on-the-line",
+      "title_zh": "天气晾在房间里",
+      "title_en": "Weather On The Line",
+      "tagline": "把天气一件件晾上去，再一件件摘下来。",
+      "render": "WebGL (p5.js)",
+      "tech": ["p5.js", "WebGL", "Canvas 2D", "Web Audio API"],
+      "particle_count": "441 cloth nodes",
+      "page_url": "https://shasha1108.github.io/healing-visual-lab/weather-on-the-line/weather-on-the-line.html",
+      "preview_asset": "weather-on-the-line_1.gif"
     },
     {
       "slug": "aquarium-2003",
